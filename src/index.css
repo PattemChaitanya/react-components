@@ -180,7 +180,7 @@ html {
 }
 
 *, *::before, *::after {
-  box-sizing: inherit; 
+  box-sizing: border-box; 
 }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul, li, figure, figcaption, blockquote, dl, dd {
@@ -227,4 +227,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.card-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
 }

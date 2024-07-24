@@ -1,0 +1,15 @@
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  width: 30%;
+  margin: 10px
+}
+
+@media (max-width: 768px) {
+  .card-wrapper {
+    width: 100%;
+  }
+}

@@ -1,14 +1,31 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import "./sidebar.css";
+import { menu, components } from "../../constants/sidebarConstants";
 
 const Sidebar = () => {
+  const location = useLocation();
+  const pathname = location.pathname.split("/")[1];
+
   return (
-    <div class="sidebar">
+    <div className="sidebar">
       <aside>
-        <a href="/">home</a>
-        <a href="/drop">drop</a>
-        <p>aside</p>
+        {pathname === "components" ? (
+          components.map((item, index) => (
+            <Link to={item.to} key={index}>
+              {item.title}
+            </Link>
+          ))
+        ) : (
+          <>
+            <Link to="/">Home</Link>
+            {menu.map((item, index) => (
+              <Link to={item.path} key={index}>
+                {item.title}
+              </Link>
+            ))}
+          </>
+        )}
       </aside>
       <main>
         <Outlet />

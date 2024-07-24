@@ -1,8 +1,21 @@
 import { createBrowserRouter } from "react-router-dom";
 import Header from "../components/navbar/header";
 import Sidebar from "../components/sidebar/sidebar";
+import { menu, components } from "../constants/sidebarConstants";
+import Components from "../pages/components/components";
 import Home from "../pages/home/home";
-import DragAndDrop from "../pages/drag-and-drop/drag-and-drop";
+
+const childrenRouteMapping = () => {
+  return menu.map((item) => {
+    return { path: item.path, element: item.component };
+  });
+};
+
+const childRouteMapping = () => {
+  return components.map((item) => {
+    return { path: item.path, element: item.component };
+  });
+};
 
 const routeMapping = [
   {
@@ -16,18 +29,12 @@ const routeMapping = [
             index: true,
             element: <Home />,
           },
+          ...childrenRouteMapping(),
           {
-            path: "drop",
-            element: <DragAndDrop />,
+            path: "components",
+            element: <Components />,
+            children: [...childRouteMapping()],
           },
-          // {
-          //   path: "myCookbooks",
-          //   element: <UserCookBooks />,
-          // },
-          // {
-          //   path: "likedRecipes",
-          //   element: <LikedRecipes />,
-          // },
         ],
       },
     ],

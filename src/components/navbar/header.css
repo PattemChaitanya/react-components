@@ -3,8 +3,8 @@
 }
 nav {
   height: 70px;
-  background: #000;
-  color: #fff;
+  background: var(--background-color);
+  color: var(--text-color);
   font-size: 20px;
   padding: 14px 16px;
   position: fixed;
@@ -14,9 +14,9 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--border-color);
+  transition: 0.5s all ease-in-out;
 }
-
 
 @media (max-width: 768px) {
   nav {

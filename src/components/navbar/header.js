@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./header.css";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Header = () => {
   const [count, setCount] = useState(0);
@@ -12,6 +12,7 @@ const Header = () => {
     } else {
       document.body.removeAttribute("data-theme");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count]);
 
   const updatingCount = () => {
@@ -23,9 +24,11 @@ const Header = () => {
   };
 
   return (
-    <div class="main">
-      <nav class="navbar">
+    <div className="main">
+      <nav className="navbar">
         <p>Css</p>
+        <Link to="/">Features</Link>
+        <Link to="/components">Component</Link>
         <button onClick={() => updatingCount()}> change theme</button>
       </nav>
       <Outlet />
