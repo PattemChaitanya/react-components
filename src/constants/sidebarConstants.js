@@ -1,10 +1,16 @@
 import DragAndDrop from "../pages/drag-and-drop/drag-and-drop";
+import Todo from "../pages/todo/todo";
 
 export const menu = [
   {
     title: "Drag and drop",
     path: "/drag-and-drop",
     component: <DragAndDrop />,
+  },
+  {
+    title: "To Do List",
+    path: "/to-do",
+    component: <Todo />,
   },
   {
     title: "Container",

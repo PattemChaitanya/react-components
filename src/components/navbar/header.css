@@ -2,8 +2,8 @@
   height: 100vh;
 }
 nav {
+  background-color: aliceblue;
   height: 70px;
-  background: var(--background-color);
   color: var(--text-color);
   font-size: 20px;
   padding: 14px 16px;
@@ -16,6 +16,7 @@ nav {
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   transition: 0.5s all ease-in-out;
+  z-index: 1000;
 }
 
 @media (max-width: 768px) {

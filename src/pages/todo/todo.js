@@ -1,15 +1,15 @@
 import React from "react";
-import "./drag-and-drop.css";
+import "./todo.css";
 import { Link } from "react-router-dom";
-import { jsonToDisplay } from "./code-snippet-display"
 import CodeSnippet from "../../components/codeSnippet/codeSnippet";
+import { todoListData } from "./todoListData";
 
-const DragAndDrop = () => {
+const Todo = () => {
   return (
     <p className="homeText">
       <Link to={-1}>Back</Link>
       <br />
-      {jsonToDisplay.map((item) => (
+      {todoListData.map((item) => (
         <>
           {item.component}
           <CodeSnippet code={item.toDisplay} />
@@ -19,4 +19,4 @@ const DragAndDrop = () => {
   );
 };
 
-export default DragAndDrop;
+export default Todo;

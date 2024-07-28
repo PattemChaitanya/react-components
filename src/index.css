@@ -221,7 +221,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vw
+  height: 100vw;
+  background-color: var(--background-color);
 }
 
 code {
