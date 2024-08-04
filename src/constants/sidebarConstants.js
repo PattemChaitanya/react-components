@@ -1,4 +1,8 @@
+import Accordion from "../pages/accordion";
+import Alert from "../pages/alert";
 import DragAndDrop from "../pages/drag-and-drop/drag-and-drop";
+import Images from "../pages/images";
+import Table from "../pages/table";
 import Todo from "../pages/todo/todo";
 
 export const menu = [
@@ -53,29 +57,14 @@ export const menu = [
     component: "<Avatar />",
   },
   {
-    title: "Mansory images",
-    path: "/mansory-images",
-    component: "<MansoryImages />",
-  },
-  {
-    title: "Image slider",
-    path: "/image-slider",
-    component: "<ImageSlider />",
-  },
-  {
-    title: "Image carousel",
-    path: "/image-carousel",
-    component: "<ImageCarousel />",
-  },
-  {
-    title: "Shuffle list",
-    path: "/shuffle-list",
-    component: "<ShuffleList />",
+    title: "Images",
+    path: "/images",
+    component: <Images />,
   },
   {
     title: "Table",
     path: "/table",
-    component: "<Table />",
+    component: <Table />,
   },
   {
     title: "Pagination",
@@ -176,5 +165,118 @@ export const components = [
     path: "image",
     to: "/components/image",
     component: "<Image />",
+  },
+];
+
+export const newMenu = [
+  {
+    title: 'Accordion',
+    path: '/accordion',
+    component: <Accordion />
+  },
+  { title: 'Alert', path: '/alert', component: <Alert /> },
+  { title: 'Avatar', path: '/avatar', component: '<Avatar />' },
+  { title: 'Badge', path: '/badge', component: '<Badge />' },
+  { title: 'Banner', path: '/banner', component: '<Banner />' },
+  {
+    title: 'Bottom Navigation',
+    path: '/bottom-navigation',
+    component: '<BottomNavigation />'
+  },
+  {
+    title: 'Breadcrumbs',
+    path: '/breadcrumbs',
+    component: '<Breadcrumbs />'
+  },
+  {
+    title: 'Button Group',
+    path: '/button-group',
+    component: '<ButtonGroup />'
+  },
+  { title: 'Buttons', path: '/buttons', component: '<Buttons />' },
+  { title: 'Card', path: '/card', component: '<Card />' },
+  { title: 'Carousel', path: '/carousel', component: '<Carousel />' },
+  {
+    title: 'Chat Bubble',
+    path: '/chat-bubble',
+    component: '<ChatBubble />'
+  },
+  {
+    title: 'Clipboard',
+    path: '/clipboard',
+    component: '<Clipboard />'
+  },
+  {
+    title: 'Container',
+    path: '/container',
+    component: '<Container />'
+  },
+  {
+    title: 'Datepicker',
+    path: '/datepicker',
+    component: '<Datepicker />'
+  },
+  {
+    title: 'Drag and drop',
+    path: '/drag-and-drop',
+    component: <DragAndDrop />
+  },
+  { title: 'Drawer', path: '/drawer', component: '<Drawer />' },
+  {
+    title: 'Dropdowns',
+    path: '/dropdowns',
+    component: '<Dropdowns />'
+  },
+  { title: 'Footer', path: '/footer', component: '<Footer />' },
+  { title: 'Forms', path: '/forms', component: '<Forms />' },
+  { title: 'Gallery', path: '/gallery', component: '<Gallery />' },
+  {
+    title: 'Indicators',
+    path: '/indicators',
+    component: '<Indicators />'
+  },
+  {
+    title: "Images",
+    path: "/images",
+    component: <Images />,
+  },
+  {
+    title: 'List Group',
+    path: '/list-group',
+    component: '<ListGroup />'
+  },
+  { title: 'Loaders', path: '/loaders', component: '<Loaders />' },
+  { title: 'Modal', path: '/modal', component: '<Modal />' },
+  { title: 'Navbar', path: '/navbar', component: '<Navbar />' },
+  {
+    title: 'Pagination',
+    path: '/pagination',
+    component: '<Pagination />'
+  },
+  { title: 'Popover', path: '/popover', component: '<Popover />' },
+  {
+    title: 'Progress bar',
+    path: '/progress-bar',
+    component: '<Progressbar />'
+  },
+  { title: 'Rating', path: '/rating', component: '<Rating />' },
+  {
+    title: 'Responsive layout.',
+    path: '/responsive-layout.',
+    component: '<Responsivelayout. />'
+  },
+  { title: 'Sidebar', path: '/sidebar', component: '<Sidebar />' },
+  { title: 'Skeleton', path: '/skeleton', component: '<Skeleton />' },
+  { title: 'Spinner', path: '/spinner', component: '<Spinner />' },
+  { title: 'Stepper', path: '/stepper', component: '<Stepper />' },
+  { title: 'Tables', path: '/tables', component: <Table /> },
+  { title: 'Tabs', path: '/tabs', component: '<Tabs />' },
+  { title: 'Timeline', path: '/timeline', component: '<Timeline />' },
+  { title: 'Toast', path: '/toast', component: '<Toast />' },
+  { title: 'Tooltips', path: '/tooltips', component: '<Tooltips />' },
+  {
+    title: 'Typography',
+    path: '/typography',
+    component: '<Typography />'
   },
 ];

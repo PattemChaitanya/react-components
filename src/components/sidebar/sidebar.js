@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import "./sidebar.css";
-import { menu, components } from "../../constants/sidebarConstants";
+import { components, newMenu } from "../../constants/sidebarConstants";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -19,7 +19,7 @@ const Sidebar = () => {
         ) : (
           <>
             <Link to="/">Home</Link>
-            {menu.map((item, index) => (
+              {newMenu.map((item, index) => (
               <Link to={item.path} key={index}>
                 {item.title}
               </Link>

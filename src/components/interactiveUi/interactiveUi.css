@@ -1,0 +1,16 @@
+.interactive-wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .interactive-wrapper {
+    width: 100%;
+  }
+}

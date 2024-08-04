@@ -1,6 +1,6 @@
 import TodoList from "./todoList";
 
-export const todoListData = [
+export const jsonToDisplay = [
   {
     component: <TodoList />,
     open: false,

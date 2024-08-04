@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./header.css";
 import { Link, Outlet } from "react-router-dom";
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 
 const Header = () => {
   const [count, setCount] = useState(parseInt(window.localStorage.getItem("mode"), 10) || 0);
-  const colorTheme = ["light", "dark", "blue", "green", "red"];
+  const colorTheme = ["light", "dark"];
 
   useEffect(() => {
     const theme = colorTheme[count];
@@ -20,10 +22,13 @@ const Header = () => {
   return (
     <div className="main">
       <nav className="navbar">
-        <p>Css</p>
+
+        <p>Components</p>
         <Link to="/">Features</Link>
         <Link to="/components">Component</Link>
-        <button onClick={() => updatingCount()}> change theme</button>
+        <button onClick={() => updatingCount()}>
+          {colorTheme[count] === "light" ? <LightModeOutlinedIcon /> : <DarkModeIcon />}
+        </button>
       </nav>
       <Outlet />
     </div>

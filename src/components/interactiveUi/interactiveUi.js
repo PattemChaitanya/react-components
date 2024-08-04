@@ -1,10 +1,10 @@
 import React from 'react'
 import "./interactiveUi.css"
 
-const InteractiveUi = () => {
+const InteractiveUi = ({ children }) => {
   return (
-    <div>
-      InteractiveUi
+    <div className='interactive-wrapper'>
+      {children}
     </div>
   )
 }
