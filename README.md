@@ -38,71 +38,71 @@
 
 ---------------------------------------------------
 ## new components
-- Accordion
-- Alerts
-- Avatar
-- Badge
-- Banner
-- Bottom Navigation
-- Breadcrumb
-- Buttons
-- Button Group
-- Card
-- Carousel
-- Chat Bubble
-- Clipboard
-- Datepicker
-- Device Mockups
-- Drawer
-- Dropdowns
-- Footer
-- Forms
-- Gallery
-- Indicators
-- Jumbotron
-- KBD
-- List Group
-- Mega Menu
-- Modal
-- Navbar
-- Pagination
-- Popover
-- Progress
-- Rating
-- Sidebar
-- Skeleton
-- Speed Dial
-- Spinner
-- Stepper
-- Tables
-- Tabs
-- Timeline
-- Toast
-- Tooltips
-- Typography
-- Video
+- [x] Accordion
+- [x] Alerts
+- [x] Avatar
+- [x] Badge
+- [ ] Banner
+- [x] Bottom Navigation
+- [ ] Breadcrumb
+- [ ] Buttons
+- [x] Button Group
+- [ ] Card
+- [ ] Carousel
+- [ ] Chat Bubble
+- [ ] Clipboard
+- [ ] Datepicker
+- [ ] Device Mockups
+- [ ] Drawer
+- [ ] Dropdowns
+- [ ] Footer
+- [ ] Forms
+- [ ] Gallery
+- [ ] Indicators
+- [ ] Jumbotron
+- [ ] KBD
+- [ ] List Group
+- [ ] Mega Menu
+- [ ] Modal
+- [ ] Navbar
+- [ ] Pagination
+- [ ] Popover
+- [ ] Progress
+- [ ] Rating
+- [ ] Sidebar
+- [ ] Skeleton
+- [ ] Speed Dial
+- [ ] Spinner
+- [ ] Stepper
+- [ ] Tables
+- [ ] Tabs
+- [ ] Timeline
+- [ ] Toast
+- [ ] Tooltips
+- [ ] Typography
+- [ ] Video
 ---------------------------------------------------
 FORMS
-Input Field
-File Input
-Search Input
-Number Input
-Phone Input
-Select
-Textarea
-Timepicker
-Checkbox
-Radio
-Toggle
-Range
-Floating Label
+- Input Field
+- File Input
+- Search Input
+- Number Input
+- Phone Input
+- Select
+- Textarea
+- Timepicker
+- Checkbox
+- Radio
+- Toggle
+- Range
+- Floating Label
 ----------------------------------------------------
 TYPOGRAPHY
-Headings
-Paragraphs
-Blockquote
-Images
-Lists
-Links
-Text
-HR
+- Headings
+- Paragraphs
+- Blockquote
+- Images
+- Lists
+- Links
+- Text
+- HR
