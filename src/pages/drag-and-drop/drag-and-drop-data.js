@@ -4,7 +4,9 @@ import Kanban from "./kanban";
 
 export const jsonToDisplay = [
   {
-    "component": <OneWayDrop />,
+    title: "Simple Drag and drop",
+    subTitle: "Simple Drag and drop",
+    component: <OneWayDrop />,
     "toDisplay": `
 import React, { useState } from 'react';
 
@@ -89,6 +91,8 @@ export default OneWayDrop;
     "open": false
   },
   {
+    title: "Kanban Drag and drop",
+    subTitle: "Kanban Drag and drop",
     component: <Kanban />,
     open: false,
     toDisplay: `
@@ -181,6 +185,8 @@ export default Kanban;
     `
   },
   {
+    title: "Drag and drop by dnd libaray",
+    subTitle: "Drag and drop by dnd libaray",
     component: <Dnd />,
     open: false,
     toDisplay: `

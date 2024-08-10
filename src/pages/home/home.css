@@ -6,4 +6,5 @@
   margin-left: auto;
   margin-right: auto;
   color: var(--text-color);
+  height: fit-content
 }

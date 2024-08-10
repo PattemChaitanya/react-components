@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap');
 :root {
     /* Colors */
     --primary-color: #006400; /* Dark green */
@@ -207,10 +208,10 @@ a {
 }
 
 button {
-  background: none; 
+  background: none;
+  border: none;
   color: inherit; 
-  border: none; 
-  padding: 0; 
+  padding: 6px 14px; 
   cursor: pointer; 
 }
 
@@ -221,7 +222,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vw;
   background-color: var(--background-color);
 }
 
@@ -235,4 +235,29 @@ code {
   flex-wrap: wrap;
   width: 100%;
   margin: 0 auto;
+}
+
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  gap: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .page-layout {
+    width: 100%;
+    padding-inline: 14px;
+  }
+}
+
+.gap-each-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
 }

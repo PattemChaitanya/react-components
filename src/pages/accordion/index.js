@@ -18,12 +18,16 @@ const Accordion = () => {
         <Link to={-1}>Back</Link>
         <br />
         {jsonToDisplay.map((item, index) => (
-          <InteractiveUi>
-            <div key={index} style={{ padding: "10px" }}>
-              {item.component}
-            </div>
-            <CodeSnippet code={item.toDisplay} open={openIndexes} handleOpen={handleOpen} index={index} />
-          </InteractiveUi>
+          <div key={index} className='gap-each-section'>
+            <h2>{item.title}</h2>
+            <p>{item.subTitle}</p>
+            <InteractiveUi>
+              <div key={index} style={{ padding: "10px" }}>
+                {item.component}
+              </div>
+              <CodeSnippet code={item.toDisplay} open={openIndexes} handleOpen={handleOpen} index={index} />
+            </InteractiveUi>
+          </div>
         ))}
       </>
     </Layout>

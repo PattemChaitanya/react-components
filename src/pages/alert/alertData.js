@@ -2,6 +2,8 @@ import SimpleAlert from "./simple-alert";
 
 export const jsonToDisplay = [
   {
+    title: "Simple alert",
+    subTitle: "Simple Alert",
     component: <SimpleAlert />,
     open: false,
     toDisplay: `

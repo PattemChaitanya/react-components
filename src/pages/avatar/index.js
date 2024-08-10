@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { jsonToDisplay } from './alertData'
+import { jsonToDisplay } from './avatar-data'
 import CodeSnippet from '../../components/codeSnippet/codeSnippet'
 import InteractiveUi from '../../components/interactiveUi/interactiveUi'
 import Layout from '../../components/mainLayout/main-layout'
 
-const Alert = () => {
+const Avatar = () => {
   const [openIndexes, setOpenIndexes] = useState(jsonToDisplay.map(() => false));
 
   const handleOpen = (index) => {
@@ -13,7 +13,7 @@ const Alert = () => {
   }
 
   return (
-    <Layout title="Alert" description={"Alert"}>
+    <Layout title="Avatar" description={"Avatar"}>
       <>
         <Link to={-1}>Back</Link>
         <br />
@@ -34,4 +34,4 @@ const Alert = () => {
   )
 }
 
-export default Alert
+export default Avatar

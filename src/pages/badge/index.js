@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { jsonToDisplay } from './alertData'
+import { jsonToDisplay } from './badge-data'
 import CodeSnippet from '../../components/codeSnippet/codeSnippet'
 import InteractiveUi from '../../components/interactiveUi/interactiveUi'
 import Layout from '../../components/mainLayout/main-layout'
 
-const Alert = () => {
+const Badge = () => {
   const [openIndexes, setOpenIndexes] = useState(jsonToDisplay.map(() => false));
 
   const handleOpen = (index) => {
@@ -13,7 +13,7 @@ const Alert = () => {
   }
 
   return (
-    <Layout title="Alert" description={"Alert"}>
+    <Layout title="Badge" description={"Badge"}>
       <>
         <Link to={-1}>Back</Link>
         <br />
@@ -22,7 +22,7 @@ const Alert = () => {
             <h2>{item.title}</h2>
             <p>{item.subTitle}</p>
             <InteractiveUi>
-              <div key={index} style={{ padding: "10px" }}>
+              <div style={{ padding: "10px" }}>
                 {item.component}
               </div>
               <CodeSnippet code={item.toDisplay} open={openIndexes} handleOpen={handleOpen} index={index} />
@@ -34,4 +34,4 @@ const Alert = () => {
   )
 }
 
-export default Alert
+export default Badge

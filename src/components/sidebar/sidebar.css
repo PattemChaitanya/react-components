@@ -37,6 +37,7 @@ main {
   left: 200px;
   padding-top: 10px;
   width: calc(100vw - 220px);
+  min-height: calc(100vh - 70px);
 }
 
 @media (max-width: 768px) {

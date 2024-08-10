@@ -8,7 +8,9 @@ const Layout = ({ title, description, children }) => {
         <title>{title}</title>
         <meta name="description" content={`${description} component from scratch`} />
       </Helmet>
-      {children}
+      <div className='page-layout'>
+        {children}
+      </div>
     </>
   )
 }

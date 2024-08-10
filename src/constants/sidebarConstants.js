@@ -1,5 +1,8 @@
 import Accordion from "../pages/accordion";
 import Alert from "../pages/alert";
+import Avatar from "../pages/avatar";
+import Badge from "../pages/badge";
+import BottomNavigation from "../pages/button-nav";
 import DragAndDrop from "../pages/drag-and-drop/drag-and-drop";
 import Images from "../pages/images";
 import Table from "../pages/table";
@@ -175,13 +178,13 @@ export const newMenu = [
     component: <Accordion />
   },
   { title: 'Alert', path: '/alert', component: <Alert /> },
-  { title: 'Avatar', path: '/avatar', component: '<Avatar />' },
-  { title: 'Badge', path: '/badge', component: '<Badge />' },
+  { title: 'Avatar', path: '/avatar', component: <Avatar /> },
+  { title: 'Badge', path: '/badge', component: <Badge /> },
   { title: 'Banner', path: '/banner', component: '<Banner />' },
   {
     title: 'Bottom Navigation',
     path: '/bottom-navigation',
-    component: '<BottomNavigation />'
+    component: <BottomNavigation />
   },
   {
     title: 'Breadcrumbs',
