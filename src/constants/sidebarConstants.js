@@ -4,7 +4,11 @@ import Avatar from "../pages/avatar";
 import Badge from "../pages/badge";
 import ButtonGroup from "../pages/button-group";
 import BottomNavigation from "../pages/button-nav";
+import Buttons from "../pages/buttons";
+import Cards from "../pages/cards";
 import DragAndDrop from "../pages/drag-and-drop/drag-and-drop";
+import Drawer from "../pages/drawer";
+import Footer from "../pages/footer";
 import Images from "../pages/images";
 import Table from "../pages/table";
 import Todo from "../pages/todo/todo";
@@ -197,8 +201,8 @@ export const newMenu = [
     path: "/button-group",
     component: <ButtonGroup />,
   },
-  { title: "Buttons", path: "/buttons", component: "<Buttons />" },
-  { title: "Card", path: "/card", component: "<Card />" },
+  { title: "Buttons", path: "/buttons", component: <Buttons /> },
+  { title: "Card", path: "/card", component: <Cards /> },
   { title: "Carousel", path: "/carousel", component: "<Carousel />" },
   {
     title: "Chat Bubble",
@@ -225,13 +229,13 @@ export const newMenu = [
     path: "/drag-and-drop",
     component: <DragAndDrop />,
   },
-  { title: "Drawer", path: "/drawer", component: "<Drawer />" },
+  { title: "Drawer", path: "/drawer", component: <Drawer /> },
   {
     title: "Dropdowns",
     path: "/dropdowns",
     component: "<Dropdowns />",
   },
-  { title: "Footer", path: "/footer", component: "<Footer />" },
+  { title: "Footer", path: "/footer", component: <Footer /> },
   { title: "Forms", path: "/forms", component: "<Forms />" },
   { title: "Gallery", path: "/gallery", component: "<Gallery />" },
   {

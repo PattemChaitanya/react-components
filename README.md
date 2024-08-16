@@ -45,9 +45,9 @@
 - [ ] Banner
 - [x] Bottom Navigation
 - [ ] Breadcrumb
-- [ ] Buttons
+- [x] Buttons
 - [x] Button Group
-- [ ] Card
+- [x] Card
 - [ ] Carousel
 - [ ] Chat Bubble
 - [ ] Clipboard
