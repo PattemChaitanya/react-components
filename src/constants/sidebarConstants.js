@@ -3,7 +3,7 @@ import Alert from "../pages/alert";
 import Avatar from "../pages/avatar";
 import Badge from "../pages/badge";
 import ButtonGroup from "../pages/button-group";
-import BottomNavigation from "../pages/button-nav";
+import BottomNavigation from "../pages/bottom-nav";
 import Buttons from "../pages/buttons";
 import Cards from "../pages/cards";
 import DragAndDrop from "../pages/drag-and-drop/drag-and-drop";
@@ -12,6 +12,8 @@ import Footer from "../pages/footer";
 import Images from "../pages/images";
 import Table from "../pages/table";
 import Todo from "../pages/todo/todo";
+import RadioButton from "../pages/radio-button";
+import SelectBox from "../pages/select-box";
 
 export const menu = [
   {
@@ -173,6 +175,18 @@ export const components = [
     path: "image",
     to: "/components/image",
     component: "<Image />",
+  },
+  {
+    title: "Radio button",
+    path: "radio-button",
+    to: "/components/radio-button",
+    component: <RadioButton />,
+  },
+  {
+    title: "Select box",
+    path: "select-box",
+    to: "/components/select-box",
+    component: <SelectBox />,
   },
 ];
 

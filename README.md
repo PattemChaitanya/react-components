@@ -53,13 +53,12 @@
 - [ ] Clipboard
 - [ ] Datepicker
 - [ ] Device Mockups
-- [ ] Drawer
+- [x] Drawer
 - [ ] Dropdowns
-- [ ] Footer
+- [x] Footer
 - [ ] Forms
 - [ ] Gallery
 - [ ] Indicators
-- [ ] Jumbotron
 - [ ] KBD
 - [ ] List Group
 - [ ] Mega Menu
