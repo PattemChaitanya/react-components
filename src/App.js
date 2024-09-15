@@ -7,3 +7,7 @@ function App() {
 }
 
 export default App;
+
+// name/url of the project - "jsexamplewithreact.netlify.app"
+// name/url of the project - "jsexamplewithreact.web.app"
+// name/url of the project - "jsexamplewithreact.com"

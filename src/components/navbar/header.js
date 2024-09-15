@@ -22,13 +22,25 @@ const Header = () => {
   return (
     <div className="main">
       <nav className="navbar">
-
         <p>Components</p>
-        <Link to="/">Features</Link>
-        <Link to="/components">Component</Link>
-        <button onClick={() => updatingCount()}>
-          {colorTheme[count] === "light" ? <LightModeOutlinedIcon /> : <DarkModeIcon />}
-        </button>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: "10px",
+          }}
+        >
+          <Link to="/">Features</Link>
+          <Link to="/components">Component</Link>
+          <button onClick={() => updatingCount()}>
+            {colorTheme[count] === "light" ? (
+              <LightModeOutlinedIcon />
+            ) : (
+              <DarkModeIcon />
+            )}
+          </button>
+        </div>
       </nav>
       <Outlet />
     </div>

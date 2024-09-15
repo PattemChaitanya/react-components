@@ -2,7 +2,7 @@
   height: 100vh;
 }
 nav {
-  background-color: aliceblue;
+  background-color: var(--background-color);
   height: 70px;
   color: var(--text-color);
   font-size: 20px;

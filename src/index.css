@@ -5,9 +5,10 @@
     --primary-light-color: #228B22; /* Lighter shade of dark green */
     --primary-dark-color: #004d00; /* Darker shade of dark green */
     --background-color: #ffffff;
-    --text-color: #000000;
+    --text-color: #5e35b1;
     --border-color: #dddddd;
     --primary-color-hover: #228B22;
+    /* #041e49b3 #041e49 #5e35b1 */
 
     /* Typography */
     --font-family: 'Arial, sans-serif';
@@ -39,10 +40,11 @@
     --primary-color: #006400; /* Dark green */
     --primary-light-color: #228B22; /* Lighter shade of dark green */
     --primary-dark-color: #004d00; /* Darker shade of dark green */
-    --background-color: #121212;
-    --text-color: #ffffff;
+    --background-color: #162c46;
+    --text-color: #d3f3fd;
     --border-color: #444444;
     --primary-color-hover: #228B22;
+    /* #0d2136 #162d47 #d3e3fd #031525  */
 
     /* Typography */
     --font-family: 'Arial, sans-serif';
