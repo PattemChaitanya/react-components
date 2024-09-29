@@ -15,19 +15,22 @@ aside {
   padding: 12px 14px;
   height: calc(100vh - 70px);
   overflow: auto;
+
   ::-webkit-scrollbar {
     display: none;
   }
+
   -ms-overflow-style: none;
-  scrollbar-width: none;  
+  scrollbar-width: none;
   transition: 0.5s all ease-in-out;
   border-right: 1px solid var(--border-color);
 }
 
-aside > p {
+aside>p {
   padding-top: 10px
 }
-aside > a {
+
+aside>a {
   padding-top: 10px
 }
 

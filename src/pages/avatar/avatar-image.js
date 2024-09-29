@@ -1,17 +1,17 @@
-import React from 'react';
-import Flower1 from "../../assets/mansoryImages/1.jpg"
-import Flower2 from "../../assets/mansoryImages/2.jpg"
-import Flower3 from "../../assets/mansoryImages/3.jpg"
+import React from "react";
+import Flower1 from "../../assets/mansoryImages/1.jpg";
+import Flower2 from "../../assets/mansoryImages/2.jpg";
+import Flower3 from "../../assets/mansoryImages/3.jpg";
 
 const styles = {
   container: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
     justifyContent: "center",
     paddingTop: "30px",
     paddingBottom: "30px",
-    gap: '12px',
+    gap: "12px",
   },
   imageContainer: {
     width: "50px",
@@ -20,12 +20,13 @@ const styles = {
   images: {
     width: "100%",
     height: "100%",
-    borderRadius: "50%"
-  }
-}
+    borderRadius: "50%",
+  },
+};
 
 const AvatarImage = () => {
-  const images = [Flower1, Flower2, Flower3]
+  const images = [Flower1, Flower2, Flower3];
+
   return (
     <div style={styles.container}>
       {images.map((item) => {
@@ -33,10 +34,10 @@ const AvatarImage = () => {
           <div key={item} style={styles.imageContainer}>
             <img src={item} alt="flower" style={styles.images} />
           </div>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default AvatarImage
+export default AvatarImage;

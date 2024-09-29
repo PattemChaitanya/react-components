@@ -1,63 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DoneAllIcon from "@mui/icons-material/DoneAll";
-
-const textChatBubbleStyles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "10px",
-    backgroundColor: "#fff",
-    borderRadius: "10px",
-    width: "300px",
-  },
-  bubbleContainer: {
-    display: "flex",
-    width: "inherit",
-    gap: "8px",
-  },
-  imageContainer: {
-    width: "40px",
-    height: "40px",
-    borderRadius: "50%",
-  },
-  messageContainer: {
-    border: "1px solid black",
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    gap: "4px",
-    padding: "8px 4px",
-    position: "relative",
-  },
-};
+import "./style.css";
 
 const TextChatBubble = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  const src = "";
+
   return (
-    <div style={textChatBubbleStyles.container}>
-      <div style={textChatBubbleStyles.bubbleContainer}>
-        <div style={textChatBubbleStyles.imageContainer}>
-          <img
-            src=""
-            alt="avatar"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
+    <div
+      className="container"
+      style={{ height: "220px" }}
+      onClick={() => isOpen && setIsOpen(false)}
+    >
+      <div className="bubbleContainer">
+        <div className="imageContainer">
+          {src ? <img src="" alt="avatar" /> : <p>C</p>}
         </div>
-        <div style={textChatBubbleStyles.messageContainer}>
-          <h5>Name</h5>
-          <p>description</p>
-          <p>description</p>
-          <p>description</p>
-          <DoneAllIcon
-            fontSize="small"
-            style={{ position: "absolute", right: 0, bottom: "-8px" }}
-          />
+        <div className="messageContainer">
+          <div className="messageContainerContent">
+            <div className="messageHeaderContainer">
+              <h4>John Doe</h4>
+              <caption>11:46</caption>
+            </div>
+            <p>
+              That's awesome. I think our users will really appreciate the
+              improvements.
+            </p>
+          </div>
+          <DoneAllIcon fontSize="small" style={{ marginLeft: "auto" }} />
         </div>
         <div>
-          <MoreVertIcon />
+          <MoreVertIcon onClick={() => setIsOpen(!isOpen)} />
         </div>
+
+        {isOpen && (
+          <div className="optionsMenu">
+            <p>reply</p>
+            <p>forward</p>
+            <p>copy</p>
+            <p>delete</p>
+            <p>report</p>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -68,4 +53,4 @@ export default TextChatBubble;
 // text format
 // image
 // any file
-// music
+// url sharing

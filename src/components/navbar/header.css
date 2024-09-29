@@ -1,6 +1,7 @@
-.main{
+.main {
   height: 100vh;
 }
+
 nav {
   background-color: var(--background-color);
   height: 70px;
@@ -19,6 +20,40 @@ nav {
   z-index: 1000;
 }
 
+.sideMenuContainer {
+  background-color: var(--background-color);
+}
+
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 200px;
+  overflow: auto;
+  position: absolute;
+  top: 55px;
+  right: 25px;
+  padding: 12px 20px;
+  z-index: 10;
+  border-radius: 4px;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  gap: 8px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.ham-menu {
+  display: none;
+}
+
+.right-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px
+}
+
 @media (max-width: 768px) {
   nav {
     height: 60px;
@@ -32,5 +67,13 @@ nav {
     height: 50px;
     font-size: 16px;
     padding: 10px 12px;
+  }
+
+  .ham-menu {
+    display: block;
+  }
+
+  .right-menu {
+    display: none;
   }
 }

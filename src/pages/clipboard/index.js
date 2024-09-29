@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { jsonToPageDisplay } from "./chat-bubble-data";
+import { jsonToPageDisplay } from "./clipboard-data";
 import CodeSnippet from "../../components/codeSnippet/codeSnippet";
 import InteractiveUi from "../../components/interactiveUi/interactiveUi";
 import Layout from "../../components/mainLayout/main-layout";
 
-const ChatBubble = () => {
+const Clipboard = () => {
   const [openIndexes, setOpenIndexes] = useState(
     jsonToPageDisplay.jsonToDisplay.map((item) => item.open)
   );
@@ -16,7 +16,7 @@ const ChatBubble = () => {
   };
 
   return (
-    <Layout title="Chat-bubble" description={"Chat-bubble"}>
+    <Layout title="Clipboard" description={"Clipboard"}>
       <h2>{jsonToPageDisplay?.pageTitle}</h2>
       <p>{jsonToPageDisplay?.description}</p>
       <div
@@ -34,7 +34,7 @@ const ChatBubble = () => {
           <InteractiveUi>
             <div
               style={{
-                padding: "20px 10px",
+                padding: "10px",
                 marginInline: "auto",
               }}
             >
@@ -53,4 +53,6 @@ const ChatBubble = () => {
   );
 };
 
-export default ChatBubble;
+export default Clipboard;
+
+    

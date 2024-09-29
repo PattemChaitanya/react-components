@@ -1,220 +1,310 @@
 @import url('https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap');
+
 :root {
-    /* Colors */
-    --primary-color: #006400; /* Dark green */
-    --primary-light-color: #228B22; /* Lighter shade of dark green */
-    --primary-dark-color: #004d00; /* Darker shade of dark green */
-    --background-color: #ffffff;
-    --text-color: #5e35b1;
-    --border-color: #dddddd;
-    --primary-color-hover: #228B22;
-    /* #041e49b3 #041e49 #5e35b1 */
+  /* Colors */
+  --primary-color: #006400;
+  /* Dark green */
+  --primary-light-color: #228B22;
+  /* Lighter shade of dark green */
+  --primary-dark-color: #004d00;
+  /* Darker shade of dark green */
+  --background-color: #ffffff;
+  --text-color: #5e35b1;
+  --border-color: #dddddd;
+  --primary-color-hover: #228B22;
+  /* #041e49b3 #041e49 #5e35b1 */
 
-    /* Typography */
-    --font-family: 'Arial, sans-serif';
-    --font-size-base: 16px;
-    --font-size-h1: 2em; /* 32px */
-    --font-size-h2: 1.5em; /* 24px */
-    --font-size-h3: 1.17em; /* 18.72px */
-    --font-size-h4: 1em; /* 16px */
-    --font-size-h5: 0.83em; /* 13.28px */
-    --font-size-h6: 0.67em; /* 10.72px */
-    --font-size-p: 1em; /* 16px */
-    --font-size-small: 0.8em; /* 12.8px */
-    --font-size-large: 1.25em; /* 20px */
+  /* Typography */
+  --font-family: 'Arial, sans-serif';
+  --font-size-base: 16px;
+  --font-size-h1: 2em;
+  /* 32px */
+  --font-size-h2: 1.5em;
+  /* 24px */
+  --font-size-h3: 1.17em;
+  /* 18.72px */
+  --font-size-h4: 1em;
+  /* 16px */
+  --font-size-h5: 0.83em;
+  /* 13.28px */
+  --font-size-h6: 0.67em;
+  /* 10.72px */
+  --font-size-p: 1em;
+  /* 16px */
+  --font-size-small: 0.8em;
+  /* 12.8px */
+  --font-size-large: 1.25em;
+  /* 20px */
 
-    /* Layout */
-    --padding-base: 1rem;
-    --margin-base: 1rem;
-    --border-radius: 4px;
+  /* Layout */
+  --padding-base: 1rem;
+  --margin-base: 1rem;
+  --border-radius: 4px;
 
-    /* Common Tags */
-    --section-padding: var(--padding-base);
-    --main-padding: var(--padding-base);
-    --before-content: ' ';
-    --after-content: ' ';
+  /* Common Tags */
+  --section-padding: var(--padding-base);
+  --main-padding: var(--padding-base);
+  --before-content: ' ';
+  --after-content: ' ';
 }
 
 [data-theme="dark"] {
-    /* Colors */
-    --primary-color: #006400; /* Dark green */
-    --primary-light-color: #228B22; /* Lighter shade of dark green */
-    --primary-dark-color: #004d00; /* Darker shade of dark green */
-    --background-color: #162c46;
-    --text-color: #d3f3fd;
-    --border-color: #444444;
-    --primary-color-hover: #228B22;
-    /* #0d2136 #162d47 #d3e3fd #031525  */
+  /* Colors */
+  --primary-color: #006400;
+  /* Dark green */
+  --primary-light-color: #228B22;
+  /* Lighter shade of dark green */
+  --primary-dark-color: #004d00;
+  /* Darker shade of dark green */
+  --background-color: #162c46;
+  --text-color: #d3f3fd;
+  --border-color: #444444;
+  --primary-color-hover: #228B22;
+  /* #0d2136 #162d47 #d3e3fd #031525  */
 
-    /* Typography */
-    --font-family: 'Arial, sans-serif';
-    --font-size-base: 16px;
-    --font-size-h1: 2em; /* 32px */
-    --font-size-h2: 1.5em; /* 24px */
-    --font-size-h3: 1.17em; /* 18.72px */
-    --font-size-h4: 1em; /* 16px */
-    --font-size-h5: 0.83em; /* 13.28px */
-    --font-size-h6: 0.67em; /* 10.72px */
-    --font-size-p: 1em; /* 16px */
-    --font-size-small: 0.8em; /* 12.8px */
-    --font-size-large: 1.25em; /* 20px */
+  /* Typography */
+  --font-family: 'Arial, sans-serif';
+  --font-size-base: 16px;
+  --font-size-h1: 2em;
+  /* 32px */
+  --font-size-h2: 1.5em;
+  /* 24px */
+  --font-size-h3: 1.17em;
+  /* 18.72px */
+  --font-size-h4: 1em;
+  /* 16px */
+  --font-size-h5: 0.83em;
+  /* 13.28px */
+  --font-size-h6: 0.67em;
+  /* 10.72px */
+  --font-size-p: 1em;
+  /* 16px */
+  --font-size-small: 0.8em;
+  /* 12.8px */
+  --font-size-large: 1.25em;
+  /* 20px */
 
-    /* Layout */
-    --padding-base: 1rem;
-    --margin-base: 1rem;
-    --border-radius: 4px;
+  /* Layout */
+  --padding-base: 1rem;
+  --margin-base: 1rem;
+  --border-radius: 4px;
 
-    /* Common Tags */
-    --section-padding: var(--padding-base);
-    --main-padding: var(--padding-base);
-    --before-content: ' ';
-    --after-content: ' ';
+  /* Common Tags */
+  --section-padding: var(--padding-base);
+  --main-padding: var(--padding-base);
+  --before-content: ' ';
+  --after-content: ' ';
 }
 
 [data-theme="blue"] {
   /* Colors */
-  --primary-color: #1E90FF; /* Dodger Blue */
-  --primary-light-color: #87CEFA; /* Light Sky Blue */
-  --primary-dark-color: #0000CD; /* Medium Blue */
-  --background-color: #E6E6FA; /* Lavender */
-  --text-color: #000000; /* Black */
-  --border-color: #B0C4DE; /* Light Steel Blue */
-  --primary-color-hover: #6495ED; /* Cornflower Blue */
+  --primary-color: #1E90FF;
+  /* Dodger Blue */
+  --primary-light-color: #87CEFA;
+  /* Light Sky Blue */
+  --primary-dark-color: #0000CD;
+  /* Medium Blue */
+  --background-color: #E6E6FA;
+  /* Lavender */
+  --text-color: #000000;
+  /* Black */
+  --border-color: #B0C4DE;
+  /* Light Steel Blue */
+  --primary-color-hover: #6495ED;
+  /* Cornflower Blue */
 
   /* Typography */
-    --font-family: 'Arial, sans-serif';
-    --font-size-base: 16px;
-    --font-size-h1: 2em; /* 32px */
-    --font-size-h2: 1.5em; /* 24px */
-    --font-size-h3: 1.17em; /* 18.72px */
-    --font-size-h4: 1em; /* 16px */
-    --font-size-h5: 0.83em; /* 13.28px */
-    --font-size-h6: 0.67em; /* 10.72px */
-    --font-size-p: 1em; /* 16px */
-    --font-size-small: 0.8em; /* 12.8px */
-    --font-size-large: 1.25em; /* 20px */
+  --font-family: 'Arial, sans-serif';
+  --font-size-base: 16px;
+  --font-size-h1: 2em;
+  /* 32px */
+  --font-size-h2: 1.5em;
+  /* 24px */
+  --font-size-h3: 1.17em;
+  /* 18.72px */
+  --font-size-h4: 1em;
+  /* 16px */
+  --font-size-h5: 0.83em;
+  /* 13.28px */
+  --font-size-h6: 0.67em;
+  /* 10.72px */
+  --font-size-p: 1em;
+  /* 16px */
+  --font-size-small: 0.8em;
+  /* 12.8px */
+  --font-size-large: 1.25em;
+  /* 20px */
 
-    /* Layout */
-    --padding-base: 1rem;
-    --margin-base: 1rem;
-    --border-radius: 4px;
+  /* Layout */
+  --padding-base: 1rem;
+  --margin-base: 1rem;
+  --border-radius: 4px;
 
-    /* Common Tags */
-    --section-padding: var(--padding-base);
-    --main-padding: var(--padding-base);
-    --before-content: ' ';
-    --after-content: ' ';
+  /* Common Tags */
+  --section-padding: var(--padding-base);
+  --main-padding: var(--padding-base);
+  --before-content: ' ';
+  --after-content: ' ';
 }
 
 [data-theme="green"] {
   /* Colors */
-  --primary-color: #008000; /* Green */
-  --primary-light-color: #00FF00; /* Lime */
-  --primary-dark-color: #006400; /* Dark Green */
-  --background-color: #F0FFF0; /* Mint Cream */
-  --text-color: #000000; /* Black */
-  --border-color: #90EE90; /* Pale Green */
-  --primary-color-hover: #00FF00; /* Lime */
+  --primary-color: #008000;
+  /* Green */
+  --primary-light-color: #00FF00;
+  /* Lime */
+  --primary-dark-color: #006400;
+  /* Dark Green */
+  --background-color: #F0FFF0;
+  /* Mint Cream */
+  --text-color: #000000;
+  /* Black */
+  --border-color: #90EE90;
+  /* Pale Green */
+  --primary-color-hover: #00FF00;
+  /* Lime */
 
   /* Typography */
-    --font-family: 'Arial, sans-serif';
-    --font-size-base: 16px;
-    --font-size-h1: 2em; /* 32px */
-    --font-size-h2: 1.5em; /* 24px */
-    --font-size-h3: 1.17em; /* 18.72px */
-    --font-size-h4: 1em; /* 16px */
-    --font-size-h5: 0.83em; /* 13.28px */
-    --font-size-h6: 0.67em; /* 10.72px */
-    --font-size-p: 1em; /* 16px */
-    --font-size-small: 0.8em; /* 12.8px */
-    --font-size-large: 1.25em; /* 20px */
+  --font-family: 'Arial, sans-serif';
+  --font-size-base: 16px;
+  --font-size-h1: 2em;
+  /* 32px */
+  --font-size-h2: 1.5em;
+  /* 24px */
+  --font-size-h3: 1.17em;
+  /* 18.72px */
+  --font-size-h4: 1em;
+  /* 16px */
+  --font-size-h5: 0.83em;
+  /* 13.28px */
+  --font-size-h6: 0.67em;
+  /* 10.72px */
+  --font-size-p: 1em;
+  /* 16px */
+  --font-size-small: 0.8em;
+  /* 12.8px */
+  --font-size-large: 1.25em;
+  /* 20px */
 
-    /* Layout */
-    --padding-base: 1rem;
-    --margin-base: 1rem;
-    --border-radius: 4px;
+  /* Layout */
+  --padding-base: 1rem;
+  --margin-base: 1rem;
+  --border-radius: 4px;
 
-    /* Common Tags */
-    --section-padding: var(--padding-base);
-    --main-padding: var(--padding-base);
-    --before-content: ' ';
-    --after-content: ' ';
+  /* Common Tags */
+  --section-padding: var(--padding-base);
+  --main-padding: var(--padding-base);
+  --before-content: ' ';
+  --after-content: ' ';
 }
 
-[data-theme="red"]{
+[data-theme="red"] {
   /* Colors */
-  --primary-color: #FF0000; /* Red */
-  --primary-light-color: #FF6347; /* Tomato */
-  --primary-dark-color: #8B0000; /* Dark Red */
-  --background-color: #FFE4E1; /* Misty Rose */
-  --text-color: #000000; /* Black */
-  --border-color: #FA8072; /* Salmon */
-  --primary-color-hover: #FF4500; /* OrangeRed */
+  --primary-color: #FF0000;
+  /* Red */
+  --primary-light-color: #FF6347;
+  /* Tomato */
+  --primary-dark-color: #8B0000;
+  /* Dark Red */
+  --background-color: #FFE4E1;
+  /* Misty Rose */
+  --text-color: #000000;
+  /* Black */
+  --border-color: #FA8072;
+  /* Salmon */
+  --primary-color-hover: #FF4500;
+  /* OrangeRed */
 
   /* Typography */
-    --font-family: 'Arial, sans-serif';
-    --font-size-base: 16px;
-    --font-size-h1: 2em; /* 32px */
-    --font-size-h2: 1.5em; /* 24px */
-    --font-size-h3: 1.17em; /* 18.72px */
-    --font-size-h4: 1em; /* 16px */
-    --font-size-h5: 0.83em; /* 13.28px */
-    --font-size-h6: 0.67em; /* 10.72px */
-    --font-size-p: 1em; /* 16px */
-    --font-size-small: 0.8em; /* 12.8px */
-    --font-size-large: 1.25em; /* 20px */
+  --font-family: 'Arial, sans-serif';
+  --font-size-base: 16px;
+  --font-size-h1: 2em;
+  /* 32px */
+  --font-size-h2: 1.5em;
+  /* 24px */
+  --font-size-h3: 1.17em;
+  /* 18.72px */
+  --font-size-h4: 1em;
+  /* 16px */
+  --font-size-h5: 0.83em;
+  /* 13.28px */
+  --font-size-h6: 0.67em;
+  /* 10.72px */
+  --font-size-p: 1em;
+  /* 16px */
+  --font-size-small: 0.8em;
+  /* 12.8px */
+  --font-size-large: 1.25em;
+  /* 20px */
 
-    /* Layout */
-    --padding-base: 1rem;
-    --margin-base: 1rem;
-    --border-radius: 4px;
+  /* Layout */
+  --padding-base: 1rem;
+  --margin-base: 1rem;
+  --border-radius: 4px;
 
-    /* Common Tags */
-    --section-padding: var(--padding-base);
-    --main-padding: var(--padding-base);
-    --before-content: ' ';
-    --after-content: ' ';
+  /* Common Tags */
+  --section-padding: var(--padding-base);
+  --main-padding: var(--padding-base);
+  --before-content: ' ';
+  --after-content: ' ';
 }
 
 html {
-  line-height: 1.15; 
-  -webkit-text-size-adjust: 100%; 
-  box-sizing: border-box; 
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box; 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p, ol, ul, li, figure, figcaption, blockquote, dl, dd {
-  margin: 0; 
-  padding: 0; 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
 }
 
-ol, ul {
-  list-style: none; 
+ol,
+ul {
+  list-style: none;
 }
 
 img {
-  max-width: 100%; 
-  display: block; 
+  max-width: 100%;
+  display: block;
 }
 
 table {
-  border-collapse: collapse; 
+  border-collapse: collapse;
 }
 
 a {
-  text-decoration: none; 
-  color: inherit; 
+  text-decoration: none;
+  color: inherit;
 }
 
 button {
   background: none;
   border: none;
-  color: inherit; 
-  padding: 6px 14px; 
-  cursor: pointer; 
+  color: inherit;
+  padding: 6px 14px;
+  cursor: pointer;
 }
 
 body {
@@ -242,12 +332,13 @@ code {
 .page-layout {
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
   margin-top: 20px;
   gap: 12px;
+  color: var(--text-color);
 }
 
 @media screen and (max-width: 768px) {
@@ -262,4 +353,12 @@ code {
   flex-direction: column;
   gap: 8px;
   margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.container {
+  width: 100%;
+  height: fit-content;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
