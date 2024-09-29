@@ -1,5 +1,6 @@
 import React from "react";
 import HomeIcon from "@mui/icons-material/Home";
+import { Link } from "react-router-dom";
 
 const simpleBreadcrumbsStyles = {
   container: {
@@ -37,12 +38,7 @@ const SimpleBreadcrumbs = () => {
             <HomeIcon fontSize="small" />
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbItem}>
-            <a
-              href="/breadcrumbs"
-              style={simpleBreadcrumbsStyles.breadcrumbItem}
-            >
-              Home
-            </a>
+            <Link style={simpleBreadcrumbsStyles.breadcrumbItem}>Home</Link>
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbSeparator}>
             <span style={simpleBreadcrumbsStyles.breadcrumbSeparator}>
@@ -50,12 +46,7 @@ const SimpleBreadcrumbs = () => {
             </span>
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbItem}>
-            <a
-              href="/breadcrumbs"
-              style={simpleBreadcrumbsStyles.breadcrumbItem}
-            >
-              Features
-            </a>
+            <Link style={simpleBreadcrumbsStyles.breadcrumbItem}>Features</Link>
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbSeparator}>
             <span style={simpleBreadcrumbsStyles.breadcrumbSeparator}>
@@ -63,12 +54,7 @@ const SimpleBreadcrumbs = () => {
             </span>
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbItem}>
-            <a
-              href="/breadcrumbs"
-              style={simpleBreadcrumbsStyles.breadcrumbItem}
-            >
-              Pricing
-            </a>
+            <Link style={simpleBreadcrumbsStyles.breadcrumbItem}>Pricing</Link>
           </li>
         </ol>
       </div>
