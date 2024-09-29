@@ -1,6 +1,5 @@
 import React from "react";
 import HomeIcon from "@mui/icons-material/Home";
-import { Link } from "react-router-dom";
 
 const simpleBreadcrumbsStyles = {
   container: {
@@ -38,7 +37,7 @@ const SimpleBreadcrumbs = () => {
             <HomeIcon fontSize="small" />
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbItem}>
-            <Link style={simpleBreadcrumbsStyles.breadcrumbItem}>Home</Link>
+            <p style={simpleBreadcrumbsStyles.breadcrumbItem}>Home</p>
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbSeparator}>
             <span style={simpleBreadcrumbsStyles.breadcrumbSeparator}>
@@ -46,7 +45,7 @@ const SimpleBreadcrumbs = () => {
             </span>
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbItem}>
-            <Link style={simpleBreadcrumbsStyles.breadcrumbItem}>Features</Link>
+            <p style={simpleBreadcrumbsStyles.breadcrumbItem}>Features</p>
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbSeparator}>
             <span style={simpleBreadcrumbsStyles.breadcrumbSeparator}>
@@ -54,7 +53,7 @@ const SimpleBreadcrumbs = () => {
             </span>
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbItem}>
-            <Link style={simpleBreadcrumbsStyles.breadcrumbItem}>Pricing</Link>
+            <p style={simpleBreadcrumbsStyles.breadcrumbItem}>Pricing</p>
           </li>
         </ol>
       </div>
