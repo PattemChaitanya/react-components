@@ -37,7 +37,10 @@ const SimpleBreadcrumbs = () => {
             <HomeIcon fontSize="small" />
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbItem}>
-            <a href="#" style={simpleBreadcrumbsStyles.breadcrumbItem}>
+            <a
+              href="/breadcrumbs"
+              style={simpleBreadcrumbsStyles.breadcrumbItem}
+            >
               Home
             </a>
           </li>
@@ -47,7 +50,10 @@ const SimpleBreadcrumbs = () => {
             </span>
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbItem}>
-            <a href="#" style={simpleBreadcrumbsStyles.breadcrumbItem}>
+            <a
+              href="/breadcrumbs"
+              style={simpleBreadcrumbsStyles.breadcrumbItem}
+            >
               Features
             </a>
           </li>
@@ -57,7 +63,10 @@ const SimpleBreadcrumbs = () => {
             </span>
           </li>
           <li style={simpleBreadcrumbsStyles.breadcrumbItem}>
-            <a href="#" style={simpleBreadcrumbsStyles.breadcrumbItem}>
+            <a
+              href="/breadcrumbs"
+              style={simpleBreadcrumbsStyles.breadcrumbItem}
+            >
               Pricing
             </a>
           </li>
