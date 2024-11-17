@@ -20,6 +20,7 @@ import ChatBubble from "../pages/chat-bubble";
 import Clipboard from "../pages/clipboard";
 import Datepicker from "../pages/datepicker";
 import DropDowns from "../pages/drop-downs";
+import Gallery from "../pages/gallery";
 
 export const menu = [
   {
@@ -263,7 +264,7 @@ export const newMenu = [
   },
   { title: "Footer", path: "/footer", component: <Footer /> },
   { title: "Forms", path: "/forms", component: "<Forms />" },
-  { title: "Gallery", path: "/gallery", component: "<Gallery />" },
+  { title: "Gallery", path: "/gallery", component: <Gallery /> },
   {
     title: "Indicators",
     path: "/indicators",

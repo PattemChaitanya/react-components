@@ -3,12 +3,12 @@ import HoverCard from "./display-hover-card";
 import SimpleCard from "./simple-card";
 
 export const jsonToPageDisplay = {
-  pageTitle: "Buttons",
-  description: "Variety of buttons",
+  pageTitle: "Cards",
+  description: "Variety of Cards",
   jsonToDisplay: [
     {
-      title: "Simple button",
-      subTitle: "Simple button",
+      title: "Simple Cards",
+      subTitle: "Simple Cards",
       toDisplay: `import React from "react";
 
 const cardStyles = {
@@ -63,8 +63,8 @@ export default SimpleCard;
       open: false,
     },
     {
-      title: "Complex button",
-      subTitle: "Complex button",
+      title: "Complex Cards",
+      subTitle: "Complex Cards",
       toDisplay: `import React from "react";
 
 const complexCardStyles = {

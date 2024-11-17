@@ -2,12 +2,15 @@ import Dnd from "./dnd";
 import OneWayDrop from "./drop";
 import Kanban from "./kanban";
 
-export const jsonToDisplay = [
-  {
-    title: "Simple Drag and drop",
-    subTitle: "Simple Drag and drop",
-    component: <OneWayDrop />,
-    "toDisplay": `
+export const jsonToPageDisplay = {
+  pageTitle: "Drag and Drop",
+  description: "Variety of Drag and Drop",
+  jsonToDisplay: [
+    {
+      title: "Simple Drag and drop",
+      subTitle: "Simple Drag and drop",
+      component: <OneWayDrop />,
+      toDisplay: `
 import React, { useState } from 'react';
 
 const OneWayDrop = () => {
@@ -88,14 +91,14 @@ const OneWayDrop = () => {
 
 export default OneWayDrop;
 `,
-    "open": false
-  },
-  {
-    title: "Kanban Drag and drop",
-    subTitle: "Kanban Drag and drop",
-    component: <Kanban />,
-    open: false,
-    toDisplay: `
+      open: false,
+    },
+    {
+      title: "Kanban Drag and drop",
+      subTitle: "Kanban Drag and drop",
+      component: <Kanban />,
+      open: false,
+      toDisplay: `
 import React, { useState } from 'react';
 
 const Kanban = () => {
@@ -182,14 +185,14 @@ const Kanban = () => {
 
 export default Kanban;
 
-    `
-  },
-  {
-    title: "Drag and drop by dnd libaray",
-    subTitle: "Drag and drop by dnd libaray",
-    component: <Dnd />,
-    open: false,
-    toDisplay: `
+    `,
+    },
+    {
+      title: "Drag and drop by dnd libaray",
+      subTitle: "Drag and drop by dnd libaray",
+      component: <Dnd />,
+      open: false,
+      toDisplay: `
 import React, { useState } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -292,6 +295,7 @@ const Kanban = () => {
 };
 
 export default Kanban;
-`
-  }
-]
+`,
+    },
+  ],
+};

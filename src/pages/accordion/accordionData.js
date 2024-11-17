@@ -2,13 +2,16 @@ import FullWidthAccordion from "./full-width-accordion";
 import OneOpenAccordion from "./one-open-accordion";
 import SimpleAccordion from "./simple-accordion";
 
-export const jsonToDisplay = [
-  {
-    title: "Simple accordion",
-    subTitle: "Simple accordion",
-    component: <SimpleAccordion />,
-    open: false,
-    toDisplay: `
+export const jsonToPageDisplay = {
+  pageTitle: "Accordion",
+  description: "Variety of Accordion",
+  jsonToDisplay: [
+    {
+      title: "Simple accordion",
+      subTitle: "Simple accordion",
+      component: <SimpleAccordion />,
+      open: false,
+      toDisplay: `
 import React, { useState } from 'react';
 
 const accordionData = [
@@ -85,14 +88,14 @@ const styles = {
 };
 
 export default SimpleAccordion;
-`
-  },
-  {
-    title: "One Open accordion",
-    subTitle: "One Open accordion",
-    component: <OneOpenAccordion />,
-    open: false,
-    toDisplay: `
+`,
+    },
+    {
+      title: "One Open accordion",
+      subTitle: "One Open accordion",
+      component: <OneOpenAccordion />,
+      open: false,
+      toDisplay: `
 import React, { useState } from 'react';
 
 const accordionData = [
@@ -169,14 +172,14 @@ const styles = {
 };
 
 export default OneOpenAccordion;
-`
-  },
-  {
-    title: "Full width accordion",
-    subTitle: "Full width accordion",
-    component: <FullWidthAccordion />,
-    open: false,
-    toDisplay: `
+`,
+    },
+    {
+      title: "Full width accordion",
+      subTitle: "Full width accordion",
+      component: <FullWidthAccordion />,
+      open: false,
+      toDisplay: `
 import React, { useState } from 'react';
 
 const accordionData = [
@@ -249,6 +252,7 @@ const styles = {
 };
 
 export default FullWidthAccordion;
-`
-  },
-]
+`,
+    },
+  ],
+};

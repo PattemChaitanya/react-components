@@ -1,10 +1,13 @@
 import TodoList from "./todoList";
 
-export const jsonToDisplay = [
-  {
-    component: <TodoList />,
-    open: false,
-    toDisplay: `
+export const jsonToPageDisplay = {
+  pageTitle: "Todo",
+  description: "Variety of Todo",
+  jsonToDisplay: [
+    {
+      component: <TodoList />,
+      open: false,
+      toDisplay: `
 import React, { useState } from 'react';
 
 const TodoList = () => {
@@ -66,6 +69,7 @@ const TodoList = () => {
 };
 
 export default TodoList;
-`
-  }
-]
+`,
+    },
+  ],
+};

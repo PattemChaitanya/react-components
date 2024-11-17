@@ -1,13 +1,16 @@
 import AvatarImage from "./avatar-image";
 import AvatarLetter from "./avatar-letter";
 
-export const jsonToDisplay = [
-  {
-    title: "Avatar with Image",
-    subTitle: "Avatar with Image",
-    component: <AvatarImage />,
-    open: false,
-    toDisplay: `
+export const jsonToPageDisplay = {
+  pageTitle: "Avatar",
+  description: "Variety of Avatar",
+  jsonToDisplay: [
+    {
+      title: "Avatar with Image",
+      subTitle: "Avatar with Image",
+      component: <AvatarImage />,
+      open: false,
+      toDisplay: `
 import React, { useState } from 'react';
 
 const Alert = () => {
@@ -79,14 +82,14 @@ const styles = {
 };
 
 export default Alert;
-    `
-  },
-  {
-    title: "Avatar with letters",
-    subTitle: "Avatar with letters",
-    component: <AvatarLetter />,
-    open: false,
-    toDisplay: `
+    `,
+    },
+    {
+      title: "Avatar with letters",
+      subTitle: "Avatar with letters",
+      component: <AvatarLetter />,
+      open: false,
+      toDisplay: `
 import React, { useState } from 'react';
 
 const Alert = () => {
@@ -158,6 +161,7 @@ const styles = {
 };
 
 export default Alert;
-    `
-  },
-]
+    `,
+    },
+  ],
+};

@@ -3,13 +3,16 @@ import FixedBottomSelectNav from "./fixed-bottom-selection";
 import SelectNameBottomNav from "./select-name-bottom-nav";
 import SimpleBottomNav from "./simple-bottom-nav";
 
-export const jsonToDisplay = [
-  {
-    title: "Simple bottom navbar",
-    subTitle: "Basic bottom navbar which consists of name and icons",
-    component: <SimpleBottomNav />,
-    open: false,
-    toDisplay: `import React from "react";
+export const jsonToPageDisplay = {
+  pageTitle: "Bottom Navbar",
+  description: "Variety of Bottom Navbar",
+  jsonToDisplay: [
+    {
+      title: "Simple bottom navbar",
+      subTitle: "Basic bottom navbar which consists of name and icons",
+      component: <SimpleBottomNav />,
+      open: false,
+      toDisplay: `import React from "react";
 
 const styles = {
   container: {
@@ -61,14 +64,14 @@ const SimpleBottomNav = () => {
 
 export default SimpleBottomNav;
 `,
-  },
-  {
-    title: "Name on select",
-    subTitle:
-      "Name on select which consists of name and icons and otherwise icons",
-    component: <SelectNameBottomNav />,
-    open: false,
-    toDisplay: `import React, { useState } from "react";
+    },
+    {
+      title: "Name on select",
+      subTitle:
+        "Name on select which consists of name and icons and otherwise icons",
+      component: <SelectNameBottomNav />,
+      open: false,
+      toDisplay: `import React, { useState } from "react";
 import { navItems } from "./bottom-nav-data";
 
 const styles = {
@@ -124,14 +127,14 @@ const SelectNameBottomNav = () => {
 
 export default SelectNameBottomNav;
 `,
-  },
-  {
-    title: "Fixed bottom navbar",
-    subTitle:
-      "Fixed bottom navbar which sits on bottom of the screen when scroll",
-    component: <FixedBottomNav />,
-    open: false,
-    toDisplay: `import React from "react";
+    },
+    {
+      title: "Fixed bottom navbar",
+      subTitle:
+        "Fixed bottom navbar which sits on bottom of the screen when scroll",
+      component: <FixedBottomNav />,
+      open: false,
+      toDisplay: `import React from "react";
 import { navItems } from "./bottom-nav-data";
 
 const styles = {
@@ -198,14 +201,14 @@ const FixedBottomNav = () => {
 
 export default FixedBottomNav;
 `,
-  },
-  {
-    title: "Fixed bottom navbar with selection",
-    subTitle:
-      "Fixed bottom navbar which sits on bottom of the screen when scroll",
-    component: <FixedBottomSelectNav />,
-    open: false,
-    toDisplay: `import React, { useState } from "react";
+    },
+    {
+      title: "Fixed bottom navbar with selection",
+      subTitle:
+        "Fixed bottom navbar which sits on bottom of the screen when scroll",
+      component: <FixedBottomSelectNav />,
+      open: false,
+      toDisplay: `import React, { useState } from "react";
 import { navItems } from "./bottom-nav-data";
 
 const styles = {
@@ -290,8 +293,9 @@ const FixedBottomSelectNav = () => {
 };
 
 export default FixedBottomSelectNav;`,
-  },
-];
+    },
+  ],
+};
 
 export const navItems = [
   {

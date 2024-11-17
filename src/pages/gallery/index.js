@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { jsonToPageDisplay } from "./footer-data";
+import { jsonToPageDisplay } from "./gallery-data";
 import CodeSnippet from "../../components/codeSnippet/codeSnippet";
 import InteractiveUi from "../../components/interactiveUi/interactiveUi";
 import Layout from "../../components/mainLayout/main-layout";
 
-const Footer = () => {
+const Gallery = () => {
   const [openIndexes, setOpenIndexes] = useState(
     jsonToPageDisplay.jsonToDisplay.map((item) => item.open)
   );
@@ -17,7 +17,7 @@ const Footer = () => {
 
   return (
     <>
-      <Layout title="Footer" description={"Footer"}>
+      <Layout title="Gallery" description={"Gallery"}>
         <h2>{jsonToPageDisplay?.pageTitle}</h2>
         <p>{jsonToPageDisplay?.description}</p>
         <div className="underline" />
@@ -74,4 +74,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Gallery;

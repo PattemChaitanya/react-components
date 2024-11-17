@@ -1,10 +1,13 @@
 import SortableTable from "./sortableTable";
 
-export const jsonToDisplay = [
-  {
-    component: <SortableTable />,
-    open: false,
-    toDisplay: `
+export const jsonToPageDisplay = {
+  pageTitle: "Tables",
+  description: "Variety of Tables",
+  jsonToDisplay: [
+    {
+      component: <SortableTable />,
+      open: false,
+      toDisplay: `
 import React, { useState } from 'react';
 
 const initialData = [
@@ -97,5 +100,7 @@ const styles = {
 };
 
 export default SortableTable;
-`
-  }]
+`,
+    },
+  ],
+};

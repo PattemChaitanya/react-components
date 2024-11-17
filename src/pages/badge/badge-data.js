@@ -2,13 +2,16 @@ import BasicBadge from "./basic-badge";
 import IncreaseCountBadge from "./increase-count-badge";
 import NumberBadge from "./number-badge";
 
-export const jsonToDisplay = [
-  {
-    title: "Basic badge",
-    subTitle: "Basic badge",
-    component: <BasicBadge />,
-    open: false,
-    toDisplay: `
+export const jsonToPageDisplay = {
+  pageTitle: "Badge",
+  description: "Variety of Badge",
+  jsonToDisplay: [
+    {
+      title: "Basic badge",
+      subTitle: "Basic badge",
+      component: <BasicBadge />,
+      open: false,
+      toDisplay: `
       import React from 'react';
       import NotificationsIcon from '@mui/icons-material/Notifications';
 
@@ -41,14 +44,14 @@ export const jsonToDisplay = [
       }
 
       export default BasicBadge
-    `
-  },
-  {
-    title: "Number badge",
-    subTitle: "Number badge",
-    component: <NumberBadge />,
-    open: false,
-    toDisplay: `
+    `,
+    },
+    {
+      title: "Number badge",
+      subTitle: "Number badge",
+      component: <NumberBadge />,
+      open: false,
+      toDisplay: `
       import React from 'react';
       import NotificationsIcon from '@mui/icons-material/Notifications';
 
@@ -87,14 +90,14 @@ export const jsonToDisplay = [
       }
 
       export default NumberBadge
-    `
-  },
-  {
-    title: "Increase badge count",
-    subTitle: "Increase badge count",
-    component: <IncreaseCountBadge />,
-    open: false,
-    toDisplay: `
+    `,
+    },
+    {
+      title: "Increase badge count",
+      subTitle: "Increase badge count",
+      component: <IncreaseCountBadge />,
+      open: false,
+      toDisplay: `
       import React, { useState } from 'react';
       import NotificationsIcon from '@mui/icons-material/Notifications';
 
@@ -153,6 +156,7 @@ export const jsonToDisplay = [
       }
 
       export default IncreaseCountBadge
-    `
-  }
-]
+    `,
+    },
+  ],
+};

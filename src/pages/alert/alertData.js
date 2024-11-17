@@ -1,12 +1,15 @@
 import SimpleAlert from "./simple-alert";
 
-export const jsonToDisplay = [
-  {
-    title: "Simple alert",
-    subTitle: "Simple Alert",
-    component: <SimpleAlert />,
-    open: false,
-    toDisplay: `
+export const jsonToPageDisplay = {
+  pageTitle: "Alert",
+  description: "Variety of Alert",
+  jsonToDisplay: [
+    {
+      title: "Simple alert",
+      subTitle: "Simple Alert",
+      component: <SimpleAlert />,
+      open: false,
+      toDisplay: `
 import React, { useState } from 'react';
 
 const Alert = () => {
@@ -78,6 +81,7 @@ const styles = {
 };
 
 export default Alert;
-    `
-  }
-]
+    `,
+    },
+  ],
+};
