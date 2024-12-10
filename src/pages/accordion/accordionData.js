@@ -4,10 +4,12 @@ import SimpleAccordion from "./simple-accordion";
 
 export const jsonToPageDisplay = {
   pageTitle: "Accordion",
-  description: "Variety of Accordion",
+  description:
+    "Accordion component lets users show and hide sections of related content on a page.",
   jsonToDisplay: [
     {
-      title: "Simple accordion",
+      id: "basic",
+      title: "Basics",
       subTitle: "Simple accordion",
       component: <SimpleAccordion />,
       open: false,
@@ -91,6 +93,7 @@ export default SimpleAccordion;
 `,
     },
     {
+      id: "one_open_accordion",
       title: "One Open accordion",
       subTitle: "One Open accordion",
       component: <OneOpenAccordion />,
@@ -175,6 +178,7 @@ export default OneOpenAccordion;
 `,
     },
     {
+      id: "full_width_accordion",
       title: "Full width accordion",
       subTitle: "Full width accordion",
       component: <FullWidthAccordion />,

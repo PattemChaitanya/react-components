@@ -234,7 +234,7 @@ export const newMenu = [
   },
   { title: "Buttons", path: "/buttons", component: <Buttons /> },
   { title: "Card", path: "/card", component: <Cards /> },
-  { title: "Carousel", path: "/carousel", component: "<Carousel />" },
+  // { title: "Carousel", path: "/carousel", component: "<Carousel />" },
   {
     title: "Chat Bubble",
     path: "/chat-bubble",
@@ -263,50 +263,224 @@ export const newMenu = [
     component: <DropDowns />,
   },
   { title: "Footer", path: "/footer", component: <Footer /> },
-  { title: "Forms", path: "/forms", component: "<Forms />" },
+  // { title: "Forms", path: "/forms", component: "<Forms />" },
   { title: "Gallery", path: "/gallery", component: <Gallery /> },
-  {
-    title: "Indicators",
-    path: "/indicators",
-    component: "<Indicators />",
-  },
+  // {
+  //   title: "Indicators",
+  //   path: "/indicators",
+  //   component: "<Indicators />",
+  // },
   {
     title: "Images",
     path: "/images",
     component: <Images />,
   },
-  {
-    title: "List Group",
-    path: "/list-group",
-    component: "<ListGroup />",
-  },
-  { title: "Loaders", path: "/loaders", component: "<Loaders />" },
-  { title: "Modal", path: "/modal", component: "<Modal />" },
-  { title: "Navbar", path: "/navbar", component: "<Navbar />" },
-  {
-    title: "Pagination",
-    path: "/pagination",
-    component: "<Pagination />",
-  },
-  { title: "Popover", path: "/popover", component: "<Popover />" },
-  {
-    title: "Progress bar",
-    path: "/progress-bar",
-    component: "<Progressbar />",
-  },
-  { title: "Rating", path: "/rating", component: "<Rating />" },
-  {
-    title: "Responsive layout.",
-    path: "/responsive-layout.",
-    component: "<Responsivelayout. />",
-  },
-  { title: "Sidebar", path: "/sidebar", component: "<Sidebar />" },
-  { title: "Skeleton", path: "/skeleton", component: "<Skeleton />" },
-  { title: "Spinner", path: "/spinner", component: "<Spinner />" },
-  { title: "Stepper", path: "/stepper", component: "<Stepper />" },
+  // {
+  //   title: "List Group",
+  //   path: "/list-group",
+  //   component: "<ListGroup />",
+  // },
+  // { title: "Loaders", path: "/loaders", component: "<Loaders />" },
+  // { title: "Modal", path: "/modal", component: "<Modal />" },
+  // { title: "Navbar", path: "/navbar", component: "<Navbar />" },
+  // {
+  //   title: "Pagination",
+  //   path: "/pagination",
+  //   component: "<Pagination />",
+  // },
+  // { title: "Popover", path: "/popover", component: "<Popover />" },
+  // {
+  //   title: "Progress bar",
+  //   path: "/progress-bar",
+  //   component: "<Progressbar />",
+  // },
+  // { title: "Rating", path: "/rating", component: "<Rating />" },
+  // {
+  //   title: "Responsive layout.",
+  //   path: "/responsive-layout.",
+  //   component: "<Responsivelayout. />",
+  // },
+  // { title: "Sidebar", path: "/sidebar", component: "<Sidebar />" },
+  // { title: "Skeleton", path: "/skeleton", component: "<Skeleton />" },
+  // { title: "Spinner", path: "/spinner", component: "<Spinner />" },
+  // { title: "Stepper", path: "/stepper", component: "<Stepper />" },
   { title: "Tables", path: "/tables", component: <Table /> },
-  { title: "Tabs", path: "/tabs", component: "<Tabs />" },
-  { title: "Timeline", path: "/timeline", component: "<Timeline />" },
-  { title: "Toast", path: "/toast", component: "<Toast />" },
-  { title: "Tooltips", path: "/tooltips", component: "<Tooltips />" },
+  // { title: "Tabs", path: "/tabs", component: "<Tabs />" },
+  // { title: "Timeline", path: "/timeline", component: "<Timeline />" },
+  // { title: "Toast", path: "/toast", component: "<Toast />" },
+  // { title: "Tooltips", path: "/tooltips", component: "<Tooltips />" },
+];
+
+export const homeScreenCards = [
+  {
+    title: "Components",
+    description: "",
+    components: [
+      {
+        title: "Buttons",
+        path: "/buttons",
+        component: "<Buttons />",
+      },
+      {
+        title: "Check box",
+        path: "/check-box",
+        component: "<CheckBox />",
+      },
+      {
+        title: "Slider",
+        path: "/slider",
+        component: "<Slider />",
+      },
+      {
+        title: "Input",
+        path: "/input",
+        component: "<Input />",
+      },
+      {
+        title: "Chips",
+        path: "/chip",
+        component: "<Chips />",
+      },
+      {
+        title: "Floating action button",
+        path: "/fab",
+        component: "<Fab />",
+      },
+      {
+        title: "Icon buttons",
+        path: "/icon-buttons",
+        component: "<IconButtons />",
+      },
+      {
+        title: "Lists",
+        path: "/list",
+        component: "<Lists />",
+      },
+      {
+        title: "Menu",
+        path: "/menu",
+        component: "<Menu />",
+      },
+      {
+        title: "Radio Buttons",
+        path: "/radio-buttons",
+        component: "<RadioButtons />",
+      },
+      {
+        title: "Select",
+        path: "/select",
+        component: "<Select />",
+      },
+      {
+        title: "Switch",
+        path: "/switch",
+        component: "<Switch />",
+      },
+    ],
+  },
+  // how to section
+  {
+    title: "How to Section",
+    description: "",
+    components: [
+      {
+        title: "Tabs",
+        path: "/tabs",
+        component: "<Tabs />",
+      },
+      {
+        title: "Accrodion",
+        path: "/accordion",
+        component: "<Accordion />",
+      },
+      {
+        title: "Avatar",
+        path: "/avatar",
+        component: "<Avatar />",
+      },
+      {
+        title: "Button group",
+        path: "/button-group",
+        component: "<ButtonGroup />",
+      },
+      {
+        title: "Images",
+        path: "/images",
+        component: "<Images />",
+      },
+      {
+        title: "Caursoul",
+        path: "/caursoul",
+        component: "<Caursoul />",
+      },
+      {
+        title: "Todo",
+        path: "/todo",
+        component: "<Todo />",
+      },
+      {
+        title: "Tables",
+        path: "/tables",
+        component: "<Tables />",
+      },
+      {
+        title: "Drag and drop",
+        path: "/drag-and-drop",
+        component: "<DragAndDrop />",
+      },
+      {
+        title: "Custom cards",
+        path: "/cards",
+        component: "<CustomCards />",
+      },
+      {
+        title: "Top navigation",
+        path: "/top-nav",
+        component: "<TopNavigation />",
+      },
+      {
+        title: "Botton navigation",
+        path: "/botton-navigation ",
+        component: "<BottonNavigation />",
+      },
+      {
+        title: "Drop downs",
+        path: "/drop-downs",
+        component: "<DropDowns />",
+      },
+      {
+        title: "Side navigation",
+        path: "/side-navigation",
+        component: "<SideNavigation />",
+      },
+      {
+        title: "Responsive Layout",
+        path: "/responsive-layout",
+        component: "<ResponsiveLayout />",
+      },
+    ],
+  },
+  // how to section
+  {
+    title: "Concepts",
+    description: "",
+    components: [
+      // concepts
+      {
+        title: "Flex box",
+        path: "/flex-box",
+        component: "<FlexBox />",
+      },
+      {
+        title: "Grid",
+        path: "/grid",
+        component: "<Grid />",
+      },
+      {
+        title: "Position",
+        path: "/position",
+        component: "<Position />",
+      },
+    ],
+  },
 ];

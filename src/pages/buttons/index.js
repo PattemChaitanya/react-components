@@ -18,9 +18,20 @@ const Buttons = () => {
   return (
     <>
       <Layout title="Buttons" description={"Buttons"}>
-        <h2>{jsonToPageDisplay?.pageTitle}</h2>
-        <p>{jsonToPageDisplay?.description}</p>
-        <div className="underline" />
+        <div className="header_pattern">
+          <div className="header_container flex_center header_container_height">
+            <p className="pageTitle">{jsonToPageDisplay?.pageTitle}</p>
+            <p>
+              {jsonToPageDisplay?.description} {jsonToPageDisplay?.description}{" "}
+              {jsonToPageDisplay?.description}
+            </p>
+          </div>
+          <div className="header_container">
+            <h2>{jsonToPageDisplay?.pageTitle}</h2>
+            <p>{jsonToPageDisplay?.description}</p>
+          </div>
+        </div>
+        {/* <div className="underline" /> */}
         {jsonToPageDisplay?.jsonToDisplay?.map((item, index) => (
           <div key={index} className="gap-each-section">
             <h2>{item.title}</h2>

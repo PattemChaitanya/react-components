@@ -22,7 +22,7 @@ const Accordion = () => {
         <p>{jsonToPageDisplay?.description}</p>
         <div className="underline" />
         {jsonToPageDisplay?.jsonToDisplay.map((item, index) => (
-          <div key={index} className="gap-each-section">
+          <div key={index} className="gap-each-section" id={item.id}>
             <h2>{item.title}</h2>
             <p>{item.subTitle}</p>
             <InteractiveUi>
@@ -43,26 +43,24 @@ const Accordion = () => {
         <div className="scroll-wrapper">
           <p style={{ fontSize: "11px" }}>On this page:</p>
           <p style={{ fontSize: "24px", fontWeight: 700, margin: "10px 0" }}>
-            Material Theming
+            Accordion
           </p>
+          {/* <ul> */}
+          {/* <li>
+              <p>Reference</p> */}
           <ul>
-            <li>
-              <p>Reference</p>
-              <ul>
-                <li>Typeface</li>
-                <li>Palette</li>
-              </ul>
-            </li>
-            <li>
-              <p>System</p>
-              <ul>
-                <li>Color</li>
-                <li>Typography</li>
-                <li>Shape</li>
-                <li>Motion</li>
-              </ul>
-            </li>
+            <a href="#basic">
+              <li>Basic</li>
+            </a>
+            <a href="#one_open_accordion">
+              <li>One Open Accordion</li>
+            </a>
+            <a href="#full_width_accordion">
+              <li>Full Width Accordion</li>
+            </a>
           </ul>
+          {/* </li> */}
+          {/* </ul> */}
         </div>
       </section>
     </>

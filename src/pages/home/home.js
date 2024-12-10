@@ -1,16 +1,24 @@
 import React from "react";
 import "./home.css";
 import Card from "../../components/cards/card";
-import { newMenu } from "../../constants/sidebarConstants";
+import { homeScreenCards } from "../../constants/sidebarConstants";
 
 const Home = () => {
   return (
     <div className="homeText">
-      <div className="card-box">
-        {newMenu.map((item, index) => (
+      {/* {newMenu.map((item, index) => (
           <Card to={item.path} key={index} title={item.title} />
-        ))}
-      </div>
+        ))} */}
+      {Object.values(homeScreenCards).map((card) => (
+        <>
+          <h2>{card.title}</h2>
+          <div className="card-box">
+            {card.components.map((component, index) => (
+              <Card to={component.path} key={index} title={component.title} />
+            ))}
+          </div>
+        </>
+      ))}
     </div>
   );
 };

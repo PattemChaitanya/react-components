@@ -40,5 +40,5 @@ pre {
   margin-right: auto;
   margin-left: auto;
   font-weight: 600;
-  font-size: 18px;
+  font-size: var(--theme-title-m-font-size);
 }
