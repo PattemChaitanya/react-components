@@ -1,13 +1,13 @@
 import React from "react";
-import { jsonToButtonData } from "./button-data";
+import { fabData } from "./fab-data";
 import ComponentBlock from "../../components/component-layout/component";
 
-const Buttons = () => {
+const Fab = () => {
   const jsonObject = {
-    ...jsonToButtonData,
+    ...fabData,
   };
 
   return <ComponentBlock jsonObject={jsonObject} />;
 };
 
-export default Buttons;
+export default Fab;

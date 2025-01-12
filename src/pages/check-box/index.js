@@ -1,13 +1,13 @@
 import React from "react";
-import { jsonToButtonData } from "./button-data";
+import { checkboxData } from "./check-box-data";
 import ComponentBlock from "../../components/component-layout/component";
 
-const Buttons = () => {
+const CheckBox = () => {
   const jsonObject = {
-    ...jsonToButtonData,
+    ...checkboxData,
   };
 
   return <ComponentBlock jsonObject={jsonObject} />;
 };
 
-export default Buttons;
+export default CheckBox;

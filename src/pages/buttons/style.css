@@ -1,0 +1,67 @@
+:root {
+  --button-background-color: #007bff;
+  --button-background-tonal: #59a1ef75;
+  --button-disabled: #cccccc;
+  --button-text: #fff;
+  --button-disable-text: #292929;
+}
+
+.button-component-base {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 5px;
+  color: var(--button-text);
+  background-color: var(--button-background-color)
+}
+
+.elevated {
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.icon {
+  display: flex;
+  gap: 10px;
+  height: fit-content;
+  align-items: center;
+}
+
+.filled-tonal {
+  background-color: var(--button-background-tonal);
+  color: #000;
+}
+
+.filled-tonal:hover {
+  background-color: var(--button-background-color);
+}
+
+.outlined {
+  border: 2px solid;
+  border-color: var(--button-background-color);
+  background-color: var(--button-text);
+  color: var(--button-background-color);
+}
+
+.outlined:hover {
+  background-color: var(--button-background-color);
+  color: var(--button-text);
+}
+
+.text {
+  background-color: transparent;
+}
+
+.text:hover {
+  color: var(--button-background-color);
+}
+
+.disabled {
+  border: 2px solid;
+  border-color: var(--button-disabled);
+  color: var(--button-disabled);
+  cursor: not-allowed;
+  background: transparent;
+}

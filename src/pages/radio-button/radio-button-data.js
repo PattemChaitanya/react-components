@@ -207,3 +207,118 @@ export default DisableRadioButton;
     },
   ],
 };
+
+export const radioData = {
+  seoTitle: "Radio Button Component - Simplified Selection",
+  seoDescription:
+    "Learn about the Radio Button component for creating single-choice selections. Explore examples, accessibility tips, and creative implementations.",
+  seoKeywords: [
+    "Radio Button",
+    "UI Design",
+    "Selection Control",
+    "Form Components",
+    "Custom Radio",
+  ],
+  pageTitle: "Radio Button",
+  pageDescription: [
+    "The Radio Button component allows users to select one option from a predefined set of choices.",
+    "It's an essential part of forms and interfaces that require mutually exclusive selections.",
+  ],
+  pageImage: "https://material-web.dev/components/images/tabs/hero.webp",
+  types: [
+    "Basic Radio Button",
+    "Radio Button with Labels",
+    "Custom-Themed Radio Button",
+    "Icon-Based Radio Button",
+    "Grouped Radio Buttons",
+  ],
+  interactiveDemo: "#demo",
+  accessibity:
+    "Ensure radio buttons are keyboard-navigable and use proper ARIA attributes like 'role=radiogroup' for the group and 'aria-checked' for the selected button. Provide clear focus indicators, and labels should be programmatically associated with their corresponding buttons using 'for' and 'id' attributes.",
+  examples: [
+    {
+      component: "Basic Radio Button",
+      description: "A minimal radio button for single-choice selection.",
+      id: "basic",
+      title: "Basic Radio Button Example",
+      usages: "Used when users need to choose one option from a small list.",
+      purpose: "Keeps the UI simple and efficient for single-choice scenarios.",
+      codeBlock:
+        "<radio-button name='group1' value='option1'>Option 1</radio-button>",
+      open: false,
+    },
+    {
+      component: "Radio Button with Labels",
+      description: "A radio button accompanied by a descriptive text label.",
+      id: "labels",
+      title: "Radio Button with Labels Example",
+      usages:
+        "Ideal for forms or surveys where context for each choice is necessary.",
+      purpose: "Improves clarity by combining the button with a label.",
+      codeBlock:
+        "<radio-button name='group2' value='option2'>Option 2</radio-button>",
+      open: false,
+    },
+    {
+      component: "Custom-Themed Radio Button",
+      description:
+        "A radio button styled with custom colors, sizes, or animations.",
+      id: "custom-theme",
+      title: "Custom-Themed Radio Button Example",
+      usages: "Perfect for branded or visually rich designs.",
+      purpose:
+        "Provides a unique user experience while maintaining functionality.",
+      codeBlock:
+        "<radio-button name='group3' value='custom' style='--radio-color: #ff5722;'>Custom Style</radio-button>",
+      open: false,
+    },
+    {
+      component: "Icon-Based Radio Button",
+      description: "A radio button that replaces the circle with an icon.",
+      id: "icon-based",
+      title: "Icon-Based Radio Button Example",
+      usages:
+        "Great for interfaces where icons convey meaning more effectively than text.",
+      purpose:
+        "Enhances usability and adds a visual element to the selection process.",
+      codeBlock:
+        "<radio-button name='group4' value='icon' icon='🌟'>Star</radio-button>",
+      open: false,
+    },
+    {
+      component: "Grouped Radio Buttons",
+      description:
+        "A collection of related radio buttons displayed as a group.",
+      id: "grouped",
+      title: "Grouped Radio Buttons Example",
+      usages:
+        "Used when multiple related options need to be presented together.",
+      purpose:
+        "Improves organization and clarity for users making a selection.",
+      codeBlock:
+        "<div role='radiogroup'><radio-button name='group5' value='1'>Option 1</radio-button><radio-button name='group5' value='2'>Option 2</radio-button></div>",
+      open: false,
+    },
+  ],
+  links: {
+    Types: "#types",
+    "Interactive Demo": "#demo",
+    Accessibity: "#accessibity",
+    Examples: {
+      "Basic Radio Button": "#basic",
+      "Radio Button with Labels": "#labels",
+      "Custom-Themed Radio Button": "#custom-theme",
+      "Icon-Based Radio Button": "#icon-based",
+      "Grouped Radio Buttons": "#grouped",
+    },
+    References: "#references",
+  },
+  references: {
+    "ARIA Roles for Radio Buttons":
+      "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Radio_Role",
+    "Effective Use of Radio Buttons":
+      "https://uxplanet.org/best-practices-for-using-radio-buttons-in-ui-design-f2f64b8f44bf",
+    "Keyboard Navigation for Radio Groups":
+      "https://webaim.org/techniques/keyboard/",
+  },
+};

@@ -1,13 +1,13 @@
 import React from "react";
-import { jsonToButtonData } from "./button-data";
+import { textFieldData } from "./textField-data";
 import ComponentBlock from "../../components/component-layout/component";
 
-const Buttons = () => {
+const TextField = () => {
   const jsonObject = {
-    ...jsonToButtonData,
+    ...textFieldData,
   };
 
   return <ComponentBlock jsonObject={jsonObject} />;
 };
 
-export default Buttons;
+export default TextField;

@@ -1,8 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Header from "../components/navbar/header";
 import Sidebar from "../components/sidebar/sidebar";
-import { newMenu, components } from "../constants/sidebarConstants";
-import Components from "../pages/components/components";
+import {
+  newMenu,
+  components,
+  homeScreenCards,
+} from "../constants/sidebarConstants";
 import Home from "../pages/home/home";
 
 const childrenRouteMapping = () => {
@@ -17,6 +20,21 @@ const childRouteMapping = () => {
   });
 };
 
+const childHomeRouteMapping = () => {
+  let allRoutes = homeScreenCards.map((item) => {
+    return item.components;
+  });
+  return allRoutes.flat().map((item) => {
+    return { path: item.path, element: item.component };
+  });
+};
+
+const mergingAllRoutes = [
+  ...childrenRouteMapping(),
+  ...childRouteMapping(),
+  ...childHomeRouteMapping(),
+];
+
 const routeMapping = [
   {
     element: <Header />,
@@ -29,12 +47,7 @@ const routeMapping = [
             index: true,
             element: <Home />,
           },
-          ...childrenRouteMapping(),
-          {
-            path: "components",
-            element: <Components />,
-            children: [...childRouteMapping()],
-          },
+          ...mergingAllRoutes,
         ],
       },
     ],

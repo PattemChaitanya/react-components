@@ -21,6 +21,11 @@ import Clipboard from "../pages/clipboard";
 import Datepicker from "../pages/datepicker";
 import DropDowns from "../pages/drop-downs";
 import Gallery from "../pages/gallery";
+import CheckBox from "../pages/check-box";
+import Slider from "../pages/slider";
+import TextField from "../pages/textField";
+import Switch from "../pages/switch";
+import Fab from "../pages/fab";
 
 export const menu = [
   {
@@ -319,22 +324,22 @@ export const homeScreenCards = [
       {
         title: "Buttons",
         path: "/buttons",
-        component: "<Buttons />",
+        component: <Buttons />,
       },
       {
         title: "Check box",
         path: "/check-box",
-        component: "<CheckBox />",
+        component: <CheckBox />,
       },
       {
         title: "Slider",
         path: "/slider",
-        component: "<Slider />",
+        component: <Slider />,
       },
       {
         title: "Input",
         path: "/input",
-        component: "<Input />",
+        component: <TextField />,
       },
       {
         title: "Chips",
@@ -344,7 +349,7 @@ export const homeScreenCards = [
       {
         title: "Floating action button",
         path: "/fab",
-        component: "<Fab />",
+        component: <Fab />,
       },
       {
         title: "Icon buttons",
@@ -364,17 +369,17 @@ export const homeScreenCards = [
       {
         title: "Radio Buttons",
         path: "/radio-buttons",
-        component: "<RadioButtons />",
+        component: <RadioButton />,
       },
       {
         title: "Select",
         path: "/select",
-        component: "<Select />",
+        component: <SelectBox />,
       },
       {
         title: "Switch",
         path: "/switch",
-        component: "<Switch />",
+        component: <Switch />,
       },
     ],
   },
@@ -391,22 +396,22 @@ export const homeScreenCards = [
       {
         title: "Accrodion",
         path: "/accordion",
-        component: "<Accordion />",
+        component: <Accordion />,
       },
       {
         title: "Avatar",
         path: "/avatar",
-        component: "<Avatar />",
+        component: <Avatar />,
       },
       {
         title: "Button group",
         path: "/button-group",
-        component: "<ButtonGroup />",
+        component: <ButtonGroup />,
       },
       {
         title: "Images",
         path: "/images",
-        component: "<Images />",
+        component: <Images />,
       },
       {
         title: "Caursoul",
@@ -416,22 +421,22 @@ export const homeScreenCards = [
       {
         title: "Todo",
         path: "/todo",
-        component: "<Todo />",
+        component: <Todo />,
       },
       {
         title: "Tables",
         path: "/tables",
-        component: "<Tables />",
+        component: <Table />,
       },
       {
         title: "Drag and drop",
         path: "/drag-and-drop",
-        component: "<DragAndDrop />",
+        component: <DragAndDrop />,
       },
       {
         title: "Custom cards",
         path: "/cards",
-        component: "<CustomCards />",
+        component: <Cards />,
       },
       {
         title: "Top navigation",
@@ -439,19 +444,19 @@ export const homeScreenCards = [
         component: "<TopNavigation />",
       },
       {
-        title: "Botton navigation",
-        path: "/botton-navigation ",
-        component: "<BottonNavigation />",
+        title: "Bottom navigation",
+        path: "/bottom-navigation ",
+        component: <BottomNavigation />,
       },
       {
         title: "Drop downs",
         path: "/drop-downs",
-        component: "<DropDowns />",
+        component: <DropDowns />,
       },
       {
         title: "Side navigation",
         path: "/side-navigation",
-        component: "<SideNavigation />",
+        component: <Drawer />,
       },
       {
         title: "Responsive Layout",

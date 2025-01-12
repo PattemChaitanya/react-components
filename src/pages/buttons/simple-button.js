@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SimpleButton = () => {
   const styles = {
@@ -24,14 +24,64 @@ const SimpleButton = () => {
       color: "white",
     },
   };
+  // const [buttonStates, setButtonStates] = useState({
+  //   isText: false,
+  //   isFilled: false,
+  //   isFilledTonal: false,
+  //   isOutlined: false,
+  // });
+  const [isIconsRequired, setIsIconsRequired] = useState(false);
+  console.log(isIconsRequired, "icons");
 
   return (
-    <div>
-      <button style={{ ...styles.base, ...styles.primary }}>Primary</button>
-      <button style={{ ...styles.base, ...styles.disabled }} disabled>
-        Disabled
-      </button>
-      <button style={{ ...styles.base, ...styles.success }}>Success</button>
+    <div style={{ height: "inherit", display: "flex", flexDirection: "row" }}>
+      <div style={{ flex: 1, padding: "16px" }}>
+        <button style={{ ...styles.base, ...styles.primary }}>Primary</button>
+        <button style={{ ...styles.base, ...styles.disabled }} disabled>
+          Disabled
+        </button>
+        <button style={{ ...styles.base, ...styles.success }}>Success</button>
+      </div>
+      <div
+        style={{
+          width: "150px",
+          padding: "16px 8px",
+          borderLeft: "1px solid black",
+          display: "flex",
+          flexDirection: "column",
+          gap: "8px",
+        }}
+      >
+        {[
+          "Text button",
+          "Filled button",
+          "Filled Tonal button",
+          "Outlined button",
+        ].map((item, index) => (
+          <div style={{ display: "flex", gap: "10px" }}>
+            <input
+              type="radio"
+              value={item}
+              aria-label="button-types"
+              label={item}
+            />
+            <p>{item}</p>
+          </div>
+        ))}
+        <hr />
+        {["With Icons", "Without Icons"].map((item, index) => (
+          <div style={{ display: "flex", gap: "10px" }}>
+            <input
+              type="radio"
+              value={index === 0 ? true : false}
+              aria-label="button-icons"
+              label={item}
+              onChange={() => setIsIconsRequired(index === 0 ? true : false)}
+            />
+            <p>{item}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

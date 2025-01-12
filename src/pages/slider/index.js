@@ -1,13 +1,13 @@
 import React from "react";
-import { jsonToButtonData } from "./button-data";
 import ComponentBlock from "../../components/component-layout/component";
+import { switchData } from "./slider-data";
 
-const Buttons = () => {
+const Slider = () => {
   const jsonObject = {
-    ...jsonToButtonData,
+    ...switchData,
   };
 
   return <ComponentBlock jsonObject={jsonObject} />;
 };
 
-export default Buttons;
+export default Slider;

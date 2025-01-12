@@ -1,11 +1,11 @@
 .main-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 70px;
+  margin-top: 58px;
   width: 100%;
   gap: 18px;
   padding: 12px;
-  height: calc(100vh - 72px);
+  height: calc(100vh - 60px);
 }
 
 aside {
@@ -32,7 +32,6 @@ aside {
 
 main {
   flex: 1;
-  padding-top: 10px;
   display: flex;
   flex-direction: row;
   gap: 18px;
@@ -46,5 +45,12 @@ main {
     flex-direction: column;
     color: var(--color-on-background);
     transition: display 0.5s ease-in-out, 0.5s color ease-in-out;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .main-container {
+    margin-top: 72px;
+    height: calc(100vh - 80px);
   }
 }
