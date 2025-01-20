@@ -1,3 +1,4 @@
+import { codeConsider, formatAsCodeBlock } from "../../utils/another-converter";
 import FullWidthAccordion from "./full-width-accordion";
 import OneOpenAccordion from "./one-open-accordion";
 import SimpleAccordion from "./simple-accordion";
@@ -289,7 +290,7 @@ export const accrodionData = {
     "The Accordion component should comply with accessibility standards by providing keyboard navigation (e.g., arrow keys, Enter, and Space). ARIA attributes like 'aria-expanded' and 'aria-controls' should be used for screen readers. Content inside the accordion should remain accessible even when collapsed.",
   examples: [
     {
-      component: "Basic Accordion",
+      component: <SimpleAccordion />,
       description:
         "A minimal accordion example with three independent sections. Each section can be expanded or collapsed individually.",
       id: "Basic",
@@ -298,8 +299,8 @@ export const accrodionData = {
         "Used for displaying FAQ sections or structured lists of content.",
       purpose:
         "Simplifies navigation by organizing content into collapsible sections.",
-      codeBlock:
-        "<accordion><panel>Content 1</panel><panel>Content 2</panel></accordion>",
+      codeBlock: formatAsCodeBlock("./simple-accordion"),
+      // codeBlock: "",
       open: false,
     },
     {
@@ -347,8 +348,6 @@ export const accrodionData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
-    Accessibity: "#accessibity",
     Examples: {
       "Basic Accordion": "#basic",
       "Multi-Expand Accordion": "#multi",

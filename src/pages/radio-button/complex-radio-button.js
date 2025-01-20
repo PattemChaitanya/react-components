@@ -1,4 +1,8 @@
 import React from "react";
+import {
+  convertReactToString,
+  formatAsCodeBlock,
+} from "../../utils/converter-function";
 
 const complexRadioButtonStyles = {
   container: {
@@ -33,3 +37,6 @@ const HorizontalRadioButton = () => {
 };
 
 export default HorizontalRadioButton;
+
+const codeBlock = formatAsCodeBlock(<HorizontalRadioButton />);
+console.log(codeBlock, "codeBlock");

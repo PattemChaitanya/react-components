@@ -484,6 +484,13 @@ nav {
   padding: 24px;
 }
 
+.header_example_container {
+  background-color: var(--color-surface-container);
+  border-radius: var(--theme-border-radius-container);
+  width: 100%;
+  padding: 24px;
+}
+
 .header_container_left {
   height: fit-content;
 }

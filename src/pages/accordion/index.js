@@ -1,13 +1,13 @@
 import React from "react";
 import { accrodionData } from "./accordionData";
-import ComponentBlock from "../../components/component-layout/component";
+import ComponentExample from "../../components/component-layout/component-example";
 
 const Accordion = () => {
   const jsonObject = {
     ...accrodionData,
   };
 
-  return <ComponentBlock jsonObject={jsonObject} />;
+  return <ComponentExample jsonObject={jsonObject} />;
 };
 
 export default Accordion;
