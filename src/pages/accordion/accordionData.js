@@ -1,4 +1,4 @@
-import { codeConsider, formatAsCodeBlock } from "../../utils/another-converter";
+import { formatAsCodeBlock } from "../../utils/another-converter";
 import FullWidthAccordion from "./full-width-accordion";
 import OneOpenAccordion from "./one-open-accordion";
 import SimpleAccordion from "./simple-accordion";
