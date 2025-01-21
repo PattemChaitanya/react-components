@@ -23,7 +23,7 @@ export const jsonToPageDisplay = {
 };
 
 export const fabData = {
-  seoTitle: "Material Design Floating Action Button (FAB) Guide",
+  seoTitle: "Floating Action Button (FAB) Guide",
   seoDescription:
     "Learn how to implement a Floating Action Button (FAB) using Material Design principles, with examples, accessibility tips, and interactive demos.",
   seoKeywords: [
@@ -32,7 +32,7 @@ export const fabData = {
     "FAB UI Component",
     "Material Design Components",
   ],
-  pageTitle: "Floating Action Button (FAB)",
+  pageTitle: "Fab",
   pageDescription: [
     "The Floating Action Button (FAB) is a circular button that represents a primary action on a screen.",
     "It’s designed to provide prominence to a key action in your app, making it easily accessible while adhering to Material Design principles.",

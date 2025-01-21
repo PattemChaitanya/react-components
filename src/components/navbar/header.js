@@ -3,7 +3,7 @@ import "./header.css";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import WbSunnyRoundedIcon from "@mui/icons-material/WbSunnyRounded";
-import { newMenu } from "../../constants/sidebarConstants";
+import { homeScreenCards } from "../../constants/sidebarConstants";
 import { IconButton } from "@mui/material";
 
 const Header = () => {
@@ -83,7 +83,7 @@ const Header = () => {
             </IconButton>
           </div>
           <h6 className="nav-header-typo" onClick={navigateHome}>
-            Header
+            Developer's Web Components
           </h6>
         </div>
         <div className="row-align-center">
@@ -116,17 +116,24 @@ const Header = () => {
         <Link to="/" className="sideMenu_left_header">
           Home
         </Link>
-        {newMenu.map((item, index) => (
-          <NavLink
-            to={item.path}
-            key={index}
-            className={({ isActive }) =>
-              isActive ? "sideMenu_left_para active" : "sideMenu_left_para"
-            }
-            onClick={handleOpen}
-          >
-            {item.title}
-          </NavLink>
+        {homeScreenCards.map((item, itemIndex) => (
+          <React.Fragment key={itemIndex}>
+            <p style={{ margin: "12px 6px", fontWeight: "bold" }}>
+              {item.title}
+            </p>
+            {item.components.map((component, index) => (
+              <NavLink
+                to={component.path}
+                key={index}
+                className={({ isActive }) =>
+                  isActive ? "sideMenu_left_para active" : "sideMenu_left_para"
+                }
+                onClick={handleOpen}
+              >
+                {component.title}
+              </NavLink>
+            ))}
+          </React.Fragment>
         ))}
       </div>
       {isOpenMenu && (

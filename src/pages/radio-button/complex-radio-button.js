@@ -38,5 +38,5 @@ const HorizontalRadioButton = () => {
 
 export default HorizontalRadioButton;
 
-const codeBlock = formatAsCodeBlock(<HorizontalRadioButton />);
-console.log(codeBlock, "codeBlock");
+// const codeBlock = formatAsCodeBlock(<HorizontalRadioButton />);
+// console.log(codeBlock, "codeBlock");

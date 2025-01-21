@@ -318,7 +318,7 @@ export const newMenu = [
 
 export const homeScreenCards = [
   {
-    title: "Components",
+    title: "Components Utility",
     description: "",
     components: [
       {
@@ -467,7 +467,7 @@ export const homeScreenCards = [
   },
   // how to section
   {
-    title: "Concepts",
+    title: "Concepts To Learn",
     description: "",
     components: [
       // concepts

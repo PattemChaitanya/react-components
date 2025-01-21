@@ -44,7 +44,9 @@ const ComponentLayout = ({ jsonObject }) => {
     >
       <div className="header_pattern">
         <div className="header_container header_container_left flex_center">
-          <h3 className="pageTitle">{pageTitle}</h3>
+          <h4 className="pageTitle" style={{ flexShrink: 1 }}>
+            {pageTitle}
+          </h4>
           {pageDescription.map((item) => (
             <p style={{ paddingBottom: "12px", lineHeight: "1.25rem" }}>
               {item}

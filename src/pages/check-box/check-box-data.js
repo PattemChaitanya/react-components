@@ -33,7 +33,7 @@ export const checkboxData = {
     "Form Elements",
     "Custom Checkbox",
   ],
-  pageTitle: "Check box",
+  pageTitle: "Checkbox",
   pageDescription: [
     "The Check box component is a versatile form element that allows users to select one or more options from a set.",
     "Check boxes are ideal for multi-select scenarios, binary settings, and customizable form inputs.",

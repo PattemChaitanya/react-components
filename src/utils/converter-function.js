@@ -4,7 +4,6 @@ import { isValidElement } from "react";
 // import { renderToString } from "react-dom/server";
 
 const convertReactToString = (component) => {
-  console.log(component);
   // Handle null or undefined
   if (!component) {
     console.log("1");

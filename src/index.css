@@ -364,7 +364,7 @@ nav {
 
 .sidebar-right {
   display: none;
-  width: 240px;
+  width: 220px;
   background-color: var(--color-surface-container-lowest);
   border-radius: var(--theme-border-radius-container);
   padding: 28px;
@@ -493,6 +493,11 @@ nav {
 
 .header_container_left {
   height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 
 .header_container_right {

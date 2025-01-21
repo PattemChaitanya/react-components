@@ -1,7 +1,11 @@
-import { readFileSync } from "fs-extra";
+// import fs from "fs-extra";
 
 export const formatAsCodeBlock = (filePath) => {
   try {
+    // fs.readFileSync(filePath, "utf8", function (err, data) {
+    //   // Display the file content
+    //   console.log(data);
+    // });
     let stringFormat = "";
     const response = fetch(filePath).then((response) => response.text());
     // const jsxContent = await response.text();
