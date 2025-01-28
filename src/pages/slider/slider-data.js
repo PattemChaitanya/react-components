@@ -121,4 +121,9 @@ export const sliderData = {
     "ARIA Slider Accessibility Guide":
       "https://www.w3.org/WAI/ARIA/apg/patterns/slider/",
   },
+  previousNavigation: { title: "Check box", link: "/check-box" },
+  nextNavigation: {
+    title: "Input field",
+    link: "/input",
+  },
 };

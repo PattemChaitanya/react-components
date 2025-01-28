@@ -135,4 +135,6 @@ export const switchData = {
     "Keyboard Accessibility for Controls":
       "https://webaim.org/techniques/keyboard/",
   },
+  previousNavigation: { title: "Select", link: "/select" },
+  nextNavigation: null,
 };

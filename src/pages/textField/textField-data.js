@@ -121,4 +121,9 @@ export const textFieldData = {
     "Keyboard Accessibility Guidelines":
       "https://webaim.org/techniques/keyboard/",
   },
+  previousNavigation: { title: "Slider", link: "/slider" },
+  nextNavigation: {
+    title: "Chips",
+    link: "/chip",
+  },
 };

@@ -1,27 +1,3 @@
-import ComplexSelectBox from "./complex-select-box";
-import SimpleSelectBox from "./simple-select-box";
-
-export const jsonToPageDisplay = {
-  pageTitle: "SelectBox",
-  description: "Variety of selectBox",
-  jsonToDisplay: [
-    {
-      title: "Simple selectBox",
-      subTitle: "Simple selectBox",
-      toDisplay: "",
-      component: <SimpleSelectBox />,
-      open: false,
-    },
-    {
-      title: "Complex selectBox",
-      subTitle: "Complex selectBox",
-      toDisplay: "",
-      component: <ComplexSelectBox />,
-      open: false,
-    },
-  ],
-};
-
 export const selectData = {
   seoTitle: "Select Component - Intuitive Dropdown Menus",
   seoDescription:
@@ -33,7 +9,7 @@ export const selectData = {
     "Form Elements",
     "Custom Inputs",
   ],
-  pageTitle: "Select Component",
+  pageTitle: "Select",
   pageDescription: [
     "The Select component is a form element that enables users to choose one or more options from a dropdown menu.",
     "It can be used in a variety of contexts, from simple single-option selectors to multi-select menus with advanced customization.",
@@ -132,5 +108,10 @@ export const selectData = {
       "https://uxdesign.cc/designing-effective-dropdowns-best-practices-5a9f9f39908d",
     "Keyboard Navigation in Forms":
       "https://webaim.org/techniques/forms/controls",
+  },
+  previousNavigation: { title: "Radio Buttons", link: "/radio-buttons" },
+  nextNavigation: {
+    title: "Switch",
+    link: "/switch",
   },
 };

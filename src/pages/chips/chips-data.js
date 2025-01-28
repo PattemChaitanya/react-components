@@ -118,4 +118,9 @@ export const chipsData = {
     "WAI-ARIA Accessibility": "https://www.w3.org/WAI/ARIA/apg/patterns/chips/",
     "Chips Implementation Guide": "https://material-web.dev/components/chips",
   },
+  previousNavigation: { title: "Input", link: "/input" },
+  nextNavigation: {
+    title: "FAB",
+    link: "/fab",
+  },
 };

@@ -87,4 +87,9 @@ export const fabData = {
       "https://www.w3.org/WAI/ARIA/apg/patterns/button/",
     "Material Icons": "https://fonts.google.com/icons",
   },
+  previousNavigation: { title: "Chips", link: "/chip" },
+  nextNavigation: {
+    title: "Icon Buttons",
+    link: "/icon-buttons",
+  },
 };

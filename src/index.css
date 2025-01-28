@@ -575,4 +575,41 @@ nav {
     padding: 12px 16px;
     margin-bottom: 8px;
   }
+
+  .main-footer-navigation {
+    padding: 0 40px 20px;
+  }
 }
+
+/* --------------------------------------- */
+/* navigation buttons in every component */
+.main-footer-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px 20px;
+}
+
+.back-to-components-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-text-primary);
+  transition: color 0.3s ease-in-out;
+  padding: 12px 16px;
+  border-radius: var(--theme-border-radius-container);
+  border: 0.5px solid #ccc;
+}
+
+.back-to-components-link:hover {
+  color: var(--color-text-primary-hover);
+}
+
+.back-to-components-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-text-primary-hover);
+}
+
+/* ------------------------------- */

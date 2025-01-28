@@ -313,6 +313,11 @@ export const jsonToButtonData = {
     "MDN Docs":
       "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button",
   },
+  previousNavigation: null,
+  nextNavigation: {
+    title: "Check box",
+    link: "/check-box",
+  },
 };
 
 export const jsonToInputData = {
@@ -644,5 +649,10 @@ export const buttonData = {
   references: {
     "MDN Docs":
       "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button",
+  },
+  previousNavigation: null,
+  nextNavigation: {
+    title: "Check box",
+    link: "/check-box",
   },
 };

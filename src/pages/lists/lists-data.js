@@ -130,4 +130,9 @@ export const listsData = {
     "WAI-ARIA Accessibility for Lists":
       "https://www.w3.org/WAI/ARIA/apg/patterns/listbox/",
   },
+  previousNavigation: { title: "Icon Buttons", link: "/icon-buttons" },
+  nextNavigation: {
+    title: "Menu",
+    link: "/menu",
+  },
 };

@@ -3,6 +3,8 @@ import LayoutComponent from "../mainLayout/layout-component";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import DoneIcon from "@mui/icons-material/Done";
 import LiveDemo from "./live-demo";
+import { Link } from "react-router-dom";
+import DoubleArrowRoundedIcon from "@mui/icons-material/DoubleArrowRounded";
 
 const ComponentLayout = ({ jsonObject }) => {
   const {
@@ -17,6 +19,8 @@ const ComponentLayout = ({ jsonObject }) => {
     accessibity,
     examples: jsonToDisplay,
     references,
+    nextNavigation,
+    previousNavigation,
   } = jsonObject;
 
   const [isCopied, setIsCopied] = useState(
@@ -141,6 +145,24 @@ const ComponentLayout = ({ jsonObject }) => {
             </ul>
           </div>
         )}
+      </div>
+      <div className="main-footer-navigation">
+        <Link
+          to={previousNavigation?.link}
+          className="back-to-components-link"
+          style={{ visibility: previousNavigation === null && "hidden" }}
+        >
+          <DoubleArrowRoundedIcon style={{ transform: "rotate(180deg)" }} />
+          {previousNavigation?.title}
+        </Link>
+        <Link
+          to={nextNavigation?.link}
+          className="back-to-components-link"
+          style={{ visibility: nextNavigation === null && "hidden" }}
+        >
+          {nextNavigation?.title}
+          <DoubleArrowRoundedIcon />
+        </Link>
       </div>
     </LayoutComponent>
   );
