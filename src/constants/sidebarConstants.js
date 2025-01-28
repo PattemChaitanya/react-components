@@ -26,6 +26,10 @@ import Slider from "../pages/slider";
 import TextField from "../pages/textField";
 import Switch from "../pages/switch";
 import Fab from "../pages/fab";
+import Chips from "../pages/chips";
+import Lists from "../pages/lists";
+import Menu from "../pages/menu";
+import IconButton from "../pages/icon-button";
 
 export const menu = [
   {
@@ -344,7 +348,7 @@ export const homeScreenCards = [
       {
         title: "Chips",
         path: "/chip",
-        component: "<Chips />",
+        component: <Chips />,
       },
       {
         title: "Floating action button",
@@ -354,17 +358,17 @@ export const homeScreenCards = [
       {
         title: "Icon buttons",
         path: "/icon-buttons",
-        component: "<IconButtons />",
+        component: <IconButton />,
       },
       {
         title: "Lists",
         path: "/list",
-        component: "<Lists />",
+        component: <Lists />,
       },
       {
         title: "Menu",
         path: "/menu",
-        component: "<Menu />",
+        component: <Menu />,
       },
       {
         title: "Radio Buttons",

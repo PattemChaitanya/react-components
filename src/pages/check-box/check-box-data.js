@@ -1,26 +1,9 @@
-import ComplexCheckBox from "./complex-check-box";
-import SimpleCheckBox from "./simple-check-box";
-
-export const jsonToPageDisplay = {
-  pageTitle: "Check-box",
-  description: "Variety of check-box",
-  jsonToDisplay: [
-    {
-      title: "Simple check-box",
-      subTitle: "Simple check-box",
-      toDisplay: "",
-      component: <SimpleCheckBox />,
-      open: false,
-    },
-    {
-      title: "Complex check-box",
-      subTitle: "Complex check-box",
-      toDisplay: "",
-      component: <ComplexCheckBox />,
-      open: false,
-    },
-  ],
-};
+import {
+  Checkbox,
+  CheckboxThemed,
+  CheckboxWithIcon,
+  CheckboxWithLabel,
+} from "./checkbox-component";
 
 export const checkboxData = {
   seoTitle: "Checkbox Component - Versatile Multi-Select Control",
@@ -51,7 +34,7 @@ export const checkboxData = {
     "Ensure each checkbox has a descriptive label, and use ARIA attributes like 'aria-checked' and 'aria-labelledby' where necessary. Keyboard navigation should support toggling the checkbox with Space or Enter, and focus indicators should be clear and visible. For indeterminate states, ensure they are communicated to assistive technologies.",
   examples: [
     {
-      component: "Basic Checkbox",
+      component: <Checkbox />,
       description: "A minimal checkbox for simple selection.",
       id: "basic",
       title: "Basic Checkbox Example",
@@ -62,7 +45,7 @@ export const checkboxData = {
       open: false,
     },
     {
-      component: "Checkbox with Labels",
+      component: <CheckboxWithLabel />,
       description: "A checkbox paired with a text label for better context.",
       id: "labels",
       title: "Checkbox with Labels Example",
@@ -75,7 +58,7 @@ export const checkboxData = {
       open: false,
     },
     {
-      component: "Custom-Themed Checkbox",
+      component: <CheckboxThemed />,
       description:
         "A checkbox styled with custom visuals such as colors or animations.",
       id: "custom-theme",
@@ -102,7 +85,7 @@ export const checkboxData = {
       open: false,
     },
     {
-      component: "Icon-Based Checkbox",
+      component: <CheckboxWithIcon />,
       description:
         "A checkbox that uses icons or images instead of a traditional square.",
       id: "icons",

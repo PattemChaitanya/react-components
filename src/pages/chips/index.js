@@ -1,13 +1,14 @@
 import React from "react";
 import ComponentBlock from "../../components/component-layout/component";
-import { sliderData } from "./slider-data";
+import { chipsData } from "./chips-data";
 
-const Slider = () => {
+const Chips = () => {
   const jsonObject = {
-    ...sliderData,
+    ...chipsData,
   };
 
   return <ComponentBlock jsonObject={jsonObject} />;
 };
 
-export default Slider;
+export default Chips;
+    

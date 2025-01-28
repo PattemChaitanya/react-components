@@ -1,26 +1,10 @@
-import ComplexTextField from "./complex-textField";
-import SimpleTextField from "./simple-textField";
-
-export const jsonToPageDisplay = {
-  pageTitle: "TextField",
-  description: "Variety of textField",
-  jsonToDisplay: [
-    {
-      title: "Simple textField",
-      subTitle: "Simple textField",
-      toDisplay: "",
-      component: <SimpleTextField />,
-      open: false,
-    },
-    {
-      title: "Complex textField",
-      subTitle: "Complex textField",
-      toDisplay: "",
-      component: <ComplexTextField />,
-      open: false,
-    },
-  ],
-};
+import {
+  MultiLineTextField,
+  PasswordField,
+  TextField,
+  TextFieldWithPrefixSuffix,
+  TextFieldWithValidation,
+} from "./text-field-component";
 
 export const textFieldData = {
   seoTitle: "Text Field Component - Modern UI Design",
@@ -51,7 +35,7 @@ export const textFieldData = {
     "Text Fields should be fully navigable via keyboard, with clear focus indicators. Use ARIA attributes like 'aria-label' for naming the field and 'aria-invalid' for validation feedback. Provide real-time error messaging for users with screen readers and ensure that the contrast between text and background is sufficient.",
   examples: [
     {
-      component: "Basic Text Field",
+      component: <TextField />,
       description:
         "A simple, single-line text field for capturing short text entries.",
       id: "basic",
@@ -63,7 +47,7 @@ export const textFieldData = {
       open: false,
     },
     {
-      component: "Multi-Line Text Field",
+      component: <MultiLineTextField />,
       description: "A text field that expands to accommodate longer inputs.",
       id: "multi",
       title: "Multi-Line Text Field Example",
@@ -76,7 +60,7 @@ export const textFieldData = {
       open: false,
     },
     {
-      component: "Text Field with Prefix/Suffix",
+      component: <TextFieldWithPrefixSuffix />,
       description:
         "An input field with a prefix or suffix to provide context for the input.",
       id: "prefix-suffix",
@@ -89,7 +73,7 @@ export const textFieldData = {
       open: false,
     },
     {
-      component: "Password Text Field",
+      component: <PasswordField />,
       description:
         "A secure text field for entering passwords, with a toggle to show or hide the input.",
       id: "password",
@@ -103,7 +87,7 @@ export const textFieldData = {
       open: false,
     },
     {
-      component: "Text Field with Validation",
+      component: <TextFieldWithValidation />,
       description: "A text field that validates user input in real time.",
       id: "validation",
       title: "Text Field with Validation Example",

@@ -1,13 +1,13 @@
 import React from "react";
 import ComponentBlock from "../../components/component-layout/component";
-import { sliderData } from "./slider-data";
+import { iconButtonData } from "./icon-button-data";
 
-const Slider = () => {
+const IconButton = () => {
   const jsonObject = {
-    ...sliderData,
+    ...iconButtonData,
   };
 
   return <ComponentBlock jsonObject={jsonObject} />;
 };
 
-export default Slider;
+export default IconButton;

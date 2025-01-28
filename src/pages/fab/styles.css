@@ -1,0 +1,120 @@
+.fab-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  height: min(400px, 300px);
+}
+
+#presentation h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+#container-floating {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+  height: 60px;
+}
+
+.nds {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #4285f4;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, opacity 0.3s;
+  transform: scale(0);
+  width: max-content;
+  opacity: 0;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.letter {
+  margin: 0;
+  padding: 0;
+}
+
+#container-floating:hover .nds {
+  opacity: 1;
+}
+
+.nd1 {
+  transform: translateY(-140px);
+}
+
+.nd2 {
+  transform: translateY(-100px);
+}
+
+.nd3 {
+  transform: translateY(-60px);
+}
+
+.nd4 {
+  transform: translateY(-60px);
+}
+
+.nd5 {
+  transform: translateY(-105px);
+}
+
+.nd6 {
+  transform: translateY(-150px);
+}
+
+/* Floating Action Button */
+#floating-button {
+  width: 50px;
+  height: 50px;
+  background-color: #db4437;
+  border-radius: 50%;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#floating-button:hover {
+  background-color: #c33c2e;
+}
+
+#floating-button .plus {
+  font-size: 28px;
+  color: white;
+  margin: 0;
+  position: absolute;
+  transition: opacity 0.3s;
+}
+
+#floating-button .edit {
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#floating-button:hover .plus {
+  opacity: 0;
+}
+
+#floating-button:hover .edit {
+  opacity: 1;
+}

@@ -30,9 +30,9 @@ const childHomeRouteMapping = () => {
 };
 
 const mergingAllRoutes = [
+  ...childHomeRouteMapping(),
   ...childrenRouteMapping(),
   ...childRouteMapping(),
-  ...childHomeRouteMapping(),
 ];
 
 const routeMapping = [

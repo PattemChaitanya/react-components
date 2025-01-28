@@ -1,26 +1,4 @@
-import ComplexFab from "./complex-fab";
-import SimpleFab from "./simple-fab";
-
-export const jsonToPageDisplay = {
-  pageTitle: "Fab",
-  description: "Variety of fab",
-  jsonToDisplay: [
-    {
-      title: "Simple fab",
-      subTitle: "Simple fab",
-      toDisplay: "",
-      component: <SimpleFab />,
-      open: false,
-    },
-    {
-      title: "Complex fab",
-      subTitle: "Complex fab",
-      toDisplay: "",
-      component: <ComplexFab />,
-      open: false,
-    },
-  ],
-};
+import { ExtendedFAB, SimpleFAB } from "./fab-component";
 
 export const fabData = {
   seoTitle: "Floating Action Button (FAB) Guide",
@@ -44,7 +22,7 @@ export const fabData = {
     "Ensure the FAB is accessible by adding proper ARIA roles and labels. For instance, use `aria-label` to describe the action of the button. Always position it in a way that doesn’t obstruct critical UI elements. If multiple FABs exist, prioritize one as the primary action for clarity.",
   examples: [
     {
-      component: "Default FAB",
+      component: <SimpleFAB />,
       description: "A FAB with an icon that represents adding a new item.",
       id: "fab-add-default",
       title: "Default FAB Example",
@@ -60,7 +38,7 @@ export const fabData = {
       open: false,
     },
     {
-      component: "Extended FAB",
+      component: <ExtendedFAB />,
       description: "An extended FAB with both an icon and text label.",
       id: "fab-extended",
       title: "Extended FAB Example",

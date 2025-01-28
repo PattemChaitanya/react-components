@@ -1,138 +1,124 @@
-import ComplexSlider from "./complex-slider";
-import SimpleSlider from "./simple-slider";
+import { Slider } from "./slider-component";
 
-export const jsonToPageDisplay = {
-  pageTitle: "Slider",
-  description: "Variety of slider",
-  jsonToDisplay: [
-    {
-      title: "Simple slider",
-      subTitle: "Simple slider",
-      toDisplay: "",
-      component: <SimpleSlider />,
-      open: false,
-    },
-    {
-      title: "Complex slider",
-      subTitle: "Complex slider",
-      toDisplay: "",
-      component: <ComplexSlider />,
-      open: false,
-    },
-  ],
-};
-
-export const switchData = {
-  seoTitle: "Switch Component - Modern UI Toggles",
+export const sliderData = {
+  seoTitle: "Slider Component – A Complete Guide",
   seoDescription:
-    "Explore the Switch component for toggling states in modern UI design. Includes examples, interactive demos, accessibility guidelines, and custom use cases.",
+    "Explore the versatility of sliders, an essential UI component for range selection, input control, and media navigation. Learn to design and implement sliders effectively.",
   seoKeywords: [
-    "Switch",
-    "Toggle",
-    "UI Components",
-    "State Control",
-    "Custom Switch Design",
+    "slider component",
+    "range slider",
+    "UI sliders",
+    "input sliders",
+    "volume slider",
+    "media slider",
+    "progress bar",
   ],
-  pageTitle: "Switch",
+  pageTitle: "Slider",
   pageDescription: [
-    "The Switch component is a UI element that allows users to toggle between two states, such as ON and OFF.",
-    "Switches are commonly used for enabling or disabling features, managing preferences, or controlling real-time settings.",
+    "Sliders are interactive UI components that allow users to select values or ranges by dragging a handle along a track.",
+    "They are commonly used for range selection, volume control, and media playback.",
   ],
-  pageImage: "https://material-web.dev/components/images/tabs/hero.webp",
+  pageImage: "https://material-web.dev/components/images/slider/hero.webp",
   types: [
-    "Basic Switch",
-    "Switch with Labels",
-    "Switch with Icons",
-    "Custom-Themed Switch",
-    "Multi-State Switch",
+    "Range Slider",
+    "Single Value Slider",
+    "Volume Slider",
+    "Media Slider",
   ],
-  interactiveDemo: "#demo",
+  interactiveDemo:
+    "https://material-web.dev/components/slider#interactive-demo",
   accessibity:
-    "The Switch component should include proper ARIA attributes such as 'aria-checked' for state indication. Ensure it is fully keyboard-accessible (e.g., toggled with Space or Enter). For users with screen readers, the labels or context of the switch should be announced clearly.",
+    "Sliders are accessible with keyboard support, screen reader announcements for values, and ARIA roles for better usability.",
   examples: [
     {
-      component: "Basic Switch",
+      component: <Slider />,
       description:
-        "A minimal switch component for toggling between two states.",
-      id: "basic",
-      title: "Basic Switch Example",
+        "A range slider for selecting a range of values between two points.",
+      id: "range-slider",
+      title: "Price Range Slider",
       usages:
-        "Ideal for simple ON/OFF controls, such as enabling dark mode or notifications.",
+        "Use range sliders for selecting ranges, such as price filters or date ranges.",
       purpose:
-        "Provides an intuitive and space-efficient way to toggle a setting.",
-      codeBlock: "<switch></switch>",
+        "To allow users to select a start and end value within a defined range.",
+      codeBlock: `
+<div class="slider-container">
+  <label for="range-slider">Price Range: $0 - $100</label>
+  <input type="range" id="range-slider-min" min="0" max="100" value="20">
+  <input type="range" id="range-slider-max" min="0" max="100" value="80">
+</div>
+      `,
       open: false,
     },
     {
-      component: "Switch with Labels",
-      description: "A switch with text labels for its ON and OFF states.",
-      id: "labels",
-      title: "Switch with Labels Example",
-      usages:
-        "Useful when it’s important to explicitly indicate the meaning of each state.",
-      purpose:
-        "Improves clarity and user understanding, especially for accessibility.",
-      codeBlock: "<switch on-label='Enabled' off-label='Disabled'></switch>",
-      open: false,
-    },
-    {
-      component: "Switch with Icons",
-      description: "A switch that uses icons to represent its states visually.",
-      id: "icons",
-      title: "Switch with Icons Example",
-      usages:
-        "Great for applications with visual-heavy designs, like IoT device controls.",
-      purpose:
-        "Enhances usability and aesthetics by providing clear visual indicators.",
-      codeBlock: "<switch on-icon='🌞' off-icon='🌙'></switch>",
-      open: false,
-    },
-    {
-      component: "Custom-Themed Switch",
+      component: "Single Value Slider Example",
       description:
-        "A switch styled with custom colors and animations to match brand identity.",
-      id: "custom-theme",
-      title: "Custom-Themed Switch Example",
-      usages: "Perfect for branded applications or unique design systems.",
-      purpose:
-        "Allows for creative expression while maintaining core functionality.",
-      codeBlock: "<switch style='--switch-color: #ff5722'></switch>",
+        "A single slider for selecting one value within a defined range.",
+      id: "single-slider",
+      title: "Brightness Control Slider",
+      usages:
+        "Use single sliders for inputs like brightness, contrast, or other single-value settings.",
+      purpose: "To adjust a single value interactively.",
+      codeBlock: `
+<div class="slider-container">
+  <label for="brightness-slider">Brightness: 50%</label>
+  <input type="range" id="brightness-slider" min="0" max="100" value="50">
+</div>
+      `,
       open: false,
     },
     {
-      component: "Multi-State Switch",
+      component: "Volume Slider Example",
       description:
-        "A switch with more than two states for extended functionality.",
-      id: "multi",
-      title: "Multi-State Switch Example",
+        "A vertical or horizontal slider for adjusting volume levels.",
+      id: "volume-slider",
+      title: "Volume Control Slider",
+      usages: "Use volume sliders for audio or media volume adjustment.",
+      purpose: "To provide users with precise control over volume levels.",
+      codeBlock: `
+<div class="slider-container">
+  <label for="volume-slider">Volume</label>
+  <input type="range" id="volume-slider" min="0" max="100" value="75" orient="vertical">
+</div>
+      `,
+      open: false,
+    },
+    {
+      component: "Media Slider Example",
+      description:
+        "A slider for navigating or seeking through media, such as video or audio.",
+      id: "media-slider",
+      title: "Media Playback Slider",
       usages:
-        "Ideal for controls with multiple settings, such as fan speed or volume levels.",
+        "Use media sliders for video or audio playback, allowing users to seek specific timestamps.",
       purpose:
-        "Provides more granular control without taking up additional space.",
-      codeBlock:
-        '<multi-state-switch states=\'["Low", "Medium", "High"]\'></multi-state-switch>',
+        "To enhance the media playback experience with precise seek control.",
+      codeBlock: `
+<div class="slider-container">
+  <label for="media-slider">Playback Position</label>
+  <input type="range" id="media-slider" min="0" max="300" value="120">
+  <span>2:00 / 5:00</span>
+</div>
+      `,
       open: false,
     },
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
-    Accessibity: "#accessibity",
+    "Interactive Demo": "#interactive-demo",
+    Accessibility: "#accessibity",
     Examples: {
-      "Basic Switch": "basic",
-      "Switch with Labels": "#labels",
-      "Switch with Icons": "#icons",
-      "Custom-Themed Switch": "#custom-theme",
-      "Multi-State Switch": "#multi",
+      "Range Slider": "#range-slider",
+      "Single Value Slider": "#single-slider",
+      "Volume Slider": "#volume-slider",
+      "Media Slider": "#media-slider",
     },
     References: "#references",
   },
   references: {
-    "ARIA Roles for Toggles":
-      "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Switch_Role",
-    "Switch Design Patterns":
-      "https://uxdesign.cc/designing-effective-switches-for-ui-8d4d61fddf9",
-    "Keyboard Accessibility for Controls":
-      "https://webaim.org/techniques/keyboard/",
+    "Material Design Sliders": "https://material.io/components/sliders",
+    "HTML Input Range Documentation":
+      "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range",
+    "ARIA Slider Accessibility Guide":
+      "https://www.w3.org/WAI/ARIA/apg/patterns/slider/",
   },
 };
