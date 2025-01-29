@@ -87,15 +87,15 @@
   /* large */
   --theme-title-l-font-size: 22px;
   --theme-title-l-line-height: 30px;
-  --theme-title-l-font-weight: 400;
+  --theme-title-l-font-weight: 600;
   /* medium */
   --theme-title-m-font-size: 16px;
   --theme-title-m-line-height: 24px;
-  --theme-title-m-font-weight: 500;
+  --theme-title-m-font-weight: 700;
   /* small */
   --theme-title-s-font-size: 14px;
   --theme-title-s-line-height: 20px;
-  --theme-title-s-font-weight: 500;
+  --theme-title-s-font-weight: 600;
 
   /* label */
   --theme-label-font-family: var(--theme-text-font-family);
@@ -191,13 +191,13 @@ html {
   line-height: 1.15;
   text-size-adjust: 100%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 h1,

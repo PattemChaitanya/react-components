@@ -82,9 +82,9 @@ const Header = () => {
               </svg>
             </IconButton>
           </div>
-          <h6 className="nav-header-typo" onClick={navigateHome}>
+          <h5 className="nav-header-typo" onClick={navigateHome}>
             Developer's Web Components
-          </h6>
+          </h5>
         </div>
         <div className="row-align-center">
           <IconButton>
