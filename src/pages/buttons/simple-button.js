@@ -1,86 +1,108 @@
 import React, { useState } from "react";
+import "./style.css";
+import clsx from "clsx";
+import AddIcon from "@mui/icons-material/Add";
+import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 
 const SimpleButton = () => {
-  const styles = {
-    base: {
-      padding: "10px 15px",
-      border: "none",
-      borderRadius: "5px",
-      cursor: "pointer",
-      fontSize: "16px",
-      margin: "5px",
-    },
-    primary: {
-      backgroundColor: "#007bff",
-      color: "white",
-    },
-    disabled: {
-      backgroundColor: "#e0e0e0",
-      color: "#9e9e9e",
-      cursor: "not-allowed",
-    },
-    success: {
-      backgroundColor: "#28a745",
-      color: "white",
-    },
-  };
-  // const [buttonStates, setButtonStates] = useState({
-  //   isText: false,
-  //   isFilled: false,
-  //   isFilledTonal: false,
-  //   isOutlined: false,
-  // });
-  const [isIconsRequired, setIsIconsRequired] = useState(false);
-  console.log(isIconsRequired, "icons");
+  const [buttonStates, setButtonStates] = useState(0);
+  const [isIconsRequired, setIsIconsRequired] = useState(1);
+  const [isDisabled, setIsDisabled] = useState(false);
+  const buttonMenu = [
+    { label: "primary", icon: <AddIcon /> },
+    { label: "secondary", icon: <FavoriteBorderIcon /> },
+    { label: "success", icon: <ThumbUpAltIcon /> },
+    { label: "error", icon: <ReportProblemIcon /> },
+  ];
+
+  function styleButton(variant) {
+    switch (variant) {
+      case 1:
+        return "elevated";
+      case 2:
+        return "filled";
+      case 3:
+        return "tonal";
+      case 4:
+        return "outlined";
+      default:
+        return "text";
+    }
+  }
 
   return (
     <div style={{ height: "inherit", display: "flex", flexDirection: "row" }}>
       <div style={{ flex: 1, padding: "16px" }}>
-        <button style={{ ...styles.base, ...styles.primary }}>Primary</button>
-        <button style={{ ...styles.base, ...styles.disabled }} disabled>
-          Disabled
-        </button>
-        <button style={{ ...styles.base, ...styles.success }}>Success</button>
+        {buttonMenu.map((variant, index) => (
+          <button
+            key={index}
+            className={clsx(
+              "base",
+              `${variant.label}-${styleButton(buttonStates)}`,
+              isDisabled && "disabled"
+            )}
+            onClick={() =>
+              alert(
+                `You have clicked a ${variant.label} button ${
+                  !isIconsRequired ? "with icons" : ""
+                }`
+              )
+            }
+            disabled={isDisabled}
+          >
+            {!isIconsRequired ? <i> {variant.icon}</i> : null}
+            {variant.label}
+          </button>
+        ))}
       </div>
-      <div
-        style={{
-          width: "150px",
-          padding: "16px 8px",
-          borderLeft: "1px solid black",
-          display: "flex",
-          flexDirection: "column",
-          gap: "8px",
-        }}
-      >
+      <div className="demo-right-container">
         {[
           "Text button",
+          "Elevated Button",
           "Filled button",
-          "Filled Tonal button",
+          "Tonal button",
           "Outlined button",
         ].map((item, index) => (
-          <div style={{ display: "flex", gap: "10px" }}>
+          <div className="demo-content" onClick={() => setButtonStates(index)}>
             <input
               type="radio"
-              value={item}
+              checked={buttonStates === index}
               aria-label="button-types"
               label={item}
             />
-            <p>{item}</p>
+            <label>{item}</label>
           </div>
         ))}
         <hr />
         {["With Icons", "Without Icons"].map((item, index) => (
-          <div style={{ display: "flex", gap: "10px" }}>
+          <div
+            className="demo-content"
+            onClick={() => setIsIconsRequired(index)}
+          >
             <input
               type="radio"
-              value={index === 0 ? true : false}
+              checked={isIconsRequired === index}
               aria-label="button-icons"
               label={item}
-              onChange={() => setIsIconsRequired(index === 0 ? true : false)}
             />
-            <p>{item}</p>
+            <label>{item}</label>
           </div>
         ))}
+        <hr />
+        <div
+          className="demo-content"
+          onClick={() => setIsDisabled(!isDisabled)}
+        >
+          <input
+            type="radio"
+            checked={isDisabled}
+            aria-label="button-icons"
+            label={isDisabled ? "Enabled" : "Disabled"}
+          />
+          <label>Disabled</label>
+        </div>
       </div>
     </div>
   );

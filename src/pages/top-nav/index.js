@@ -1,13 +1,13 @@
 import React from "react";
-import { tableData } from "./tableData";
+import { topNavData } from "./top-nav-data";
 import ComponentExample from "../../components/component-layout/component-example";
 
-const Table = () => {
+const TopNavigation = () => {
   const jsonObject = {
-    ...tableData,
+    ...topNavData,
   };
 
   return <ComponentExample jsonObject={jsonObject} />;
 };
 
-export default Table;
+export default TopNavigation;

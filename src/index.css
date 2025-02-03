@@ -613,3 +613,6 @@ nav {
 }
 
 /* ------------------------------- */
+.link-hover:hover {
+  text-decoration: underline;
+}

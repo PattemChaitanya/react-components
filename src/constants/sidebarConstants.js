@@ -31,6 +31,14 @@ import Lists from "../pages/lists";
 import Menu from "../pages/menu";
 import IconButton from "../pages/icon-button";
 
+/* images */
+import { ButtonIcon } from "../assets/component-card-images/images-index";
+import Tabs from "../pages/tabs";
+import Caursoul from "../pages/caursoul";
+import TopNavigation from "../pages/top-nav";
+import ResponsiveLayout from "../pages/responsive-layout";
+import Flexbox from "../pages/flexbox";
+
 export const menu = [
   {
     title: "Drag and drop",
@@ -329,61 +337,73 @@ export const homeScreenCards = [
         title: "Buttons",
         path: "/buttons",
         component: <Buttons />,
+        image: ButtonIcon,
       },
       {
         title: "Check box",
         path: "/check-box",
         component: <CheckBox />,
+        image: "",
       },
       {
         title: "Slider",
         path: "/slider",
         component: <Slider />,
+        image: "",
       },
       {
         title: "Input",
         path: "/input",
         component: <TextField />,
+        image: "",
       },
       {
         title: "Chips",
         path: "/chip",
         component: <Chips />,
+        image: "",
       },
       {
         title: "Floating action button",
         path: "/fab",
         component: <Fab />,
+        image: "",
       },
       {
         title: "Icon buttons",
         path: "/icon-buttons",
         component: <IconButton />,
+        image: "",
       },
       {
         title: "Lists",
         path: "/list",
         component: <Lists />,
+        image: "",
       },
       {
         title: "Menu",
         path: "/menu",
         component: <Menu />,
+        image: "",
       },
       {
         title: "Radio Buttons",
         path: "/radio-buttons",
         component: <RadioButton />,
+        image: "",
       },
       {
         title: "Select",
         path: "/select",
         component: <SelectBox />,
+        image: "",
       },
       {
         title: "Switch",
         path: "/switch",
         component: <Switch />,
+        image: "",
       },
     ],
   },
@@ -395,77 +415,92 @@ export const homeScreenCards = [
       {
         title: "Tabs",
         path: "/tabs",
-        component: "<Tabs />",
+        component: <Tabs />,
+        image: "",
       },
       {
         title: "Accrodion",
         path: "/accordion",
         component: <Accordion />,
+        image: "",
       },
       {
         title: "Avatar",
         path: "/avatar",
         component: <Avatar />,
+        image: "",
       },
       {
         title: "Button group",
         path: "/button-group",
         component: <ButtonGroup />,
+        image: "",
       },
       {
         title: "Images",
         path: "/images",
         component: <Images />,
+        image: "",
       },
       {
         title: "Caursoul",
         path: "/caursoul",
-        component: "<Caursoul />",
+        component: <Caursoul />,
+        image: "",
       },
       {
         title: "Todo",
         path: "/todo",
         component: <Todo />,
+        image: "",
       },
       {
         title: "Tables",
         path: "/tables",
         component: <Table />,
+        image: "",
       },
       {
         title: "Drag and drop",
         path: "/drag-and-drop",
         component: <DragAndDrop />,
+        image: "",
       },
       {
         title: "Custom cards",
         path: "/cards",
         component: <Cards />,
+        image: "",
       },
       {
         title: "Top navigation",
         path: "/top-nav",
-        component: "<TopNavigation />",
+        component: <TopNavigation />,
+        image: "",
       },
       {
         title: "Bottom navigation",
         path: "/bottom-navigation ",
         component: <BottomNavigation />,
+        image: "",
       },
       {
         title: "Drop downs",
         path: "/drop-downs",
         component: <DropDowns />,
+        image: "",
       },
       {
         title: "Side navigation",
         path: "/side-navigation",
         component: <Drawer />,
+        image: "",
       },
       {
         title: "Responsive Layout",
         path: "/responsive-layout",
-        component: "<ResponsiveLayout />",
+        component: <ResponsiveLayout />,
+        image: "",
       },
     ],
   },
@@ -478,17 +513,20 @@ export const homeScreenCards = [
       {
         title: "Flex box",
         path: "/flex-box",
-        component: "<FlexBox />",
+        component: <Flexbox />,
+        image: "",
       },
       {
         title: "Grid",
         path: "/grid",
         component: "<Grid />",
+        image: "",
       },
       {
         title: "Position",
         path: "/position",
         component: "<Position />",
+        image: "",
       },
     ],
   },

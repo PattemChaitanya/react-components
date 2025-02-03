@@ -104,3 +104,110 @@ export default SortableTable;
     },
   ],
 };
+
+export const tableData = {
+  seoTitle: "HTML Table Component - Usage and Accessibility",
+  seoDescription:
+    "Learn how to create, style, and use HTML table components effectively with accessibility and usability in mind.",
+  seoKeywords: [
+    "HTML table",
+    "table accessibility",
+    "responsive table",
+    "HTML table styling",
+  ],
+  pageTitle: "HTML Table Component",
+  pageDescription: [
+    "HTML tables are used to display tabular data in rows and columns. They can be styled for aesthetics and enhanced for accessibility.",
+    "This guide covers basic usage, best practices, and examples of how to implement tables in modern web development.",
+  ],
+  pageImage: "https://material-web.dev/components/images/tabs/hero.webp",
+  types: ["Basic Table", "Responsive Table", "Accessible Table"],
+  interactiveDemo: "https://example.com/table-demo", // Add a link to your interactive table demo if available.
+  accessibity:
+    "Ensure that tables use semantic tags like <thead>, <tbody>, and <th> for structure. Add ARIA roles and attributes for better screen reader support, and use captions for context.",
+  examples: [
+    {
+      component: "Basic HTML Table",
+      description: "A simple HTML table with rows and columns displaying data.",
+      id: "basic-table",
+      title: "Basic Table Example",
+      usages: "Use for displaying basic data sets with no interactivity.",
+      purpose:
+        "To demonstrate the structure of a table with <table>, <tr>, <th>, and <td> tags.",
+      codeBlock: `
+<table>
+  <thead>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+      <th>Header 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Row 1, Col 1</td>
+      <td>Row 1, Col 2</td>
+      <td>Row 1, Col 3</td>
+    </tr>
+    <tr>
+      <td>Row 2, Col 1</td>
+      <td>Row 2, Col 2</td>
+      <td>Row 2, Col 3</td>
+    </tr>
+  </tbody>
+</table>
+      `,
+      open: false,
+    },
+    {
+      component: "Responsive Table",
+      description: "An HTML table styled to be responsive on smaller screens.",
+      id: "responsive-table",
+      title: "Responsive Table Example",
+      usages:
+        "Use for tables that need to adapt to mobile devices or smaller screens.",
+      purpose: "To demonstrate CSS techniques for making tables responsive.",
+      codeBlock: `
+<div style="overflow-x: auto;">
+  <table>
+    <thead>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Row 1, Col 1</td>
+        <td>Row 1, Col 2</td>
+        <td>Row 1, Col 3</td>
+      </tr>
+      <tr>
+        <td>Row 2, Col 1</td>
+        <td>Row 2, Col 2</td>
+        <td>Row 2, Col 3</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+      `,
+      open: false,
+    },
+  ],
+  links: {
+    Types: "#types",
+    "Interactive Demo": "#demo",
+    Accessibity: "#accessibity",
+    Examples: {
+      "Basic Table": "#basic-table",
+      "Responsive Table": "#responsive-table",
+    },
+    References: "#references",
+  },
+  references: {
+    MDN: "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table",
+    W3C: "https://www.w3.org/WAI/tutorials/tables/",
+    "CSS Tricks": "https://css-tricks.com/complete-guide-table-element/",
+  },
+};

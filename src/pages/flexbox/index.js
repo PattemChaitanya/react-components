@@ -1,13 +1,13 @@
 import React from "react";
-import { tableData } from "./tableData";
+import { flexBoxData } from "./flexbox-data";
 import ComponentExample from "../../components/component-layout/component-example";
 
-const Table = () => {
+const Flexbox = () => {
   const jsonObject = {
-    ...tableData,
+    ...flexBoxData,
   };
 
   return <ComponentExample jsonObject={jsonObject} />;
 };
 
-export default Table;
+export default Flexbox;

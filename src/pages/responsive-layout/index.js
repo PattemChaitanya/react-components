@@ -1,13 +1,13 @@
 import React from "react";
-import { tableData } from "./tableData";
+import { responsiveData } from "./responsive-layout-data";
 import ComponentExample from "../../components/component-layout/component-example";
 
-const Table = () => {
+const ResponsiveLayout = () => {
   const jsonObject = {
-    ...tableData,
+    ...responsiveData,
   };
 
   return <ComponentExample jsonObject={jsonObject} />;
 };
 
-export default Table;
+export default ResponsiveLayout;

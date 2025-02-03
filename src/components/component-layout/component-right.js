@@ -13,7 +13,9 @@ const ComponentRight = ({ pageTitle, links }) => {
             if (typeof linkvalue === "string") {
               return (
                 <li>
-                  <a href={linkvalue}>{linkKey}</a>
+                  <a href={linkvalue} className="link-hover">
+                    {linkKey}
+                  </a>
                 </li>
               );
             } else if (typeof linkvalue === "object") {
@@ -23,7 +25,9 @@ const ComponentRight = ({ pageTitle, links }) => {
                   <ul>
                     {Object.entries(linkvalue).map(([itemKey, itemValue]) => (
                       <li>
-                        <a href={itemValue}>{itemKey}</a>
+                        <a href={itemValue} className="link-hover">
+                          {itemKey}
+                        </a>
                       </li>
                     ))}
                   </ul>

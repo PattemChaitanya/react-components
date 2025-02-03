@@ -316,3 +316,116 @@ export const navItems = [
     label: "Profile",
   },
 ];
+
+export const bottomNavData = {
+  seoTitle: "Bottom Navigation Component - Design, Usage, and Accessibility",
+  seoDescription:
+    "Learn how to create a responsive and accessible bottom navigation bar with Material Design principles, optimized for mobile-first user experiences.",
+  seoKeywords: [
+    "bottom navigation",
+    "mobile navigation",
+    "bottom navbar",
+    "material design bottom navigation",
+    "responsive navbar",
+  ],
+  pageTitle: "Bottom Navigation Component",
+  pageDescription: [
+    "Bottom navigation bars are essential for mobile applications, providing easy access to key sections with just a thumb's reach. They are ideal for mobile-first designs, ensuring minimal clutter while maximizing usability.",
+    "When creating a bottom navigation bar, prioritize key sections and ensure that actions are clear, accessible, and intuitive. Limit the number of primary links to no more than 5 to avoid overcrowding and to enhance clarity.",
+    "Responsive design should always be considered, as bottom navigation should adapt to both small and large screen sizes, providing a consistent user experience across devices.",
+    "Ensure keyboard and screen reader accessibility by properly utilizing `aria-label` and `aria-current` for the active state. Additionally, make all navigation links easily navigable via keyboard shortcuts, particularly for mobile-first web applications.",
+  ],
+  pageImage: "https://material-web.dev/components/images/tabs/hero.webp",
+  types: [
+    "Simple Bottom Navigation",
+    "Bottom Navigation with Icons",
+    "Bottom Navigation with Label",
+  ],
+  interactiveDemo: "https://example.com/bottom-nav-demo", // Replace with an actual interactive demo URL if applicable.
+  accessibity:
+    "Incorporate `aria-current` for indicating the active navigation item. Use `aria-label` on the navigation container and individual items for clarity. Ensure that all buttons are keyboard accessible and that focus is correctly managed between them. Provide visual feedback for active states and transitions.",
+  examples: [
+    {
+      component: "Simple Bottom Navigation",
+      description:
+        "A basic bottom navigation bar with three key links for quick access to the primary sections of the app.",
+      id: "simple-bottom-nav",
+      title: "Simple Bottom Navigation Example",
+      usages:
+        "Use for mobile-first websites or apps where there are only a few sections to navigate through.",
+      purpose:
+        "This simple example emphasizes clear visual cues and touch-friendly navigation for users with smaller screens.",
+      codeBlock: `
+<div style="position: fixed; bottom: 0; width: 100%; background-color: #6200ea; display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid #ccc;">
+  <a href="#home" style="color: white; text-decoration: none; font-size: 1.2rem;">Home</a>
+  <a href="#search" style="color: white; text-decoration: none; font-size: 1.2rem;">Search</a>
+  <a href="#profile" style="color: white; text-decoration: none; font-size: 1.2rem;">Profile</a>
+</div>
+      `,
+      open: false,
+    },
+    {
+      component: "Bottom Navigation with Icons",
+      description:
+        "A bottom navigation bar with icons for easy recognition of sections, designed for mobile applications.",
+      id: "bottom-nav-with-icons",
+      title: "Bottom Navigation with Icons Example",
+      usages:
+        "Ideal for applications where users need quick, visual access to key sections. Icons help enhance the usability by providing an intuitive visual language.",
+      purpose:
+        "This example uses Material Icons to make the navigation bar more visually appealing and intuitive for mobile users.",
+      codeBlock: `
+<div style="position: fixed; bottom: 0; width: 100%; background-color: #6200ea; display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid #ccc;">
+  <a href="#home" aria-label="Home" style="color: white; text-decoration: none; font-size: 1.5rem;"><i class="material-icons">home</i></a>
+  <a href="#search" aria-label="Search" style="color: white; text-decoration: none; font-size: 1.5rem;"><i class="material-icons">search</i></a>
+  <a href="#profile" aria-label="Profile" style="color: white; text-decoration: none; font-size: 1.5rem;"><i class="material-icons">account_circle</i></a>
+</div>
+      `,
+      open: false,
+    },
+    {
+      component: "Bottom Navigation with Label",
+      description:
+        "A bottom navigation bar that combines icons with text labels for better clarity.",
+      id: "bottom-nav-with-label",
+      title: "Bottom Navigation with Label Example",
+      usages:
+        "Use for applications where clarity is a priority and users benefit from both visual cues and text.",
+      purpose:
+        "This version includes both icons and text, offering a more descriptive navigation system for users unfamiliar with the app's features.",
+      codeBlock: `
+<div style="position: fixed; bottom: 0; width: 100%; background-color: #6200ea; display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid #ccc;">
+  <a href="#home" aria-label="Home" style="color: white; text-decoration: none; text-align: center;">
+    <i class="material-icons">home</i>
+    <p style="margin: 0; font-size: 0.8rem;">Home</p>
+  </a>
+  <a href="#search" aria-label="Search" style="color: white; text-decoration: none; text-align: center;">
+    <i class="material-icons">search</i>
+    <p style="margin: 0; font-size: 0.8rem;">Search</p>
+  </a>
+  <a href="#profile" aria-label="Profile" style="color: white; text-decoration: none; text-align: center;">
+    <i class="material-icons">account_circle</i>
+    <p style="margin: 0; font-size: 0.8rem;">Profile</p>
+  </a>
+</div>
+      `,
+      open: false,
+    },
+  ],
+  links: {
+    Types: "#types",
+    "Interactive Demo": "#demo",
+    Accessibity: "#accessibity",
+    Examples: {
+      "Simple Bottom Navigation": "#simple-bottom-nav",
+      "Bottom Navigation with Icons": "#bottom-nav-with-icons",
+      "Bottom Navigation with Label": "#bottom-nav-with-label",
+    },
+    References: "#references",
+  },
+  references: {
+    MDN: "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav",
+    "Material Design": "https://material.io/components/bottom-navigation",
+    "CSS Tricks": "https://css-tricks.com/almanac/properties/f/flex/",
+  },
+};

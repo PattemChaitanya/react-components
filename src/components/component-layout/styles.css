@@ -1,0 +1,46 @@
+.live-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px
+}
+
+.demo-container {
+  min-height: 200px;
+  max-height: 400px;
+  border: 1px solid var(--color-on-background);
+  border-radius: 8px;
+}
+
+.demo-right-container {
+  width: 150px;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 1px solid var(--color-on-background);
+  background-color: var(--color-surface-container);
+  border-radius: 0 8px 8px 0;
+  color: var(--color-shadow);
+}
+
+.demo-content {
+  display: flex;
+  gap: 10px
+}
+
+.demo-content input[type="radio"]:checked {
+  color: inherit;
+}
+
+.demo-button {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-shadow);
+  border-radius: 6px;
+  background-color: var(--color-surface-container);
+}
+
+.demo-button:hover {
+  background-color: var(--color-surface-container-lowest);
+}

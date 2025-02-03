@@ -1,13 +1,13 @@
 import React from "react";
-import { tableData } from "./tableData";
+import { tabsData } from "./tabs-data";
 import ComponentExample from "../../components/component-layout/component-example";
 
-const Table = () => {
+const Tabs = () => {
   const jsonObject = {
-    ...tableData,
+    ...tabsData,
   };
 
   return <ComponentExample jsonObject={jsonObject} />;
 };
 
-export default Table;
+export default Tabs;
