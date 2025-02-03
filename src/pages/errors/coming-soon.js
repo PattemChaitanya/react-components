@@ -46,7 +46,9 @@ const ComingSoon = () => {
       <h1 className="coming-soon-header">CSS Component library</h1>
       <h2 className="coming-soon-title">Something Exciting is Coming Soon!</h2>
       <p className="coming-soon-subtitle">
-        Stay tuned for an experience that redefines modern design.
+        Welcome to the future of intuitive design! We’re crafting something
+        extraordinary an experience inspired by the elegance of Material Design,
+        where functionality meets aesthetics seamlessly.
       </p>
       <div className="countdown">
         <div className="time-box">

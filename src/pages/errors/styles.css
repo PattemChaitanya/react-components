@@ -70,7 +70,9 @@
   font-size: 1.25rem;
   margin-bottom: 30px;
   opacity: 0.9;
+  line-height: 1.5rem;
   animation: fadeIn 1s ease-in-out;
+  max-width: 800px;
 }
 
 .countdown {
