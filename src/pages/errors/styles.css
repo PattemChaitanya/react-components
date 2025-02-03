@@ -42,46 +42,73 @@
 
 .coming-soon-container {
   text-align: center;
-  background: var(--color-surface-container);
   padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  height: 100dvh;
+  background: linear-gradient(135deg, #6200ea, #03dac6);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .coming-soon-header {
-  font-size: 2rem;
-  font-weight: bolder;
-  color: #6200ea;
-  margin-bottom: 16px;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .coming-soon-title {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 16px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-in-out;
 }
 
-.coming-soon-description {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 24px;
+.coming-soon-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .countdown {
-  font-size: 1.5rem;
-  color: #6200ea;
+  display: flex;
+  gap: 20px;
+  animation: fadeIn 1s ease-in-out;
 }
 
-.time-value {
-  margin-right: 8px;
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 16px;
+.time-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  min-width: 80px;
+}
 
+.time {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.label {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -61,6 +61,7 @@ const routeMapping = [
     element: <PageNotFound />,
     status: 404,
   },
+  // { path: "/coming-soon", element: <ComingSoon /> },
 ];
 
 const routes = createBrowserRouter(routeMapping);
