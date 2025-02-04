@@ -1,7 +1,9 @@
 {
-  "name": "react-component",
-  "version": "0.1.0",
+  "name": "web-jsx-component",
+  "version": "0.1.1",
   "private": true,
+  "homepage": "https://github.com/PattemChaitanya/react-components/blob/main/README.md",
+  "author": "Chaitanya Pattem <pattemchaitu@gmail.com>",
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
@@ -50,5 +52,9 @@
   },
   "devDependencies": {
     "fs-extra": "^11.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:PattemChaitanya/react-components.git"
   }
 }
