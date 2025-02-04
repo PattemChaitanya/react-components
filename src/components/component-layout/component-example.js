@@ -32,6 +32,7 @@ const ComponentExample = ({ jsonObject }) => {
       }, 2000);
     }
   }, [isCopied]);
+
   return (
     <>
       <LayoutComponent

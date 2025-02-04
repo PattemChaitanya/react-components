@@ -1,5 +1,8 @@
 import { formatAsCodeBlock } from "../../utils/another-converter";
 import FullWidthAccordion from "./full-width-accordion";
+import AccordionWithIcon from "./icon-accordion";
+import MultiExpandAccordion from "./mutli-expand-accordion";
+import NestedAccordion from "./nested-accordion";
 import OneOpenAccordion from "./one-open-accordion";
 import SimpleAccordion from "./simple-accordion";
 
@@ -304,7 +307,7 @@ export const accrodionData = {
       open: false,
     },
     {
-      component: "Multi-Expand Accordion",
+      component: <MultiExpandAccordion />,
       description:
         "This example demonstrates how multiple sections can be expanded simultaneously.",
       id: "multi",
@@ -318,7 +321,7 @@ export const accrodionData = {
       open: false,
     },
     {
-      component: "Accordion with Icons",
+      component: <AccordionWithIcon />,
       description:
         "An accordion example where each section includes icons for visual indicators.",
       id: "icons",
@@ -332,7 +335,7 @@ export const accrodionData = {
       open: false,
     },
     {
-      component: "Nested Accordion",
+      component: <NestedAccordion />,
       description:
         "This example demonstrates a nested accordion structure for complex hierarchies.",
       id: "nested",

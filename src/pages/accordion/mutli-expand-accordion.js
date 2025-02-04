@@ -15,11 +15,15 @@ const accordionData = [
   },
 ];
 
-const SimpleAccordion = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+const MultiExpandAccordion = () => {
+  const [activeIndex, setActiveIndex] = useState([]);
 
   const handleToggle = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    setActiveIndex((prevState) =>
+      activeIndex.includes(index)
+        ? prevState.filter((item) => item !== index)
+        : [...prevState, index]
+    );
   };
 
   return (
@@ -29,7 +33,7 @@ const SimpleAccordion = () => {
           <div style={styles.title} onClick={() => handleToggle(index)}>
             {item.title}
           </div>
-          {activeIndex === index && (
+          {activeIndex.includes(index) && (
             <div style={styles.content}>{item.content}</div>
           )}
         </div>
@@ -67,4 +71,4 @@ const styles = {
   },
 };
 
-export default SimpleAccordion;
+export default MultiExpandAccordion;

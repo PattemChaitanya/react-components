@@ -1,21 +1,31 @@
 import React, { useState } from "react";
+import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
+import ArrowCircleDownRoundedIcon from "@mui/icons-material/ArrowCircleDownRounded";
+import ArrowCircleUpRoundedIcon from "@mui/icons-material/ArrowCircleUpRounded";
+import ArrowDropUpRoundedIcon from "@mui/icons-material/ArrowDropUpRounded";
 
 const accordionData = [
   {
     title: "Section 1",
     content: "Content for section 1.",
+    openIcon: <ArrowDropDownRoundedIcon />,
+    closeIcon: <ArrowDropUpRoundedIcon />,
   },
   {
     title: "Section 2",
     content: "Content for section 2.",
+    openIcon: <ArrowCircleDownRoundedIcon />,
+    closeIcon: <ArrowCircleUpRoundedIcon />,
   },
   {
     title: "Section 3",
     content: "Content for section 3.",
+    openIcon: <ArrowDropDownRoundedIcon />,
+    closeIcon: <ArrowDropUpRoundedIcon />,
   },
 ];
 
-const SimpleAccordion = () => {
+const AccordionWithIcon = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleToggle = (index) => {
@@ -28,6 +38,9 @@ const SimpleAccordion = () => {
         <div key={index} style={styles.section}>
           <div style={styles.title} onClick={() => handleToggle(index)}>
             {item.title}
+            <i style={styles.icon}>
+              {activeIndex === index ? item["closeIcon"] : item["openIcon"]}
+            </i>
           </div>
           {activeIndex === index && (
             <div style={styles.content}>{item.content}</div>
@@ -67,4 +80,4 @@ const styles = {
   },
 };
 
-export default SimpleAccordion;
+export default AccordionWithIcon;
