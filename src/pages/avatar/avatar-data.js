@@ -1,3 +1,9 @@
+import {
+  GroupedAvatar,
+  IconAvatar,
+  ImageAvatar,
+  TextAvatar,
+} from "./avatar-component";
 import AvatarImage from "./avatar-image";
 import AvatarLetter from "./avatar-letter";
 
@@ -195,7 +201,7 @@ export const avatarData = {
         "Use when a user’s profile picture or identifiable image is available.",
       purpose:
         "Provides a personal touch, making it easy for users to recognize profiles.",
-      component: "Image Avatar",
+      component: <ImageAvatar />,
       codeBlock: `
 <img class="avatar" src="https://example.com/user.jpg" alt="User Profile Picture">
 `,
@@ -210,7 +216,7 @@ export const avatarData = {
         "Use when an image isn't available but the user's name or initials can represent them.",
       purpose:
         "Ensures avatars remain functional and visually consistent, even without images.",
-      component: "Text Avatar",
+      component: <TextAvatar />,
       codeBlock: `
 <div class="avatar text-avatar" role="img" aria-label="John Doe">JD</div>
 `,
@@ -224,7 +230,7 @@ export const avatarData = {
         "Use for placeholders or when representing non-user entities, like system notifications.",
       purpose:
         "Provides a consistent, recognizable visual element without requiring user-specific content.",
-      component: "Icon Avatar",
+      component: <IconAvatar />,
       codeBlock: `
 <div class="avatar icon-avatar" role="img" aria-label="Default User">
   <span class="material-icons">person</span>
@@ -240,7 +246,7 @@ export const avatarData = {
         "Use to represent multiple users, such as members of a team or participants in a group chat.",
       purpose:
         "Indicates collaboration or a collective entity in a compact space.",
-      component: "Grouped Avatar",
+      component: <GroupedAvatar />,
       codeBlock: `
 <div class="grouped-avatar">
   <img class="avatar" src="https://example.com/user1.jpg" alt="User 1">

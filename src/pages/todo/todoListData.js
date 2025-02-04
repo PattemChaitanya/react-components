@@ -1,3 +1,5 @@
+import AdvancedTodoList from "./advanced-todo";
+import BasicTodo from "./basic-todo";
 import TodoList from "./todoList";
 
 export const jsonToPageDisplay = {
@@ -96,13 +98,13 @@ export const todoData = {
     "Ensure to-do lists are accessible by supporting keyboard navigation, ARIA roles like `aria-checked` for tasks, and labels for checkboxes.",
   examples: [
     {
-      component: "Basic To-Do List",
-      description:
-        "A straightforward to-do list with add, mark complete, and delete functionality.",
       id: "basic-todo-list",
       title: "Basic To-Do List Example",
+      description:
+        "A straightforward to-do list with add, mark complete, and delete functionality.",
       usages: "Use for simple task tracking without advanced categorization.",
       purpose: "Enables users to manage tasks quickly with minimal setup.",
+      component: <BasicTodo />,
       codeBlock: `
 <div class="todo">
   <h3>My Tasks</h3>
@@ -129,7 +131,7 @@ export const todoData = {
       open: false,
     },
     {
-      component: "Advanced To-Do List",
+      component: <AdvancedTodoList />,
       description:
         "A to-do list with categories, due dates, and filters for organizing tasks effectively.",
       id: "advanced-todo-list",

@@ -1,0 +1,153 @@
+.todo-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.basic-h1 {
+  text-align: center;
+  color: #333;
+}
+
+.todo-input {
+  display: flex;
+  gap: 10px;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todo-input button {
+  padding: 8px 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.todo-input button:hover {
+  background: #0056b3;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  height: 220px;
+  overflow: auto;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: #f9f9f9;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.todo-list li:hover {
+  background: #e9e9e9;
+}
+
+.todo-list li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-list button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.todo-list button:hover {
+  background: #d93636;
+}
+
+/* --------- Advanced todo list --------- */
+
+.advanced-h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.add-task input:focus {
+  border-color: #007bff;
+}
+
+.add-task button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-task button:hover {
+  background-color: #0056b3;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: grab;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.todo-item:active {
+  background: #e3e3e3;
+  transform: scale(0.98);
+  cursor: grabbing;
+}
+
+.todo-item:hover {
+  background: #f9f9f9;
+}
+
+.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}

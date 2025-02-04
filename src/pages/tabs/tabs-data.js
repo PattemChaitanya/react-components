@@ -1,7 +1,12 @@
-import {} from "./tabs-component";
+import {
+  IconAndTextTabs,
+  IconTabs,
+  ScrollableTabs,
+  TextTabs,
+} from "./tabs-component";
 
 export const tabsData = {
-  seoTitle: "Design Tabs Component Guide",
+  seoTitle: "Tabs",
   seoDescription:
     "Explore how to implement and customize Design Tabs with accessibility, interactivity, and real-world examples.",
   seoKeywords: [
@@ -29,7 +34,7 @@ export const tabsData = {
         "Use when the tab labels alone are sufficient to describe the content.",
       purpose:
         "Keeps the design clean and straightforward, ideal for most content-heavy applications.",
-      component: "Text Tabs",
+      component: <TextTabs />,
       codeBlock: `
 <div class="tabs" role="tablist">
   <button role="tab" aria-selected="true" id="tab-1" aria-controls="panel-1">Tab 1</button>
@@ -49,7 +54,33 @@ export const tabsData = {
       usages:
         "Ideal for dashboards or when the icons themselves are self-explanatory (e.g., home, settings, search).",
       purpose: "Saves space while still providing intuitive navigation.",
-      component: "Icon Tabs",
+      component: <IconTabs />,
+      codeBlock: `
+<div class="tabs" role="tablist">
+  <button role="tab" aria-selected="true" id="tab-home" aria-controls="panel-home">
+    <span class="material-icons">home</span>
+  </button>
+  <button role="tab" aria-selected="false" id="tab-search" aria-controls="panel-search">
+    <span class="material-icons">search</span>
+  </button>
+  <button role="tab" aria-selected="false" id="tab-settings" aria-controls="panel-settings">
+    <span class="material-icons">settings</span>
+  </button>
+</div>
+<div id="panel-home" role="tabpanel" aria-labelledby="tab-home">Home Content</div>
+<div id="panel-search" role="tabpanel" aria-labelledby="tab-search" hidden>Search Content</div>
+<div id="panel-settings" role="tabpanel" aria-labelledby="tab-settings" hidden>Settings Content</div>
+`,
+      open: false,
+    },
+    {
+      id: "icon-text-tabs",
+      title: "Text and Icon Tabs",
+      description: "Tabs represented using text and icons.",
+      usages:
+        "Ideal for dashboards or when the icons themselves are self-explanatory (e.g., home, settings, search).",
+      purpose: "Saves space while still providing intuitive navigation.",
+      component: <IconAndTextTabs />,
       codeBlock: `
 <div class="tabs" role="tablist">
   <button role="tab" aria-selected="true" id="tab-home" aria-controls="panel-home">
@@ -76,7 +107,7 @@ export const tabsData = {
         "Great for content-heavy applications with many categories or sections.",
       purpose:
         "Provides flexibility for layouts with limited space without cluttering the UI.",
-      component: "Scrollable Tabs",
+      component: <ScrollableTabs />,
       codeBlock: `
 <div class="tabs scrollable" role="tablist">
   <button role="tab" aria-selected="true" id="tab-1" aria-controls="panel-1">Tab 1</button>
@@ -96,12 +127,13 @@ export const tabsData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
+    // "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
-      "Text Tabs Example": "#text-tabs",
-      "Icon Tabs Example": "#icon-tabs",
-      "Scrollable Tabs Example": "#scrollable-tabs",
+      "Text Tabs": "#text-tabs",
+      "Icon Tabs": "#icon-tabs",
+      "Text and Icon Tabs": "#icon-text-tabs",
+      "Scrollable Tabs": "#scrollable-tabs",
     },
     References: "#references",
   },

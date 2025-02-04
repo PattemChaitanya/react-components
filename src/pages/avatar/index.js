@@ -1,6 +1,6 @@
 import React from "react";
-import { avatarData } from "../accordion/accordionData";
 import ComponentExample from "../../components/component-layout/component-example";
+import { avatarData } from "./avatar-data";
 
 const Avatar = () => {
   const jsonObject = {
