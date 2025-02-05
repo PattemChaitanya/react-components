@@ -46,7 +46,7 @@
   background: linear-gradient(135deg, #6200ea, #03dac6);
   color: white;
   font-family: 'Roboto', sans-serif;
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -268,7 +268,7 @@ code {
 }
 
 .body-container {
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   position: fixed;
   background-color: var(--color-surface-container);
@@ -339,7 +339,7 @@ nav {
   width: 100%;
   gap: 18px;
   padding: 12px;
-  height: calc(100vh - 66px);
+  height: calc(100dvh - 66px);
 }
 
 .container-right {
@@ -399,13 +399,13 @@ nav {
 .scroll-wrapper {
   width: min(980px, 100%);
   margin-inline: auto;
-  max-height: calc(100vh - 75px);
+  max-height: calc(100dvh - 75px);
 }
 
 .scroll-wrapper-component {
   width: min(1700px, 100%);
   margin-inline: auto;
-  max-height: calc(100vh - 75px);
+  max-height: calc(100dvh - 75px);
 }
 
 .page-layout>h2 {
@@ -550,7 +550,7 @@ nav {
 
   .second-container {
     margin-top: 72px;
-    height: calc(100vh - 80px);
+    height: calc(100dvh - 80px);
   }
 
   .page-layout>h2 {

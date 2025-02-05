@@ -5,7 +5,7 @@
   width: 100%;
   gap: 18px;
   padding: 12px;
-  height: calc(100% - 120px);
+  height: calc(100dvh - 58px);
 }
 
 aside {
@@ -51,6 +51,6 @@ main {
 @media screen and (min-width: 601px) {
   .main-container {
     margin-top: 72px;
-    height: calc(100vh - 80px);
+    height: calc(100dvh - 80px);
   }
 }
