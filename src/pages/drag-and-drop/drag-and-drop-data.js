@@ -416,12 +416,13 @@ export const dragandDropData = {
     {
       component: <FileDropZone />,
       description:
-        "A draggable and sortable list where items can be rearranged.",
-      id: "sortable-list",
-      title: "Sortable List Example",
-      usages: "Use for lists or grids where users need to reorder items.",
+        "A file upload drop zone where users can drag and drop files or click to select them for upload.",
+      id: "file-drop-zone",
+      title: "File Drop Zone",
+      usages:
+        "Use for uploading files in forms, dashboards, or content management systems where intuitive file upload is required.",
       purpose:
-        "To demonstrate how to create a sortable list using drag-and-drop events.",
+        "To demonstrate how to create an interactive file upload area using native drag-and-drop events along with file input support.",
       codeBlock: `
 <ul id="sortable-list" style="list-style: none; padding: 0;">
   <li draggable="true" style="padding: 10px; background: #f1f1f1; margin-bottom: 5px; cursor: grab;">Item 1</li>
@@ -465,6 +466,7 @@ export const dragandDropData = {
     Examples: {
       "Basic Drag and Drop": "#basic-drag-drop",
       "Sortable List": "#sortable-list",
+      "File Drop Zone": "#file-drop-zone",
     },
     References: "#references",
   },
