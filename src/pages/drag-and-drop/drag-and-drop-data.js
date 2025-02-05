@@ -1,4 +1,5 @@
 import Dnd from "./dnd";
+import { DraggableList, FileDropZone } from "./dnd-component";
 import OneWayDrop from "./drop";
 import Kanban from "./kanban";
 
@@ -301,7 +302,7 @@ export default Kanban;
 };
 
 export const dragandDropData = {
-  seoTitle: "Drag and Drop Component - Interactive and Accessible",
+  seoTitle: "Drag and Drop Component",
   seoDescription:
     "Learn how to implement drag-and-drop functionality with interactive examples, accessibility considerations, and best practices.",
   seoKeywords: [
@@ -310,19 +311,19 @@ export const dragandDropData = {
     "drag and drop accessibility",
     "interactive UI",
   ],
-  pageTitle: "Drag and Drop Component",
+  pageTitle: "Drag and Drop",
   pageDescription: [
     "Drag and Drop allows users to interact with elements by dragging them and dropping them into designated areas.",
     "This guide includes examples of drag-and-drop implementations, accessibility best practices, and interactive demos.",
   ],
   pageImage: "https://material-web.dev/components/images/tabs/hero.webp",
   types: ["Basic Drag and Drop", "Sortable List", "File Upload"],
-  interactiveDemo: "https://example.com/drag-drop-demo", // Replace with an actual interactive demo URL.
+  interactiveDemo: "https://example.com/drag-drop-demo",
   accessibity:
     "Ensure drag-and-drop interactions are keyboard-accessible by providing alternatives like buttons or ARIA roles. Use proper focus management for dropped elements.",
   examples: [
     {
-      component: "Basic Drag and Drop",
+      component: <OneWayDrop />,
       description:
         "A simple drag-and-drop implementation using HTML5 drag events.",
       id: "basic-drag-drop",
@@ -369,7 +370,51 @@ export const dragandDropData = {
       open: false,
     },
     {
-      component: "Sortable List",
+      component: <DraggableList />,
+      description:
+        "A draggable and sortable list where items can be rearranged.",
+      id: "sortable-list",
+      title: "Sortable List Example",
+      usages: "Use for lists or grids where users need to reorder items.",
+      purpose:
+        "To demonstrate how to create a sortable list using drag-and-drop events.",
+      codeBlock: `
+<ul id="sortable-list" style="list-style: none; padding: 0;">
+  <li draggable="true" style="padding: 10px; background: #f1f1f1; margin-bottom: 5px; cursor: grab;">Item 1</li>
+  <li draggable="true" style="padding: 10px; background: #f1f1f1; margin-bottom: 5px; cursor: grab;">Item 2</li>
+  <li draggable="true" style="padding: 10px; background: #f1f1f1; margin-bottom: 5px; cursor: grab;">Item 3</li>
+</ul>
+
+<script>
+  const list = document.getElementById("sortable-list");
+
+  let draggedItem = null;
+
+  list.addEventListener("dragstart", (event) => {
+    draggedItem = event.target;
+    setTimeout(() => event.target.style.display = "none", 0);
+  });
+
+  list.addEventListener("dragend", (event) => {
+    event.target.style.display = "block";
+    draggedItem = null;
+  });
+
+  list.addEventListener("dragover", (event) => {
+    event.preventDefault();
+    const hoveredItem = event.target;
+    if (hoveredItem !== draggedItem && hoveredItem.tagName === "LI") {
+      const rect = hoveredItem.getBoundingClientRect();
+      const next = (event.clientY - rect.top) / rect.height > 0.5;
+      list.insertBefore(draggedItem, next ? hoveredItem.nextSibling : hoveredItem);
+    }
+  });
+</script>
+      `,
+      open: false,
+    },
+    {
+      component: <FileDropZone />,
       description:
         "A draggable and sortable list where items can be rearranged.",
       id: "sortable-list",

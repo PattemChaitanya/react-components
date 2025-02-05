@@ -1,3 +1,10 @@
+import {
+  RoundedImageCarousel,
+  ImageCardWithOverlay,
+  BackgroundImageCard,
+  ImageGrid,
+  ResponsiveImageGrid,
+} from "./image-component";
 import ImageCarousel from "./imageCarousel";
 import ImageSlider from "./imageSlider";
 
@@ -221,7 +228,6 @@ export const imagesData = {
   types: [
     "Responsive Images",
     "Rounded Images",
-    "Circular Images",
     "Image Cards",
     "Background Images",
     "Thumbnail Images",
@@ -232,7 +238,7 @@ export const imagesData = {
     "Ensure images are accessible by including meaningful `alt` text for screen readers. For decorative images, set `alt=''` and `role='presentation'`. Provide proper contrast between images and overlaid text for better readability.",
   examples: [
     {
-      component: "Responsive Images",
+      component: <ResponsiveImageGrid />,
       description:
         "Images that adjust their size dynamically based on the screen width.",
       id: "responsive-images",
@@ -246,7 +252,7 @@ export const imagesData = {
       open: false,
     },
     {
-      component: "Rounded Images",
+      component: <RoundedImageCarousel />,
       description:
         "Images with rounded corners for a smoother, modern appearance.",
       id: "rounded-images",
@@ -260,20 +266,7 @@ export const imagesData = {
       open: false,
     },
     {
-      component: "Circular Images",
-      description: "Circular images often used for profile pictures.",
-      id: "circular-images",
-      title: "Circular Image Example",
-      usages:
-        "Best for representing users or entities in a personal and identifiable way.",
-      purpose: "Enhances the UI by making user profiles visually distinctive.",
-      codeBlock: `
-<img class="circular-image" src="https://example.com/profile.jpg" alt="User Profile Picture">
-`,
-      open: false,
-    },
-    {
-      component: "Image Cards",
+      component: <ImageCardWithOverlay />,
       description: "Images used in card components with text overlays.",
       id: "image-cards",
       title: "Image Card Example",
@@ -292,7 +285,7 @@ export const imagesData = {
       open: false,
     },
     {
-      component: "Background Images",
+      component: <BackgroundImageCard />,
       description: "Images used as container backgrounds with layered content.",
       id: "background-images",
       title: "Background Image Example",
@@ -307,7 +300,7 @@ export const imagesData = {
       open: false,
     },
     {
-      component: "Gallery Images",
+      component: <ImageGrid />,
       description: "A grid layout for multiple images.",
       id: "gallery-images",
       title: "Gallery Image Example",
@@ -330,7 +323,6 @@ export const imagesData = {
     Examples: {
       "Responsive Image Example": "#responsive-images",
       "Rounded Image Example": "#rounded-images",
-      "Circular Image Example": "#circular-images",
       "Image Card Example": "#image-cards",
       "Background Image Example": "#background-images",
       "Gallery Image Example": "#gallery-images",

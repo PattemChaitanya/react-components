@@ -1,4 +1,9 @@
-import {} from "./caursoul-component";
+import { RoundedImageCarousel } from "../images/image-component";
+import {
+  AutoCarousel,
+  CardCarousel,
+  FullScreenCarousel,
+} from "./caursoul-component";
 
 export const caursoulData = {
   seoTitle: "Material Design Carousel Component Guide",
@@ -28,7 +33,7 @@ export const caursoulData = {
     "Carousels should support keyboard navigation, focus management, and screen reader announcements. Use ARIA roles like `aria-live` to update screen readers about slide changes.",
   examples: [
     {
-      component: "Image Carousel",
+      component: <RoundedImageCarousel />,
       description:
         "A carousel showcasing images with indicators and navigation arrows.",
       id: "image-carousel",
@@ -59,7 +64,7 @@ export const caursoulData = {
       open: false,
     },
     {
-      component: "Card Carousel",
+      component: <CardCarousel />,
       description:
         "A carousel displaying cards with text, buttons, and images.",
       id: "card-carousel",
@@ -94,7 +99,7 @@ export const caursoulData = {
       open: false,
     },
     {
-      component: "Auto-Scrolling Carousel",
+      component: <AutoCarousel />,
       description: "A carousel that automatically scrolls through slides.",
       id: "auto-scrolling-carousel",
       title: "Auto-Scrolling Carousel Example",
@@ -146,7 +151,7 @@ export const caursoulData = {
       open: false,
     },
     {
-      component: "Fullscreen Carousel",
+      component: <FullScreenCarousel />,
       description: "A fullscreen carousel with immersive visuals.",
       id: "fullscreen-carousel",
       title: "Fullscreen Carousel Example",
