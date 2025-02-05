@@ -1,4 +1,5 @@
 import SortableTable from "./sortableTable";
+import { BasicTableComponent, ResponsiveHTMLTable } from "./table-component";
 
 export const jsonToPageDisplay = {
   pageTitle: "Tables",
@@ -115,7 +116,7 @@ export const tableData = {
     "responsive table",
     "HTML table styling",
   ],
-  pageTitle: "HTML Table Component",
+  pageTitle: "HTML Table",
   pageDescription: [
     "HTML tables are used to display tabular data in rows and columns. They can be styled for aesthetics and enhanced for accessibility.",
     "This guide covers basic usage, best practices, and examples of how to implement tables in modern web development.",
@@ -127,7 +128,7 @@ export const tableData = {
     "Ensure that tables use semantic tags like <thead>, <tbody>, and <th> for structure. Add ARIA roles and attributes for better screen reader support, and use captions for context.",
   examples: [
     {
-      component: "Basic HTML Table",
+      component: <BasicTableComponent />,
       description: "A simple HTML table with rows and columns displaying data.",
       id: "basic-table",
       title: "Basic Table Example",
@@ -160,7 +161,7 @@ export const tableData = {
       open: false,
     },
     {
-      component: "Responsive Table",
+      component: <ResponsiveHTMLTable />,
       description: "An HTML table styled to be responsive on smaller screens.",
       id: "responsive-table",
       title: "Responsive Table Example",

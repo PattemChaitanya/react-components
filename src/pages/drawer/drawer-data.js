@@ -47,7 +47,7 @@ export const sideNavData = {
     "When the drawer is open, trap focus within it to prevent users from interacting with other elements on the page. Add `aria-hidden` to non-essential elements outside the drawer. Ensure users can navigate using a keyboard (`Tab` and `Shift+Tab`), and provide a clear way to close the drawer, such as a close button with an appropriate `aria-label`.",
   examples: [
     {
-      component: "Temporary Drawer",
+      component: <SimpleDrawer />,
       description:
         "A modal side navigation drawer that overlays the content and can be toggled on smaller devices.",
       id: "temporary-drawer",
@@ -119,7 +119,7 @@ export const sideNavData = {
       open: false,
     },
     {
-      component: "Permanent Drawer",
+      component: <ComplexDrawer />,
       description:
         "A side navigation drawer that is always visible and part of the layout.",
       id: "permanent-drawer",

@@ -1,0 +1,354 @@
+/* ------------ basic/primary group ---------- */
+.button-group {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  /* Ensures rounded corners */
+  background-color: #90caf9;
+  /* Light blue background */
+  width: fit-content;
+  border: 1px solid #64b5f6;
+  /* Slight border for separation */
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+  outline: none;
+  transition: background 0.3s ease;
+  flex: 1;
+  /* Equal width for all buttons */
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* Add separator lines between buttons */
+.btn:not(:last-child) {
+  border-right: 1px solid #64b5f6;
+}
+
+/* Hover effect */
+.btn:hover {
+  background-color: #64b5f6;
+}
+
+/* Active state */
+.btn:active {
+  background-color: #42a5f5;
+  color: white;
+}
+
+/* ----------- custom button group ----------- */
+
+/* Sizes */
+.btn.small {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.btn.medium {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.btn.large {
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+/* Variants */
+.btn.filled {
+  color: white;
+}
+
+.btn.outlined {
+  background: transparent;
+  border: 2px solid currentColor;
+}
+
+/* Color Themes */
+.btn.gray {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn.indigo {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.btn.orange {
+  background-color: #ff7043;
+  color: white;
+}
+
+.btn.green {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn.blue {
+  background-color: #2196f3;
+  color: white;
+}
+
+.btn.outlined.gray,
+.btn.outlined.indigo,
+.btn.outlined.orange,
+.btn.outlined.green,
+.btn.outlined.blue {
+  background: transparent;
+}
+
+/* ----------- trail button group ---------- */
+/* Base styles */
+.trail-button-group {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  width: fit-content;
+  border: 1px solid transparent;
+}
+
+.trail-btn {
+  background: transparent;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s ease, color 0.3s ease;
+  flex: 1;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-right: 1px solid transparent;
+}
+
+.trail-btn:last-child {
+  border-right: none;
+}
+
+/* === Sizes === */
+.trail-button-group.small .trail-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.trail-button-group.medium .trail-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.trail-button-group.large .trail-btn {
+  padding: 14px 28px;
+  font-size: 16px;
+}
+
+/* === Variants === */
+.trail-button-group.filled .trail-btn:hover {
+  filter: brightness(90%);
+}
+
+.trail-button-group.outlined {
+  border: 1px solid currentColor;
+}
+
+.trail-button-group.outlined .trail-btn {
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.trail-button-group.outlined .trail-btn:not(:last-child) {
+  border-right: 1px solid currentColor;
+}
+
+.trail-button-group.filled .trail-btn:not(:last-child) {
+  border-right: 1px solid #64b5f6;
+}
+
+.trail-button-group.text .trail-btn:not(:last-child) {
+  border-right: 1px solid currentColor;
+}
+
+.trail-button-group.text .trail-btn {
+  background: none;
+}
+
+/* === Color Themes === */
+.trail-button-group.blue {
+  background-color: #90caf9;
+  color: #0d47a1;
+  border-color: #64b5f6;
+}
+
+.trail-button-group.green {
+  color: #1b5e20;
+  border-color: #1b5e20;
+}
+
+.trail-button-group.red {
+  color: #b71c1c;
+}
+
+.trail-button-group.filled .trail-btn:active {
+  filter: brightness(80%);
+}
+
+.trail-button-group.outlined .trail-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.trail-button-group.text .trail-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* ------ vertical and horizontal button group ------ */
+/* Base styles */
+.v-h-button-group {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.v-h-btn {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s ease, color 0.3s ease;
+  flex: 1;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.v-h-btn:last-child {
+  border: none;
+}
+
+/* === Layout Directions === */
+.v-h-button-group.horizontal {
+  flex-direction: row;
+}
+
+.v-h-button-group.horizontal .v-h-btn:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.v-h-button-group.vertical {
+  flex-direction: column;
+}
+
+.v-h-button-group.vertical .v-h-btn:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* === Sizes === */
+.v-h-button-group.small .v-h-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.v-h-button-group.medium .v-h-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.v-h-button-group.large .v-h-btn {
+  padding: 14px 28px;
+  font-size: 16px;
+}
+
+/* === Colors === */
+.v-h-button-group.blue .v-h-btn {
+  color: #0d47a1;
+}
+
+.v-h-button-group.green .v-h-btn {
+  color: #1b5e20;
+}
+
+.v-h-button-group.red .v-h-btn {
+  color: #b71c1c;
+}
+
+/* === Hover Effects === */
+.v-h-button-group .v-h-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.v-h-button-group .v-h-btn:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ------ icon button group ------ */
+/* Base styles */
+.icon-button-group {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.icon-btn:last-child {
+  border-right: none;
+}
+
+/* === Sizes === */
+.icon-button-group.small .icon-btn {
+  padding: 6px 12px;
+  font-size: 16px;
+}
+
+.icon-button-group.medium .icon-btn {
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.icon-button-group.large .icon-btn {
+  padding: 14px 28px;
+  font-size: 24px;
+}
+
+/* === Colors === */
+.icon-button-group.blue .icon-btn {
+  color: #0d47a1;
+}
+
+.icon-button-group.green .icon-btn {
+  color: #1b5e20;
+}
+
+.icon-button-group.red .icon-btn {
+  color: #b71c1c;
+}
+
+/* === Hover Effects === */
+.icon-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.icon-btn:active {
+  background-color: rgba(0, 0, 0, 0.2);
+}

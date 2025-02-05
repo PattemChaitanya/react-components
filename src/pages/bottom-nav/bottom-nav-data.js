@@ -328,7 +328,7 @@ export const bottomNavData = {
     "material design bottom navigation",
     "responsive navbar",
   ],
-  pageTitle: "Bottom Navigation Component",
+  pageTitle: "Bottom Navigation",
   pageDescription: [
     "Bottom navigation bars are essential for mobile applications, providing easy access to key sections with just a thumb's reach. They are ideal for mobile-first designs, ensuring minimal clutter while maximizing usability.",
     "When creating a bottom navigation bar, prioritize key sections and ensure that actions are clear, accessible, and intuitive. Limit the number of primary links to no more than 5 to avoid overcrowding and to enhance clarity.",
@@ -346,11 +346,11 @@ export const bottomNavData = {
     "Incorporate `aria-current` for indicating the active navigation item. Use `aria-label` on the navigation container and individual items for clarity. Ensure that all buttons are keyboard accessible and that focus is correctly managed between them. Provide visual feedback for active states and transitions.",
   examples: [
     {
-      component: "Simple Bottom Navigation",
+      component: <SimpleBottomNav />,
       description:
         "A basic bottom navigation bar with three key links for quick access to the primary sections of the app.",
       id: "simple-bottom-nav",
-      title: "Simple Bottom Navigation Example",
+      title: "Simple Bottom Navigation",
       usages:
         "Use for mobile-first websites or apps where there are only a few sections to navigate through.",
       purpose:
@@ -365,11 +365,11 @@ export const bottomNavData = {
       open: false,
     },
     {
-      component: "Bottom Navigation with Icons",
+      component: <SelectNameBottomNav />,
       description:
         "A bottom navigation bar with icons for easy recognition of sections, designed for mobile applications.",
       id: "bottom-nav-with-icons",
-      title: "Bottom Navigation with Icons Example",
+      title: "Bottom Navigation with Icons",
       usages:
         "Ideal for applications where users need quick, visual access to key sections. Icons help enhance the usability by providing an intuitive visual language.",
       purpose:
@@ -384,11 +384,11 @@ export const bottomNavData = {
       open: false,
     },
     {
-      component: "Bottom Navigation with Label",
+      component: <SelectNameBottomNav />,
       description:
         "A bottom navigation bar that combines icons with text labels for better clarity.",
       id: "bottom-nav-with-label",
-      title: "Bottom Navigation with Label Example",
+      title: "Bottom Navigation with Label",
       usages:
         "Use for applications where clarity is a priority and users benefit from both visual cues and text.",
       purpose:

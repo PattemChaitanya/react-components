@@ -41,7 +41,7 @@ export const dropDownData = {
     "responsive dropdown",
     "accessible dropdown",
   ],
-  pageTitle: "Dropdown Component",
+  pageTitle: "Dropdown",
   pageDescription: [
     "Dropdown menus are a versatile UI element that allow users to choose from a list of options in a compact space. They are widely used for navigation, form inputs, and various other applications.",
     "When designing dropdowns, make sure they are easy to open and close, and provide users with clear visual feedback. Dropdowns should also be easy to navigate via both mouse and keyboard, with an accessible design that caters to users with disabilities.",
@@ -50,12 +50,12 @@ export const dropDownData = {
   ],
   pageImage: "https://material-web.dev/components/images/tabs/hero.webp",
   types: ["Basic Dropdown", "Dropdown with Icons", "Dropdown with Search"],
-  interactiveDemo: "https://example.com/dropdown-demo", // Replace with an actual interactive demo URL if applicable.
+  interactiveDemo: "https://example.com/dropdown-demo",
   accessibity:
     "Dropdowns should support both mouse and keyboard navigation. Make sure to trap keyboard focus within the dropdown when it's open, and ensure that users can navigate options using `Up` and `Down` arrow keys. `Enter` should select an option, and `Escape` should close the dropdown. Use `aria-expanded` and `aria-haspopup` for state management and convey the dropdown's purpose.",
   examples: [
     {
-      component: "Basic Dropdown",
+      component: <SimpleDropDowns />,
       description:
         "A simple dropdown menu with a list of links that appear when the button is clicked.",
       id: "basic-dropdown",
@@ -97,7 +97,7 @@ export const dropDownData = {
       open: false,
     },
     {
-      component: "Dropdown with Icons",
+      component: <ComplexDropDowns />,
       description:
         "A dropdown menu that includes icons next to the options for better visual clarity and user experience.",
       id: "dropdown-with-icons",
@@ -143,7 +143,7 @@ export const dropDownData = {
       open: false,
     },
     {
-      component: "Dropdown with Search",
+      component: <NotificationDropDowns />,
       description:
         "A dropdown menu with a search input that allows users to quickly filter through options.",
       id: "dropdown-with-search",

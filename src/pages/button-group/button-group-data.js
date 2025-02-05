@@ -1,3 +1,10 @@
+import {
+  ButtonGroup,
+  // CustomButtonGroup,
+  IconButton,
+  VariantionButtonGroup,
+  VHButtonGroups,
+} from "./button-group-component";
 import HorizontalButtonGroup from "./horizontal-button-group";
 import VerticalButtonGroup from "./vertical-button-group";
 
@@ -128,7 +135,7 @@ export const buttonGroupData = {
     "CSS buttons",
     "navigation",
   ],
-  pageTitle: "Button Group Component",
+  pageTitle: "Button Group",
   pageDescription: [
     "This button group component offers a clean, modern look ideal for web applications.",
     "It supports customizable styles, interactive demos, and accessibility features.",
@@ -136,7 +143,8 @@ export const buttonGroupData = {
   pageImage: "https://material-web.dev/components/images/tabs/hero.webp",
   types: [
     "Primary Button Group",
-    "Secondary Button Group",
+    "Custom Button Group",
+    "Vertical & Horizonal Button Group",
     "Icon Button Group",
   ],
   interactiveDemo: "#demo",
@@ -144,9 +152,9 @@ export const buttonGroupData = {
     "Designed with ARIA roles and keyboard navigation support for better accessibility.",
   examples: [
     {
-      component: "ButtonGroup",
+      component: <ButtonGroup />,
       description: "A basic button group with primary and secondary buttons.",
-      id: "button-group-1",
+      id: "basic-button-group",
       title: "Basic Button Group",
       usages:
         "Used for grouping related actions together in a toolbar or navigation.",
@@ -162,10 +170,48 @@ export const buttonGroupData = {
       open: false,
     },
     {
-      component: "IconButtonGroup",
+      component: <VariantionButtonGroup />,
+      description:
+        "A customizable button group with various color themes and sizes for diverse UI needs.",
+      id: "custom-button-group",
+      title: "Custom Button Group",
+      usages:
+        "Used for secondary actions that complement primary buttons or for grouped navigation actions.",
+      purpose:
+        "To provide flexible button options with different sizes and color variations, enhancing UI consistency without overpowering primary actions.",
+      codeBlock: `
+        <div class="button-group">
+          <button class="btn secondary">Option 1</button>
+          <button class="btn secondary">Option 2</button>
+          <button class="btn secondary">Option 3</button>
+        </div>
+      `,
+      open: false,
+    },
+    {
+      component: <VHButtonGroups />,
+      description:
+        "A versatile button group that supports both vertical and horizontal orientations for flexible layouts.",
+      id: "vertical-horizontal-button-group",
+      title: "Vertical and Horizontal Button Group",
+      usages:
+        "Used in toolbars, navigation panels, or forms where grouping related actions is required.",
+      purpose:
+        "To provide a clean, organized layout for buttons, adaptable to both vertical and horizontal directions for better UI responsiveness.",
+      codeBlock: `
+        <div class="button-group">
+          <button class="btn icon"><i class="icon-home"></i></button>
+          <button class="btn icon"><i class="icon-settings"></i></button>
+          <button class="btn icon"><i class="icon-user"></i></button>
+        </div>
+      `,
+      open: false,
+    },
+    {
+      component: <IconButton />,
       description:
         "A button group with icons for quick visual identification of actions.",
-      id: "button-group-2",
+      id: "icon-button-group",
       title: "Icon Button Group",
       usages:
         "Ideal for toolbars where space is limited, and icons enhance usability.",
@@ -180,33 +226,17 @@ export const buttonGroupData = {
       `,
       open: false,
     },
-    {
-      component: "SecondaryButtonGroup",
-      description:
-        "A secondary button group with subtle design for less prominent actions.",
-      id: "button-group-3",
-      title: "Secondary Button Group",
-      usages: "Used for secondary actions that complement the primary buttons.",
-      purpose:
-        "To provide additional actions without drawing attention away from primary buttons.",
-      codeBlock: `
-        <div class="button-group">
-          <button class="btn secondary">Option 1</button>
-          <button class="btn secondary">Option 2</button>
-          <button class="btn secondary">Option 3</button>
-        </div>
-      `,
-      open: false,
-    },
   ],
   links: {
     Types: "#types",
     "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
-      "Basic Button Group": "#button-group-1",
-      "Icon Button Group": "#button-group-2",
-      "Secondary Button Group": "#button-group-3",
+      "Basic Button Group": "#basic-button-group",
+      "Custom Button Group": "#custom-button-group",
+      "vertical and Horizontal Button Group":
+        "#vertical-horizontal-button-group",
+      "Icon Button Group": "#icon-button-group",
     },
     References: "#references",
   },

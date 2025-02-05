@@ -42,7 +42,7 @@ const NotificationDropDowns = () => {
     <div className="container">
       <div className="dropDownContainer">
         <div className="icon-button">
-          <IconButton onClick={() => setIsOpen(true)}>
+          <IconButton onClick={() => setIsOpen(!isOpen)}>
             <NotificationsRoundedIcon />
           </IconButton>
         </div>

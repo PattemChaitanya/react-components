@@ -384,7 +384,7 @@ nav {
   flex: 1;
   background-color: var(--color-surface-container-lowest);
   border-radius: var(--theme-border-radius-container);
-  padding: 0 20px 0 28px;
+  padding: 0 20px;
   overflow: auto;
 
   ::-webkit-scrollbar {
