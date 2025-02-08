@@ -1,6 +1,13 @@
 import HorizontalRadioButton from "./complex-radio-button";
 import DisableRadioButton from "./disable-radio";
 import LabelPosition from "./label-position";
+import {
+  CustomRadioButton,
+  DescriptiveRadioButton,
+  IconRadioButton,
+  RadioButton,
+  RadioButtonGroup,
+} from "./radio-button-component";
 import VerticalRadioButton from "./simple-radio-button";
 
 export const jsonToPageDisplay = {
@@ -208,6 +215,36 @@ export default DisableRadioButton;
   ],
 };
 
+const radioButtonData = {
+  options: [
+    { label: "Option 1", value: "option1" },
+    { label: "Option 2", value: "option2" },
+    { label: "Option 3", value: "option3" },
+  ],
+  desOptions: [
+    {
+      label: "Basic Plan",
+      value: "basic",
+      description: "Includes standard features.",
+    },
+    {
+      label: "Premium Plan",
+      value: "premium",
+      description: "Includes all features with priority support.",
+    },
+    {
+      label: "Enterprise Plan",
+      value: "enterprise",
+      description: "Custom solutions for large businesses.",
+    },
+  ],
+  iconOptions: [
+    { label: "Heart", value: "heart", icon: "🤍", selectedIcon: "❤️" },
+    { label: "Star", value: "star", icon: "⭐", selectedIcon: "🌟" },
+    { label: "Check", value: "check", icon: "⬜", selectedIcon: "✅" },
+  ],
+};
+
 export const radioData = {
   seoTitle: "Radio Button Component - Simplified Selection",
   seoDescription:
@@ -237,7 +274,9 @@ export const radioData = {
     "Ensure radio buttons are keyboard-navigable and use proper ARIA attributes like 'role=radiogroup' for the group and 'aria-checked' for the selected button. Provide clear focus indicators, and labels should be programmatically associated with their corresponding buttons using 'for' and 'id' attributes.",
   examples: [
     {
-      component: "Basic Radio Button",
+      component: (
+        <RadioButton options={radioButtonData.options} name="radioExample" />
+      ),
       description: "A minimal radio button for single-choice selection.",
       id: "basic",
       title: "Basic Radio Button Example",
@@ -248,7 +287,12 @@ export const radioData = {
       open: false,
     },
     {
-      component: "Radio Button with Labels",
+      component: (
+        <DescriptiveRadioButton
+          options={radioButtonData.desOptions}
+          name="plans"
+        />
+      ),
       description: "A radio button accompanied by a descriptive text label.",
       id: "labels",
       title: "Radio Button with Labels Example",
@@ -260,7 +304,12 @@ export const radioData = {
       open: false,
     },
     {
-      component: "Custom-Themed Radio Button",
+      component: (
+        <CustomRadioButton
+          options={radioButtonData.options}
+          name="customRadio"
+        />
+      ),
       description:
         "A radio button styled with custom colors, sizes, or animations.",
       id: "custom-theme",
@@ -273,7 +322,9 @@ export const radioData = {
       open: false,
     },
     {
-      component: "Icon-Based Radio Button",
+      component: (
+        <IconRadioButton options={radioButtonData.iconOptions} name="icons" />
+      ),
       description: "A radio button that replaces the circle with an icon.",
       id: "icon-based",
       title: "Icon-Based Radio Button Example",
@@ -286,7 +337,9 @@ export const radioData = {
       open: false,
     },
     {
-      component: "Grouped Radio Buttons",
+      component: (
+        <RadioButtonGroup options={radioButtonData.options} name="radioGroup" />
+      ),
       description:
         "A collection of related radio buttons displayed as a group.",
       id: "grouped",

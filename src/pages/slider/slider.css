@@ -1,0 +1,158 @@
+.music-player {
+  width: 320px;
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3, #a18cd1);
+  color: white;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.album-cover {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  float: left;
+  margin-right: 12px;
+}
+
+.song-info {
+  overflow: hidden;
+  text-align: left;
+}
+
+.artist {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subtitle {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  flex: 1;
+  margin: 0 8px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.icon {
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.play-btn {
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.volume-bar {
+  flex: 1;
+  margin-inline: 8px;
+}
+
+/* ----- volume slider ------ */
+.volume-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.horizontal-slider {
+  width: 150px;
+  cursor: pointer;
+}
+
+.volume-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.vertical-slider {
+  height: 120px;
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+
+/* -------- range slider ------- */
+.dual-range-slider {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.slider-container {
+  position: relative;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 5px;
+  border-radius: 3px;
+}
+
+.range-slider {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  appearance: none;
+  background: transparent;
+  z-index: 2;
+}
+
+.range-slider::-webkit-slider-thumb {
+  pointer-events: auto;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+.slider-track {
+  position: absolute;
+  height: 5px;
+  background: white;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 3px;
+  /* margin-top: 2px; */
+}

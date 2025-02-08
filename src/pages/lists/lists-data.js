@@ -1,4 +1,9 @@
-import {} from "./lists-component";
+import {
+  ActionableList,
+  NestedList,
+  OrderedList,
+  UnorderedList,
+} from "./lists-component";
 
 export const listsData = {
   seoTitle: "Lists Component – A Complete Guide",
@@ -30,7 +35,7 @@ export const listsData = {
     "Lists are fully accessible, supporting screen readers and proper hierarchical structure using semantic HTML and ARIA roles.",
   examples: [
     {
-      component: "Ordered Lists Example",
+      component: <OrderedList />,
       description:
         "An ordered list to display steps in a process or a sequence of actions.",
       id: "ordered-lists",
@@ -48,7 +53,7 @@ export const listsData = {
       open: false,
     },
     {
-      component: "Unordered Lists Example",
+      component: <UnorderedList />,
       description: "An unordered list to display items with no specific order.",
       id: "unordered-lists",
       title: "Unordered List for Features",
@@ -65,7 +70,7 @@ export const listsData = {
       open: false,
     },
     {
-      component: "Nested Lists Example",
+      component: <NestedList />,
       description: "A nested list for hierarchical or grouped information.",
       id: "nested-lists",
       title: "Nested List for Categories",
@@ -93,7 +98,7 @@ export const listsData = {
       open: false,
     },
     {
-      component: "Actionable Lists Example",
+      component: <ActionableList />,
       description:
         "An actionable list with items that trigger actions or navigation.",
       id: "actionable-lists",

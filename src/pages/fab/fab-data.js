@@ -16,7 +16,7 @@ export const fabData = {
     "It’s designed to provide prominence to a key action in your app, making it easily accessible while adhering to Material Design principles.",
   ],
   pageImage: "https://material-web.dev/components/images/tabs/hero.webp",
-  types: ["Default FAB", "Extended FAB", "Small FAB", "Large FAB"],
+  types: ["Default FAB", "Extended FAB"],
   interactiveDemo: "https://material-web.dev/components/fab",
   accessibity:
     "Ensure the FAB is accessible by adding proper ARIA roles and labels. For instance, use `aria-label` to describe the action of the button. Always position it in a way that doesn’t obstruct critical UI elements. If multiple FABs exist, prioritize one as the primary action for clarity.",
@@ -54,29 +54,29 @@ export const fabData = {
 `,
       open: false,
     },
-    {
-      component: "Small FAB",
-      description: "A compact FAB suitable for dense UIs.",
-      id: "fab-small",
-      title: "Small FAB Example",
-      usages: "Use in places with limited space, like toolbars or lists.",
-      purpose: "Maintains usability while adhering to compact UI constraints.",
-      codeBlock: `
-<button class="fab small" aria-label="Search">
-  <span class="material-icons">search</span>
-</button>
-`,
-      open: false,
-    },
+    //     {
+    //       component: "Small FAB",
+    //       description: "A compact FAB suitable for dense UIs.",
+    //       id: "fab-small",
+    //       title: "Small FAB Example",
+    //       usages: "Use in places with limited space, like toolbars or lists.",
+    //       purpose: "Maintains usability while adhering to compact UI constraints.",
+    //       codeBlock: `
+    // <button class="fab small" aria-label="Search">
+    //   <span class="material-icons">search</span>
+    // </button>
+    // `,
+    //       open: false,
+    //     },
   ],
   links: {
     Types: "#types",
     "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
-      "Default FAB Example": "#fab-add-default",
-      "Extended FAB Example": "#fab-extended",
-      "Small FAB Example": "#fab-small",
+      "Default FAB": "#fab-add-default",
+      "Extended FAB": "#fab-extended",
+      // "Small FAB Example": "#fab-small",
     },
     References: "#references",
   },

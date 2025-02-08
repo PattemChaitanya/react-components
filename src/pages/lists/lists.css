@@ -1,0 +1,130 @@
+/* ----- ordered list -----  */
+.ordered-list-container {
+  max-width: 400px;
+  padding: 16px;
+}
+
+.ordered-list {
+  list-style: none;
+  counter-reset: step-counter;
+  padding-left: 0;
+}
+
+.ordered-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  padding: 8px 0;
+}
+
+.step-number {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.step-text {
+  flex: 1;
+}
+
+/* ----- unordered list -----  */
+.unordered-list-container {
+  max-width: 400px;
+  padding: 16px;
+}
+
+.unordered-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.unordered-list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  padding: 6px 0;
+}
+
+.bullet {
+  font-size: 18px;
+  color: #007bff;
+}
+
+.item-text {
+  flex: 1;
+}
+
+/* ----- mested list item ----- */
+.nested-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.nested-list-item {
+  margin: 4px 0;
+}
+
+.list-item-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.list-item-header:hover {
+  background: #f1f1f1;
+}
+
+.toggle-btn {
+  margin-right: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.item-text {
+  font-size: 16px;
+}
+
+.nested-sublist {
+  list-style: none;
+  padding-left: 16px;
+}
+
+/* ----- action list ----- */
+.actionable-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.actionable-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.actionable-list-item:hover {
+  background: #f0f0f0;
+}
+
+.list-icon {
+  font-size: 18px;
+}
+
+.list-text {
+  font-size: 16px;
+  flex: 1;
+}

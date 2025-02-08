@@ -1,4 +1,68 @@
-import {} from "./menu-component";
+import {
+  ContextMenu,
+  DropdownMenu,
+  MegaMenu,
+  NavigationMenu,
+} from "./menu-component";
+
+const menuContextData = {
+  megaMenuItems: [
+    {
+      label: "Products",
+      categories: [
+        {
+          title: "Electronics",
+          links: [
+            { label: "Laptops", url: "#" },
+            { label: "Phones", url: "#" },
+          ],
+        },
+        {
+          title: "Home Appliances",
+          links: [
+            { label: "Refrigerators", url: "#" },
+            { label: "Washing Machines", url: "#" },
+          ],
+        },
+      ],
+    },
+    {
+      label: "Services",
+      categories: [
+        {
+          title: "Customer Support",
+          links: [
+            { label: "Help Center", url: "#" },
+            { label: "Contact Us", url: "#" },
+          ],
+        },
+        {
+          title: "Repairs",
+          links: [
+            { label: "Schedule a Repair", url: "#" },
+            { label: "Warranty Info", url: "#" },
+          ],
+        },
+      ],
+    },
+  ],
+  menuOptions: [
+    { label: "Copy", onClick: () => alert("Copied!") },
+    { label: "Paste", onClick: () => alert("Pasted!") },
+    { label: "Delete", onClick: () => alert("Deleted!") },
+  ],
+  menuItems: [
+    { label: "Home", url: "#" },
+    { label: "About", url: "#" },
+    { label: "Services", url: "#" },
+    { label: "Contact", url: "#" },
+  ],
+  dropDownMenuOptions: [
+    { label: "Profile", onClick: () => alert("Profile Clicked") },
+    { label: "Settings", onClick: () => alert("Settings Clicked") },
+    { label: "Logout", onClick: () => alert("Logged Out") },
+  ],
+};
 
 export const menuData = {
   seoTitle: "Menu Component – A Complete Guide",
@@ -25,7 +89,7 @@ export const menuData = {
     "Menus are designed to be accessible, with keyboard navigation, ARIA roles, and focus management for screen readers.",
   examples: [
     {
-      component: "Dropdown Menu Example",
+      component: <DropdownMenu options={menuContextData.dropDownMenuOptions} />,
       description:
         "A dropdown menu for displaying a list of actions or options when the user clicks a button.",
       id: "dropdown-menu",
@@ -47,7 +111,7 @@ export const menuData = {
       open: false,
     },
     {
-      component: "Context Menu Example",
+      component: <ContextMenu options={menuContextData.menuOptions} />,
       description:
         "A context menu for displaying contextual options when the user right-clicks on an element.",
       id: "context-menu",
@@ -70,7 +134,7 @@ export const menuData = {
       open: false,
     },
     {
-      component: "Navigation Menu Example",
+      component: <NavigationMenu menuItems={menuContextData.menuItems} />,
       description:
         "A navigation menu for website or app navigation, often displayed in a sidebar or header.",
       id: "navigation-menu",
@@ -91,7 +155,7 @@ export const menuData = {
       open: false,
     },
     {
-      component: "Mega Menu Example",
+      component: <MegaMenu menuItems={menuContextData.megaMenuItems} />,
       description:
         "A mega menu for displaying extensive navigation options in a large, multi-column layout.",
       id: "mega-menu",

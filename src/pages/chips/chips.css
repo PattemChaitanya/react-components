@@ -1,0 +1,96 @@
+/* ---- basic chip ---- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  background: #f1f1f1;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 1px solid #ccc;
+}
+
+.chip:hover {
+  background: #e0e0e0;
+}
+
+.chip-icon {
+  margin-right: 6px;
+}
+
+.chip-label {
+  margin-right: 8px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.chip-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #777;
+  padding: 0;
+}
+
+.chip-close:hover {
+  color: #333;
+}
+
+/* ----- input chip for tagging ----- */
+.input-chip-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.input-chip-text {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  padding: 6px;
+  font-size: 14px;
+  width: min(250px, 100%);
+  margin: 0 auto;
+}
+
+/* ----- multi chip selection ----- */
+.choice-chips-container {
+  display: flex;
+  gap: 8px;
+}
+
+.choice-chip {
+  padding: 8px 16px;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  background: #f1f1f1;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.choice-chip:hover {
+  background: #e0e0e0;
+}
+
+.choice-chip.selected {
+  background: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+}
+
+/* ----- filter chips ----- */
+.filter-chips-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  text-align: center;
+}

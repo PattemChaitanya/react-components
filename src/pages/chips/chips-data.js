@@ -1,4 +1,4 @@
-import {} from "./chips-component";
+import { Chip, ChoiceChips, FilterChips, InputChips } from "./chips-component";
 
 export const chipsData = {
   seoTitle: "Chips Component – A Complete Guide",
@@ -25,7 +25,12 @@ export const chipsData = {
     "Chips are keyboard navigable, accessible via screen readers, and provide clear focus indicators to ensure a great experience for all users.",
   examples: [
     {
-      component: "Action Chips Example",
+      component: (
+        <Chip
+          label="Apply Discount"
+          onClick={() => alert("Discount Applied!")}
+        />
+      ),
       description:
         "Action chips for performing quick tasks, such as applying a discount code or opening a help dialog.",
       id: "action-chips",
@@ -44,7 +49,26 @@ export const chipsData = {
       open: false,
     },
     {
-      component: "Filter Chips Example",
+      component: <ChoiceChips />,
+      description:
+        "Choice chips for selecting one option from multiple choices.",
+      id: "choice-chips",
+      title: "Choice Chips for Preferences",
+      usages:
+        "Choice chips are used when the user must select a single option from a set, such as themes or delivery options.",
+      purpose:
+        "To make single-option selections more user-friendly and visually engaging.",
+      codeBlock: `
+<div class="chips-container">
+  <div class="chip">Light Theme</div>
+  <div class="chip selected">Dark Theme</div>
+  <div class="chip">System Default</div>
+</div>
+      `,
+      open: false,
+    },
+    {
+      component: <FilterChips />,
       description:
         "Filter chips for narrowing down options in a catalog or product list.",
       id: "filter-chips",
@@ -62,7 +86,7 @@ export const chipsData = {
       open: false,
     },
     {
-      component: "Input Chips Example",
+      component: <InputChips />,
       description:
         "Input chips to represent user input, like tags or email addresses in a form.",
       id: "input-chips",
@@ -77,25 +101,6 @@ export const chipsData = {
   <div class="chip">Material Design <span class="chip-remove">&times;</span></div>
   <div class="chip">UI Components <span class="chip-remove">&times;</span></div>
   <input type="text" placeholder="Add a tag" class="chip-input">
-</div>
-      `,
-      open: false,
-    },
-    {
-      component: "Choice Chips Example",
-      description:
-        "Choice chips for selecting one option from multiple choices.",
-      id: "choice-chips",
-      title: "Choice Chips for Preferences",
-      usages:
-        "Choice chips are used when the user must select a single option from a set, such as themes or delivery options.",
-      purpose:
-        "To make single-option selections more user-friendly and visually engaging.",
-      codeBlock: `
-<div class="chips-container">
-  <div class="chip">Light Theme</div>
-  <div class="chip selected">Dark Theme</div>
-  <div class="chip">System Default</div>
 </div>
       `,
       open: false,

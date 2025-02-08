@@ -1,4 +1,9 @@
-import { Slider } from "./slider-component";
+import {
+  DualRangeSlider,
+  MusicPlayerSlider,
+  Slider,
+  VolumeSlider,
+} from "./slider-component";
 
 export const sliderData = {
   seoTitle: "Slider Component – A Complete Guide",
@@ -19,12 +24,7 @@ export const sliderData = {
     "They are commonly used for range selection, volume control, and media playback.",
   ],
   pageImage: "https://material-web.dev/components/images/slider/hero.webp",
-  types: [
-    "Range Slider",
-    "Single Value Slider",
-    "Volume Slider",
-    "Media Slider",
-  ],
+  types: ["Basic Slider", "Volume Slider", "Range Slider", "Media Slider"],
   interactiveDemo:
     "https://material-web.dev/components/slider#interactive-demo",
   accessibity:
@@ -33,13 +33,13 @@ export const sliderData = {
     {
       component: <Slider />,
       description:
-        "A range slider for selecting a range of values between two points.",
-      id: "range-slider",
-      title: "Price Range Slider",
+        "A simple slider component that allows users to select a single value within a predefined range. The slider provides a smooth and interactive way to adjust numerical inputs.",
+      id: "basic-slider",
+      title: "Basic Slider",
       usages:
-        "Use range sliders for selecting ranges, such as price filters or date ranges.",
+        "Used in volume controls, brightness adjustments, form inputs, progress tracking, and any UI requiring a single-value selection within a range.",
       purpose:
-        "To allow users to select a start and end value within a defined range.",
+        "To provide a user-friendly input method for selecting a value within a defined range, improving accessibility and interaction.",
       codeBlock: `
 <div class="slider-container">
   <label for="range-slider">Price Range: $0 - $100</label>
@@ -50,24 +50,7 @@ export const sliderData = {
       open: false,
     },
     {
-      component: "Single Value Slider Example",
-      description:
-        "A single slider for selecting one value within a defined range.",
-      id: "single-slider",
-      title: "Brightness Control Slider",
-      usages:
-        "Use single sliders for inputs like brightness, contrast, or other single-value settings.",
-      purpose: "To adjust a single value interactively.",
-      codeBlock: `
-<div class="slider-container">
-  <label for="brightness-slider">Brightness: 50%</label>
-  <input type="range" id="brightness-slider" min="0" max="100" value="50">
-</div>
-      `,
-      open: false,
-    },
-    {
-      component: "Volume Slider Example",
+      component: <VolumeSlider />,
       description:
         "A vertical or horizontal slider for adjusting volume levels.",
       id: "volume-slider",
@@ -83,7 +66,26 @@ export const sliderData = {
       open: false,
     },
     {
-      component: "Media Slider Example",
+      component: <DualRangeSlider />,
+      description:
+        "A dual-handle range slider that allows users to select a minimum and maximum value, like price filter. It visually represents the selected range with a track between the handles.",
+      id: "range-slider",
+      title: "Range Slider",
+      usages:
+        "Used in pricing filters, budget selectors, volume controls, and other applications where users need to define a range of values.",
+      purpose:
+        "To provide an intuitive and interactive way for users to select a numerical range, ensuring better user experience in filtering and selection processes.",
+      codeBlock: `
+<div class="slider-container">
+  <label for="media-slider">Playback Position</label>
+  <input type="range" id="media-slider" min="0" max="300" value="120">
+  <span>2:00 / 5:00</span>
+</div>
+      `,
+      open: false,
+    },
+    {
+      component: <MusicPlayerSlider />,
       description:
         "A slider for navigating or seeking through media, such as video or audio.",
       id: "media-slider",
@@ -107,9 +109,9 @@ export const sliderData = {
     "Interactive Demo": "#interactive-demo",
     Accessibility: "#accessibity",
     Examples: {
-      "Range Slider": "#range-slider",
-      "Single Value Slider": "#single-slider",
+      "Basic Slider": "#basic-slider",
       "Volume Slider": "#volume-slider",
+      "Range Slider": "#range-slider",
       "Media Slider": "#media-slider",
     },
     References: "#references",
