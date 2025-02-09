@@ -38,7 +38,7 @@ const mergingAllRoutes = [
 ];
 
 const routeMapping = [
-  process.env.NODE_ENV !== "production"
+  process.env.NODE_ENV === "production"
     ? { index: true, element: <ComingSoon /> }
     : {
         element: <Header />,
