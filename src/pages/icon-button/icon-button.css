@@ -1,0 +1,44 @@
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  outline: none;
+  position: relative;
+}
+
+.icon-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.icon-button:active {
+  transform: scale(0.9);
+}
+
+.icon-button.active {
+  color: red;
+}
+
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}

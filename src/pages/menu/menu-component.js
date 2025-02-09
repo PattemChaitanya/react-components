@@ -56,8 +56,10 @@ export const ContextMenu = ({ options }) => {
 
   const handleContextMenu = (event) => {
     event.preventDefault();
-    console.log("Menu position:", event);
-    setMenuPosition({ x: event.pageX, y: event.pageY });
+    setMenuPosition({
+      x: event.target.offsetLeft,
+      y: event.target.offsetHeight,
+    });
     setMenuVisible(true);
   };
 

@@ -1,0 +1,203 @@
+.select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: Arial, sans-serif;
+}
+
+.select-label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.select-list {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.select-list:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* ----- multi select ----- */
+.multi-select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 200px;
+}
+
+.multi-select-label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.multi-select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  height: 100px;
+}
+
+.multi-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.selected-values {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* ----- searchable drop down ----- */
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: Arial, sans-serif;
+  width: 250px;
+  height: 250px;
+  position: relative;
+}
+
+.dropdown-label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.dropdown-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropdown-item:hover,
+.dropdown-item.highlighted {
+  background: #007bff;
+  color: white;
+}
+
+.dropdown-item.disabled {
+  color: gray;
+  cursor: not-allowed;
+}
+
+.selected-value {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* ----- custom select(multi) ----- */
+.dropdown-container {
+  position: relative;
+  width: 320px;
+  margin: 20px auto;
+}
+
+.dropdown-box {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  min-height: 40px;
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+  background: white;
+  overflow: auto;
+}
+
+/* Selected Items (Chips) */
+.chip {
+  display: flex;
+  align-items: center;
+  background: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 14px;
+  width: fit-content;
+}
+
+.remove-btn {
+  margin-left: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: red;
+}
+
+/* Dropdown Arrow */
+.arrow {
+  margin-left: auto;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Dropdown List */
+.dropdown-list {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+/* Search Box */
+.search-box {
+  width: calc(100% - 16px);
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  padding: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}

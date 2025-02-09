@@ -466,12 +466,12 @@ export const homeScreenCards = [
         component: <DragAndDrop />,
         image: "",
       },
-      {
-        title: "Custom cards",
-        path: "/cards",
-        component: <Cards />,
-        image: "",
-      },
+      // {
+      //   title: "Custom cards",
+      //   path: "/cards",
+      //   component: <Cards />,
+      //   image: "",
+      // },
       {
         title: "Top navigation",
         path: "/top-nav",

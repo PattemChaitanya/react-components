@@ -1,4 +1,8 @@
-import {} from "./icon-button-component";
+import {
+  IconButtonWithBadge,
+  SimpleIconButton,
+  ToggleIconButton,
+} from "./icon-button-component";
 
 export const iconButtonData = {
   seoTitle: "Icon Button Component – A Complete Guide",
@@ -22,7 +26,6 @@ export const iconButtonData = {
   pageImage: "https://material-web.dev/components/images/icon-button/hero.webp",
   types: [
     "Standard Icon Button",
-    "Floating Action Button (FAB)",
     "Toggle Icon Button",
     "Icon Button with Badge",
   ],
@@ -32,7 +35,7 @@ export const iconButtonData = {
     "Icon buttons use ARIA labels to ensure screen readers announce their purpose, and focus indicators are provided for accessibility.",
   examples: [
     {
-      component: "Standard Icon Button Example",
+      component: <SimpleIconButton />,
       description:
         "A simple icon button for actions like refresh, search, or settings.",
       id: "icon-button",
@@ -52,27 +55,7 @@ export const iconButtonData = {
       open: false,
     },
     {
-      component: "Floating Action Button (FAB) Example",
-      description:
-        "A circular button for primary actions like adding or creating content.",
-      id: "fab-button",
-      title: "Floating Action Button (FAB)",
-      usages:
-        "Use FABs for prominent actions such as adding a new item or navigating to a key page.",
-      purpose:
-        "To highlight a primary action while keeping it visually distinct.",
-      codeBlock: `
-<button class="fab-button" aria-label="Add">
-  <svg width="24" height="24" viewBox="0 0 24 24">
-    <line x1="12" y1="5" x2="12" y2="19" stroke="white" stroke-width="2"></line>
-    <line x1="5" y1="12" x2="19" y2="12" stroke="white" stroke-width="2"></line>
-  </svg>
-</button>
-      `,
-      open: false,
-    },
-    {
-      component: "Toggle Icon Button Example",
+      component: <ToggleIconButton />,
       description:
         "An icon button with toggle functionality for actions like 'favorite' or 'like'.",
       id: "toggle-icon-button",
@@ -90,7 +73,7 @@ export const iconButtonData = {
       open: false,
     },
     {
-      component: "Icon Button with Badge Example",
+      component: <IconButtonWithBadge count={5} />,
       description:
         "An icon button with a badge to indicate notifications or item counts.",
       id: "icon-button-badge",
@@ -117,10 +100,9 @@ export const iconButtonData = {
     "Interactive Demo": "#interactive-demo",
     Accessibility: "#accessibity",
     Examples: {
-      "Standard Icon Button Example": "#icon-button",
-      "Floating Action Button Example": "#fab-button",
-      "Toggle Icon Button Example": "#toggle-icon-button",
-      "Icon Button with Badge Example": "#icon-button-badge",
+      "Standard Icon Button": "#icon-button",
+      "Toggle Icon Button": "#toggle-icon-button",
+      "Icon Button with Badge": "#icon-button-badge",
     },
     References: "#references",
   },

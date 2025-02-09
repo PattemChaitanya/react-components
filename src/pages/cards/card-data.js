@@ -1,3 +1,4 @@
+import CarCard from "./card-component";
 import ComplexCard from "./complex-card";
 import HoverCard from "./display-hover-card";
 import SimpleCard from "./simple-card";
@@ -233,7 +234,7 @@ export const cardData = {
     "Beyond basic semantic HTML, consider implementing ARIA landmarks for better navigation. For dynamic content within cards, like expandable sections or buttons, ensure focus management is handled correctly to maintain context for keyboard and screen reader users. Also, for cards with interactive elements, ensure that actions like buttons or links have an accessible description (e.g., using aria-label).",
   examples: [
     {
-      component: "Basic Card",
+      component: <CarCard />,
       description:
         "A simple card with a title and text description, optimized for responsive layouts.",
       id: "basic-card",

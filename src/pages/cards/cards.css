@@ -58,3 +58,82 @@
 .action-buttons button:hover {
   background-color: #1565c0;
 }
+
+/* ----- car card ----- */
+.car-card {
+  width: 300px;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-family: "Arial", sans-serif;
+  transition: transform 0.3s ease-in-out;
+}
+
+.car-card:hover {
+  transform: scale(1.05);
+}
+
+/* Car Image */
+.car-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Title */
+.car-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 15px 0;
+  text-transform: uppercase;
+}
+
+/* Description */
+.car-description {
+  font-size: 14px;
+  opacity: 0.8;
+  padding: 0 10px;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.details-btn,
+.buy-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.details-btn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.details-btn:hover {
+  background: white;
+  color: black;
+}
+
+.buy-btn {
+  background: #00bfff;
+  color: white;
+}
+
+.buy-btn:hover {
+  background: #0080ff;
+}

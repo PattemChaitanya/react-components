@@ -1,3 +1,21 @@
+import {
+  BasicSelect,
+  CategorizedDropdown,
+  CustomMultiSelect,
+  MultiSelect,
+  SearchableDropdown,
+} from "./select-component";
+
+const selectMenu = {
+  options: ["Option 1", "Option 2", "Option 3"],
+  multiOptions: ["Apple", "Banana", "Cherry", "Date", "Grapes"],
+  categorizedOptions: [
+    { category: "Fruits", items: ["Apple", "Banana", "Cherry"] },
+    { category: "Vegetables", items: ["Carrot", "Broccoli", "Spinach"] },
+    { category: "Dairy", items: ["Milk", "Cheese", "Yogurt"] },
+  ],
+};
+
 export const selectData = {
   seoTitle: "Select Component - Intuitive Dropdown Menus",
   seoDescription:
@@ -27,7 +45,9 @@ export const selectData = {
     "The Select component should be fully keyboard-navigable and screen-reader friendly. Ensure ARIA roles like 'listbox' and 'option' are used. Provide visual focus indicators and announce selected or filtered options dynamically. For multi-select, ensure that selections are announced properly to assistive technologies.",
   examples: [
     {
-      component: "Basic Dropdown",
+      component: (
+        <BasicSelect options={selectMenu.options} label="Choose an option:" />
+      ),
       description: "A simple dropdown menu for selecting one option.",
       id: "basic",
       title: "Basic Dropdown Example",
@@ -40,7 +60,9 @@ export const selectData = {
       open: false,
     },
     {
-      component: "Multi-Select Dropdown",
+      component: (
+        <MultiSelect options={selectMenu.multiOptions} label="Select fruits:" />
+      ),
       description: "A dropdown menu allowing selection of multiple options.",
       id: "multi",
       title: "Multi-Select Dropdown Example",
@@ -52,7 +74,12 @@ export const selectData = {
       open: false,
     },
     {
-      component: "Searchable Dropdown",
+      component: (
+        <SearchableDropdown
+          options={selectMenu.multiOptions}
+          label="Select a fruit:"
+        />
+      ),
       description: "A dropdown menu with a search bar for filtering options.",
       id: "searchable",
       title: "Searchable Dropdown Example",
@@ -64,7 +91,12 @@ export const selectData = {
       open: false,
     },
     {
-      component: "Grouped Options",
+      component: (
+        <CategorizedDropdown
+          options={selectMenu.categorizedOptions}
+          label="Select an item:"
+        />
+      ),
       description: "A dropdown menu with categorized options.",
       id: "grouped",
       title: "Grouped Options Example",
@@ -75,7 +107,7 @@ export const selectData = {
       open: false,
     },
     {
-      component: "Customizable Select",
+      component: <CustomMultiSelect />,
       description: "A select component with custom icons, colors, or layouts.",
       id: "custom",
       title: "Customizable Select Example",

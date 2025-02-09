@@ -1,0 +1,281 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked+.slider {
+  background-color: #4caf50;
+}
+
+input:checked+.slider::before {
+  transform: translateX(20px);
+}
+
+/* ----- switch with labels ----- */
+.switch-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  gap: 10px;
+}
+
+/* Hide Default Checkbox */
+.switch-label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-label {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: 0.3s;
+}
+
+.slider-label::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked+.slider-label {
+  background-color: #4caf50;
+}
+
+input:checked+.slider-label::before {
+  transform: translateX(20px);
+}
+
+.label {
+  min-width: 30px;
+  text-align: center;
+  color: #555;
+}
+
+/* ----- switch icons ----- */
+/* Switch Container */
+.switch-icons {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Hide Default Checkbox */
+.switch-icons input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider (Background) */
+.slider-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f1f1f1;
+  border-radius: 30px;
+  transition: background-color 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+/* Icons */
+.icon {
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+/* Sun & Moon Position */
+.sun {
+  color: #ffcc00;
+  transform: translateX(-10px);
+}
+
+.moon {
+  color: #ccc;
+  transform: translateX(10px);
+}
+
+/* When Checkbox is Checked */
+.switch-icons input:checked+.slider-icons {
+  background-color: #555;
+}
+
+.switch-icons input:checked+.slider-icons .moon {
+  opacity: 1;
+  transform: translateX(28px);
+}
+
+.switch-icons input:checked+.slider-icons .sun {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.switch-icons input:not(:checked)+.slider-icons .moon {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.switch-icons input:not(:checked)+.slider-icons .sun {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+/* ----- custom switch ----- */
+/* Switch Container */
+.custom-switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+  cursor: pointer;
+}
+
+/* Hide Default Checkbox */
+.custom-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider Track */
+.custom-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  transition: background 0.4s ease-in-out;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Slider Knob */
+.custom-slider::before {
+  content: "";
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  transition: transform 0.4s ease, background 0.4s ease;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Checked State */
+.custom-switch input:checked+.custom-slider::before {
+  transform: translate(36px, -50%);
+  background: #f1f1f1;
+}
+
+/* ----- multi state switch ----- */
+.multi-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  user-select: none;
+  outline: none;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.multi-switch:focus {
+  border-color: #4caf50;
+}
+
+/* Slider Background Colors */
+.multi-slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Dynamic background for each state */
+.multi-slider[data-state="0"] {
+  background: #ff5722;
+  color: white;
+}
+
+.multi-slider[data-state="1"] {
+  background: #ff9800;
+  color: white;
+}
+
+.multi-slider[data-state="2"] {
+  background: #4caf50;
+  color: white;
+}
+
+.multi-thumb {
+  position: relative;
+  text-align: center;
+  padding: 6px 12px;
+}

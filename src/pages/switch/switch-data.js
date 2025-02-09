@@ -1,5 +1,12 @@
 import ComplexSwitch from "./complex-switch";
 import SimpleSwitch from "./simple-switch";
+import {
+  CustomSwitch,
+  MinimalSwitch,
+  MultiStateSwitch,
+  SwitchWithIcons,
+  SwitchWithLabels,
+} from "./switch-component";
 
 export const jsonToPageDisplay = {
   pageTitle: "Switch",
@@ -51,7 +58,7 @@ export const switchData = {
     "The Switch component should include proper ARIA attributes such as 'aria-checked' for state indication. Ensure it is fully keyboard-accessible (e.g., toggled with Space or Enter). For users with screen readers, the labels or context of the switch should be announced clearly.",
   examples: [
     {
-      component: "Basic Switch",
+      component: <MinimalSwitch />,
       description:
         "A minimal switch component for toggling between two states.",
       id: "basic",
@@ -64,7 +71,7 @@ export const switchData = {
       open: false,
     },
     {
-      component: "Switch with Labels",
+      component: <SwitchWithLabels />,
       description: "A switch with text labels for its ON and OFF states.",
       id: "labels",
       title: "Switch with Labels Example",
@@ -76,7 +83,7 @@ export const switchData = {
       open: false,
     },
     {
-      component: "Switch with Icons",
+      component: <SwitchWithIcons />,
       description: "A switch that uses icons to represent its states visually.",
       id: "icons",
       title: "Switch with Icons Example",
@@ -88,7 +95,7 @@ export const switchData = {
       open: false,
     },
     {
-      component: "Custom-Themed Switch",
+      component: <CustomSwitch />,
       description:
         "A switch styled with custom colors and animations to match brand identity.",
       id: "custom-theme",
@@ -100,7 +107,7 @@ export const switchData = {
       open: false,
     },
     {
-      component: "Multi-State Switch",
+      component: <MultiStateSwitch />,
       description:
         "A switch with more than two states for extended functionality.",
       id: "multi",

@@ -1,4 +1,4 @@
-import {} from "./top-nav-component";
+import { Navbar, NavbarDropdown, NavbarWithSearch } from "./top-nav-component";
 
 export const topNavData = {
   seoTitle: "Top Navigation Component - Design, Usage, and Accessibility",
@@ -11,7 +11,7 @@ export const topNavData = {
     "material design navbar",
     "accessible navigation",
   ],
-  pageTitle: "Top Navigation Component",
+  pageTitle: "Top Navigation",
   pageDescription: [
     "Top navigation bars are essential for providing users with a seamless way to navigate through a website or application. Creating one from scratch offers flexibility in design and responsiveness.",
     "When building top navigation, ensure a balance between visibility, usability, and aesthetics. Consistent padding, appropriate use of icons, and focus states are essential for an intuitive experience.",
@@ -29,7 +29,7 @@ export const topNavData = {
     "Beyond semantic HTML and ARIA roles, ensure your top navigation uses appropriate focus management, especially for dropdowns and mobile views. Make sure that navigation links are focusable and can be activated by keyboard events (Enter/Space) with visual feedback.",
   examples: [
     {
-      component: "Simple Navigation",
+      component: <Navbar />,
       description:
         "A simple horizontal navigation bar with links to different sections of the website.",
       id: "simple-navigation",
@@ -48,7 +48,7 @@ export const topNavData = {
       open: false,
     },
     {
-      component: "Navigation with Dropdown",
+      component: <NavbarDropdown />,
       description:
         "A navigation bar with a dropdown menu to handle more options efficiently.",
       id: "nav-with-dropdown",
@@ -83,7 +83,7 @@ export const topNavData = {
       open: false,
     },
     {
-      component: "Navigation with Search",
+      component: <NavbarWithSearch />,
       description:
         "A navigation bar with a search bar included for quick access to content.",
       id: "nav-with-search",
