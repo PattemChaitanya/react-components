@@ -108,7 +108,7 @@ export const chipsData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#interactive-demo",
+    // "Interactive Demo": "#interactive-demo",
     Accessibility: "#accessibity",
     Examples: {
       "Action Chips": "#action-chips",

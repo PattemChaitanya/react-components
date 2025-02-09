@@ -1,7 +1,7 @@
-import {
+import ParentCheckbox, {
   Checkbox,
   CheckboxThemed,
-  CheckboxWithIcon,
+  // CheckboxWithIcon,
   CheckboxWithLabel,
 } from "./checkbox-component";
 
@@ -27,7 +27,7 @@ export const checkboxData = {
     "Checkbox with Labels",
     "Custom-Themed Checkbox",
     "Indeterminate Checkbox",
-    "Icon-Based Checkbox",
+    // "Icon-Based Checkbox",
   ],
   interactiveDemo: "#demo",
   accessibity:
@@ -72,7 +72,7 @@ export const checkboxData = {
       open: false,
     },
     {
-      component: "Indeterminate Checkbox",
+      component: <ParentCheckbox />,
       description: "A checkbox with a partial selection state.",
       id: "indeterminate",
       title: "Indeterminate Checkbox Example",
@@ -84,30 +84,30 @@ export const checkboxData = {
         "<checkbox id='indeterminate' indeterminate>Partial Selection</checkbox>",
       open: false,
     },
-    {
-      component: <CheckboxWithIcon />,
-      description:
-        "A checkbox that uses icons or images instead of a traditional square.",
-      id: "icons",
-      title: "Icon-Based Checkbox Example",
-      usages:
-        "Great for visually rich designs, like voting systems or feedback tools.",
-      purpose:
-        "Improves usability by making selections more visually intuitive.",
-      codeBlock: "<checkbox id='icon' icon='✔️'>Mark as Complete</checkbox>",
-      open: false,
-    },
+    // {
+    //   component: <CheckboxWithIcon />,
+    //   description:
+    //     "A checkbox that uses icons or images instead of a traditional square.",
+    //   id: "icons",
+    //   title: "Icon-Based Checkbox Example",
+    //   usages:
+    //     "Great for visually rich designs, like voting systems or feedback tools.",
+    //   purpose:
+    //     "Improves usability by making selections more visually intuitive.",
+    //   codeBlock: "<checkbox id='icon' icon='✔️'>Mark as Complete</checkbox>",
+    //   open: false,
+    // },
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
+    // "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Basic Checkbox": "#basic",
       "Checkbox with Labels": "#labels",
       "Custom-Themed Checkbox": "#custom-theme",
       "Indeterminate Checkbox": "#indeterminate",
-      "Icon-Based Checkbox": "#icons",
+      // "Icon-Based Checkbox": "#icons",
     },
     References: "#references",
   },

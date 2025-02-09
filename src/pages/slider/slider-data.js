@@ -106,7 +106,7 @@ export const sliderData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#interactive-demo",
+    // "Interactive Demo": "#interactive-demo",
     Accessibility: "#accessibity",
     Examples: {
       "Basic Slider": "#basic-slider",

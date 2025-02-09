@@ -118,7 +118,7 @@ export const listsData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#interactive-demo",
+    // "Interactive Demo": "#interactive-demo",
     Accessibility: "#accessibity",
     Examples: {
       "Ordered Lists": "#ordered-lists",

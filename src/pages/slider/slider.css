@@ -59,7 +59,7 @@
 }
 
 .icon {
-  color: white;
+  color: currentColor;
   font-size: 28px;
   cursor: pointer;
 }

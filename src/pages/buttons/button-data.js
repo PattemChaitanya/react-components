@@ -157,7 +157,7 @@ export const jsonToButtonData = {
     "Common types of buttons include elevated, filled, tonal, outlined, and text, each offering unique visual emphasis and function.",
   ],
   pageImage: "https://material-web.dev/components/images/button/hero.webp",
-  types: ["Elevated", "Filled", "Filled Tonal", "Outlined", "Text", "Disabled"],
+  types: ["Elevated", "Filled Tonal", "Outlined", "Text", "Disabled"],
   interactiveDemo: <SimpleButton />,
   accessibity: "",
   examples: [
@@ -186,31 +186,6 @@ export const jsonToButtonData = {
 
 <button className='elevated'>Elevated Button</button>
         `,
-      open: false,
-    },
-    {
-      id: "icon-button",
-      title: "Icon Button",
-      description:
-        "An icon button is a compact, visually-focused button that uses an icon to represent an action. It may include a tooltip or text label for clarity.",
-      usages:
-        "Use when space is limited or when the action is easily identifiable by its icon. Best suited for toolbar actions or secondary actions.",
-      purpose:
-        "To provide a visually efficient and space-saving method for users to perform frequent or contextual actions.",
-      component: <IconButton />,
-      codeBlock: `
-.filled {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin: 5px;
-  background-color: #007bff;
-  color: white;
-}
-
-<button className='filled'>Filled Button</button>`,
       open: false,
     },
     {
@@ -298,10 +273,9 @@ export const jsonToButtonData = {
   links: {
     Types: "#types",
     "Interactive Demo": "#demo",
-    Accessibity: "#accessibity",
+    // Accessibity: "#accessibity",
     Examples: {
       "Elevated button": "#elevated",
-      "Filled button": "#filled",
       "Filled tonal button": "#filled_tonal",
       "Outlined button": "#outlined",
       "Text button": "#text",

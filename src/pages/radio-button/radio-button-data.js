@@ -355,7 +355,7 @@ export const radioData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
+    // "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Basic Radio Button": "#basic",

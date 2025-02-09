@@ -97,7 +97,7 @@ export const iconButtonData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#interactive-demo",
+    // "Interactive Demo": "#interactive-demo",
     Accessibility: "#accessibity",
     Examples: {
       "Standard Icon Button": "#icon-button",

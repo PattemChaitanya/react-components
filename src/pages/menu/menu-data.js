@@ -192,7 +192,7 @@ export const menuData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#interactive-demo",
+    // "Interactive Demo": "#interactive-demo",
     Accessibility: "#accessibity",
     Examples: {
       "Dropdown Menu": "#dropdown-menu",

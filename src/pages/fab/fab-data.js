@@ -71,7 +71,7 @@ export const fabData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
+    // "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Default FAB": "#fab-add-default",

@@ -123,10 +123,10 @@ export const switchData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
+    // "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
-      "Basic Switch": "basic",
+      "Basic Switch": "#basic",
       "Switch with Labels": "#labels",
       "Switch with Icons": "#icons",
       "Custom-Themed Switch": "#custom-theme",

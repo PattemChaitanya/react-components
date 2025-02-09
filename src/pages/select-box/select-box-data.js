@@ -122,7 +122,7 @@ export const selectData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
+    // "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Basic Dropdown": "#basic",

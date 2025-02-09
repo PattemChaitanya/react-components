@@ -35,10 +35,10 @@ export const TextField = () => {
 };
 
 export const MultiLineTextField = () => {
-  const [text, setText] = useState(""); // State to manage the input value
+  const [text, setText] = useState("");
 
   const handleChange = (event) => {
-    setText(event.target.value); // Update state with the entered text
+    setText(event.target.value);
   };
 
   return (
@@ -168,9 +168,8 @@ export const PasswordField = () => {
         onClick={togglePasswordVisibility}
         style={{
           position: "absolute",
-          right: "10px",
+          right: "4px",
           top: "50%",
-          transform: "translateY(-50%)",
           background: "none",
           border: "none",
           cursor: "pointer",

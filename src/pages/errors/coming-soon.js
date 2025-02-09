@@ -10,7 +10,7 @@ const ComingSoon = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2025-02-10T00:00:00").getTime();
+    const targetDate = new Date("2025-02-12T00:00:00").getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const difference = targetDate - now;

@@ -1,12 +1,15 @@
 :root {
   --button-background-color: #007bff;
   --button-background-tonal: #59a1ef75;
-  --button-disabled: #cccccc;
+  --button-disabled: #555;
   --button-text: #fff;
-  --button-disable-text: #292929;
+  --button-disable-text: #555;
+  --button-disabled-opacity: 0.4;
 }
 
-[data-theme="dark"] {}
+[data-theme="dark"] {
+  --button-disabled-opacity: 0.8;
+}
 
 .button-component-base {
   padding: 10px 15px;
@@ -15,13 +18,15 @@
   border-radius: 5px;
   font-size: 16px;
   margin: 5px;
-  color: var(--button-text);
+  color: var(--color-on-background);
   background-color: var(--button-background-color)
 }
 
 .elevated {
   box-shadow:
-    0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: var(--button-background-color);
+  backdrop-filter: opacity(20%);
 }
 
 .icon {
@@ -33,7 +38,6 @@
 
 .filled-tonal {
   background-color: var(--button-background-tonal);
-  color: #000;
 }
 
 .filled-tonal:hover {
@@ -43,7 +47,7 @@
 .outlined {
   border: 2px solid;
   border-color: var(--button-background-color);
-  background-color: var(--button-text);
+  background-color: transparent;
   color: var(--button-background-color);
 }
 
@@ -66,6 +70,7 @@
   color: var(--button-disabled);
   cursor: not-allowed;
   background: transparent;
+  opacity: var(--button-disabled-opacity);
 }
 
 /* ------------------------------------- */
