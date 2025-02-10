@@ -1,3 +1,11 @@
+:root {
+  --background-hover: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] {
+  --background-hover: rgba(0, 0, 0, 0.7);
+}
+
 /* ----- ordered list -----  */
 .ordered-list-container {
   max-width: 400px;
@@ -82,13 +90,14 @@
 }
 
 .list-item-header:hover {
-  background: #f1f1f1;
+  background: var(--background-hover);
 }
 
 .toggle-btn {
   margin-right: 8px;
   font-size: 12px;
   cursor: pointer;
+  color: currentColor !important;
 }
 
 .item-text {
@@ -117,7 +126,7 @@
 }
 
 .actionable-list-item:hover {
-  background: #f0f0f0;
+  background: var(--background-hover);
 }
 
 .list-icon {

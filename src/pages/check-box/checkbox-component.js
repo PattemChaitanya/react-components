@@ -7,7 +7,7 @@ export const Checkbox = () => {
   return (
     <div className="checkbox">
       <input
-        id="check-me"
+        // id="check-me"
         type="checkbox"
         name="check-me"
         checked={checked}
@@ -25,7 +25,7 @@ export const CheckboxWithLabel = () => {
   return (
     <div className="checkbox">
       <input
-        id="check-me"
+        // id="check-me"
         type="checkbox"
         checked={checked}
         onChange={() => setChecked(!checked)}

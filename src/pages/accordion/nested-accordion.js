@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
+import ArrowDropUpRoundedIcon from "@mui/icons-material/ArrowDropUpRounded";
 
 const accordionData = [
   {
@@ -40,7 +42,13 @@ const NestedAccordion = () => {
         <div key={index} style={styles.section}>
           <div style={styles.title} onClick={() => handleToggle(index)}>
             {item.title}
-            <span style={styles.icon}>{activeIndex === index ? "-" : "+"}</span>
+            <span style={styles.icon}>
+              {activeIndex === index ? (
+                <ArrowDropUpRoundedIcon />
+              ) : (
+                <ArrowDropDownRoundedIcon />
+              )}
+            </span>
           </div>
           {activeIndex === index && (
             <div style={styles.content}>
@@ -53,7 +61,11 @@ const NestedAccordion = () => {
                   >
                     {child.title}
                     <span style={styles.icon}>
-                      {childActiveIndex === childIndex ? "-" : "+"}
+                      {childActiveIndex === childIndex ? (
+                        <ArrowDropUpRoundedIcon />
+                      ) : (
+                        <ArrowDropDownRoundedIcon />
+                      )}
                     </span>
                   </div>
                   {childActiveIndex === childIndex && (
@@ -84,16 +96,18 @@ const styles = {
   },
   title: {
     padding: "15px",
-    backgroundColor: "#f4f4f4",
+    backgroundColor: "#cecece",
     cursor: "pointer",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     userSelect: "none",
+    color: "#000",
   },
   content: {
     padding: "15px",
     backgroundColor: "#fff",
+    color: "#292929",
   },
   icon: {
     marginLeft: "10px",

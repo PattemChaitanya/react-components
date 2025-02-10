@@ -300,6 +300,7 @@ code {
   gap: 10px;
   margin: 20px 0;
   color: var(--color-on-background);
+  transition: 0.5s color ease-in-out;
 }
 
 .container {
@@ -400,6 +401,7 @@ nav {
   width: min(980px, 100%);
   margin-inline: auto;
   max-height: calc(100dvh - 75px);
+  transition: 0.5s color ease-in-out;
 }
 
 .scroll-wrapper-component {
@@ -453,7 +455,8 @@ nav {
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px
+  gap: 12px;
+  transition: "0.5s color ease-in-out",
 }
 
 .component-layout-component {
@@ -492,6 +495,7 @@ nav {
   border-radius: var(--theme-border-radius-container);
   width: 100%;
   padding: 24px;
+  transition: 0.5s background-color ease-in-out;
 }
 
 .header_example_container {

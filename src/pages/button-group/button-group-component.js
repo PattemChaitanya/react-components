@@ -83,9 +83,9 @@ const TrailButtonGroup = ({
   return (
     <div className={`trail-button-group ${color} ${size} ${variant}`}>
       {buttons.map((btn, index) => (
-        <p key={index} className="trail-btn">
+        <button key={index} className="trail-btn">
           {btn}
-        </p>
+        </button>
       ))}
     </div>
   );

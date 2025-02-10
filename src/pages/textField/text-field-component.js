@@ -64,7 +64,7 @@ export const MultiLineTextField = () => {
           resize: "vertical", // Allows vertical resizing
         }}
       />
-      <p style={{ marginTop: "10px", color: "#555" }}>
+      <p style={{ marginTop: "10px" }}>
         You wrote: <br />
         <em>{text}</em>
       </p>
@@ -97,7 +97,7 @@ export const TextFieldWithPrefixSuffix = () => {
           backgroundColor: "#f9f9f9",
         }}
       >
-        <span style={{ marginRight: "5px", color: "#555" }}>$</span>{" "}
+        <span style={{ marginRight: "5px", color: "#555" }}>$</span>
         {/* Prefix */}
         <input
           id="text-field-prefix-suffix"
@@ -113,10 +113,10 @@ export const TextFieldWithPrefixSuffix = () => {
             fontSize: "16px",
           }}
         />
-        <span style={{ marginLeft: "5px", color: "#555" }}>USD</span>{" "}
+        <span style={{ marginLeft: "5px", color: "#555" }}>USD</span>
         {/* Suffix */}
       </div>
-      <p style={{ marginTop: "10px", color: "#555" }}>
+      <p style={{ marginTop: "10px" }}>
         You entered: {text ? `$${text} USD` : "nothing yet"}
       </p>
     </div>

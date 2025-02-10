@@ -4,6 +4,7 @@ import Flower2 from "../../assets/mansoryImages/2.jpg";
 import Flower3 from "../../assets/mansoryImages/3.jpg";
 import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import "./avatar.css";
 
 export const ImageAvatar = ({ alt = "component", size = "40px" }) => {
   return (
@@ -25,25 +26,11 @@ export const ImageAvatar = ({ alt = "component", size = "40px" }) => {
   );
 };
 
-export const TextAvatar = ({ text = "Design", size = "50px" }) => {
+export const TextAvatar = () => {
   return (
     <div style={{ display: "flex", gap: "30px" }}>
-      {[...text].map((letter, index) => (
-        <span
-          key={index}
-          style={{
-            width: size,
-            height: size,
-            borderRadius: "50%",
-            objectFit: "cover",
-            color: "#fff",
-            backgroundColor: "#000",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            textTransform: "upperCase",
-          }}
-        >
+      {[..."Design"].map((letter, index) => (
+        <span key={index} className="letter-avatar">
           {letter}
         </span>
       ))}

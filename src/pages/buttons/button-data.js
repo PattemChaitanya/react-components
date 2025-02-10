@@ -163,6 +163,7 @@ export const jsonToButtonData = {
   examples: [
     {
       id: "elevated",
+      "id-link": "#elevated",
       title: "Elevated button",
       description:
         "An elevated button is used to display a primary action with emphasis. It has a shadow effect, making it appear raised from the background.",
@@ -190,6 +191,7 @@ export const jsonToButtonData = {
     },
     {
       id: "filled_tonal",
+      "id-link": "#filled_tonal",
       title: "Filled Tonal button",
       description:
         "The filled tonal button uses a muted color scheme for actions that need to be visible but less dominant than filled buttons.",
@@ -204,6 +206,7 @@ export const jsonToButtonData = {
     },
     {
       id: "outlined",
+      "id-link": "#outlined",
       title: "Outlined button",
       description:
         "An outlined button has a transparent background with a border, providing a clean and minimalistic design.",
@@ -233,6 +236,7 @@ export const jsonToButtonData = {
     },
     {
       id: "text",
+      "id-link": "#text",
       title: "Text button",
       description:
         "A text button has no border or background, often used for links or small actions.",
@@ -246,6 +250,7 @@ export const jsonToButtonData = {
     },
     {
       id: "disabled",
+      "id-link": "#disabled",
       title: "Disabled button",
       description:
         "A disabled button is inactive and cannot be clicked or interacted with.",

@@ -51,16 +51,18 @@ const styles = {
   },
   title: {
     padding: "15px",
-    backgroundColor: "#f4f4f4",
+    backgroundColor: "#cecece",
     cursor: "pointer",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     userSelect: "none",
+    color: "#000",
   },
   content: {
     padding: "15px",
     backgroundColor: "#fff",
+    color: "#292929",
   },
   icon: {
     marginLeft: "10px",

@@ -128,9 +128,9 @@ export const VolumeSlider = () => {
         />
       </div>
       <div className="volume-vertical">
-        <VolumeMuteRoundedIcon
+        <VolumeUpRoundedIcon
           className="icon"
-          onClick={() => setVolumeVertical(0)}
+          onClick={() => setVolumeVertical(100)}
         />
         <input
           type="range"
@@ -141,9 +141,9 @@ export const VolumeSlider = () => {
           className="vertical-slider"
           orient="vertical"
         />
-        <VolumeUpRoundedIcon
+        <VolumeMuteRoundedIcon
           className="icon"
-          onClick={() => setVolumeVertical(100)}
+          onClick={() => setVolumeVertical(0)}
         />
       </div>
     </div>
@@ -190,7 +190,8 @@ export const DualRangeSlider = () => {
         ></div>
       </div>
       <span>
-        Range selected from {minValue} - {maxValue}
+        Range selected from {maxValue < minValue ? maxValue : minValue} -{" "}
+        {maxValue < minValue ? minValue : maxValue}
       </span>
     </div>
   );

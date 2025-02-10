@@ -39,7 +39,7 @@ export const textFieldData = {
       description:
         "A simple, single-line text field for capturing short text entries.",
       id: "basic",
-      title: "Basic Text Field Example",
+      title: "Basic Text Field(Input)",
       usages:
         "Used for capturing single-line inputs like names, email addresses, or search queries.",
       purpose: "Provides a clean and minimalistic way to input text.",
@@ -50,7 +50,7 @@ export const textFieldData = {
       component: <MultiLineTextField />,
       description: "A text field that expands to accommodate longer inputs.",
       id: "multi",
-      title: "Multi-Line Text Field Example",
+      title: "Multi-Line Text Field(Input)",
       usages:
         "Ideal for capturing feedback, comments, or longer pieces of information.",
       purpose:
@@ -64,7 +64,7 @@ export const textFieldData = {
       description:
         "An input field with a prefix or suffix to provide context for the input.",
       id: "prefix-suffix",
-      title: "Text Field with Prefix/Suffix Example",
+      title: "Text Field(Input) with Prefix/Suffix",
       usages:
         "Perfect for inputs like currency (e.g., $100), measurements (e.g., 50kg), or units (e.g., 15min).",
       purpose:
@@ -77,7 +77,7 @@ export const textFieldData = {
       description:
         "A secure text field for entering passwords, with a toggle to show or hide the input.",
       id: "password",
-      title: "Password Text Field Example",
+      title: "Password Text Field(Input)",
       usages:
         "Used for securely capturing sensitive information like passwords or PINs.",
       purpose:
@@ -90,7 +90,7 @@ export const textFieldData = {
       component: <TextFieldWithValidation />,
       description: "A text field that validates user input in real time.",
       id: "validation",
-      title: "Text Field with Validation Example",
+      title: "Text Field(Input) with Validation",
       usages:
         "Useful for validating email formats, phone numbers, or other specific patterns.",
       purpose:
@@ -105,11 +105,11 @@ export const textFieldData = {
     // "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
-      "Basic Text Field": "#basic",
-      "Multi-Line Text Field": "#multi",
-      "Text Field with Prefix/Suffix": "#prefix-suffix",
-      "Password Text Field": "#password",
-      "Text Field with Validation": "#validation",
+      "Basic Text Field(Input)": "#basic",
+      "Multi-Line Text Field(Input)": "#multi",
+      "Text Field(Input) with Prefix/Suffix": "#prefix-suffix",
+      "Password Text Field(Input)": "#password",
+      "Text Field(Input) with Validation": "#validation",
     },
     References: "#references",
   },

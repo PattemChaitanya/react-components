@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
-import ArrowCircleDownRoundedIcon from "@mui/icons-material/ArrowCircleDownRounded";
-import ArrowCircleUpRoundedIcon from "@mui/icons-material/ArrowCircleUpRounded";
 import ArrowDropUpRoundedIcon from "@mui/icons-material/ArrowDropUpRounded";
 
 const accordionData = [
@@ -14,8 +12,8 @@ const accordionData = [
   {
     title: "Section 2",
     content: "Content for section 2.",
-    openIcon: <ArrowCircleDownRoundedIcon />,
-    closeIcon: <ArrowCircleUpRoundedIcon />,
+    openIcon: <ArrowDropDownRoundedIcon />,
+    closeIcon: <ArrowDropUpRoundedIcon />,
   },
   {
     title: "Section 3",
@@ -64,16 +62,18 @@ const styles = {
   },
   title: {
     padding: "15px",
-    backgroundColor: "#f4f4f4",
+    backgroundColor: "#cecece",
     cursor: "pointer",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     userSelect: "none",
+    color: "#000",
   },
   content: {
     padding: "15px",
     backgroundColor: "#fff",
+    color: "#292929",
   },
   icon: {
     marginLeft: "10px",

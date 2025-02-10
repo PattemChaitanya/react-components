@@ -8,7 +8,7 @@ import {
 } from "../constants/sidebarConstants";
 import Home from "../pages/home/home";
 import PageNotFound from "../pages/errors";
-import ComingSoon from "../pages/errors/coming-soon";
+// import ComingSoon from "../pages/errors/coming-soon";
 
 const childrenRouteMapping = () => {
   return newMenu.map((item) => {
@@ -38,24 +38,25 @@ const mergingAllRoutes = [
 ];
 
 const routeMapping = [
-  process.env.NODE_ENV === "production"
-    ? { index: true, element: <ComingSoon /> }
-    : {
-        element: <Header />,
+  // process.env.NODE_ENV === "production"
+  //   ? { index: true, element: <ComingSoon /> }
+  //   :
+  {
+    element: <Header />,
+    children: [
+      {
+        path: "/",
+        element: <Sidebar />,
         children: [
           {
-            path: "/",
-            element: <Sidebar />,
-            children: [
-              {
-                index: true,
-                element: <Home />,
-              },
-              ...mergingAllRoutes,
-            ],
+            index: true,
+            element: <Home />,
           },
+          ...mergingAllRoutes,
         ],
       },
+    ],
+  },
   {
     path: "*",
     element: <PageNotFound />,

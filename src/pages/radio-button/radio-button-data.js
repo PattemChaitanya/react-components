@@ -2,11 +2,11 @@ import HorizontalRadioButton from "./complex-radio-button";
 import DisableRadioButton from "./disable-radio";
 import LabelPosition from "./label-position";
 import {
-  CustomRadioButton,
+  // CustomRadioButton,
   DescriptiveRadioButton,
   IconRadioButton,
   RadioButton,
-  RadioButtonGroup,
+  // RadioButtonGroup,
 } from "./radio-button-component";
 import VerticalRadioButton from "./simple-radio-button";
 
@@ -265,9 +265,9 @@ export const radioData = {
   types: [
     "Basic Radio Button",
     "Radio Button with Labels",
-    "Custom-Themed Radio Button",
+    // "Custom-Themed Radio Button",
     "Icon-Based Radio Button",
-    "Grouped Radio Buttons",
+    // "Grouped Radio Buttons",
   ],
   interactiveDemo: "#demo",
   accessibity:
@@ -303,24 +303,24 @@ export const radioData = {
         "<radio-button name='group2' value='option2'>Option 2</radio-button>",
       open: false,
     },
-    {
-      component: (
-        <CustomRadioButton
-          options={radioButtonData.options}
-          name="customRadio"
-        />
-      ),
-      description:
-        "A radio button styled with custom colors, sizes, or animations.",
-      id: "custom-theme",
-      title: "Custom-Themed Radio Button Example",
-      usages: "Perfect for branded or visually rich designs.",
-      purpose:
-        "Provides a unique user experience while maintaining functionality.",
-      codeBlock:
-        "<radio-button name='group3' value='custom' style='--radio-color: #ff5722;'>Custom Style</radio-button>",
-      open: false,
-    },
+    // {
+    //   component: (
+    //     <CustomRadioButton
+    //       options={radioButtonData.options}
+    //       name="customRadio"
+    //     />
+    //   ),
+    //   description:
+    //     "A radio button styled with custom colors, sizes, or animations.",
+    //   id: "custom-theme",
+    //   title: "Custom-Themed Radio Button Example",
+    //   usages: "Perfect for branded or visually rich designs.",
+    //   purpose:
+    //     "Provides a unique user experience while maintaining functionality.",
+    //   codeBlock:
+    //     "<radio-button name='group3' value='custom' style='--radio-color: #ff5722;'>Custom Style</radio-button>",
+    //   open: false,
+    // },
     {
       component: (
         <IconRadioButton options={radioButtonData.iconOptions} name="icons" />
@@ -336,22 +336,22 @@ export const radioData = {
         "<radio-button name='group4' value='icon' icon='🌟'>Star</radio-button>",
       open: false,
     },
-    {
-      component: (
-        <RadioButtonGroup options={radioButtonData.options} name="radioGroup" />
-      ),
-      description:
-        "A collection of related radio buttons displayed as a group.",
-      id: "grouped",
-      title: "Grouped Radio Buttons Example",
-      usages:
-        "Used when multiple related options need to be presented together.",
-      purpose:
-        "Improves organization and clarity for users making a selection.",
-      codeBlock:
-        "<div role='radiogroup'><radio-button name='group5' value='1'>Option 1</radio-button><radio-button name='group5' value='2'>Option 2</radio-button></div>",
-      open: false,
-    },
+    // {
+    //   component: (
+    //     <RadioButtonGroup options={radioButtonData.options} name="radioGroup" />
+    //   ),
+    //   description:
+    //     "A collection of related radio buttons displayed as a group.",
+    //   id: "grouped",
+    //   title: "Grouped Radio Buttons Example",
+    //   usages:
+    //     "Used when multiple related options need to be presented together.",
+    //   purpose:
+    //     "Improves organization and clarity for users making a selection.",
+    //   codeBlock:
+    //     "<div role='radiogroup'><radio-button name='group5' value='1'>Option 1</radio-button><radio-button name='group5' value='2'>Option 2</radio-button></div>",
+    //   open: false,
+    // },
   ],
   links: {
     Types: "#types",
@@ -360,9 +360,9 @@ export const radioData = {
     Examples: {
       "Basic Radio Button": "#basic",
       "Radio Button with Labels": "#labels",
-      "Custom-Themed Radio Button": "#custom-theme",
+      // "Custom-Themed Radio Button": "#custom-theme",
       "Icon-Based Radio Button": "#icon-based",
-      "Grouped Radio Buttons": "#grouped",
+      // "Grouped Radio Buttons": "#grouped",
     },
     References: "#references",
   },

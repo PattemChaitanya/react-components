@@ -37,7 +37,7 @@ export const checkboxData = {
       component: <Checkbox />,
       description: "A minimal checkbox for simple selection.",
       id: "basic",
-      title: "Basic Checkbox Example",
+      title: "Basic Checkbox",
       usages:
         "Used for scenarios like accepting terms, enabling features, or selecting preferences.",
       purpose: "Provides a straightforward way to toggle a binary state.",
@@ -48,7 +48,7 @@ export const checkboxData = {
       component: <CheckboxWithLabel />,
       description: "A checkbox paired with a text label for better context.",
       id: "labels",
-      title: "Checkbox with Labels Example",
+      title: "Checkbox with Labels",
       usages:
         "Ideal for forms where clarity about the checkbox's function is necessary.",
       purpose:
@@ -62,7 +62,7 @@ export const checkboxData = {
       description:
         "A checkbox styled with custom visuals such as colors or animations.",
       id: "custom-theme",
-      title: "Custom-Themed Checkbox Example",
+      title: "Custom-Themed Checkbox",
       usages:
         "Perfect for branded designs or applications with unique visual identities.",
       purpose:
@@ -75,7 +75,7 @@ export const checkboxData = {
       component: <ParentCheckbox />,
       description: "A checkbox with a partial selection state.",
       id: "indeterminate",
-      title: "Indeterminate Checkbox Example",
+      title: "Indeterminate Checkbox",
       usages:
         "Used in hierarchical selections, like when a parent option is partially selected.",
       purpose:

@@ -10,7 +10,7 @@
 #presentation h1 {
   margin: 0;
   font-size: 24px;
-  color: #333;
+  /* color: #333; */
 }
 
 #container-floating {

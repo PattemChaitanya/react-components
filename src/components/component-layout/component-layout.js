@@ -87,7 +87,11 @@ const ComponentLayout = ({ jsonObject }) => {
         )}
         {jsonToDisplay?.map((item, index) => (
           <div key={index} className="gap-each-section" id={item.id}>
-            <h2>{item.title}</h2>
+            <h2>
+              {/* <a href={item?.["id-link"]} className="link-hover"> */}
+              {item.title}
+              {/* </a> */}
+            </h2>
             <p>{item.description}</p>
             <p>
               <strong>Usages:</strong> {item.usages}

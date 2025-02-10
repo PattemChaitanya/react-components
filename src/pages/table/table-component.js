@@ -53,17 +53,20 @@ const styles = {
     fontFamily: "Arial, sans-serif",
   },
   header: {
-    backgroundColor: "#f2f2f2",
+    backgroundColor: "#f1f1f1",
     padding: "10px",
     border: "1px solid #ddd",
     textAlign: "left",
+    color: "#292929",
   },
   row: {
     backgroundColor: "#fff",
+    color: "#292929",
   },
   cell: {
     padding: "10px",
     border: "1px solid #ddd",
+    color: "#292929",
   },
 };
 

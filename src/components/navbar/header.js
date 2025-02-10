@@ -104,11 +104,20 @@ const Header = () => {
             </svg>
           </IconButton>
           <IconButton onClick={updatingCount}>
-            {count === 1 ? (
-              <WbSunnyRoundedIcon className="mode-font light-mode" />
-            ) : (
-              <DarkModeIcon className="mode-font dark-mode" />
-            )}
+            <WbSunnyRoundedIcon
+              className="mode-font light-mode"
+              sx={{
+                display: count === 1 ? "block" : "none",
+                transition: "display 0.5s ease-in-out",
+              }}
+            />
+            <DarkModeIcon
+              className="mode-font dark-mode"
+              sx={{
+                display: count === 0 ? "block" : "none",
+                transition: "display 0.5s ease-in-out",
+              }}
+            />
           </IconButton>
         </div>
       </nav>
@@ -118,7 +127,13 @@ const Header = () => {
         </Link>
         {homeScreenCards.map((item, itemIndex) => (
           <React.Fragment key={itemIndex}>
-            <p style={{ margin: "12px 6px", fontWeight: "bold" }}>
+            <p
+              style={{
+                margin: "12px 6px",
+                fontWeight: "bold",
+                transition: "0.5s color ease-in-out",
+              }}
+            >
               {item.title}
             </p>
             {item.components.map((component, index) => (
