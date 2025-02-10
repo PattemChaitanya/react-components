@@ -9,7 +9,7 @@ import {
 import Home from "../pages/home/home";
 import PageNotFound from "../pages/errors";
 import WelcomeSection from "../pages/welcome-apge/welcome-page";
-// import ComingSoon from "../pages/errors/coming-soon";
+import ComingSoon from "../pages/errors/coming-soon";
 
 // const childrenRouteMapping = () => {
 //   return newMenu.map((item) => {
@@ -39,10 +39,9 @@ const mergingAllRoutes = [
 ];
 
 const routeMapping = [
-  // process.env.NODE_ENV === "production"
-  //   ? { index: true, element: <ComingSoon /> }
-  //   :
-  { element: <WelcomeSection />, path: "/" },
+  process.env.NODE_ENV === "production"
+    ? { index: true, element: <ComingSoon /> }
+    : { element: <WelcomeSection />, path: "/" },
   {
     element: <Header />,
     path: "/all-components",
