@@ -318,7 +318,7 @@ export const dragandDropData = {
   ],
   pageImage: "https://material-web.dev/components/images/tabs/hero.webp",
   types: ["Basic Drag and Drop", "Sortable List", "File Upload"],
-  interactiveDemo: "https://example.com/drag-drop-demo",
+  interactiveDemo: "",
   accessibity:
     "Ensure drag-and-drop interactions are keyboard-accessible by providing alternatives like buttons or ARIA roles. Use proper focus management for dropped elements.",
   examples: [
@@ -327,7 +327,7 @@ export const dragandDropData = {
       description:
         "A simple drag-and-drop implementation using HTML5 drag events.",
       id: "basic-drag-drop",
-      title: "Basic Drag and Drop Example",
+      title: "Basic Drag and Drop",
       usages:
         "Use for moving elements from one area to another in a straightforward manner.",
       purpose:
@@ -374,7 +374,7 @@ export const dragandDropData = {
       description:
         "A draggable and sortable list where items can be rearranged.",
       id: "sortable-list",
-      title: "Sortable List Example",
+      title: "Sortable List",
       usages: "Use for lists or grids where users need to reorder items.",
       purpose:
         "To demonstrate how to create a sortable list using drag-and-drop events.",
@@ -461,7 +461,6 @@ export const dragandDropData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Basic Drag and Drop": "#basic-drag-drop",

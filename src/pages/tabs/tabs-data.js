@@ -22,7 +22,7 @@ export const tabsData = {
   ],
   pageImage: "https://material-web.dev/components/images/tabs/hero.webp",
   types: ["Text Tabs", "Icon Tabs", "Text and Icon Tabs", "Scrollable Tabs"],
-  interactiveDemo: "https://material-web.dev/components/tabs",
+  interactiveDemo: "",
   accessibity:
     "Ensure tabs are accessible by using proper ARIA roles, like `role='tablist'` for the container and `role='tab'` for each tab. Use `aria-selected` and keyboard navigation (arrow keys) to allow seamless accessibility. Each tab should also have an associated panel with a unique `id` for linking.",
   examples: [
@@ -101,7 +101,7 @@ export const tabsData = {
     },
     {
       id: "scrollable-tabs",
-      title: "Scrollable Tabs Example",
+      title: "Scrollable Tabs",
       description: "Tabs that allow horizontal scrolling.",
       usages:
         "Great for content-heavy applications with many categories or sections.",
@@ -127,7 +127,6 @@ export const tabsData = {
   ],
   links: {
     Types: "#types",
-    // "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Text Tabs": "#text-tabs",

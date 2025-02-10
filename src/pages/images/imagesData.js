@@ -233,7 +233,7 @@ export const imagesData = {
     "Thumbnail Images",
     "Gallery Images",
   ],
-  interactiveDemo: "https://material-web.dev/components/images",
+  interactiveDemo: "",
   accessibity:
     "Ensure images are accessible by including meaningful `alt` text for screen readers. For decorative images, set `alt=''` and `role='presentation'`. Provide proper contrast between images and overlaid text for better readability.",
   examples: [
@@ -242,7 +242,7 @@ export const imagesData = {
       description:
         "Images that adjust their size dynamically based on the screen width.",
       id: "responsive-images",
-      title: "Responsive Image Example",
+      title: "Responsive Image",
       usages:
         "Use in layouts that need to work across multiple devices and screen sizes.",
       purpose: "Maintains visual consistency and avoids layout breaking.",
@@ -256,7 +256,7 @@ export const imagesData = {
       description:
         "Images with rounded corners for a smoother, modern appearance.",
       id: "rounded-images",
-      title: "Rounded Image Example",
+      title: "Rounded Image",
       usages:
         "Use in designs where a softer or less rigid aesthetic is preferred.",
       purpose: "Creates a polished and professional look.",
@@ -269,7 +269,7 @@ export const imagesData = {
       component: <ImageCardWithOverlay />,
       description: "Images used in card components with text overlays.",
       id: "image-cards",
-      title: "Image Card Example",
+      title: "Image Card",
       usages: "Use for displaying content like articles, products, or events.",
       purpose:
         "Makes content visually appealing while maintaining a compact layout.",
@@ -288,7 +288,7 @@ export const imagesData = {
       component: <BackgroundImageCard />,
       description: "Images used as container backgrounds with layered content.",
       id: "background-images",
-      title: "Background Image Example",
+      title: "Background Image",
       usages: "Ideal for hero sections or content headers.",
       purpose:
         "Provides a visually striking design element while highlighting content.",
@@ -303,7 +303,7 @@ export const imagesData = {
       component: <ImageGrid />,
       description: "A grid layout for multiple images.",
       id: "gallery-images",
-      title: "Gallery Image Example",
+      title: "Gallery Image",
       usages: "Use for portfolios, e-commerce, or image-heavy applications.",
       purpose: "Showcases multiple images in a structured and engaging way.",
       codeBlock: `
@@ -318,14 +318,13 @@ export const imagesData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
-      "Responsive Image Example": "#responsive-images",
-      "Rounded Image Example": "#rounded-images",
-      "Image Card Example": "#image-cards",
-      "Background Image Example": "#background-images",
-      "Gallery Image Example": "#gallery-images",
+      "Responsive Image": "#responsive-images",
+      "Rounded Image": "#rounded-images",
+      "Image Card": "#image-cards",
+      "Background Image": "#background-images",
+      "Gallery Image": "#gallery-images",
     },
     References: "#references",
   },

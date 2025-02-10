@@ -28,7 +28,7 @@ export const caursoulData = {
     "Multi-Item Carousel",
     "Fullscreen Carousel",
   ],
-  interactiveDemo: "https://material-web.dev/components/carousel",
+  interactiveDemo: "",
   accessibity:
     "Carousels should support keyboard navigation, focus management, and screen reader announcements. Use ARIA roles like `aria-live` to update screen readers about slide changes.",
   examples: [
@@ -37,7 +37,7 @@ export const caursoulData = {
       description:
         "A carousel showcasing images with indicators and navigation arrows.",
       id: "image-carousel",
-      title: "Image Carousel Example",
+      title: "Image Carousel",
       usages: "Use for photo galleries, advertisements, or featured content.",
       purpose:
         "Engages users visually with scrollable, organized image content.",
@@ -68,7 +68,7 @@ export const caursoulData = {
       description:
         "A carousel displaying cards with text, buttons, and images.",
       id: "card-carousel",
-      title: "Card Carousel Example",
+      title: "Card Carousel",
       usages: "Use for product showcases, blog highlights, or testimonials.",
       purpose:
         "Provides a structured way to display rich content interactively.",
@@ -102,7 +102,7 @@ export const caursoulData = {
       component: <AutoCarousel />,
       description: "A carousel that automatically scrolls through slides.",
       id: "auto-scrolling-carousel",
-      title: "Auto-Scrolling Carousel Example",
+      title: "Auto-Scrolling Carousel",
       usages:
         "Use for hero banners, advertisements, or content that needs periodic attention.",
       purpose:
@@ -134,7 +134,7 @@ export const caursoulData = {
       component: "Multi-Item Carousel",
       description: "A carousel that displays multiple items at once.",
       id: "multi-item-carousel",
-      title: "Multi-Item Carousel Example",
+      title: "Multi-Item Carousel",
       usages:
         "Use for image galleries, product carousels, or feature highlights.",
       purpose:
@@ -154,7 +154,7 @@ export const caursoulData = {
       component: <FullScreenCarousel />,
       description: "A fullscreen carousel with immersive visuals.",
       id: "fullscreen-carousel",
-      title: "Fullscreen Carousel Example",
+      title: "Fullscreen Carousel",
       usages:
         "Use for portfolios, immersive product showcases, or image-based storytelling.",
       purpose:
@@ -174,14 +174,13 @@ export const caursoulData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
-      "Image Carousel Example": "#image-carousel",
-      "Card Carousel Example": "#card-carousel",
-      "Auto-Scrolling Carousel Example": "#auto-scrolling-carousel",
-      "Multi-Item Carousel Example": "#multi-item-carousel",
-      "Fullscreen Carousel Example": "#fullscreen-carousel",
+      "Image Carousel": "#image-carousel",
+      "Card Carousel": "#card-carousel",
+      "Auto-Scrolling Carousel": "#auto-scrolling-carousel",
+      "Multi-Item Carousel": "#multi-item-carousel",
+      "Fullscreen Carousel": "#fullscreen-carousel",
     },
     References: "#references",
   },

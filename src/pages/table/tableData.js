@@ -123,7 +123,7 @@ export const tableData = {
   ],
   pageImage: "https://material-web.dev/components/images/tabs/hero.webp",
   types: ["Basic Table", "Responsive Table", "Accessible Table"],
-  interactiveDemo: "https://example.com/table-demo", // Add a link to your interactive table demo if available.
+  interactiveDemo: "",
   accessibity:
     "Ensure that tables use semantic tags like <thead>, <tbody>, and <th> for structure. Add ARIA roles and attributes for better screen reader support, and use captions for context.",
   examples: [
@@ -131,7 +131,7 @@ export const tableData = {
       component: <BasicTableComponent />,
       description: "A simple HTML table with rows and columns displaying data.",
       id: "basic-table",
-      title: "Basic Table Example",
+      title: "Basic Table",
       usages: "Use for displaying basic data sets with no interactivity.",
       purpose:
         "To demonstrate the structure of a table with <table>, <tr>, <th>, and <td> tags.",
@@ -164,7 +164,7 @@ export const tableData = {
       component: <ResponsiveHTMLTable />,
       description: "An HTML table styled to be responsive on smaller screens.",
       id: "responsive-table",
-      title: "Responsive Table Example",
+      title: "Responsive Table",
       usages:
         "Use for tables that need to adapt to mobile devices or smaller screens.",
       purpose: "To demonstrate CSS techniques for making tables responsive.",
@@ -198,7 +198,6 @@ export const tableData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Basic Table": "#basic-table",

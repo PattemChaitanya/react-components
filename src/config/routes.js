@@ -8,6 +8,7 @@ import {
 } from "../constants/sidebarConstants";
 import Home from "../pages/home/home";
 import PageNotFound from "../pages/errors";
+import WelcomeSection from "../pages/welcome-apge/welcome-page";
 // import ComingSoon from "../pages/errors/coming-soon";
 
 const childrenRouteMapping = () => {
@@ -33,19 +34,20 @@ const childHomeRouteMapping = () => {
 
 const mergingAllRoutes = [
   ...childHomeRouteMapping(),
-  ...childrenRouteMapping(),
-  ...childRouteMapping(),
+  // ...childrenRouteMapping(),
+  // ...childRouteMapping(),
 ];
 
 const routeMapping = [
   // process.env.NODE_ENV === "production"
   //   ? { index: true, element: <ComingSoon /> }
   //   :
+  { element: <WelcomeSection />, path: "/" },
   {
     element: <Header />,
+    path: "/all-components",
     children: [
       {
-        path: "/",
         element: <Sidebar />,
         children: [
           {

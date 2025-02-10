@@ -341,7 +341,7 @@ export const bottomNavData = {
     "Bottom Navigation with Icons",
     "Bottom Navigation with Label",
   ],
-  interactiveDemo: "https://example.com/bottom-nav-demo", // Replace with an actual interactive demo URL if applicable.
+  interactiveDemo: "",
   accessibity:
     "Incorporate `aria-current` for indicating the active navigation item. Use `aria-label` on the navigation container and individual items for clarity. Ensure that all buttons are keyboard accessible and that focus is correctly managed between them. Provide visual feedback for active states and transitions.",
   examples: [
@@ -414,7 +414,6 @@ export const bottomNavData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Simple Bottom Navigation": "#simple-bottom-nav",

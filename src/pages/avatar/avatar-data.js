@@ -187,7 +187,7 @@ export const avatarData = {
     "Avatars are circular representations of images, text, or icons used to represent a user or entity.",
     "They are commonly used in user profiles, lists, or as part of interactive UI elements like menus.",
   ],
-  pageImage: "https://material-web.dev/components/images/avatar/hero.webp",
+  pageImage: "",
   types: ["Image Avatar", "Text Avatar", "Icon Avatar", "Grouped Avatar"],
   interactiveDemo: "https://material-web.dev/components/avatar",
   accessibity:
@@ -259,13 +259,12 @@ export const avatarData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
-      "Image Avatar Example": "#image-avatar",
-      "Text Avatar Example": "#text-avatar",
-      "Icon Avatar Example": "#icon-avatar",
-      "Grouped Avatar Example": "#grouped-avatar",
+      "Image Avatar": "#image-avatar",
+      "Text Avatar": "#text-avatar",
+      "Icon Avatar": "#icon-avatar",
+      "Grouped Avatar": "#grouped-avatar",
     },
     References: "#references",
   },

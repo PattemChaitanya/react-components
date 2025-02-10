@@ -1,8 +1,8 @@
 {
-  "name": "web-jsx-component",
+  "name": "jsx-web-component",
   "version": "0.1.1",
   "private": true,
-  "homepage": "https://web-jsx.netlify.app/",
+  "homepage": "https://jsx-web.netlify.app/",
   "author": "Chaitanya Pattem <pattemchaitu@gmail.com>",
   "dependencies": {
     "@emotion/react": "^11.13.0",

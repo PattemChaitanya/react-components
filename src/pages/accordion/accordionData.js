@@ -288,7 +288,7 @@ export const accrodionData = {
     "Accordion with Icons",
     "Nested Accordion",
   ],
-  interactiveDemo: "https://material-web.dev/components/accordion/demo",
+  interactiveDemo: "",
   accessibity:
     "The Accordion component should comply with accessibility standards by providing keyboard navigation (e.g., arrow keys, Enter, and Space). ARIA attributes like 'aria-expanded' and 'aria-controls' should be used for screen readers. Content inside the accordion should remain accessible even when collapsed.",
   examples: [
@@ -297,7 +297,7 @@ export const accrodionData = {
       description:
         "A minimal accordion example with three independent sections. Each section can be expanded or collapsed individually.",
       id: "Basic",
-      title: "Basic Accordion Example",
+      title: "Basic Accordion",
       usages:
         "Used for displaying FAQ sections or structured lists of content.",
       purpose:
@@ -311,7 +311,7 @@ export const accrodionData = {
       description:
         "This example demonstrates how multiple sections can be expanded simultaneously.",
       id: "multi",
-      title: "Multi-Expand Accordion Example",
+      title: "Multi-Expand Accordion",
       usages:
         "Useful for displaying related content groups where users may need to see multiple sections at once.",
       purpose:
@@ -325,7 +325,7 @@ export const accrodionData = {
       description:
         "An accordion example where each section includes icons for visual indicators.",
       id: "icons",
-      title: "Accordion with Icons Example",
+      title: "Accordion with Icons",
       usages:
         "Enhances visual clarity, helping users quickly identify panel states.",
       purpose:
@@ -339,7 +339,7 @@ export const accrodionData = {
       description:
         "This example demonstrates a nested accordion structure for complex hierarchies.",
       id: "nested",
-      title: "Nested Accordion Example",
+      title: "Nested Accordion",
       usages:
         "Ideal for organizing multi-level content, such as navigation menus or documents.",
       purpose:

@@ -83,7 +83,7 @@ const Header = () => {
             </IconButton>
           </div>
           <h5 className="nav-header-typo" onClick={navigateHome}>
-            Developer's Web Components
+            JSX to Web
           </h5>
         </div>
         <div className="row-align-center">

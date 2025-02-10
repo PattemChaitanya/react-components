@@ -93,13 +93,13 @@ export const todoData = {
   ],
   pageImage: "https://material-web.dev/components/images/todo/hero.webp",
   types: ["Basic To-Do List", "Advanced To-Do List"],
-  interactiveDemo: "https://material-web.dev/components/todo",
+  interactiveDemo: "",
   accessibity:
     "Ensure to-do lists are accessible by supporting keyboard navigation, ARIA roles like `aria-checked` for tasks, and labels for checkboxes.",
   examples: [
     {
       id: "basic-todo-list",
-      title: "Basic To-Do List Example",
+      title: "Basic To-Do List",
       description:
         "A straightforward to-do list with add, mark complete, and delete functionality.",
       usages: "Use for simple task tracking without advanced categorization.",
@@ -135,7 +135,7 @@ export const todoData = {
       description:
         "A to-do list with categories, due dates, and filters for organizing tasks effectively.",
       id: "advanced-todo-list",
-      title: "Advanced To-Do List Example",
+      title: "Advanced To-Do List",
       usages:
         "Use for task management apps or when detailed task tracking is needed.",
       purpose:
@@ -179,11 +179,10 @@ export const todoData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
-      "Basic To-Do List Example": "#basic-todo-list",
-      "Advanced To-Do List Example": "#advanced-todo-list",
+      "Basic To-Do List": "#basic-todo-list",
+      "Advanced To-Do List": "#advanced-todo-list",
     },
     References: "#references",
   },

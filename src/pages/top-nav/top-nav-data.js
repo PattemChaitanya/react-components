@@ -24,7 +24,7 @@ export const topNavData = {
     "Navigation with Dropdown",
     "Navigation with Search",
   ],
-  interactiveDemo: "https://example.com/nav-demo", // Replace with an actual interactive demo URL if applicable.
+  interactiveDemo: "",
   accessibity:
     "Beyond semantic HTML and ARIA roles, ensure your top navigation uses appropriate focus management, especially for dropdowns and mobile views. Make sure that navigation links are focusable and can be activated by keyboard events (Enter/Space) with visual feedback.",
   examples: [
@@ -33,7 +33,7 @@ export const topNavData = {
       description:
         "A simple horizontal navigation bar with links to different sections of the website.",
       id: "simple-navigation",
-      title: "Simple Navigation Example",
+      title: "Simple Navigation",
       usages:
         "Use for websites or apps with a few core sections, providing straightforward and clear navigation.",
       purpose:
@@ -52,7 +52,7 @@ export const topNavData = {
       description:
         "A navigation bar with a dropdown menu to handle more options efficiently.",
       id: "nav-with-dropdown",
-      title: "Navigation with Dropdown Example",
+      title: "Navigation with Dropdown",
       usages:
         "Use for websites or apps that require additional sections to be grouped under a menu, saving space.",
       purpose:
@@ -87,7 +87,7 @@ export const topNavData = {
       description:
         "A navigation bar with a search bar included for quick access to content.",
       id: "nav-with-search",
-      title: "Navigation with Search Example",
+      title: "Navigation with Search",
       usages:
         "Use for websites or apps where users frequently search for content and need quick access to a search input.",
       purpose:
@@ -106,7 +106,6 @@ export const topNavData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Simple Navigation": "#simple-navigation",

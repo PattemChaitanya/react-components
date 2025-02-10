@@ -1,22 +1,32 @@
 import React from "react";
 import "./home.css";
-import Card from "../../components/cards/card";
 import { homeScreenCards } from "../../constants/sidebarConstants";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const navigationTo = (to) => {
+    navigate(to);
+  };
   return (
-    <div className="homeText">
+    <div className="gallery-container">
       {Object.values(homeScreenCards).map((card) => (
         <>
-          <h2>{card.title}</h2>
-          <div className="card-box">
-            {card.components.map((component, index) => (
-              <Card
-                to={component.path}
+          <h2 className="gallery-title">{card.title}</h2>
+          <div className="gallery-grid">
+            {card.components.map((comp, index) => (
+              <div
                 key={index}
-                title={component.title}
-                image={component.image}
-              />
+                className="gallery-card"
+                onClick={() => navigationTo(comp.path)}
+              >
+                <img
+                  src={comp.image}
+                  alt={comp.title}
+                  className="gallery-icon"
+                />
+                <p className="gallery-name">{comp.title}</p>
+              </div>
             ))}
           </div>
         </>

@@ -42,7 +42,7 @@ export const sideNavData = {
   ],
   pageImage: "https://material-web.dev/components/images/side-nav/hero.webp",
   types: ["Temporary Drawer", "Persistent Drawer", "Permanent Drawer"],
-  interactiveDemo: "https://example.com/side-nav-demo", // Replace with a valid URL for the demo if applicable.
+  interactiveDemo: "",
   accessibity:
     "When the drawer is open, trap focus within it to prevent users from interacting with other elements on the page. Add `aria-hidden` to non-essential elements outside the drawer. Ensure users can navigate using a keyboard (`Tab` and `Shift+Tab`), and provide a clear way to close the drawer, such as a close button with an appropriate `aria-label`.",
   examples: [
@@ -51,7 +51,7 @@ export const sideNavData = {
       description:
         "A modal side navigation drawer that overlays the content and can be toggled on smaller devices.",
       id: "temporary-drawer",
-      title: "Temporary Drawer Example",
+      title: "Temporary Drawer",
       usages: "Use for mobile apps or websites where screen space is limited.",
       purpose:
         "This drawer provides a space-efficient way to show navigation links without occupying permanent screen real estate.",
@@ -98,7 +98,7 @@ export const sideNavData = {
       description:
         "A persistent side navigation drawer that remains visible and can be toggled.",
       id: "persistent-drawer",
-      title: "Persistent Drawer Example",
+      title: "Persistent Drawer",
       usages:
         "Use for desktop applications or websites where navigation links should be easily accessible.",
       purpose:
@@ -123,7 +123,7 @@ export const sideNavData = {
       description:
         "A side navigation drawer that is always visible and part of the layout.",
       id: "permanent-drawer",
-      title: "Permanent Drawer Example",
+      title: "Permanent Drawer",
       usages:
         "Use for desktop apps or dashboards where navigation is a primary part of the user experience.",
       purpose:
@@ -147,7 +147,6 @@ export const sideNavData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Temporary Drawer": "#temporary-drawer",

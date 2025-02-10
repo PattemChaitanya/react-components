@@ -50,7 +50,7 @@ export const dropDownData = {
   ],
   pageImage: "https://material-web.dev/components/images/tabs/hero.webp",
   types: ["Basic Dropdown", "Dropdown with Icons", "Dropdown with Search"],
-  interactiveDemo: "https://example.com/dropdown-demo",
+  interactiveDemo: "",
   accessibity:
     "Dropdowns should support both mouse and keyboard navigation. Make sure to trap keyboard focus within the dropdown when it's open, and ensure that users can navigate options using `Up` and `Down` arrow keys. `Enter` should select an option, and `Escape` should close the dropdown. Use `aria-expanded` and `aria-haspopup` for state management and convey the dropdown's purpose.",
   examples: [
@@ -59,7 +59,7 @@ export const dropDownData = {
       description:
         "A simple dropdown menu with a list of links that appear when the button is clicked.",
       id: "basic-dropdown",
-      title: "Basic Dropdown Example",
+      title: "Basic Dropdown",
       usages:
         "Use for forms or navigation bars when a list of options is needed but space is limited.",
       purpose:
@@ -101,7 +101,7 @@ export const dropDownData = {
       description:
         "A dropdown menu that includes icons next to the options for better visual clarity and user experience.",
       id: "dropdown-with-icons",
-      title: "Dropdown with Icons Example",
+      title: "Dropdown with Icons",
       usages:
         "Ideal for applications where visual clarity is needed, such as for file type selection, settings, or user profile options.",
       purpose:
@@ -147,7 +147,7 @@ export const dropDownData = {
       description:
         "A dropdown menu with a search input that allows users to quickly filter through options.",
       id: "dropdown-with-search",
-      title: "Dropdown with Search Example",
+      title: "Dropdown with Search",
       usages:
         "Ideal for applications with a large set of options where users need a search bar to quickly find the option they need.",
       purpose:
@@ -201,7 +201,6 @@ export const dropDownData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Basic Dropdown": "#basic-dropdown",

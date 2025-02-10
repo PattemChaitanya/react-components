@@ -7,8 +7,8 @@ const Sidebar = () => {
   return (
     <div className="main-container">
       <aside>
-        <Link to="/" className="sidebar_left_header">
-          Home
+        <Link to="/all-components" className="sidebar_left_header">
+          All Components
         </Link>
         {/* {newMenu.map((item, index) => (
           <NavLink
@@ -28,7 +28,7 @@ const Sidebar = () => {
             </p>
             {item.components.map((component, index) => (
               <NavLink
-                to={component.path}
+                to={`/all-components/${component.path}`}
                 key={index}
                 className={({ isActive }) =>
                   isActive ? "sidebar_left_para active" : "sidebar_left_para"

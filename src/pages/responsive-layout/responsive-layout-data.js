@@ -19,7 +19,7 @@ export const responsiveData = {
   ],
   pageImage: "https://material-web.dev/components/images/responsive/hero.webp",
   types: ["Mobile Layout", "Tablet Layout", "Desktop Layout"],
-  interactiveDemo: "https://example.com/responsive-demo", // Replace with a valid demo link.
+  interactiveDemo: "",
   accessibity:
     "For responsive pages, ensure logical navigation order and focus management. Use semantic HTML elements (`<header>`, `<main>`, `<footer>`) for assistive technologies. Ensure all interactive elements are touch-friendly and test using screen readers and keyboard navigation.",
   examples: [
@@ -28,7 +28,7 @@ export const responsiveData = {
       description:
         "A compact layout optimized for small screens, with stacked content and easily tappable elements.",
       id: "mobile-layout",
-      title: "Mobile Layout Example",
+      title: "Mobile Layout",
       usages:
         "Ideal for screens less than 768px wide, ensuring usability on smartphones.",
       purpose:
@@ -67,7 +67,7 @@ export const responsiveData = {
       description:
         "A two-column layout with more horizontal space for navigation and content.",
       id: "tablet-layout",
-      title: "Tablet Layout Example",
+      title: "Tablet Layout",
       usages:
         "Best suited for screens between 768px and 1200px, such as tablets or small laptops.",
       purpose:
@@ -116,7 +116,7 @@ export const responsiveData = {
       description:
         "A spacious, multi-column layout with prominent navigation and grid-based content organization.",
       id: "desktop-layout",
-      title: "Desktop Layout Example",
+      title: "Desktop Layout",
       usages:
         "Perfect for screens 1200px wide or larger, such as desktops and large monitors.",
       purpose:
@@ -171,7 +171,6 @@ export const responsiveData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Mobile Layout": "#mobile-layout",

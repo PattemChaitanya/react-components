@@ -19,7 +19,7 @@ export const flexBoxData = {
   ],
   pageImage: "https://material-web.dev/components/images/flexbox/hero.webp",
   types: ["Basic Concepts", "Flex Properties", "Real-World Examples"],
-  interactiveDemo: "https://example.com/flexbox-demo", // Replace with an actual demo link.
+  interactiveDemo: "",
   accessibity:
     "Flexbox simplifies creating accessible layouts by allowing better control over alignment and order. Use semantic HTML elements and proper ARIA roles when needed for better assistive technology support.",
   examples: [
@@ -127,7 +127,6 @@ export const flexBoxData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Basic Concepts": "#basic-concepts",

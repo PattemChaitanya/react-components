@@ -147,7 +147,7 @@ export const buttonGroupData = {
     "Vertical & Horizonal Button Group",
     "Icon Button Group",
   ],
-  interactiveDemo: "#demo",
+  interactiveDemo: "",
   accessibity:
     "Designed with ARIA roles and keyboard navigation support for better accessibility.",
   examples: [
@@ -229,7 +229,6 @@ export const buttonGroupData = {
   ],
   links: {
     Types: "#types",
-    "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Basic Button Group": "#basic-button-group",
