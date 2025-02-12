@@ -3,6 +3,19 @@
   display: grid;
   place-items: center;
   background-color: var(--color-surface-container);
+  transition: 0.3s background-color ease-in-out;
+  position: relative;
+}
+
+.hero i {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.hero i svg {
+  width: 32px;
+  height: 32px;
 }
 
 .hero-container {
@@ -13,10 +26,11 @@
 }
 
 .hero-header-title {
-  font-size: 48px;
+  font-size: var(--theme-display-l-font-size);
   font-weight: bolder;
   color: linear-gradient(95deg, var(--color-inverse-on-surface), var(--color-inverse-surface));
   margin-bottom: 12px;
+  transition: 0.3s color ease-in-out;
 }
 
 .hero-title {
@@ -24,17 +38,20 @@
   font-weight: bold;
   color: var(--color-on-surface);
   margin-bottom: 12px;
+  transition: 0.3s color ease-in-out;
 }
 
 .hero-subtitle {
   font-size: 16px;
   color: var(--color-on-surface-variant);
   margin-bottom: 24px;
+  transition: 0.3s color ease-in-out;
 }
 
 .hero-buttons {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 12px;
 }
 
@@ -42,37 +59,43 @@
   .hero-buttons {
     flex-direction: column;
   }
+
+  .hero i svg {
+    width: 26px;
+    height: 26px;
+  }
 }
 
-.btn {
+.welcome-btn {
   padding: 12px 24px;
   font-size: 16px;
-  font-weight: bold;
+  width: 250px;
+  height: 50px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
 }
 
 .primary {
-  background: #3b82f6;
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  transition: 0.3s all ease-in-out;
+  opacity: 0.9;
 }
 
 .primary:hover {
-  background: #3b82f6;
-  color: white;
+  opacity: 1;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 .secondary {
-  background: #f3f4f6;
-  color: #374151;
+  background: var(--color-on-secondary);
+  color: var(--color-primary);
+  transition: 0.3s all ease-in-out;
 }
 
 .secondary:hover {
-  background: #f3f4f6;
-  color: #374151;
-}
-
-.btn:hover {
-  opacity: 0.9;
+  background: var(--color-secondary-container);
+  color: var(--color-primary);
 }

@@ -10,7 +10,7 @@ const ComplexDropDowns = () => {
   };
 
   return (
-    <div className="container">
+    <div className="drop-down-container">
       <div className="profileCardContainer">
         <div
           className="profileAvatar"

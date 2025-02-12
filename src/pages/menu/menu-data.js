@@ -208,9 +208,9 @@ export const menuData = {
     "Dropdown Menu Accessibility":
       "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Menu_Role",
   },
-  previousNavigation: { title: "Lists", link: "/list" },
+  previousNavigation: { title: "Lists", link: "/all-components/list" },
   nextNavigation: {
     title: "Radio Buttons",
-    link: "/radio-buttons",
+    link: "/all-components/radio-buttons",
   },
 };

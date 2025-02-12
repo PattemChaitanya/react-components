@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 
 const SimpleDropDowns = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const menu = ["Dashboard", "Profile", "Settings"];
 
@@ -17,7 +17,7 @@ const SimpleDropDowns = () => {
   };
 
   return (
-    <div className="container">
+    <div className="drop-down-container">
       <div className="clickAndHoverContainer">
         <div>
           <button

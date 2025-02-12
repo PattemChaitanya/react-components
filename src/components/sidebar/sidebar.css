@@ -39,6 +39,11 @@ main {
   overflow: auto;
 }
 
+.sidebar_left_para_header {
+  margin: 12px 6px;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 1501px) {
   aside {
     display: flex;

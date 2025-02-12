@@ -112,9 +112,9 @@ export const iconButtonData = {
       "https://developer.mozilla.org/en-US/docs/Web/SVG/Accessibility",
     "ARIA Button Patterns": "https://www.w3.org/WAI/ARIA/apg/patterns/button/",
   },
-  previousNavigation: { title: "FAB", link: "/fab" },
+  previousNavigation: { title: "FAB", link: "/all-components/fab" },
   nextNavigation: {
     title: "Lists",
-    link: "/list",
+    link: "/all-components/list",
   },
 };

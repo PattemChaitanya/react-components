@@ -8,11 +8,12 @@ const Home = () => {
   const navigationTo = (to) => {
     navigate(to);
   };
+
   return (
     <div className="gallery-container">
       {Object.values(homeScreenCards).map((card) => (
         <>
-          <h2 className="gallery-title">{card.title}</h2>
+          <h2 className="gallery-title transition-color">{card.title}</h2>
           <div className="gallery-grid">
             {card.components.map((comp, index) => (
               <div
@@ -20,11 +21,11 @@ const Home = () => {
                 className="gallery-card"
                 onClick={() => navigationTo(comp.path)}
               >
-                <img
+                {/* <img
                   src={comp.image}
                   alt={comp.title}
                   className="gallery-icon"
-                />
+                /> */}
                 <p className="gallery-name">{comp.title}</p>
               </div>
             ))}

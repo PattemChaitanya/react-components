@@ -374,9 +374,9 @@ export const radioData = {
     "Keyboard Navigation for Radio Groups":
       "https://webaim.org/techniques/keyboard/",
   },
-  previousNavigation: { title: "Menu", link: "/menu" },
+  previousNavigation: { title: "Menu", link: "/all-components/menu" },
   nextNavigation: {
     title: "Select",
-    link: "/select",
+    link: "/all-components/select",
   },
 };

@@ -313,7 +313,7 @@ code {
 .row-align-center {
   display: flex;
   flex-direction: row;
-  align-items: center
+  align-items: center;
 }
 
 /* ------ new layout ------ */
@@ -466,7 +466,7 @@ nav {
   border-radius: var(--theme-border-radius-hover);
   background-color: var(--color-surface-container);
   transition: 0.5s background-color ease-in-out;
-  width: 500px;
+  width: 600px;
   max-width: 100%;
   padding: 24px;
   max-height: 400px;
@@ -580,8 +580,7 @@ nav {
   }
 
   .sidebar_left_header {
-    font-size: var(--theme-headline-s-font-size);
-    padding: 12px 16px;
+    font-size: var(--theme-title-m-font-size);
   }
 
   .sidebar_left_para {
@@ -629,4 +628,9 @@ nav {
 /* ------------------------------- */
 .link-hover:hover {
   text-decoration: underline;
+}
+
+/* -------------------------- */
+.transition-color {
+  transition: 0.5s color ease-in-out,
 }

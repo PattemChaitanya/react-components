@@ -7,28 +7,18 @@ const Sidebar = () => {
   return (
     <div className="main-container">
       <aside>
-        <Link to="/all-components" className="sidebar_left_header">
+        <Link
+          to="/all-components"
+          className="sidebar_left_header sidebar_left_para_header"
+        >
           All Components
         </Link>
-        {/* {newMenu.map((item, index) => (
-          <NavLink
-            to={item.path}
-            key={index}
-            className={({ isActive }) =>
-              isActive ? "sidebar_left_para active" : "sidebar_left_para"
-            }
-          >
-            {item.title}
-          </NavLink>
-        ))} */}
         {homeScreenCards.map((item, itemIndex) => (
           <React.Fragment key={itemIndex}>
-            <p style={{ margin: "12px 6px", fontWeight: "bold" }}>
-              {item.title}
-            </p>
+            <p className="sidebar_left_para_header">{item.title}</p>
             {item.components.map((component, index) => (
               <NavLink
-                to={`/all-components/${component.path}`}
+                to={component.path}
                 key={index}
                 className={({ isActive }) =>
                   isActive ? "sidebar_left_para active" : "sidebar_left_para"

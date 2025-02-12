@@ -141,9 +141,12 @@ export const selectData = {
     "Keyboard Navigation in Forms":
       "https://webaim.org/techniques/forms/controls",
   },
-  previousNavigation: { title: "Radio Buttons", link: "/radio-buttons" },
+  previousNavigation: {
+    title: "Radio Buttons",
+    link: "/all-components/radio-buttons",
+  },
   nextNavigation: {
     title: "Switch",
-    link: "/switch",
+    link: "/all-components/switch",
   },
 };

@@ -1,7 +1,7 @@
 /* Common components 1. Check box 2. Slider 3. Button 4. Input 5. Chips 6. Floating action button 7. Icon buttons 8. Lists 9. Menu 10. Radio button 11. Select 12. Switch 13. Tabs How to section 1. Accordion 2. Avatar 3. Button group 4. Images 5. Caursoul 6. Todo 7. Tables 8. Drag and drop 9. Custom cards 10. Top navigation 11. Botton navigation 12. Drop downs 13. Side navigation 14. Responsive Layout Concepts 1. Flex box 2. Grid 3. Position */
 
 .gallery-container {
-  text-align: center;
+  /* text-align: center; */
   padding: 40px;
   display: grid;
   width: 100dvw;
@@ -32,6 +32,7 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .gallery-card {

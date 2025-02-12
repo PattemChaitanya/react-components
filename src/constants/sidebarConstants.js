@@ -496,38 +496,38 @@ export const homeScreenCards = [
         component: <Drawer />,
         image: "",
       },
-      {
-        title: "Responsive Layout",
-        path: "/all-components/responsive-layout",
-        component: <ResponsiveLayout />,
-        image: "",
-      },
+      // {
+      //   title: "Responsive Layout",
+      //   path: "/all-components/responsive-layout",
+      //   component: <ResponsiveLayout />,
+      //   image: "",
+      // },
     ],
   },
   // how to section
-  {
-    title: "Concepts To Learn",
-    description: "",
-    components: [
-      // concepts
-      {
-        title: "Flex box",
-        path: "/all-components/flex-box",
-        component: <Flexbox />,
-        image: "",
-      },
-      {
-        title: "Grid",
-        path: "/all-components/grid",
-        component: "<Grid />",
-        image: "",
-      },
-      {
-        title: "Position",
-        path: "/all-components/position",
-        component: "<Position />",
-        image: "",
-      },
-    ],
-  },
+  // {
+  //   title: "Concepts To Learn",
+  //   description: "",
+  //   components: [
+  //     // concepts
+  //     {
+  //       title: "Flex box",
+  //       path: "/all-components/flex-box",
+  //       component: <Flexbox />,
+  //       image: "",
+  //     },
+  //     {
+  //       title: "Grid",
+  //       path: "/all-components/grid",
+  //       component: "<Grid />",
+  //       image: "",
+  //     },
+  //     {
+  //       title: "Position",
+  //       path: "/all-components/position",
+  //       component: "<Position />",
+  //       image: "",
+  //     },
+  //   ],
+  // },
 ];

@@ -1,3 +1,7 @@
+.container-top-nav {
+  height: 200px;
+}
+
 /* Basic Navbar Styles */
 .navbar-top {
   background: #333;
@@ -48,16 +52,17 @@
 
 /* ----- top nav with drop down ----- */
 /* Basic Navbar Styles */
-.navbar {
+.navbar-dropdown {
   background: #333;
   padding: 12px 20px;
   display: flex;
   justify-content: center;
   flex-direction: row;
+  height: 60px;
 }
 
 .nav-links {
-  list-style: none;
+  /* list-style: none; */
   padding: 0;
   margin: 0;
   display: flex;
@@ -85,7 +90,7 @@
 /* Dropdown Menu */
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  /* top: 100%; */
   left: 0;
   background: #444;
   list-style: none;

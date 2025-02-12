@@ -295,7 +295,7 @@ export const jsonToButtonData = {
   previousNavigation: null,
   nextNavigation: {
     title: "Check box",
-    link: "/check-box",
+    link: "/all-components/check-box",
   },
 };
 

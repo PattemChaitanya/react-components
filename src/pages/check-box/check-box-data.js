@@ -119,9 +119,9 @@ export const checkboxData = {
     "Keyboard Navigation in Forms":
       "https://webaim.org/techniques/forms/controls",
   },
-  previousNavigation: { title: "Buttons", link: "/buttons" },
+  previousNavigation: { title: "Buttons", link: "/all-components/buttons" },
   nextNavigation: {
     title: "Slider",
-    link: "/slider",
+    link: "/all-components/slider",
   },
 };
