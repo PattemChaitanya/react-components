@@ -36,8 +36,8 @@ import { ButtonIcon } from "../assets/component-card-images/images-index";
 import Tabs from "../pages/tabs";
 import Caursoul from "../pages/caursoul";
 import TopNavigation from "../pages/top-nav";
-import ResponsiveLayout from "../pages/responsive-layout";
-import Flexbox from "../pages/flexbox";
+// import ResponsiveLayout from "../pages/responsive-layout";
+// import Flexbox from "../pages/flexbox";
 
 export const menu = [
   {
