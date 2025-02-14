@@ -365,7 +365,7 @@ export const bottomNavData = {
       open: false,
     },
     {
-      component: <SelectNameBottomNav />,
+      component: <FixedBottomNav />,
       description:
         "A bottom navigation bar with icons for easy recognition of sections, designed for mobile applications.",
       id: "bottom-nav-with-icons",

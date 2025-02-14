@@ -11,6 +11,7 @@ const styles = {
     padding: "10px 0",
     marginInline: "auto",
     borderRadius: "4px",
+    cursor: "pointer",
   },
   textCenter: {
     textAlign: "center",
@@ -25,27 +26,20 @@ const styles = {
 };
 
 const SelectNameBottomNav = () => {
-  const [selected, setSelected] = useState("home");
-
-  const handleClick = (id) => {
-    setSelected(id);
-  };
+  const [selected, setSelected] = useState(0);
 
   return (
-    <div style={styles.container}>
-      {navItems.map((item) => (
+    <div className="bottom-nav">
+      {navItems.map((item, index) => (
         <div
           key={item.id}
-          style={{
-            ...styles.textCenter,
-            ...(selected === item.id ? styles.selected : styles.notSelected),
-          }}
-          onClick={() => handleClick(item.id)}
+          className={`nav-item ${selected === index ? "active" : ""}`}
+          onClick={() => setSelected(index)}
         >
           <svg viewBox="0 0 24 24" style={styles.svgSize}>
             <path fill="currentColor" d={item.iconPath} />
           </svg>
-          {selected === item.id && <div>{item.label}</div>}
+          <span>{item.label}</span>
         </div>
       ))}
     </div>

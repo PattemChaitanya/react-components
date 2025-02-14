@@ -3,12 +3,6 @@ import { navItems } from "./bottom-nav-data";
 
 const styles = {
   container: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-around",
-    alignItems: "center",
-    backgroundColor: "#f0f0f0",
-    padding: "10px 0",
     position: "sticky",
     bottom: 0,
     zIndex: 1000,
@@ -21,15 +15,20 @@ const styles = {
     overflowY: "auto",
     height: "200px",
     position: "relative",
-    width: "70%",
+    width: "100%",
     marginInline: "auto",
   },
 };
 
 const FixedBottomNav = () => {
+  const [selected, setSelected] = React.useState(0);
+
   return (
     <div style={styles.contentContainer}>
       <div>
+        <h1>
+          {selected === 0 ? "home" : selected === 1 ? "Search" : "Profile"}
+        </h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
           risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,
@@ -49,13 +48,17 @@ const FixedBottomNav = () => {
           massa, varius a, semper congue, euismod non, mi.
         </p>
       </div>
-      <div style={styles.container}>
-        {navItems.map((item) => (
-          <div key={item.id} style={styles.textCenter}>
+      <div className="bottom-nav" style={styles.container}>
+        {navItems.map((item, index) => (
+          <div
+            key={index}
+            className={`nav-item ${selected === index ? "active" : ""}`}
+            onClick={() => setSelected(index)}
+          >
             <svg viewBox="0 0 24 24" style={styles.svgSize}>
               <path fill="currentColor" d={item.iconPath} />
             </svg>
-            <div>{item.label}</div>
+            {selected === index && <div>{item.label}</div>}
           </div>
         ))}
       </div>

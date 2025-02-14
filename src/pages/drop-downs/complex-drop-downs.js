@@ -17,7 +17,7 @@ const ComplexDropDowns = () => {
           onClick={() => setIsOpen(!isOpen)}
           style={{ cursor: "pointer" }}
         >
-          <Avatar url="" name="adam" color="#cccbbb" />
+          <Avatar url="" name="adam" sx={{ color: "inherit" }} />
         </div>
         <div
           className="profileMenu"

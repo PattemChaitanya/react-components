@@ -42,8 +42,11 @@ const NotificationDropDowns = () => {
     <div className="container">
       <div className="dropDownContainer">
         <div className="icon-button">
-          <IconButton onClick={() => setIsOpen(!isOpen)}>
-            <NotificationsRoundedIcon />
+          <IconButton
+            onClick={() => setIsOpen(!isOpen)}
+            sx={{ color: "inherit" }}
+          >
+            <NotificationsRoundedIcon sx={{ color: "inherit" }} />
           </IconButton>
         </div>
         <div

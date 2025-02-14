@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 const useTheme = () => {
   let mode = window.localStorage.getItem("theme");
   let darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-  const [theme, setTheme] = useState(mode || darkThemeMq ? "dark" : "light");
+  const [theme, setTheme] = useState(
+    mode || (darkThemeMq && "dark") || "light"
+  );
 
   const toggleTheme = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");

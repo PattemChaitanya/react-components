@@ -80,6 +80,7 @@ export const NavbarWithSearch = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     alert(`Searching for: ${searchQuery}`);
+    setSearchQuery("");
   };
 
   return (
