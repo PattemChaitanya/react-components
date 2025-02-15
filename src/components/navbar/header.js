@@ -73,7 +73,11 @@ const Header = () => {
           </h5>
         </div>
         <div className="row-align-center">
-          <IconButton>
+          <IconButton
+            component={"a"}
+            target="_blank"
+            href="https://github.com/PattemChaitanya/react-components"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
