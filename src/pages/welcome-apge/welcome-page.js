@@ -24,12 +24,12 @@ const WelcomeSection = () => {
         </p>
 
         <div className="hero-buttons">
-          <button
+          {/* <button
             className="welcome-btn primary"
             onClick={() => (window.location.href = "/")}
           >
             Beginner Guide
-          </button>
+          </button> */}
           <button
             className="welcome-btn secondary"
             onClick={() => (window.location.href = "/all-components")}

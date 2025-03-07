@@ -1,3 +1,28 @@
+.code-snippet-p-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 28px;
+  border-bottom: 1px solid var(--color-outline);
+  position: sticky;
+  top: 0;
+  background-color: var(--color-surface-container-lowest);
+  transition: 0.5s background-color ease-in-out,
+}
+
+.code-snippet-p {
+  font-size: 18px;
+  text-transform: capitalize;
+  cursor: pointer;
+  padding-bottom: 6px;
+}
+
+.code-snippet-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+}
+
 .code-snippet-container {
   background-color: var(--color-surface-container);
   padding: 10px;
@@ -21,8 +46,7 @@ pre {
   white-space: pre-wrap;
   word-wrap: break-word;
   margin: 0;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 15px 28px 20px;
 }
 
 .code-snippet-header {

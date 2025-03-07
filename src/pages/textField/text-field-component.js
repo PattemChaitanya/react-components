@@ -173,6 +173,7 @@ export const PasswordField = () => {
           background: "none",
           border: "none",
           cursor: "pointer",
+          color: "#000",
         }}
       >
         {showPassword ? "Hide" : "Show"}
@@ -223,6 +224,7 @@ export const TextFieldWithValidation = () => {
             fontSize: "16px",
             border: "1px solid #ccc",
             borderRadius: "4px",
+            oultine: "none",
           }}
         />
         {error && <p style={{ color: "red", marginTop: "5px" }}>{error}</p>}

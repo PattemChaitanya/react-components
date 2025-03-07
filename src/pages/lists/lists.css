@@ -70,7 +70,7 @@
   flex: 1;
 }
 
-/* ----- mested list item ----- */
+/* ----- nested list item ----- */
 .nested-list {
   list-style: none;
   padding-left: 0;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import "./slider.css";
 
 // music player component
 import { PlayArrow, Pause, SkipPrevious, SkipNext } from "@mui/icons-material";
-import "./slider.css";
 import VolumeMuteRoundedIcon from "@mui/icons-material/VolumeMuteRounded";
 import VolumeUpRoundedIcon from "@mui/icons-material/VolumeUpRounded";
 

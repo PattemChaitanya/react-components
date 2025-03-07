@@ -19,6 +19,7 @@ const ComponentExample = ({ jsonObject }) => {
   const [isCopied, setIsCopied] = useState(
     jsonToDisplay.map((item) => item.open)
   );
+  const [showDemo, setShowDemo] = useState(0);
 
   const handleCopy = (codeToCopy, index) => {
     setIsCopied(isCopied.map((item, idx) => (idx === index ? !item : item)));
@@ -70,31 +71,39 @@ const ComponentExample = ({ jsonObject }) => {
                 <strong>Purpose:</strong> {item.purpose}
               </p>
               <div className="component-layout-component">{item.component}</div>
-              <div style={{ position: "relative" }}>
-                <pre className="component-layout-code-block">
-                  <code>{item.codeBlock}</code>
+              <div className="component-layout-code-block">
+                <div className="code-snippet-p-header">
+                  {typeof item.codeBlock === "object"
+                    ? Object.keys(item.codeBlock).map((block, blockIndex) => (
+                        <p
+                          className="code-snippet-p"
+                          style={{
+                            borderBottom:
+                              showDemo === blockIndex && "1px solid",
+                          }}
+                          onClick={() => setShowDemo(blockIndex)}
+                        >
+                          {block}
+                        </p>
+                      ))
+                    : item.codeBlock}
+                  {isCopied[index] ? (
+                    <DoneIcon className="code-snippet-icon" />
+                  ) : (
+                    <ContentCopyIcon
+                      className="code-snippet-icon"
+                      onClick={() =>
+                        handleCopy(
+                          Object.values(item.codeBlock)[showDemo],
+                          index
+                        )
+                      }
+                    />
+                  )}
+                </div>
+                <pre>
+                  <code>{Object.values(item.codeBlock)[showDemo]}</code>
                 </pre>
-                {isCopied[index] ? (
-                  <DoneIcon
-                    sx={{
-                      cursor: "pointer",
-                      position: "absolute",
-                      top: 10,
-                      right: 20,
-                    }}
-                    onClick={() => handleCopy(item.codeBlock, index)}
-                  />
-                ) : (
-                  <ContentCopyIcon
-                    sx={{
-                      cursor: "pointer",
-                      position: "absolute",
-                      top: 10,
-                      right: 20,
-                    }}
-                    onClick={() => handleCopy(item.codeBlock, index)}
-                  />
-                )}
               </div>
             </div>
           ))}

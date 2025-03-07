@@ -114,15 +114,7 @@ export const NavigationMenu = ({ menuItems }) => {
             </ul>
           </nav>
           <div
-            style={{
-              width: "100%",
-              height: "100dvh",
-              background: "rgba(0,0,0,0.4)",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              zIndex: 10,
-            }}
+            className="background-overlay"
             onClick={() => {
               setSidebarOpen(false);
               setNavbarOpen(false);

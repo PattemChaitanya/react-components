@@ -39,13 +39,74 @@ export const chipsData = {
         "Action chips are ideal for actions like toggling a feature or applying a function.",
       purpose:
         "To allow users to perform specific tasks quickly and intuitively.",
-      codeBlock: `
-<div class="chips-container">
-  <div class="chip">Apply Code</div>
-  <div class="chip">Open Help</div>
-  <div class="chip">Start Chat</div>
-</div>
-      `,
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import Chip from "./chip";
+      
+export const App = () => {
+  return (
+    <Chip
+      label="Apply Discount"
+      onClick={() => alert("Discount Applied!")}
+    />
+  );
+},`,
+        "chip.jsx": `import React from "react";
+import "./chip.css";
+        
+export default const Chip = ({ label, icon, onClick }) => {
+  const handleClick = () => {
+    onClick && onClick();
+  };
+  
+  return (
+    <div className="chip">
+      {icon && <span className="chip-icon">{icon}</span>}
+      <span className="chip-label">{label}</span>
+      <button className="chip-close" onClick={handleClick}>
+        ✕
+      </button>
+    </div>
+  );
+};`,
+        "chip.css": `.chip {
+  display: inline-flex;
+  align-items: center;
+  background: #f1f1f1;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 1px solid #ccc;
+}
+
+.chip:hover {
+  background: #e0e0e0;
+}
+
+.chip-icon {
+  margin-right: 6px;
+}
+
+.chip-label {
+  margin-right: 8px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.chip-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #777;
+  padding: 0;
+}
+
+.chip-close:hover {
+  color: #333;
+}`,
+      },
       open: false,
     },
     {
@@ -58,13 +119,58 @@ export const chipsData = {
         "Choice chips are used when the user must select a single option from a set, such as themes or delivery options.",
       purpose:
         "To make single-option selections more user-friendly and visually engaging.",
-      codeBlock: `
-<div class="chips-container">
-  <div class="chip">Light Theme</div>
-  <div class="chip selected">Dark Theme</div>
-  <div class="chip">System Default</div>
-</div>
-      `,
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./app.css";
+      
+export const App = () => {
+  const options = ["Small", "Medium", "Large"];
+  const [selected, setSelected] = useState(null);
+
+  const handleSelect = (option) => {
+    setSelected(option);
+  };
+
+  return (
+    <div className="choice-chips-container">
+      {options.map((option, index) => (
+        <button
+          key={index}
+          className={\`choice-chip \${selected === option ? "selected" : ""}\`}
+          onClick={() => handleSelect(option)}
+        >
+          {option}
+        </button>
+      ))}
+    </div>
+  );
+};`,
+        "app.css": `.choice-chips-container {
+  display: flex;
+  gap: 8px;
+}
+
+.choice-chip {
+  padding: 8px 16px;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  background: #f1f1f1;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.choice-chip:hover {
+  background: #e0e0e0;
+}
+
+.choice-chip.selected {
+  background: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+}`,
+      },
       open: false,
     },
     {
@@ -76,13 +182,75 @@ export const chipsData = {
       usages:
         "Use filter chips to toggle between different categories, such as color, size, or brand.",
       purpose: "To simplify filtering options in a compact, organized manner.",
-      codeBlock: `
-<div class="chips-container">
-  <div class="chip selected">Small</div>
-  <div class="chip">Medium</div>
-  <div class="chip">Large</div>
-</div>
-      `,
+      codeBlock: {
+        "app.jsx": `import React from "react;
+import "./app.css";
+        
+export const App = () => {
+  const options = [
+    "Electronics",
+    "Clothing",
+    "Home & Kitchen",
+    "Books",
+    "Toys",
+  ];
+  const [selectedFilters, setSelectedFilters] = useState([]);
+
+  const handleToggle = (option) => {
+    let updatedFilters = [...selectedFilters];
+    if (updatedFilters.includes(option)) {
+      updatedFilters = updatedFilters.filter((item) => item !== option);
+    } else {
+      updatedFilters.push(option);
+    }
+    setSelectedFilters(updatedFilters);
+  };
+
+  return (
+    <div className="filter-chips-container">
+      {options.map((option, index) => (
+        <button
+          key={index}
+          className={\`choice-chip \${
+            selectedFilters.includes(option) ? "selected" : ""
+          }\`}
+          onClick={() => handleToggle(option)}
+        >
+          {option}
+        </button>
+      ))}
+    </div>
+  );
+};
+        `,
+        "app.css": `.filter-chips-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+  
+.choice-chip {
+  padding: 8px 16px;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  background: #f1f1f1;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.choice-chip:hover {
+  background: #e0e0e0;
+}
+
+.choice-chip.selected {
+  background: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+}`,
+      },
       open: false,
     },
     {
@@ -95,14 +263,125 @@ export const chipsData = {
         "Use input chips for representing dynamic user input, such as adding or removing tags.",
       purpose:
         "To visually display user-provided data in a structured and editable way.",
-      codeBlock: `
-<div class="chips-container">
-  <div class="chip">React <span class="chip-remove">&times;</span></div>
-  <div class="chip">Material Design <span class="chip-remove">&times;</span></div>
-  <div class="chip">UI Components <span class="chip-remove">&times;</span></div>
-  <input type="text" placeholder="Add a tag" class="chip-input">
-</div>
-      `,
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import Chip from "./chip";
+import "./app.css";
+      
+export const App = () => {
+  const [chips, setChips] = useState([]);
+  const [input, setInput] = useState("");
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" && input.trim()) {
+      setChips([...chips, input.trim()]);
+      setInput("");
+      event.preventDefault();
+    } else if (event.key === "Backspace" && !input && chips.length > 0) {
+      setChips(chips.slice(0, -1));
+    }
+  };
+
+  const removeChip = (index) => {
+    setChips(chips.filter((_, i) => i !== index));
+  };
+
+  return (
+    <div className="input-chip-container">
+      <input
+        type="text"
+        className="input-chip-text"
+        placeholder="Type and press Enter..."
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        onKeyDown={handleKeyDown}
+      />
+      <section className="input-chips">
+        {chips.map((chip, index) => (
+          <Chip label={chip} onClick={() => removeChip(index)} />
+        ))}
+      </section>
+    </div>
+  );
+};`,
+        "chips.jsx": `import React from "react";
+        
+export const Chip = ({ label, icon, onClick }) => {
+  const handleClick = () => {
+    onClick && onClick();
+  };
+  return (
+    <div className="chip">
+      {icon && <span className="chip-icon">{icon}</span>}
+      <span className="chip-label">{label}</span>
+      <button className="chip-close" onClick={handleClick}>
+        ✕
+      </button>
+    </div>
+  );
+};`,
+        "app.css": `/* ---- Chip Component ---- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  background: #f1f1f1;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 1px solid #ccc;
+}
+
+.chip:hover {
+  background: #e0e0e0;
+}
+
+.chip-icon {
+  margin-right: 6px;
+}
+
+.chip-label {
+  margin-right: 8px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.chip-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #777;
+  padding: 0;
+}
+
+.chip-close:hover {
+  color: #333;
+}
+
+/* ----- Input Chip for tagging ----- */
+.input-chip-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.input-chip-text {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  padding: 6px;
+  font-size: 14px;
+  width: min(250px, 100%);
+  margin: 0 auto;
+}`,
+      },
       open: false,
     },
   ],

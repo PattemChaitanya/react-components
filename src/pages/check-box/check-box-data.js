@@ -41,7 +41,74 @@ export const checkboxData = {
       usages:
         "Used for scenarios like accepting terms, enabling features, or selecting preferences.",
       purpose: "Provides a straightforward way to toggle a binary state.",
-      codeBlock: "<checkbox id='basic'>Accept Terms</checkbox>",
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./app.css";
+
+export const Checkbox = () => {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div className="checkbox">
+      <input
+        type="checkbox"
+        name="check-me"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+        aria-checked={checked}
+        aria-describedby="check-me-description"
+      />
+    </div>
+  );
+};`,
+        "app.css": `.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+}
+
+.checkbox input[type="checkbox"]:checked {
+  border-color: var(--primary-color);
+}
+
+.checkbox input[type="checkbox"]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--color-primary-container);
+  transform-origin: center;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checkbox input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.checkbox input[type="checkbox"]:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.checkbox-label {
+  font-size: 1rem;
+  cursor: pointer;
+}`,
+      },
       open: false,
     },
     {
@@ -53,8 +120,90 @@ export const checkboxData = {
         "Ideal for forms where clarity about the checkbox's function is necessary.",
       purpose:
         "Enhances user understanding by pairing the checkbox with descriptive text.",
-      codeBlock:
-        "<checkbox id='labeled' label='Subscribe to newsletter'></checkbox>",
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./styles.css";
+
+export const CheckboxWithLabel = () => {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div className="checkbox">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+        aria-checked={checked}
+        aria-describedby="check-me-description"
+      />
+      <label htmlFor="check-me" className="checkbox-label">
+        Check me
+      </label>
+      <span id="check-me-description" className="sr-only">
+        This is a checkbox that you can check.
+      </span>
+    </div>
+  );
+};`,
+        "app.css": `.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+}
+
+.checkbox input[type="checkbox"]:checked {
+  border-color: var(--primary-color);
+}
+
+.checkbox input[type="checkbox"]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--color-primary-container);
+  transform-origin: center;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checkbox input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.checkbox input[type="checkbox"]:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.checkbox-label {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}`,
+      },
       open: false,
     },
     {
@@ -67,8 +216,97 @@ export const checkboxData = {
         "Perfect for branded designs or applications with unique visual identities.",
       purpose:
         "Combines functionality with creative expression for better user engagement.",
-      codeBlock:
-        "<checkbox id='custom' style='--checkbox-color: #6200ea;'>Custom Theme</checkbox>",
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./app.css";
+
+export const CheckboxThemed = () => {
+  let label = "check-me";
+  let id = "check-me";
+  let theme = { primaryColor: "#6200ea" };
+  const [checked, setChecked] = React.useState(false);
+  const handleChange = (e) => {
+    setChecked(e.target.checked);
+  };
+  
+  return (
+    <div className="checkbox" style={{ "--primary-color": theprimaryColor }}>
+      <input
+        id={id}
+        type="checkbox"
+        checked={checked}
+        onChange={handleChange}
+        aria-checked={checked}
+        aria-describedby={U+0060check-me-descriptionU+0060}
+      />
+      <label htmlFor={id} className="checkbox-label">
+        {label}
+      </label>
+            <span id={U+0060check-me-description-{id}U+006className="sr-only">
+        This is a checkbox that you can check.
+      </span>
+    </div>
+  );
+};`,
+        "app.css": `.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+}
+
+.checkbox input[type="checkbox"]:checked {
+  border-color: var(--primary-color);
+}
+
+.checkbox input[type="checkbox"]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--color-primary-container);
+  transform-origin: center;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checkbox input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.checkbox input[type="checkbox"]:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.checkbox-label {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}`,
+      },
       open: false,
     },
     {
@@ -80,8 +318,128 @@ export const checkboxData = {
         "Used in hierarchical selections, like when a parent option is partially selected.",
       purpose:
         "Communicates partial selection in a clear and accessible manner.",
-      codeBlock:
-        "<checkbox id='indeterminate' indeterminate>Partial Selection</checkbox>",
+      codeBlock: {
+        "app.jsx": `import React, { useEffect, useRef, useState } from "react";
+import "./app.css";
+
+export const ParentCheckbox = () => {
+  const [checkedItems, setCheckedItems] = useState([false, false, false]);
+  const allChecked = checkedItems.every(Boolean);
+  const someChecked = checkedItems.some(Boolean) && !allChecked;
+  const toggleParent = () => {
+    setCheckedItems(allChecked ? [false, false, false] : [true, true, true]);
+  };
+
+  const toggleChild = (index) => {
+    setCheckedItems((prev) =>
+      prev.map((item, i) => (i === index ? !item : item))
+    );
+  };
+  
+  return (
+    <div className="checkbox-in-group">
+      <IndeterminateCheckbox
+        label="Select All"
+        isChecked={allChecked}
+        isIndeterminate={someChecked}
+        onChange={toggleParent}
+      />
+      {checkedItems.map((checked, index) => (
+        <IndeterminateCheckbox
+          key={index}
+          label={Item {index + 1}}
+          isChecked={checked}
+          isIndeterminate={false}
+          onChange={() => toggleChild(index)}
+        />
+      ))}
+    </div>
+  );
+};
+export default ParentCheckbox;
+
+const IndeterminateCheckbox = ({
+  label = "Select All",
+  isChecked,
+  isIndeterminate,
+  onChange,
+}) => {
+  const checkboxRef = useRef(null);
+
+  useEffect(() => {
+    if (checkboxRef.current) {
+      checkboxRef.current.indeterminate = isIndeterminate;
+    }
+  }, [isIndeterminate]);
+
+  return (
+    <label className="checkbox-in-container">
+      <input
+        ref={checkboxRef}
+        type="checkbox"
+        checked={isChecked}
+        onChange={onChange}
+      />
+      <span className="custom-checkbox-in"></span>
+      <span className="checkbox-in-label">{label}</span>
+    </label>
+  );
+};
+      `,
+        "app.css": `.checkbox-in-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  margin: 5px 0;
+}
+
+.checkbox-in-container input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--primary-color, #007bff);
+  border-radius: 4px;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.checkbox-in-container input:checked {
+  background-color: var(--primary-color, #007bff);
+}
+
+.checkbox-in-container input:checked::after {
+  content: "✔";
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox-in-container input:indeterminate {
+  background-color: var(--primary-color, #007bff);
+}
+
+.checkbox-in-container input:indeterminate::after {
+  content: "—";
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox-in-label {
+  font-size: 1rem;
+}`,
+      },
       open: false,
     },
     // {

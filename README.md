@@ -1,108 +1,43 @@
-# InProgress
-## Things to be covered:
+# JSX to Web
+*A modern UI framework inspired by Google Material Design*
 
-- Drag and drop
-- Container
-- Cards
-- Loaders
-- Navbar(header)
-- Footer
-- Side bar(drawer)
-- Responsive layout.
-- Avatar
-- Mansory images
-- Image slider
-- Image carousel
-- Shuffle list
-- Table
-- Pagination
-- Modal
-- Tooltip
-- Popover
-- Alert
-- Progress bar
-- Stepper
-- Tabs
-- Accordion
-- Breadcrumbs
-- Badge
+## Overview
+This project provides a sleek, responsive, and customizable UI framework similar to Google Material Design. It offers pre-built components, animations, and themes to enhance the user experience while maintaining simplicity and flexibility.
 
-## Components
+## Features
+- ✅ **Customizable UI Components** – Buttons, Cards, Dialogs, etc.  
+- ✅ **Responsive Design** – Works across all devices  
+- ✅ **Theming Support** – Light & Dark modes  
+- ✅ **Accessibility** – Follows best practices for UX & ARIA compliance  
+- ✅ **Animations & Transitions** – Smooth user interactions  
 
-- Buttons
-- List
-- Playground
-- Typography
-- Icons
-- Avatar
-- Image
+## Contributing
+### We welcome contributions! <br >
+*To run this project, use the following command:*
 
----------------------------------------------------
-## new components
-- [x] Accordion
-- [x] Alerts
-- [x] Avatar
-- [x] Badge
-- [ ] Banner
-- [x] Bottom Navigation
-- [ ] Breadcrumb
-- [x] Buttons
-- [x] Button Group
-- [x] Card
-- [ ] Carousel
-- [ ] Chat Bubble
-- [ ] Clipboard
-- [ ] Datepicker
-- [ ] Device Mockups
-- [x] Drawer
-- [ ] Dropdowns
-- [x] Footer
-- [ ] Forms
-- [ ] Gallery
-- [ ] Indicators
-- [ ] KBD
-- [ ] List Group
-- [ ] Mega Menu
-- [ ] Modal
-- [ ] Navbar
-- [ ] Pagination
-- [ ] Popover
-- [ ] Progress
-- [ ] Rating
-- [ ] Sidebar
-- [ ] Skeleton
-- [ ] Speed Dial
-- [ ] Spinner
-- [ ] Stepper
-- [ ] Tables
-- [ ] Tabs
-- [ ] Timeline
-- [ ] Toast
-- [ ] Tooltips
-- [ ] Typography
-- [ ] Video
----------------------------------------------------
-FORMS
-- Input Field
-- File Input
-- Search Input
-- Number Input
-- Phone Input
-- Select
-- Textarea
-- Timepicker
-- Checkbox
-- Radio
-- Toggle
-- Range
-- Floating Label
-----------------------------------------------------
-TYPOGRAPHY
-- Headings
-- Paragraphs
-- Blockquote
-- Images
-- Lists
-- Links
-- Text
-- HR
+### Getting Started
+
+*Clone the repository:*
+```sh
+git clone https://github.com/PattemChaitanya/react-components.git
+```
+*Install dependencies:*
+```sh
+npm install
+```
+*Run the development server:*
+```sh
+npm start 
+```
+
+## Usage Example
+```sh
+import { Button } from "your-ui-framework";
+
+function App() {
+  return <Button variant="primary">Click Me</Button>;
+}
+```
+
+## License
+This project is licensed under the MIT License.

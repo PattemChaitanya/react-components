@@ -44,14 +44,52 @@ export const iconButtonData = {
         "Use for common actions that are visually represented by icons, such as search or delete.",
       purpose:
         "To keep the interface compact and visually intuitive for users.",
-      codeBlock: `
-<button class="icon-button" aria-label="Search">
-  <svg width="24" height="24" viewBox="0 0 24 24">
-    <circle cx="10" cy="10" r="7" stroke="black" stroke-width="2" fill="none"></circle>
-    <line x1="15" y1="15" x2="20" y2="20" stroke="black" stroke-width="2"></line>
-  </svg>
-</button>
-      `,
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import { Refresh } from "@mui/icons-material";
+import IconButton from "./IconButton";
+
+export const App = () => {
+  return (
+    <div>
+      <IconButton
+        Icon={Refresh}
+        onClick={() => alert("Refresh clicked!")}
+        label="Refresh"
+      />
+    </div>
+  );
+};`,
+        "IconButton.js": `import React from "react";
+import "./app.css";
+        
+export default const IconButton = ({ Icon, onClick, label }) => {
+  return (
+    <i className="icon-button" onClick={onClick} aria-label={label}>
+      <Icon fontSize="inherit" />
+    </i>
+  );
+};`,
+        "app.css": `.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  outline: none;
+  position: relative;
+}
+
+.icon-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}`,
+      },
       open: false,
     },
     {
@@ -63,13 +101,56 @@ export const iconButtonData = {
       usages:
         "Use toggle buttons for actions with binary states, like favorite/unfavorite.",
       purpose: "To provide visual feedback for toggled actions.",
-      codeBlock: `
-<button class="icon-button toggle-button" aria-label="Like">
-  <svg class="icon" width="24" height="24" viewBox="0 0 24 24">
-    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09C13.09 4.01 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"></path>
-  </svg>
-</button>
-      `,
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import "./app.css";
+        
+export const App = () => {
+  const [liked, setLiked] = useState(false);
+
+  return (
+    <i
+      className={\`icon-button \${liked ? "active" : ""}\`}
+      onClick={() => setLiked(!liked)}
+      aria-label="Toggle favorite"
+    >
+      {liked ? (
+        <Favorite fontSize="inherit" />
+      ) : (
+        <FavoriteBorder fontSize="inherit" />
+      )}
+    </i>
+  );
+};`,
+        "app.css": `.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  outline: none;
+  position: relative;
+}
+
+.icon-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.icon-button:active {
+  transform: scale(0.9);
+}
+
+.icon-button.active {
+  color: red;
+}`,
+      },
       open: false,
     },
     {
@@ -82,16 +163,72 @@ export const iconButtonData = {
         "Use for actions that require a count or notification, like inbox or shopping cart.",
       purpose:
         "To provide actionable icons while also displaying additional context, like counts.",
-      codeBlock: `
-<div class="icon-button-with-badge">
-  <button class="icon-button" aria-label="Notifications">
-    <svg width="24" height="24" viewBox="0 0 24 24">
-      <path d="M12 2C8.13 2 5 5.13 5 9v6.5l-1.75 1.75c-.41.41-.25 1.11.29 1.26L5 19h14l.46-.49c.54-.15.7-.85.29-1.26L19 15.5V9c0-3.87-3.13-7-7-7zm0 20c-1.1 0-2-.9-2-2h4c0 1.1-.9 2-2 2z" fill="currentColor"></path>
-    </svg>
-  </button>
-  <span class="badge">3</span>
-</div>
-      `,
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import { Notifications } from "@mui/icons-material";
+import IconButton from "./IconButton";
+
+export const App = () => {
+  return (
+    <div>
+      <IconButton
+        Icon={Notifications}
+        count={5}
+        label="Notifications"
+      />
+    </div>
+  );
+};`,
+        "IconButton.js": `import React from "react";
+import "./app.css";
+        
+export default const IconButton = ({ Icon, count, label }) => {
+  return (
+      <button className="icon-button">
+        <i className="icon-button" aria-label={label}>
+          <Icon fontSize="inherit" />
+        </i>
+        {count > 0 && <span className="badge">{count > 99 ? "99+" : count}</span>}
+      </button>
+    );
+};`,
+        "app.css": `.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  outline: none;
+  position: relative;
+}
+
+.icon-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+  
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}`,
+      },
       open: false,
     },
   ],

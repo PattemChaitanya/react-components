@@ -36,22 +36,6 @@ const ComponentRight = ({ pageTitle, links }) => {
             }
             return 0;
           })}
-          {/* <li>
-              <p>Reference</p>
-              <ul>
-                <li>Typeface</li>
-                <li>Palette</li>
-              </ul>
-            </li>
-            <li>
-              <p>System</p>
-              <ul>
-                <li>Color</li>
-                <li>Typography</li>
-                <li>Shape</li>
-                <li>Motion</li>
-              </ul>
-            </li> */}
         </ul>
       </div>
     </section>

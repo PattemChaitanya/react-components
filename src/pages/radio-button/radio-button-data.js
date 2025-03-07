@@ -2,11 +2,9 @@ import HorizontalRadioButton from "./complex-radio-button";
 import DisableRadioButton from "./disable-radio";
 import LabelPosition from "./label-position";
 import {
-  // CustomRadioButton,
   DescriptiveRadioButton,
   IconRadioButton,
   RadioButton,
-  // RadioButtonGroup,
 } from "./radio-button-component";
 import VerticalRadioButton from "./simple-radio-button";
 
@@ -265,9 +263,7 @@ export const radioData = {
   types: [
     "Basic Radio Button",
     "Radio Button with Labels",
-    // "Custom-Themed Radio Button",
     "Icon-Based Radio Button",
-    // "Grouped Radio Buttons",
   ],
   interactiveDemo: "#demo",
   accessibity:
@@ -282,8 +278,97 @@ export const radioData = {
       title: "Basic Radio Button Example",
       usages: "Used when users need to choose one option from a small list.",
       purpose: "Keeps the UI simple and efficient for single-choice scenarios.",
-      codeBlock:
-        "<radio-button name='group1' value='option1'>Option 1</radio-button>",
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import RadioButton from "./radio-button.jsx";
+import data from "data.json";
+
+export const App = () => {
+  return (
+    <RadioButton options={data} name="radioExample" />
+  );
+};`,
+        "radio-button.jsx": `import React, { useState } from "react";
+import "./app.css";
+        
+export default const RadioButton = ({ options, name }) => {
+  const [selected, setSelected] = useState("option1");
+
+  return (
+    <div className="radio-group" role="radiogroup" aria-label={name}>
+      {options.map((option) => (
+        <label key={option.value} className="radio-label">
+          <input
+            type="radio"
+            name={name}
+            value={option.value}
+            checked={selected === option.value}
+            onChange={() => setSelected(option.value)}
+            className="radio-input"
+            aria-checked={selected === option.value}
+          />
+          <span className="custom-radio"></span>
+          {option.label}
+        </label>
+      ))}
+    </div>
+  );
+};`,
+        "app.css": `.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+}
+
+.radio-input {
+  position: absolute;
+  opacity: 0;
+}
+
+.custom-radio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  margin-right: 8px;
+}
+
+.radio-input:checked+.custom-radio {
+  background-color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.radio-input:checked+.custom-radio::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-input:focus+.custom-radio {
+  outline: 2px dashed #007bff;
+}`,
+        "data.json": `[
+  { label: "Option 1", value: "option1" },
+  { label: "Option 2", value: "option2" },
+  { label: "Option 3", value: "option3" },
+]`,
+      },
       open: false,
     },
     {
@@ -299,28 +384,114 @@ export const radioData = {
       usages:
         "Ideal for forms or surveys where context for each choice is necessary.",
       purpose: "Improves clarity by combining the button with a label.",
-      codeBlock:
-        "<radio-button name='group2' value='option2'>Option 2</radio-button>",
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import DesRadioButton from "./radio-button.jsx";
+import data from "data.json";
+
+export const App = () => {
+  return (
+    <DesRadioButton options={data} name="plans" />
+  );
+};`,
+        "radio-button.jsx": `import React, { useState } from "react";
+import "./app.css";
+
+export default const DesRadioButton = ({ options, name }) => {
+  const [selected, setSelected] = useState("option1");
+  return (
+    <div className="radio-group" role="radiogroup" aria-label={name}>
+      {options.map((option) => (
+        <label key={option.value} className="radio-label">
+          <input
+            type="radio"
+            name={name}
+            value={option.value}
+            checked={selected === option.value}
+            onChange={() => setSelected(option.value)}
+            className="radio-input"
+            aria-checked={selected === option.value}
+          />
+          <span className="custom-radio"></span>
+          <div className="radio-text">
+            <span className="radio-title">{option.label}</span>
+            <span className="radio-description">{option.description}</span>
+          </div>
+        </label>
+      ))}
+    </div>
+  );
+};`,
+        "app.css": `.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+}
+
+.radio-input {
+  position: absolute;
+  opacity: 0;
+}
+
+.custom-radio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  margin-right: 12px;
+  margin-top: 4px;
+}
+
+.radio-input:checked+.custom-radio {
+  background-color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.radio-input:checked+.custom-radio::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-input:focus+.custom-radio {
+  outline: 2px dashed #007bff;
+}`,
+        "data.json": `[
+  {
+    label: "Basic Plan",
+    value: "basic",
+    description: "Includes standard features.",
+  },
+  {
+    label: "Premium Plan",
+    value: "premium",
+    description: "Includes all features with priority support.",
+  },
+  {
+    label: "Enterprise Plan",
+    value: "enterprise",
+    description: "Custom solutions for large businesses.",
+  },
+]`,
+      },
       open: false,
     },
-    // {
-    //   component: (
-    //     <CustomRadioButton
-    //       options={radioButtonData.options}
-    //       name="customRadio"
-    //     />
-    //   ),
-    //   description:
-    //     "A radio button styled with custom colors, sizes, or animations.",
-    //   id: "custom-theme",
-    //   title: "Custom-Themed Radio Button Example",
-    //   usages: "Perfect for branded or visually rich designs.",
-    //   purpose:
-    //     "Provides a unique user experience while maintaining functionality.",
-    //   codeBlock:
-    //     "<radio-button name='group3' value='custom' style='--radio-color: #ff5722;'>Custom Style</radio-button>",
-    //   open: false,
-    // },
     {
       component: (
         <IconRadioButton options={radioButtonData.iconOptions} name="icons" />
@@ -332,37 +503,91 @@ export const radioData = {
         "Great for interfaces where icons convey meaning more effectively than text.",
       purpose:
         "Enhances usability and adds a visual element to the selection process.",
-      codeBlock:
-        "<radio-button name='group4' value='icon' icon='🌟'>Star</radio-button>",
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import IconRadioButton from "./radio-button.jsx";
+import options from "data.json";
+
+export const App = () => {
+  return (
+    <IconRadioButton options={options} name="icons" />
+  );
+};`,
+        "radio-button.jsx": `import React, { useState } from "react";
+import "./app.css";
+
+export const IconRadioButton = ({ options, name }) => {
+  const [selectedValue, setSelectedValue] = useState("option1");
+  return (
+    <div className="radio-group" role="radiogroup" aria-label={name}>
+      {options.map((option) => (
+        <label key={option.value} className="radio-label">
+          <input
+            type="radio"
+            name={name}
+            value={option.value}
+            checked={selectedValue === option.value}
+            onChange={() => setSelectedValue(option.value)}
+            className="radio-input"
+            aria-checked={selectedValue === option.value}
+          />
+          <span className="custom-icon">
+            {selectedValue === option.value ? option.selectedIcon : option.icon}
+          </span>
+          {option.label}
+        </label>
+      ))}
+    </div>
+  );
+};`,
+        "app.css": `.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.radio-input {
+  position: absolute;
+  opacity: 0;
+}
+
+.custom-icon {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.radio-input:focus+.custom-icon {
+  outline: 2px dashed #007bff;
+}`,
+        "data.json": `[
+  { label: "Heart", value: "heart", icon: "🤍", selectedIcon: "❤️" },
+  { label: "Star", value: "star", icon: "⭐", selectedIcon: "🌟" },
+  { label: "Check", value: "check", icon: "⬜", selectedIcon: "✅" },
+]`,
+      },
       open: false,
     },
-    // {
-    //   component: (
-    //     <RadioButtonGroup options={radioButtonData.options} name="radioGroup" />
-    //   ),
-    //   description:
-    //     "A collection of related radio buttons displayed as a group.",
-    //   id: "grouped",
-    //   title: "Grouped Radio Buttons Example",
-    //   usages:
-    //     "Used when multiple related options need to be presented together.",
-    //   purpose:
-    //     "Improves organization and clarity for users making a selection.",
-    //   codeBlock:
-    //     "<div role='radiogroup'><radio-button name='group5' value='1'>Option 1</radio-button><radio-button name='group5' value='2'>Option 2</radio-button></div>",
-    //   open: false,
-    // },
   ],
   links: {
     Types: "#types",
-    // "Interactive Demo": "#demo",
     Accessibity: "#accessibity",
     Examples: {
       "Basic Radio Button": "#basic",
       "Radio Button with Labels": "#labels",
-      // "Custom-Themed Radio Button": "#custom-theme",
       "Icon-Based Radio Button": "#icon-based",
-      // "Grouped Radio Buttons": "#grouped",
     },
     References: "#references",
   },

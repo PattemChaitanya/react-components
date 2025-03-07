@@ -172,7 +172,28 @@ export const jsonToButtonData = {
       purpose:
         "To grab the user's attention and encourage interaction with primary functions.",
       component: <ElevatedButton />,
-      codeBlock: `
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import "./app.css
+
+export const ElevatedButton = () => {
+  return (
+    <button className="button-component-base elevated">Elevated Button</button>
+  );
+};`,
+        "app.css": `:root {
+  --button-background-color: #007bff;
+};
+
+.button-component-base {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 5px;
+};
+
 .elevated {
   padding: 10px 15px;
   border: none;
@@ -180,13 +201,11 @@ export const jsonToButtonData = {
   cursor: pointer;
   font-size: 16px;
   margin: 5px;
-  background-color: #007bff;
+  background-color: var(--button-background-color);
   color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-<button className='elevated'>Elevated Button</button>
-        `,
+}`,
+      },
       open: false,
     },
     {
@@ -200,8 +219,41 @@ export const jsonToButtonData = {
       purpose:
         "To indicate secondary actions without drawing too much attention.",
       component: <FilledTonalButton />,
-      codeBlock:
-        "<button className='filled-tonal'>Filled Tonal Button</button>",
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import "./app.css
+
+export const FilledTonalButton = () => {
+  return (
+    <button className="button-component-base filled-tonal">
+      Filled Tonal Button
+    </button>
+  );
+};`,
+        "app.css": `:root {
+  --button-background-color: #007bff;
+  --button-text: #fff;
+};
+  
+.button-component-base {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 5px;
+};
+
+.filled-tonal {
+  color: var(--button-text);
+  background-color: var(--button-background-color);
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+}
+`,
+      },
       open: false,
     },
     {
@@ -215,23 +267,42 @@ export const jsonToButtonData = {
       purpose:
         "To provide a subtle visual style for secondary or less frequent actions.",
       component: <OutlinedButtonComponent />,
-      codeBlock: `
-.outlined {
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import "./app.css;
+
+export const OutlinedButton = () => {
+  return (
+    <button className="button-component-base outlined">Outlined Button</button>
+  );
+};
+`,
+        "app.css": `:root {
+  --button-background-color: #007bff;
+  --button-text: #fff;
+}
+  
+.button-component-base {
   padding: 10px 15px;
-  border: 2px solid;
-  border-radius: 5px;
+  border: none;
   cursor: pointer;
+  border-radius: 5px;
   font-size: 16px;
   margin: 5px;
-  border-color: #007bff;
-  color: #007bff;
-  "&:hover": {
-    background-color: #007bff;
-    color: #fff;
-  };
-}
+  transition: 0.3s all ease;
+};
 
-<button className='outlined'>Outlined Button</button>`,
+.outlined {
+  border: 2px solid;
+  border-color: var(--button-background-color);
+  background-color: transparent;
+  color: var(--button-background-color);
+  "&:hover": {
+    background-color: var(--button-background-color);
+    color: var(--button-text);
+  };
+}`,
+      },
       open: false,
     },
     {
@@ -245,7 +316,35 @@ export const jsonToButtonData = {
       purpose:
         "To provide a lightweight action button with minimal distraction.",
       component: <TextButton />,
-      codeBlock: "<button className='text'>Text Button</button>",
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import "./app.css;
+
+export const TextButton = () => {
+  return <button className="button-component-base text">Text Button</button>;
+};
+`,
+        "app.css": `:root {
+  --button-background-color: #007bff;
+};
+
+.button-component-base {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 5px;
+};
+
+.text {
+  background-color: transparent;
+  &:hover {
+    color: var(--button-background-color);
+  }
+}
+`,
+      },
       open: false,
     },
     {
@@ -259,22 +358,46 @@ export const jsonToButtonData = {
       purpose:
         "To indicate that the action is not available and prevent user interaction.",
       component: <DisabledButton />,
-      codeBlock: `
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import "./app.css;
+
+export const DisabledButton = () => {
+  return (
+    <>
+      <button className="button-component-base disabled" disabled>
+        Disabled Button
+      </button>
+    </>
+  );
+};
+`,
+        "app.css": `:root {
+  --button-disabled: #555;
+  --button-disabled-opacity: 0.4;
+};
+
+.button-component-base {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 5px;
+};
+
 .disabled {
-  padding: "10px 15px",
-  border: "2px solid",
-  borderRadius: "5px",
-  fontSize: "16px",
-  margin: "5px",
-  borderColor: "#cccccc",
-  color: "#cccccc",
-  cursor: "not-allowed",
-}
-  
-<button className='disabled' disabled>Disabled Button</button>`,
+  border: 2px solid;
+  border-color: var(--button-disabled);
+  color: var(--button-disabled);
+  cursor: not-allowed;
+  background: transparent;
+  opacity: var(--button-disabled-opacity);
+}`,
+      },
       open: false,
     },
-  ], // of above all types with accessibity
+  ],
   links: {
     Types: "#types",
     "Interactive Demo": "#demo",
