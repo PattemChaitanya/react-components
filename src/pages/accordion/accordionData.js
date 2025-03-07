@@ -1,4 +1,3 @@
-import { formatAsCodeBlock } from "../../utils/another-converter";
 import FullWidthAccordion from "./full-width-accordion";
 import AccordionWithIcon from "./icon-accordion";
 import MultiExpandAccordion from "./mutli-expand-accordion";
