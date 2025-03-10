@@ -1,4 +1,4 @@
-import { RoundedImageCarousel } from "../images/image-component";
+// import { RoundedImageCarousel } from "../images/image-component";
 import {
   AutoCarousel,
   CardCarousel,
