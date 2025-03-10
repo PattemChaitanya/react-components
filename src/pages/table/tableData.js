@@ -135,29 +135,79 @@ export const tableData = {
       usages: "Use for displaying basic data sets with no interactivity.",
       purpose:
         "To demonstrate the structure of a table with <table>, <tr>, <th>, and <td> tags.",
-      codeBlock: `
-<table>
-  <thead>
-    <tr>
-      <th>Header 1</th>
-      <th>Header 2</th>
-      <th>Header 3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Row 1, Col 1</td>
-      <td>Row 1, Col 2</td>
-      <td>Row 1, Col 3</td>
-    </tr>
-    <tr>
-      <td>Row 2, Col 1</td>
-      <td>Row 2, Col 2</td>
-      <td>Row 2, Col 3</td>
-    </tr>
-  </tbody>
-</table>
-      `,
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import TableComponent from "./table-component";
+        
+export const App = () => {
+  const data = [
+    { Name: "John Doe", Age: 28, Country: "USA" },
+    { Name: "Jane Smith", Age: 34, Country: "UK" },
+    { Name: "Alex Johnson", Age: 22, Country: "Canada" },
+  ];
+
+  const columns = ["Name", "Age", "Country"];
+
+  return (
+    <div>
+      <TableComponent data={data} columns={columns} />
+    </div>
+  );
+};`,
+        "table-component.jsx": `import React from "react";
+import "./app.css";
+
+export default const TableComponent = ({ data, columns }) => {
+  return (
+    <table className="table"}>
+      <thead>
+        <tr>
+          {columns.map((col) => (
+            <th key={col} className="header"}>
+              {col}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((row, index) => (
+          <tr key={index} className="row"}>
+            {columns.map((col) => (
+              <td key={col} className="cell"}>
+                {row[col]}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};`,
+        "app.css": `.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+};
+
+.header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  color: #292929;
+};
+
+.row {
+  background-color: #fff;
+  color: #292929;
+};
+
+.cell {
+  padding: 10px;
+  border: 1px solid #ddd;
+  color: #292929;
+};`,
+      },
       open: false,
     },
     {
@@ -168,31 +218,116 @@ export const tableData = {
       usages:
         "Use for tables that need to adapt to mobile devices or smaller screens.",
       purpose: "To demonstrate CSS techniques for making tables responsive.",
-      codeBlock: `
-<div style="overflow-x: auto;">
-  <table>
-    <thead>
-      <tr>
-        <th>Header 1</th>
-        <th>Header 2</th>
-        <th>Header 3</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Row 1, Col 1</td>
-        <td>Row 1, Col 2</td>
-        <td>Row 1, Col 3</td>
-      </tr>
-      <tr>
-        <td>Row 2, Col 1</td>
-        <td>Row 2, Col 2</td>
-        <td>Row 2, Col 3</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-      `,
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import TableComponent from "./table-component";
+
+export const App = () => {
+  const data = [
+    { Name: "John Doe", Age: 28, Country: "USA" },
+    { Name: "Jane Smith", Age: 34, Country: "UK" },
+    { Name: "Alex Johnson", Age: 22, Country: "Canada" },
+    { Name: "Maria Garcia", Age: 30, Country: "Spain" },
+  ];
+
+  const columns = ["Name", "Age", "Country"];
+
+  return (
+    <div>
+      <ResponsiveTable data={data} columns={columns} />
+    </div>
+  );
+};`,
+        "table-component.jsx": `import React from "react";
+import "./app.css";
+
+export default const TableComponent = ({ data, columns }) => {
+  return (
+    <div className="table-container">
+      <table className="responsive-table">
+        <thead>
+          <tr>
+            {columns.map((col) => (
+              <th key={col}>{col}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, index) => (
+            <tr key={index}>
+              {columns.map((col) => (
+                <td key={col} data-label={col}>
+                  {row[col]}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};`,
+        "app.css": `.table-container {
+  overflow-x: auto;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.responsive-table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table tr {
+    display: block;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .responsive-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: right;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .responsive-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #555;
+    text-align: left;
+  }
+
+  .responsive-table tr:last-child td {
+    border-bottom: none;
+  }
+}`,
+      },
       open: false,
     },
   ],

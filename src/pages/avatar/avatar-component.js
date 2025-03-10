@@ -56,10 +56,9 @@ export const IconAvatar = ({ icon, size = "40px" }) => {
   );
 };
 
-export const GroupedAvatar = ({
-  size = "40px",
-  images = [Flower1, Flower3, Flower2],
-}) => {
+export const GroupedAvatar = ({ size = "40px" }) => {
+  let images = [Flower1, Flower3, Flower2];
+
   return (
     <div style={{ display: "flex" }}>
       {images.map((image, index) => (

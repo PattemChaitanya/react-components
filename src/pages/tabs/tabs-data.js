@@ -35,16 +35,108 @@ export const tabsData = {
       purpose:
         "Keeps the design clean and straightforward, ideal for most content-heavy applications.",
       component: <TextTabs />,
-      codeBlock: `
-<div class="tabs" role="tablist">
-  <button role="tab" aria-selected="true" id="tab-1" aria-controls="panel-1">Tab 1</button>
-  <button role="tab" aria-selected="false" id="tab-2" aria-controls="panel-2">Tab 2</button>
-  <button role="tab" aria-selected="false" id="tab-3" aria-controls="panel-3">Tab 3</button>
-</div>
-<div id="panel-1" role="tabpanel" aria-labelledby="tab-1">Content for Tab 1</div>
-<div id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>Content for Tab 2</div>
-<div id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>Content for Tab 3</div>
-`,
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./app.css";
+
+export const TextTabs = () => {
+  const [selectedTab, setSelectedTab] = useState(1);
+
+  const handleTabClick = (index) => {
+    setSelectedTab(index);
+  };
+  return (
+    <div className="tabs">
+      <div role="tablist">
+        <div className="tabs-container">
+          {[1, 2, 3].map((index) => (
+            <button
+              key={index}
+              className={\`tab \${index === selectedTab ? "active-tab" : ""}\`}
+              onClick={() => handleTabClick(index)}
+              aria-controls={\`panel-\${index}\`}
+              aria-selected={index === selectedTab}
+              tabIndex={index !== selectedTab && -1}
+              aria-label={\`Go to Tab \${index}\`}
+              id={\`tab-\${index}\`}
+              role="tab"
+              type="button"
+            >
+              Item {index}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div role="tabpanel" aria-labelledby={\`tab-\${selectedTab}\`}>
+        <p> Panel {selectedTab} content</p>
+      </div>
+    </div>
+  );
+};`,
+        "app.css": `.tabs {
+  width: 100%;
+  background: var(--color-surface-container-highest);
+  border-radius: 6px;
+}
+
+[role="tablist"] {
+  border-radius: 6px 6px 0 0;
+  background: var(--color-surface-container-low);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabs-container {
+  flex: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+  
+[role="tab"],
+[role="tab"]:focus,
+[role="tab"]:hover {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  outline: none;
+  font-weight: bold;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 12px 16px;
+}
+
+[role="tab"][aria-selected="true"] {
+  border-bottom: 1px solid var(--color-on-background);
+  opacity: 1;
+}
+
+[role="tab"] span.focus {
+  display: inline-block;
+  margin: 2px;
+  padding: 4px 6px;
+}
+
+[role="tab"]:hover span.focus,
+[role="tab"]:focus span.focus {
+  padding: 2px 4px;
+  border: 2px solid rgb(36 116 214);
+  border-radius: 3px;
+}
+
+[role="tabpanel"] {
+  padding: 5px;
+  min-height: 10em;
+  overflow: auto;
+}
+
+[role="tabpanel"] p {
+  margin: 10px;
+}`,
+      },
       open: false,
     },
     {
@@ -55,22 +147,127 @@ export const tabsData = {
         "Ideal for dashboards or when the icons themselves are self-explanatory (e.g., home, settings, search).",
       purpose: "Saves space while still providing intuitive navigation.",
       component: <IconTabs />,
-      codeBlock: `
-<div class="tabs" role="tablist">
-  <button role="tab" aria-selected="true" id="tab-home" aria-controls="panel-home">
-    <span class="material-icons">home</span>
-  </button>
-  <button role="tab" aria-selected="false" id="tab-search" aria-controls="panel-search">
-    <span class="material-icons">search</span>
-  </button>
-  <button role="tab" aria-selected="false" id="tab-settings" aria-controls="panel-settings">
-    <span class="material-icons">settings</span>
-  </button>
-</div>
-<div id="panel-home" role="tabpanel" aria-labelledby="tab-home">Home Content</div>
-<div id="panel-search" role="tabpanel" aria-labelledby="tab-search" hidden>Search Content</div>
-<div id="panel-settings" role="tabpanel" aria-labelledby="tab-settings" hidden>Settings Content</div>
-`,
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./app.css";
+import { HomeRounded, SettingsRounded, SearchRounded } from "@mui/icons-material";
+
+export const App = () => {
+  const [selectedTab, setSelectedTab] = useState(0);
+  const tabs = [
+    { icon: <HomeRounded />, title: "Home", content: "Home content" },
+    {
+      icon: <SettingsRounded />,
+      title: "Settings",
+      content: "Settings content",
+    },
+    {
+      icon: <SearchRounded />,
+      title: "Search",
+      content: "Search content",
+    },
+  ];
+
+  const handleTabClick = (index) => {
+    setSelectedTab(index);
+  };
+
+  return (
+    <div className="tabs">
+      <div role="tablist">
+        <div className="tabs-container">
+          {tabs.map((item, index) => (
+            <button
+              key={index}
+              className={\`tab \${index === selectedTab ? "active-tab" : ""}\`}
+              onClick={() => handleTabClick(index)}
+              aria-controls={\`panel-\${index}\`}
+              aria-selected={index === selectedTab}
+              tabIndex={index !== selectedTab && -1}
+              aria-label={\`Go to Tab \${index}\`}
+              id={\`tab-\${index}\`}
+              role="tab"
+              type="button"
+            >
+              <span className={\`icon icon-\${index}\`}></span>
+              {item.icon}
+              <span className="sr-only">
+                {index === selectedTab ? " (active)" : ""}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+      <div role="tabpanel" aria-labelledby={\`tab-\${selectedTab}\`}>
+        <p>{tabs[selectedTab]?.content}</p>
+      </div>
+    </div>
+  );
+};`,
+        "app.css": `.tabs {
+  width: 100%;
+  background: var(--color-surface-container-highest);
+  border-radius: 6px;
+}
+
+[role="tablist"] {
+  border-radius: 6px 6px 0 0;
+  background: var(--color-surface-container-low);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabs-container {
+  flex: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+  
+[role="tab"],
+[role="tab"]:focus,
+[role="tab"]:hover {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  outline: none;
+  font-weight: bold;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 12px 16px;
+}
+
+[role="tab"][aria-selected="true"] {
+  border-bottom: 1px solid var(--color-on-background);
+  opacity: 1;
+}
+
+[role="tab"] span.focus {
+  display: inline-block;
+  margin: 2px;
+  padding: 4px 6px;
+}
+
+[role="tab"]:hover span.focus,
+[role="tab"]:focus span.focus {
+  padding: 2px 4px;
+  border: 2px solid rgb(36 116 214);
+  border-radius: 3px;
+}
+
+[role="tabpanel"] {
+  padding: 5px;
+  min-height: 10em;
+  overflow: auto;
+}
+
+[role="tabpanel"] p {
+  margin: 10px;
+}`,
+      },
       open: false,
     },
     {
@@ -81,22 +278,126 @@ export const tabsData = {
         "Ideal for dashboards or when the icons themselves are self-explanatory (e.g., home, settings, search).",
       purpose: "Saves space while still providing intuitive navigation.",
       component: <IconAndTextTabs />,
-      codeBlock: `
-<div class="tabs" role="tablist">
-  <button role="tab" aria-selected="true" id="tab-home" aria-controls="panel-home">
-    <span class="material-icons">home</span>
-  </button>
-  <button role="tab" aria-selected="false" id="tab-search" aria-controls="panel-search">
-    <span class="material-icons">search</span>
-  </button>
-  <button role="tab" aria-selected="false" id="tab-settings" aria-controls="panel-settings">
-    <span class="material-icons">settings</span>
-  </button>
-</div>
-<div id="panel-home" role="tabpanel" aria-labelledby="tab-home">Home Content</div>
-<div id="panel-search" role="tabpanel" aria-labelledby="tab-search" hidden>Search Content</div>
-<div id="panel-settings" role="tabpanel" aria-labelledby="tab-settings" hidden>Settings Content</div>
-`,
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./app.css";
+import { HomeRounded, SettingsRounded, SearchRounded } from "@mui/icons-material";
+
+export const App = () => {
+  const [selectedTab, setSelectedTab] = useState(0);
+  const tabs = [
+    { icon: <HomeRounded />, title: "Home", content: "Home content" },
+    {
+      icon: <SettingsRounded />,
+      title: "Settings",
+      content: "Settings content",
+    },
+    {
+      icon: <SearchRounded />,
+      title: "Search",
+      content: "Search content",
+    },
+  ];
+
+  const handleTabClick = (index) => {
+    setSelectedTab(index);
+  };
+  return (
+    <div className="tabs">
+      <div role="tablist">
+        <div className="tabs-container">
+          {tabs.map((item, index) => (
+            <button
+              key={index}
+              className={\`tab \${index === selectedTab ? "active-tab" : ""}\`}
+              onClick={() => handleTabClick(index)}
+              aria-controls={\`panel-\${index}\`}
+              aria-selected={index === selectedTab}
+              tabIndex={index !== selectedTab && -1}
+              aria-label={\`Go to Tab \${index}\`}
+              id={\`tab-\${index}\`}
+              role="tab"
+              type="button"
+            >
+              <span className={\`icon icon-\${index}\`}></span>
+              {item.icon} <span className="tab-title">{item.title}</span>
+              <span className="sr-only">
+                {index === selectedTab ? " (active)" : ""}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+      <div role="tabpanel" aria-labelledby={\`tab-\${selectedTab}\`}>
+        <p>{tabs[selectedTab]?.content}</p>
+      </div>
+    </div>
+  );
+};`,
+        "app.css": `.tabs {
+  width: 100%;
+  background: var(--color-surface-container-highest);
+  border-radius: 6px;
+}
+
+[role="tablist"] {
+  border-radius: 6px 6px 0 0;
+  background: var(--color-surface-container-low);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabs-container {
+  flex: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+  
+[role="tab"],
+[role="tab"]:focus,
+[role="tab"]:hover {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  outline: none;
+  font-weight: bold;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 12px 16px;
+}
+
+[role="tab"][aria-selected="true"] {
+  border-bottom: 1px solid var(--color-on-background);
+  opacity: 1;
+}
+
+[role="tab"] span.focus {
+  display: inline-block;
+  margin: 2px;
+  padding: 4px 6px;
+}
+
+[role="tab"]:hover span.focus,
+[role="tab"]:focus span.focus {
+  padding: 2px 4px;
+  border: 2px solid rgb(36 116 214);
+  border-radius: 3px;
+}
+
+[role="tabpanel"] {
+  padding: 5px;
+  min-height: 10em;
+  overflow: auto;
+}
+
+[role="tabpanel"] p {
+  margin: 10px;
+}`,
+      },
       open: false,
     },
     {
@@ -108,20 +409,119 @@ export const tabsData = {
       purpose:
         "Provides flexibility for layouts with limited space without cluttering the UI.",
       component: <ScrollableTabs />,
-      codeBlock: `
-<div class="tabs scrollable" role="tablist">
-  <button role="tab" aria-selected="true" id="tab-1" aria-controls="panel-1">Tab 1</button>
-  <button role="tab" aria-selected="false" id="tab-2" aria-controls="panel-2">Tab 2</button>
-  <button role="tab" aria-selected="false" id="tab-3" aria-controls="panel-3">Tab 3</button>
-  <button role="tab" aria-selected="false" id="tab-4" aria-controls="panel-4">Tab 4</button>
-  <button role="tab" aria-selected="false" id="tab-5" aria-controls="panel-5">Tab 5</button>
-</div>
-<div id="panel-1" role="tabpanel" aria-labelledby="tab-1">Content for Tab 1</div>
-<div id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>Content for Tab 2</div>
-<div id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>Content for Tab 3</div>
-<div id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>Content for Tab 4</div>
-<div id="panel-5" role="tabpanel" aria-labelledby="tab-5" hidden>Content for Tab 5</div>
-`,
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./app.css";
+
+export const App = () => {
+  const [selectedTab, setSelectedTab] = useState(1);
+
+  const handleTabClick = (index) => {
+    setSelectedTab(index);
+  };
+
+  return (
+    <div className="tabs">
+      <div role="tablist">
+        <div className="scrollable-tabs">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((index) => (
+            <button
+              key={index}
+              className={\`tab \${index === selectedTab ? "active-tab" : ""}\`}
+              onClick={() => handleTabClick(index)}
+              aria-controls={\`panel-\${index}\`}
+              aria-selected={index === selectedTab}
+              tabIndex={index !== selectedTab && -1}
+              aria-label={\`Go to Tab \${index}\`}
+              id={\`tab-\${index}\`}
+              role="tab"
+              type="button"
+            >
+              <span className={\`icon icon-\${index}\`}></span>
+              Panel {index}
+              <span className="sr-only">
+                {index === selectedTab ? " (active)" : ""}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+      <div role="tabpanel" aria-labelledby={\`tab-\${selectedTab}\`}>
+        <p>Panel {selectedTab} content</p>
+      </div>
+    </div>
+  );
+};`,
+        "app.css": `.tabs {
+  width: 100%;
+  background: var(--color-surface-container-highest);
+  border-radius: 6px;
+}
+
+[role="tablist"] {
+  border-radius: 6px 6px 0 0;
+  background: var(--color-surface-container-low);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabs-container {
+  flex: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.scrollable-tabs {
+  width: inherit;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+[role="tab"],
+[role="tab"]:focus,
+[role="tab"]:hover {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  outline: none;
+  font-weight: bold;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 12px 16px;
+}
+
+[role="tab"][aria-selected="true"] {
+  border-bottom: 1px solid var(--color-on-background);
+  opacity: 1;
+}
+
+[role="tab"] span.focus {
+  display: inline-block;
+  margin: 2px;
+  padding: 4px 6px;
+}
+
+[role="tab"]:hover span.focus,
+[role="tab"]:focus span.focus {
+  padding: 2px 4px;
+  border: 2px solid rgb(36 116 214);
+  border-radius: 3px;
+}
+
+[role="tabpanel"] {
+  padding: 5px;
+  min-height: 10em;
+  overflow: auto;
+}
+
+[role="tabpanel"] p {
+  margin: 10px;
+}`,
+      },
       open: false,
     },
   ],

@@ -303,44 +303,31 @@ export const accrodionData = {
         "Simplifies navigation by organizing content into collapsible sections.",
       codeBlock: {
         "app.jsx": `import React, { useState } from "react";
+import accordionData from "data.json";
+import "./app.css";
       
-      const accordionData = [
-        {
-          title: "Section 1",
-          content: "Content for section 1.",
-        },
-        {
-          title: "Section 2",
-          content: "Content for section 2.",
-        },
-        {
-          title: "Section 3",
-          content: "Content for section 3.",
-        },
-      ];
+export const App = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
       
-      const SimpleAccordion = () => {
-        const [activeIndex, setActiveIndex] = useState(null);
+  const handleToggle = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
       
-        const handleToggle = (index) => {
-          setActiveIndex(activeIndex === index ? null : index);
-        };
-      
-        return (
-          <div style={styles.container}>
-            {accordionData.map((item, index) => (
-              <div key={index} style={styles.section}>
-                <div style={styles.title} onClick={() => handleToggle(index)}>
-                  {item.title}
-                </div>
-                {activeIndex === index && (
-                  <div style={styles.content}>{item.content}</div>
-                )}
-              </div>
-            ))}
+  return (
+    <div className="container">
+      {accordionData.map((item, index) => (
+        <div key={index} className="section">
+          <div className="title" onClick={() => handleToggle(index)}>
+            {item.title}
           </div>
-        );
-      };`,
+          {activeIndex === index && (
+            <div className="content">{item.content}</div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};`,
         "app.css": `container {
     width: 100%;
     margin: 0 auto;
@@ -369,6 +356,20 @@ export const accrodionData = {
   icon {
     margin-left: 10px;
   };`,
+        "data.json": `[
+  {
+    title: "Section 1",
+    content: "Content for section 1.",
+  },
+  {
+    title: "Section 2",
+    content: "Content for section 2.",
+  },
+  {
+    title: "Section 3",
+    content: "Content for section 3.",
+  },
+];`,
       },
       open: false,
     },
@@ -384,48 +385,35 @@ export const accrodionData = {
         "Improves accessibility by offering users flexibility to expand multiple panels.",
       codeBlock: {
         "app.jsx": `import React, { useState } from "react";
+import accordionData from "./data.json";
+import "./app.css";
       
-      const accordionData = [
-        {
-          title: "Section 1",
-          content: "Content for section 1.",
-        },
-        {
-          title: "Section 2",
-          content: "Content for section 2.",
-        },
-        {
-          title: "Section 3",
-          content: "Content for section 3.",
-        },
-      ];
+export const App = () => {
+  const [activeIndex, setActiveIndex] = useState([]);
       
-      const MultiExpandAccordion = () => {
-        const [activeIndex, setActiveIndex] = useState([]);
+  const handleToggle = (index) => {
+    setActiveIndex((prevState) =>
+      activeIndex.includes(index)
+        ? prevState.filter((item) => item !== index)
+        : [...prevState, index]
+    );
+  };
       
-        const handleToggle = (index) => {
-          setActiveIndex((prevState) =>
-            activeIndex.includes(index)
-              ? prevState.filter((item) => item !== index)
-              : [...prevState, index]
-          );
-        };
-      
-        return (
-          <div style={styles.container}>
-            {accordionData.map((item, index) => (
-              <div key={index} style={styles.section}>
-                <div style={styles.title} onClick={() => handleToggle(index)}>
-                  {item.title}
-                </div>
-                {activeIndex.includes(index) && (
-                  <div style={styles.content}>{item.content}</div>
-                )}
-              </div>
-            ))}
+  return (
+    <div className="container">
+      {accordionData.map((item, index) => (
+        <div key={index} className="section">
+          <div className="title" onClick={() => handleToggle(index)}>
+            {item.title}
           </div>
-        );
-      };`,
+          {activeIndex.includes(index) && (
+            <div className="content">{item.content}</div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};`,
         "app.css": `
   container {
     width: 100%
@@ -455,6 +443,20 @@ export const accrodionData = {
   icon {
     margin-left: 10px;
   };`,
+        "data.json": `[
+  {
+    title: "Section 1",
+    content: "Content for section 1.",
+  },
+  {
+    title: "Section 2",
+    content: "Content for section 2.",
+  },
+  {
+    title: "Section 3",
+    content: "Content for section 3.",
+  },
+];`,
       },
       open: false,
     },
@@ -468,8 +470,84 @@ export const accrodionData = {
         "Enhances visual clarity, helping users quickly identify panel states.",
       purpose:
         "Makes the interface more intuitive by adding icon-based visual cues.",
-      codeBlock:
-        "<accordion><panel><icon>+</icon>Content 1</panel></accordion>",
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./app.css";
+import data from "data.json";
+import { ArrowDropDownRounded, ArrowDropUpRounded } from "@mui/icons-material";
+
+export const App = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleToggle = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  return (
+    <div className="container">
+      {accordionData.map((item, index) => (
+        <div key={index} className="section">
+          <div className="title" onClick={() => handleToggle(index)}>
+            {item.title}
+            <i className="icon">
+              {activeIndex === index ? <ArrowDropUpRounded /> : <ArrowDropDownRounded />}
+            </i>
+          </div>
+          {activeIndex === index && (
+            <div className="content">{item.content}</div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};`,
+        "app.css": `.container {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.section {
+  border-bottom: 1px solid #ddd;
+}
+
+.title: {
+  padding: 15px;
+  background-color: #cecece;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  color: #000;
+}
+
+.content {
+  padding: 15px;
+  background-color: #fff;
+  color: #292929;
+}
+
+.icon {
+  margin-left: 10px;
+}`,
+        "data.json": `[
+  {
+    title: "Section 1",
+    content: "Content for section 1.",
+  },
+  {
+    title: "Section 2",
+    content: "Content for section 2.",
+  },
+  {
+    title: "Section 3",
+    content: "Content for section 3.",
+  },
+];`,
+      },
       open: false,
     },
     {
@@ -482,8 +560,123 @@ export const accrodionData = {
         "Ideal for organizing multi-level content, such as navigation menus or documents.",
       purpose:
         "Provides a structured way to navigate deeply nested information.",
-      codeBlock:
-        "<accordion><panel><accordion>Nested Content</accordion></panel></accordion>",
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import { ArrowDropDownRounded, ArrowDropUpRounded } from "@mui/icons-material";
+import "./app.css";
+
+export const App = () => {
+  const [activeIndex, setActiveIndex] = useState([]);
+  const [childActiveIndex, setChildActiveIndex] = useState(null);
+
+  const handleToggle = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const handleChildToggle = (index) => {
+    setChildActiveIndex(childActiveIndex === index ? null : index);
+  };
+
+  return (
+    <div className="container"}>
+      {accordionData.map((item, index) => (
+        <div key={index} className="section"}>
+          <div className="title"} onClick={() => handleToggle(index)}>
+            {item.title}
+            <span className="icon"}>
+              {activeIndex === index ? (
+                <ArrowDropUpRoundedIcon />
+              ) : (
+                <ArrowDropDownRoundedIcon />
+              )}
+            </span>
+          </div>
+          {activeIndex === index && (
+            <div className="content"}>
+              <p>{item.content}</p>
+              {item?.childArray?.map((child, childIndex) => (
+                <div key={childIndex} className="section"}>
+                  <div
+                    className="title"}
+                    onClick={() => handleChildToggle(childIndex)}
+                  >
+                    {child.title}
+                    <span className="icon"}>
+                      {childActiveIndex === childIndex ? (
+                        <ArrowDropUpRounded />
+                      ) : (
+                        <ArrowDropDownRounded />
+                      )}
+                    </span>
+                  </div>
+                  {childActiveIndex === childIndex && (
+                    <div className="content"}>
+                      <p>{child.content}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};`,
+        "app.css": `.container {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.section {
+  border-bottom: 1px solid #ddd;
+}
+
+.title: {
+  padding: 15px;
+  background-color: #cecece;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  color: #000;
+}
+
+.content {
+  padding: 15px;
+  background-color: #fff;
+  color: #292929;
+}
+
+.icon {
+  margin-left: 10px;
+}`,
+        "data.json": `[
+  {
+    title: "Section 1",
+    content: "Content for section 1.",
+    childArray: [
+      {
+        title: "Subsection 1.1",
+        content: "Content for subsection 1.1.",
+      },
+      {
+        title: "Subsection 1.2",
+        content: "Content for subsection 1.2.",
+      },
+    ],
+  },
+  {
+    title: "Section 2",
+    content: "Content for section 2.",
+    childArray: null,
+  },
+];`,
+      },
       open: false,
     },
   ],

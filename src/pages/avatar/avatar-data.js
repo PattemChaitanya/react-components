@@ -202,9 +202,41 @@ export const avatarData = {
       purpose:
         "Provides a personal touch, making it easy for users to recognize profiles.",
       component: <ImageAvatar />,
-      codeBlock: `
-<img class="avatar" src="https://example.com/user.jpg" alt="User Profile Picture">
-`,
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import "./app.css";
+import Flower1 from "../../assets/mansoryImages/1.jpg";
+import Flower2 from "../../assets/mansoryImages/2.jpg";
+import Flower3 from "../../assets/mansoryImages/3.jpg";
+
+export const ImageAvatar = ({ alt = "component", size = "40px" }) => {
+  return (
+    <div className="container">
+      {[Flower1, Flower2, Flower3].map((item) => (
+        <img
+          src={item}
+          alt={alt}
+          className="image"
+          style={{
+            width: size,
+            height: size,
+          }}
+          aria-label={alt}
+        />
+      ))}
+    </div>
+  );
+};`,
+        "app.css": `.container {
+  display: flex;
+  gap: 40px;
+};
+
+.image {
+  border-radius: 50%;
+  object-fit: cover;
+}`,
+      },
       open: false,
     },
     {
@@ -217,9 +249,41 @@ export const avatarData = {
       purpose:
         "Ensures avatars remain functional and visually consistent, even without images.",
       component: <TextAvatar />,
-      codeBlock: `
-<div class="avatar text-avatar" role="img" aria-label="John Doe">JD</div>
-`,
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import "./app.css";
+
+export const TextAvatar = () => {
+  return (
+    <div className="container">
+      {[..."Design"].map((letter, index) => (
+        <span key={index} className="letter-avatar">
+          {letter}
+        </span>
+      ))}
+    </div>
+  );
+};`,
+        "app.css": `.container {
+  display: flex;
+  gap: 30px;
+};
+
+.letter-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  color: var(--color-surface-container);
+  background-color: var(--color-on-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: upperCase;
+  width: 50px;
+  height: 50px;
+  font-weight: 600;
+  transition: 0.5s color ease-in-out, 0.5s background-color ease-in-out;
+}`,
+      },
       open: false,
     },
     {
@@ -231,11 +295,37 @@ export const avatarData = {
       purpose:
         "Provides a consistent, recognizable visual element without requiring user-specific content.",
       component: <IconAvatar />,
-      codeBlock: `
-<div class="avatar icon-avatar" role="img" aria-label="Default User">
-  <span class="material-icons">person</span>
-</div>
-`,
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import "./app.css";
+import { SettingsRounded, SearchRounded } from "@mui/icons-material";
+
+export const IconAvatar = ({ icon, size = "40px" }) => {
+  return (
+    <div className="container">
+      {[SettingsRounded, SearchRounded].map((IconComponent, index) => (
+        <IconComponent
+          key={index}
+          style={{
+            width: size,
+            height: size,
+          }}
+          className="icon-component"
+        />
+      ))}
+    </div>
+  );
+};`,
+        "app.css": `.container {
+  display: flex;
+  gap: 40px;
+};
+
+.icon-component {
+  border-radius: 50%;
+  object-fit: cover;
+}`,
+      },
       open: false,
     },
     {
@@ -247,13 +337,41 @@ export const avatarData = {
       purpose:
         "Indicates collaboration or a collective entity in a compact space.",
       component: <GroupedAvatar />,
-      codeBlock: `
-<div class="grouped-avatar">
-  <img class="avatar" src="https://example.com/user1.jpg" alt="User 1">
-  <img class="avatar" src="https://example.com/user2.jpg" alt="User 2">
-  <div class="avatar text-avatar" role="img" aria-label="John Doe">+3</div>
-</div>
-`,
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import "./app.css";
+
+export const GroupedAvatar = ({ size = "40px" }) => {
+  let images = [Flower1, Flower3, Flower2];
+
+  return (
+    <div style={{ display: "flex" }}>
+      {images.map((image, index) => (
+        <img
+          key={index}
+          src={image}
+          alt="Avatar"
+          style={{
+            width: size,
+            height: size,
+            marginLeft: index === 0 ? 0 : "-20px",
+          }}
+            className="image"
+          aria-label="Avatar"
+        />
+      ))}
+    </div>
+  );
+};`,
+        "app.css": `.container {
+  display: "flex",
+};
+
+.image {
+  border-radius: 50%;
+  object-fit: cover;
+}`,
+      },
       open: false,
     },
   ],

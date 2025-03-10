@@ -332,41 +332,98 @@ export const dragandDropData = {
         "Use for moving elements from one area to another in a straightforward manner.",
       purpose:
         "To demonstrate basic drag-and-drop functionality with minimal setup.",
-      codeBlock: `
-<div id="drag-container" style="display: flex; gap: 20px;">
-  <div id="drag-item" draggable="true" style="padding: 10px; background: #007bff; color: #fff; cursor: grab;">Drag Me</div>
-  <div id="drop-zone" style="padding: 20px; background: #f8f9fa; border: 2px dashed #ccc; text-align: center;">
-    Drop Here
-  </div>
-</div>
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+      
+export const App = () => {
+  const [items, setItems] = useState([
+    { id: "1", text: "Item 1" },
+    { id: "2", text: "Item 2" },
+    { id: "3", text: "Item 3" },
+  ]);
+      
+  const [droppedItems, setDroppedItems] = useState([]);
+      
+  const handleDragStart = (e, id) => {
+    e.dataTransfer.setData("text/plain", id);
+  };
+      
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const id = e.dataTransfer.getData("text/plain");
+    const item = items.find((item) => item.id === id);
+    if (item) {
+      setDroppedItems((prevItems) => [...prevItems, item]);
+      setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    }
+  };
+      
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+      
+  return (
+    <div className="container">
+      <div>
+        <h3>Draggable Items</h3>
+        {items.map((item) => (
+          <div
+            key={item.id}
+            draggable
+            onDragStart={(e) => handleDragStart(e, item.id)}
+            className="draggable-item"
+          >
+            {item.text}
+          </div>
+        ))}
+      </div>
+      <div
+        onDragOver={handleDragOver}
+        onDrop={handleDrop}
+        className="droppable-area"
+      >
+        <h3>Droppable Area</h3>
+        {droppedItems.map((item) => (
+          <div
+            key={item.id}
+            className="droppable-area-item"
+          >
+            {item.text}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};`,
+        "app.css": `.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  color: #292929;
+};
 
-<script>
-  const dragItem = document.getElementById("drag-item");
-  const dropZone = document.getElementById("drop-zone");
+.draggable-item {
+  padding: 8px;
+  margin: 4px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: move;
+};
 
-  dragItem.addEventListener("dragstart", (event) => {
-    event.dataTransfer.setData("text/plain", "This is the dragged content");
-    dropZone.style.borderColor = "#007bff";
-  });
+.droppable-area {
+  padding: 16px;
+  background-color: lightgray;
+  minHeight: 200px;
+  border: 2px dashed black;
+};
 
-  dropZone.addEventListener("dragover", (event) => {
-    event.preventDefault();
-    dropZone.style.backgroundColor = "#e0f7fa";
-  });
-
-  dropZone.addEventListener("drop", (event) => {
-    event.preventDefault();
-    const data = event.dataTransfer.getData("text/plain");
-    dropZone.innerText = data || "Dropped!";
-    dropZone.style.backgroundColor = "#f8f9fa";
-    dropZone.style.borderColor = "#ccc";
-  });
-
-  dropZone.addEventListener("dragleave", () => {
-    dropZone.style.backgroundColor = "#f8f9fa";
-  });
-</script>
-      `,
+.droppable-area-item {
+  padding: 8px;
+  border: 1px solid black;
+  margin: 4px;
+}`,
+      },
       open: false,
     },
     {
@@ -378,39 +435,87 @@ export const dragandDropData = {
       usages: "Use for lists or grids where users need to reorder items.",
       purpose:
         "To demonstrate how to create a sortable list using drag-and-drop events.",
-      codeBlock: `
-<ul id="sortable-list" style="list-style: none; padding: 0;">
-  <li draggable="true" style="padding: 10px; background: #f1f1f1; margin-bottom: 5px; cursor: grab;">Item 1</li>
-  <li draggable="true" style="padding: 10px; background: #f1f1f1; margin-bottom: 5px; cursor: grab;">Item 2</li>
-  <li draggable="true" style="padding: 10px; background: #f1f1f1; margin-bottom: 5px; cursor: grab;">Item 3</li>
-</ul>
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import "./app.css";
 
-<script>
-  const list = document.getElementById("sortable-list");
+export const App = () => {
+  const [items, setItems] = useState(initialItems);
+  const [draggedItemIndex, setDraggedItemIndex] = useState(null);
+  const initialItems = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
 
-  let draggedItem = null;
+  const handleDragStart = (index) => {
+    setDraggedItemIndex(index);
+  };
 
-  list.addEventListener("dragstart", (event) => {
-    draggedItem = event.target;
-    setTimeout(() => event.target.style.display = "none", 0);
-  });
-
-  list.addEventListener("dragend", (event) => {
-    event.target.style.display = "block";
-    draggedItem = null;
-  });
-
-  list.addEventListener("dragover", (event) => {
+  const handleDragOver = (event) => {
     event.preventDefault();
-    const hoveredItem = event.target;
-    if (hoveredItem !== draggedItem && hoveredItem.tagName === "LI") {
-      const rect = hoveredItem.getBoundingClientRect();
-      const next = (event.clientY - rect.top) / rect.height > 0.5;
-      list.insertBefore(draggedItem, next ? hoveredItem.nextSibling : hoveredItem);
-    }
-  });
-</script>
-      `,
+  };
+
+  const handleDrop = (index) => {
+    const updatedItems = [...items];
+    const [draggedItem] = updatedItems.splice(draggedItemIndex, 1);
+    updatedItems.splice(index, 0, draggedItem);
+    setItems(updatedItems);
+    setDraggedItemIndex(null);
+  };
+
+  return (
+    <div className="draggable-list">
+      {items.map((item, index) => (
+        <div
+          key={index}
+          className={\`list-item \${
+            draggedItemIndex === index ? "dragging" : ""
+          }\`}
+          draggable
+          onDragStart={() => handleDragStart(index)}
+          onDragOver={handleDragOver}
+          onDrop={() => handleDrop(index)}
+        >
+          {item}
+        </div>
+      ))}
+    </div>
+  );
+};`,
+        "app.css": `.draggable-list {
+  width: 300px;
+  margin: 40px auto;
+  padding: 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  color: #292929
+}
+
+.list-item {
+  padding: 15px 20px;
+  background-color: white;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.list-item:hover {
+  background-color: #e6f7ff;
+}
+
+.list-item.dragging {
+  background-color: #d0eaff;
+  transform: scale(1.05);
+  opacity: 0.9;
+  cursor: grabbing;
+}
+
+.list-item:active {
+  cursor: grabbing;
+}`,
+      },
       open: false,
     },
     {
@@ -423,39 +528,131 @@ export const dragandDropData = {
         "Use for uploading files in forms, dashboards, or content management systems where intuitive file upload is required.",
       purpose:
         "To demonstrate how to create an interactive file upload area using native drag-and-drop events along with file input support.",
-      codeBlock: `
-<ul id="sortable-list" style="list-style: none; padding: 0;">
-  <li draggable="true" style="padding: 10px; background: #f1f1f1; margin-bottom: 5px; cursor: grab;">Item 1</li>
-  <li draggable="true" style="padding: 10px; background: #f1f1f1; margin-bottom: 5px; cursor: grab;">Item 2</li>
-  <li draggable="true" style="padding: 10px; background: #f1f1f1; margin-bottom: 5px; cursor: grab;">Item 3</li>
-</ul>
+      codeBlock: {
+        "app.jsx": `import React from "react";
+import "./app.css";
 
-<script>
-  const list = document.getElementById("sortable-list");
+export const FileDropZone = () => {
+  const [files, setFiles] = useState([]);
+  const [isDragging, setIsDragging] = useState(false);
 
-  let draggedItem = null;
-
-  list.addEventListener("dragstart", (event) => {
-    draggedItem = event.target;
-    setTimeout(() => event.target.style.display = "none", 0);
-  });
-
-  list.addEventListener("dragend", (event) => {
-    event.target.style.display = "block";
-    draggedItem = null;
-  });
-
-  list.addEventListener("dragover", (event) => {
+  const handleDragOver = (event) => {
     event.preventDefault();
-    const hoveredItem = event.target;
-    if (hoveredItem !== draggedItem && hoveredItem.tagName === "LI") {
-      const rect = hoveredItem.getBoundingClientRect();
-      const next = (event.clientY - rect.top) / rect.height > 0.5;
-      list.insertBefore(draggedItem, next ? hoveredItem.nextSibling : hoveredItem);
-    }
-  });
-</script>
-      `,
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleDrop = (event) => {
+    event.preventDefault();
+    setIsDragging(false);
+    const droppedFiles = Array.from(event.dataTransfer.files);
+    setFiles((prevFiles) => [...prevFiles, ...droppedFiles]);
+  };
+
+  const handleFileSelect = (event) => {
+    const selectedFiles = Array.from(event.target.files);
+    setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
+  };
+
+  return (
+    <div className="file-drop-container">
+      <div
+        className={\`drop-zone \${isDragging ? "dragging" : ""}\`}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+      >
+        <p>Drag & Drop files here or click to upload 📤</p>
+        <input
+          type="file"
+          multiple
+          className="file-input"
+          onChange={handleFileSelect}
+        />
+      </div>
+
+      {files.length > 0 && (
+        <div className="file-list">
+          <h4>Uploaded Files:</h4>
+          <ul>
+            {files.map((file, index) => (
+              <li key={index}>{file.name}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+};`,
+        "app.css": `.file-drop-container {
+  max-width: 400px;
+  margin: 50px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.drop-zone {
+  border: 2px dashed #aaa;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.drop-zone.dragging {
+  background-color: #e0f7fa;
+  border-color: #00796b;
+}
+
+.drop-zone p {
+  margin: 0;
+  color: #555;
+  font-size: 16px;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-list {
+  margin-top: 20px;
+  text-align: left;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.file-list h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.file-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.file-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.file-list li:last-child {
+  border-bottom: none;
+}`,
+      },
       open: false,
     },
   ],
