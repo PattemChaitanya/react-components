@@ -600,7 +600,92 @@ export const FixedBottomNav = () => {
         "Use for applications where clarity is a priority and users benefit from both visual cues and text.",
       purpose:
         "This version includes both icons and text, offering a more descriptive navigation system for users unfamiliar with the app's features.",
-      codeBlock: { "app.jsx": ``, "app.css": `` },
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./app.css";
+import navItems from "./data.json";
+
+export const BottomNav = () => {
+  const [selected, setSelected] = useState(0);
+
+  return (
+    <div className="bottom-nav">
+      {navItems.map((item, index) => (
+        <div
+          key={item.id}
+          className={\`nav-item \${selected === index ? "active" : ""}\`}
+          onClick={() => setSelected(index)}
+        >
+          <svg viewBox="0 0 24 24" style={styles.svgSize}>
+            <path fill="currentColor" d={item.iconPath} />
+          </svg>
+          <span>{item.label}</span>
+        </div>
+      ))}
+    </div>
+  );
+};`,
+        "app.css": `.bottom-nav {
+  width: 100%;
+  background: var(--color-surface, #ffffff);
+  border-top: 1px solid var(--color-outline, #ddd);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item {
+  text-decoration: none;
+  color: var(--color-on-background, #333);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  padding: 5px 10px;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-item svg {
+  margin-bottom: 4px;
+}
+
+.nav-item.active {
+  color: var(--color-primary, #76592e);
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .bottom-nav {
+    padding: 12px 0;
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+}`,
+        "data.json": `[
+  {
+    id: "home",
+    iconPath: "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z",
+    label: "Home",
+  },
+  {
+    id: "search",
+    iconPath:
+      "M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z",
+    label: "Search",
+  },
+  {
+    id: "profile",
+    iconPath:
+      "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z",
+    label: "Profile",
+  },
+]`,
+      },
       open: false,
     },
   ],

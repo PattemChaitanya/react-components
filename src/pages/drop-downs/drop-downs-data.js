@@ -64,36 +64,108 @@ export const dropDownData = {
         "Use for forms or navigation bars when a list of options is needed but space is limited.",
       purpose:
         "This basic dropdown is an essential UI pattern that can be used for providing users with a limited set of options or actions.",
-      codeBlock: `
-<div style="position: relative;">
-  <button id="dropdownButton" style="background-color: #6200ea; color: white; border: none; padding: 10px 20px; cursor: pointer;">
-    Options
-  </button>
-  <ul id="dropdownMenu" style="display: none; position: absolute; top: 100%; left: 0; background-color: white; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); padding: 10px 0; width: 200px; margin: 0;">
-    <li style="padding: 8px 16px; list-style: none; text-align: left;">
-      <a href="#action1" style="color: #6200ea; text-decoration: none;">Action 1</a>
-    </li>
-    <li style="padding: 8px 16px; list-style: none; text-align: left;">
-      <a href="#action2" style="color: #6200ea; text-decoration: none;">Action 2</a>
-    </li>
-  </ul>
-</div>
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./app.css";
 
-<script>
-  const button = document.getElementById('dropdownButton');
-  const menu = document.getElementById('dropdownMenu');
+export const DropDowns = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const menu = ["Dashboard", "Profile", "Settings"];
 
-  button.addEventListener('click', () => {
-    menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
-  });
+  const handleHoveredState = () => {
+    setTimeout(() => {
+      isHovered ? setIsHovered(false) : setIsHovered(true);
+    }, 500);
+  };
 
-  window.addEventListener('click', (e) => {
-    if (!e.target.matches('#dropdownButton') && !e.target.matches('#dropdownMenu') && !e.target.matches('#dropdownMenu *')) {
-      menu.style.display = 'none';
-    }
-  });
-</script>
-      `,
+  const renderedMenu = () => {
+    return menu.map((item) => <p>{item}</p>);
+  };
+
+  return (
+    <div className="drop-down-container">
+      <div className="clickAndHoverContainer">
+        <div>
+          <button
+            className="buttonContainer"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            Click me
+          </button>
+          <div
+            className="renderedMenu"
+            style={{
+              visibility: isOpen ? "visible" : "hidden",
+            }}
+          >
+            {renderedMenu()}
+          </div>
+        </div>
+        <div>
+          <button
+            className="buttonContainer"
+            onMouseEnter={() => handleHoveredState()}
+            onMouseLeave={() => handleHoveredState()}
+          >
+            Hover me
+          </button>
+          <div
+            className="renderedMenu"
+            style={{
+              visibility: isHovered ? "visible" : "hidden",
+            }}
+          >
+            {renderedMenu()}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};`,
+        "app.css": `.drop-down-container {
+  display: grid;
+  place-items: center;
+}
+  
+.clickAndHoverContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  padding: 20px 0;
+}
+
+.buttonContainer {
+  padding: 10px 24px;
+  border-radius: 4px;
+  background: blue;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.renderedMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px;
+  border: 1px solid rgb(0, 0, 0, 0.5);
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.renderedMenu > p {
+  padding: 4px;
+  width: 100px;
+  cursor: pointer
+}
+
+.renderedMenu > p:hover {
+  background-color: #cecece;
+  border-radius: 4px;
+}`,
+      },
       open: false,
     },
     {
@@ -106,40 +178,106 @@ export const dropDownData = {
         "Ideal for applications where visual clarity is needed, such as for file type selection, settings, or user profile options.",
       purpose:
         "This example uses Material Icons for a better user experience and clearer representation of the options within the dropdown.",
-      codeBlock: `
-<div style="position: relative;">
-  <button id="dropdownButton" style="background-color: #6200ea; color: white; border: none; padding: 10px 20px; cursor: pointer;">
-    Options
-  </button>
-  <ul id="dropdownMenu" style="display: none; position: absolute; top: 100%; left: 0; background-color: white; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); padding: 10px 0; width: 200px; margin: 0;">
-    <li style="padding: 8px 16px; list-style: none; text-align: left;">
-      <a href="#action1" style="color: #6200ea; text-decoration: none;">
-        <i class="material-icons" style="vertical-align: middle; margin-right: 8px;">home</i> Action 1
-      </a>
-    </li>
-    <li style="padding: 8px 16px; list-style: none; text-align: left;">
-      <a href="#action2" style="color: #6200ea; text-decoration: none;">
-        <i class="material-icons" style="vertical-align: middle; margin-right: 8px;">settings</i> Action 2
-      </a>
-    </li>
-  </ul>
-</div>
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./app.css";
+import Avatar from "./avatar";
 
-<script>
-  const button = document.getElementById('dropdownButton');
-  const menu = document.getElementById('dropdownMenu');
+export const DropDowns = () => {
+  const [isOpen, setIsOpen] = useState(true);
 
-  button.addEventListener('click', () => {
-    menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
-  });
+  const renderedMenu = () => {
+    return ["Dashboard", "Profile", "Settings"].map((item) => <p>{item}</p>);
+  };
 
-  window.addEventListener('click', (e) => {
-    if (!e.target.matches('#dropdownButton') && !e.target.matches('#dropdownMenu') && !e.target.matches('#dropdownMenu *')) {
-      menu.style.display = 'none';
-    }
-  });
-</script>
-      `,
+  return (
+    <div className="drop-down-container">
+      <div className="profileCardContainer">
+        <div
+          className="profileAvatar"
+          onClick={() => setIsOpen(!isOpen)}
+          style={{ cursor: "pointer" }}
+        >
+          <Avatar url="" name="adam" sx={{ color: "inherit" }} />
+        </div>
+        <div
+          className="profileMenu"
+          style={{ visibility: isOpen ? "visible" : "hidden" }}
+        >
+          <p>
+            Signed in as
+            <br />
+            <span>Adam Greece</span>
+          </p>
+          <hr />
+          {renderedMenu()}
+          <hr />
+          <p>Signout</p>
+        </div>
+      </div>
+    </div>
+  );
+};`,
+        "app.css": `.drop-down-container {
+  display: grid;
+  place-items: center;
+}
+  
+.profileCardContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.profileAvatar {
+  width: 48px;
+  height: 48px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profileMenu {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  width: 140px;
+  margin-top: 14px;
+}
+
+.profileMenu > hr {
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.profileMenu > p {
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.profileMenu > p > span {
+  opacity: 0.5;
+  margin-top: 8px;
+}
+
+.profileMenu > p:first-child {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.profileMenu > p:nth-child(2) {
+  padding-top: 0;
+}
+
+.profileMenu > p:last-child {
+  padding-bottom: 10px;
+}
+
+.profileMenu > p:hover {
+  background-color: #cecece;
+  color: var(--text-color);
+}`,
+      },
       open: false,
     },
     {
@@ -152,50 +290,152 @@ export const dropDownData = {
         "Ideal for applications with a large set of options where users need a search bar to quickly find the option they need.",
       purpose:
         "This example integrates a search input inside the dropdown to improve user experience when dealing with a large list of options.",
-      codeBlock: `
-<div style="position: relative;">
-  <button id="dropdownButton" style="background-color: #6200ea; color: white; border: none; padding: 10px 20px; cursor: pointer;">
-    Options
-  </button>
-  <div id="dropdownMenu" style="display: none; position: absolute; top: 100%; left: 0; background-color: white; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); padding: 10px 0; width: 200px; margin: 0;">
-    <input type="text" id="searchInput" placeholder="Search..." style="padding: 8px; width: 100%; box-sizing: border-box;">
-    <ul id="dropdownList" style="max-height: 150px; overflow-y: auto; padding: 0;">
-      <li style="padding: 8px 16px; list-style: none;">Action 1</li>
-      <li style="padding: 8px 16px; list-style: none;">Action 2</li>
-      <li style="padding: 8px 16px; list-style: none;">Action 3</li>
-    </ul>
-  </div>
-</div>
+      codeBlock: {
+        "app.jsx": `import React, { useState } from "react";
+import "./style.css";
+import { NotificationsRounded } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
+import Avatar from "./avatar";
+import notification from "./data.json";
 
-<script>
-  const button = document.getElementById('dropdownButton');
-  const menu = document.getElementById('dropdownMenu');
-  const searchInput = document.getElementById('searchInput');
-  const dropdownList = document.getElementById('dropdownList');
+export const NotificationDropDowns = () => {
+  const [isOpen, setIsOpen] = useState(true);
 
-  button.addEventListener('click', () => {
-    menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
-  });
+  return (
+    <div className="container">
+      <div className="dropDownContainer">
+        <div className="icon-button">
+          <IconButton
+            onClick={() => setIsOpen(!isOpen)}
+            sx={{ color: "inherit" }}
+          >
+            <NotificationsRoundedIcon sx={{ color: "inherit" }} />
+          </IconButton>
+        </div>
+        <div
+          className="content-container"
+          style={{ visibility: isOpen ? "visible" : "hidden" }}
+        >
+          <div className="content-header">
+            <h3>Notification</h3>
+          </div>
+          <div className="content-info">
+            {notification.map((item) => (
+              <div className="info-message">
+                <div style={{ width: "36px", height: "36px" }}>
+                  <Avatar url="" name={item.profileUrl} />
+                </div>
+                <div>
+                  <p>{item.message}</p>
+                  <small>{item.received}</small>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};`,
+        "app.css": `.drop-down-container {
+  display: grid;
+  place-items: center;
+}
 
-  searchInput.addEventListener('input', () => {
-    const filter = searchInput.value.toLowerCase();
-    const items = dropdownList.getElementsByTagName('li');
-    Array.from(items).forEach(item => {
-      if (item.textContent.toLowerCase().includes(filter)) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  });
+.dropDownContainer {
+  display: flex;
+  gap: 8px;
+  width: min(100%, 400px);
+  position: relative;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color);
+}
 
-  window.addEventListener('click', (e) => {
-    if (!e.target.matches('#dropdownButton') && !e.target.matches('#dropdownMenu') && !e.target.matches('#dropdownMenu *')) {
-      menu.style.display = 'none';
-    }
-  });
-</script>
-      `,
+.icon-button {
+  margin-left: auto;
+  margin-right: auto;
+  color: inherit;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  height: 270px;
+  overflow: auto;
+}
+
+.content-header {
+  text-align: center;
+  padding: 16px 8px;
+}
+
+.content-header > h3 {
+  text-transform: capitalize;
+}
+
+.content-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-message {
+  padding: 8px 16px;
+  display: flex;
+  gap: 12px;
+  width: "100%";
+  border-bottom: 1px solid rba(0, 0, 0, 0.4);
+}
+
+.info-message:hover {
+  background-color: #f1f1f1;
+  color: #292929;
+  cursor: pointer;
+}
+
+.info-message:last-child {
+  border-bottom: none;
+}
+
+.info-message:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+}`,
+        "data.json": `[
+  {
+    profileUrl: "Jese image",
+    message:
+      "New message from Jese Leos: 'Hey, what's up? All set for the presentation?'",
+    received: "a few moments ago",
+  },
+  {
+    profileUrl: "Joseph image",
+    message: "Joseph Mcfall and 5 others started following you.",
+    received: "10 minutes ago",
+  },
+  {
+    profileUrl: "Bonnie image",
+    message:
+      "Bonnie Green and 141 others love your story. See it and view more stories.",
+    received: "44 minutes ago",
+  },
+  {
+    profileUrl: "Leslie image",
+    message:
+      "Leslie Livingston mentioned you in a comment: @bonnie.green what do you say?",
+    received: "1 hour ago",
+  },
+  {
+    profileUrl: "Robert image",
+    message:
+      "Robert Brown posted a new video: Glassmorphism - learn how to implement the new design trend.",
+    received: "3 hours ago",
+  },
+]`,
+      },
       open: false,
     },
   ],
