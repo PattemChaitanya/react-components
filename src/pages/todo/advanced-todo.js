@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useState, useRef } from "react";
 import "./todo.css";
 import SkipLink from "../../components/SkipLink";
@@ -109,7 +110,7 @@ const AdvancedTodoList = () => {
   };
 
   const handleDelete = (index, taskText) => {
-    const deletedTaskId = tasks[index].id;
+    // const deletedTaskId = tasks[index].id;
     const newTasks = tasks.filter((_, i) => i !== index);
     setTasks(newTasks);
     

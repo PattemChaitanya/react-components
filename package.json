@@ -1,9 +1,15 @@
 {
   "name": "jsx-web-component",
   "version": "0.1.1",
-  "private": true,
+  "private": false,
   "homepage": "https://jsx-web.netlify.app/",
   "author": "Chaitanya Pattem <pattemchaitu@gmail.com>",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
@@ -24,13 +30,19 @@
     "source-map-explorer": "^2.5.3",
     "web-vitals": "^2.1.4"
   },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "generate:template": "node scripts/template-generator.js"
+    "generate:template": "node scripts/template-generator.js",
+    "build:lib": "rollup -c",
+    "prepublishOnly": "npm run build:lib"
   },
   "eslintConfig": {
     "extends": [
@@ -51,7 +63,16 @@
     ]
   },
   "devDependencies": {
-    "fs-extra": "^11.2.0"
+    "fs-extra": "^11.2.0",
+    "rollup": "^2.79.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6"
   },
   "repository": {
     "type": "git",

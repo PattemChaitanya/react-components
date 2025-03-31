@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-redundant-roles */
 import React, { useState, useRef } from 'react';
 import './todo.css';
 import SkipLink from "../../components/SkipLink";

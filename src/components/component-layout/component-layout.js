@@ -13,7 +13,7 @@ const ComponentLayout = ({ jsonObject }) => {
     seoKeywords,
     pageTitle,
     pageDescription,
-    pageImage,
+    // pageImage,
     types,
     interactiveDemo,
     accessibity,
@@ -58,13 +58,13 @@ const ComponentLayout = ({ jsonObject }) => {
             </p>
           ))}
         </div>
-        <div className="header_container header_container_right">
+        {/*<div className="header_container header_container_right">
           <img
             src={pageImage}
             alt="hero-image"
             style={{ width: "100%", height: "100%", objectFit: "contain" }}
           />
-        </div>
+        </div> */}
       </div>
       <div className="component-layout-body-container">
         {Object.keys(types).length > 0 && (
