@@ -11,11 +11,19 @@ This project provides a sleek, responsive, and customizable UI framework similar
 - ✅ **Accessibility** – Follows best practices for UX & ARIA compliance  
 - ✅ **Animations & Transitions** – Smooth user interactions  
 
-## Contributing
-### We welcome contributions! <br >
-*To run this project, use the following command:*
+## Documentation
 
-### Getting Started
+Comprehensive documentation is available in the [docs](./docs) folder:
+
+- [Getting Started](./docs/getting-started.md)
+- [Components](./docs/components.md)
+- [Style Guide](./docs/style-guide.md)
+- [API Reference](./docs/api-reference.md)
+- [Examples](./docs/examples.md)
+- [Architecture](./docs/architecture.md)
+- [Contributing](./docs/contributing.md)
+
+## Getting Started
 
 *Clone the repository:*
 ```sh
@@ -31,13 +39,16 @@ npm start
 ```
 
 ## Usage Example
-```sh
-import { Button } from "your-ui-framework";
+```jsx
+import { Button } from "jsx-web-component";
 
 function App() {
   return <Button variant="primary">Click Me</Button>;
 }
 ```
+
+## Contributing
+We welcome contributions! Please see our [Contributing Guide](./docs/contributing.md) for more details.
 
 ## License
 This project is licensed under the MIT License.

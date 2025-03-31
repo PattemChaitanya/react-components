@@ -1,9 +1,15 @@
 import React from "react";
 import { RouterProvider } from "react-router-dom";
 import routes from "./config/routes";
+import SkipLink from "./components/SkipLink";
 
 function App() {
-  return <RouterProvider router={routes} />;
+  return (
+    <>
+      <SkipLink targetId="main-content" />
+      <RouterProvider router={routes} />
+    </>
+  );
 }
 
 export default App;

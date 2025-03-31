@@ -1,0 +1,61 @@
+/* Component-specific styles for NewComponent */
+
+/* Custom title styling */
+.component-title {
+  border-bottom: 2px solid var(--color-outline-variant);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+/* Custom card styling */
+.component-card {
+  background-color: var(--color-surface-container-low);
+  margin-bottom: 20px;
+}
+
+/* Component status indicator */
+.component-status {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: var(--color-surface-variant);
+  color: var(--color-on-surface-variant);
+  font-size: var(--theme-label-l-font-size);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.component-status-active {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  transform: scale(1.05);
+}
+
+/* Animation for status change */
+@keyframes statusPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.component-status-active {
+  animation: statusPulse 0.5s ease-in-out;
+}
+
+/* Custom action button container */
+.component-actions {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--color-outline-variant);
+}
+
+/* Media queries for component-specific responsive behavior */
+@media screen and (max-width: 600px) {
+  .component-card {
+    padding: 12px;
+  }
+  
+  .component-status {
+    padding: 4px 8px;
+    font-size: var(--theme-label-m-font-size);
+  }
+} 

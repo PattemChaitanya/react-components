@@ -121,25 +121,13 @@
 }
 
 .todo-item {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  padding: 10px;
-  margin-bottom: 8px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   cursor: grab;
-  transition: transform 0.2s, background 0.3s;
+  transition: transform 0.2s;
 }
 
 .todo-item:active {
-  background: #e3e3e3;
   transform: scale(0.98);
   cursor: grabbing;
-}
-
-.todo-item:hover {
-  background: #f9f9f9;
 }
 
 .completed span {
@@ -150,4 +138,345 @@
 input[type="checkbox"] {
   margin-right: 10px;
   cursor: pointer;
+}
+
+/* Advanced todo list specific styles */
+.todo-item.dragging {
+  opacity: 0.7;
+  background: #e0f7fa;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom drag and drop visual cues */
+.todo-item.dragging {
+  opacity: 0.7;
+  background: #e0f7fa;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom todo animations */
+@keyframes taskComplete {
+  0% { background-color: transparent; }
+  50% { background-color: rgba(0, 200, 0, 0.1); }
+  100% { background-color: transparent; }
+}
+
+.task-complete-animation {
+  animation: taskComplete 0.8s ease-in-out;
+}
+
+/* Todo-specific heights */
+.todo-list-container {
+  max-height: 250px; /* Specific to todo components */
+}
+
+/* Basic Todo specific styles */
+.basic-todo-heading {
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Advanced Todo specific styles */
+.advanced-todo-controls {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+/* Button and input layout styles */
+.todo-button {
+  width: fit-content !important;
+  float: right;
+  margin-left: auto;
+}
+
+.todo-input-wrapper {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.todo-input-wrapper input {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.todo-content {
+  flex: 1;
+  min-width: 0; /* Prevent flex items from overflowing */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Make task items more responsive */
+.list-item.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding-right: 8px;
+}
+
+/* ===== Accessibility Styles ===== */
+
+/* Screen reader only - visually hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Enhanced focus styles for keyboard navigation */
+:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Make focus visible only for keyboard users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Custom checkbox styles with better accessibility */
+.checkbox-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-control-indicator {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-primary, #007bff);
+  border-radius: 3px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox .custom-control-indicator {
+  background-color: var(--color-primary, #007bff);
+}
+
+input[type="checkbox"]:checked + .custom-checkbox .custom-control-indicator::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+input[type="checkbox"]:focus + .custom-checkbox .custom-control-indicator {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .todo-item {
+    border: 1px solid CanvasText;
+  }
+  
+  .custom-control-indicator {
+    border: 1px solid CanvasText;
+  }
+  
+  input[type="checkbox"]:checked + .custom-checkbox .custom-control-indicator {
+    background-color: Highlight;
+    border-color: Highlight;
+  }
+  
+  .btn {
+    border: 1px solid CanvasText;
+  }
+}
+
+/* Task text styling */
+.task-text {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.task-text:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Empty list message */
+.empty-list-message {
+  text-align: center;
+  color: #666;
+  margin: 20px 0;
+}
+
+/* Help text */
+.help-text {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* Form styling */
+.todo-form {
+  margin-bottom: 1rem;
+}
+
+/* ===== Enhanced Accessibility Styles ===== */
+
+/* Improve focus visibility */
+.todo-item:focus-visible {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+/* Enhanced button focus styles */
+button:focus-visible {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+input:focus-visible {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+/* Visual indication for drag mode */
+.drag-mode {
+  border: 2px dashed #007bff;
+}
+
+/* Enhanced contrast for completed tasks */
+.task-text.completed {
+  color: #6c757d;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 5px,
+    rgba(0, 0, 0, 0.03) 5px,
+    rgba(0, 0, 0, 0.03) 10px
+  );
+  border-radius: 2px;
+}
+
+/* Improved touch targets for mobile */
+@media (max-width: 768px) {
+  .todo-button {
+    padding: 10px 15px;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .custom-control-indicator {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .list-item.todo-item {
+    padding: 12px;
+  }
+}
+
+/* Better contrast for placeholder text */
+::placeholder {
+  color: #767676;
+  opacity: 1;
+}
+
+/* Focus-visible polyfill for browsers that don't support it */
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+/* Skip links for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary, #007bff);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .task-complete-animation {
+    animation: none !important;
+  }
+}
+
+/* Additional ARIA states styling */
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Improved focus indication for checkboxes */
+input[type="checkbox"]:focus-visible + .custom-checkbox .custom-control-indicator {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+/* Make delete buttons more obvious on focus/hover */
+.btn-danger:hover,
+.btn-danger:focus-visible {
+  background-color: #dc3545;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Improve contrast for empty state messages */
+.empty-list-message {
+  color: #555;
+  font-weight: 500;
+}
+
+/* Ensure consistent active state for all components */
+button:active,
+.task-text:active,
+.todo-item:active {
+  transform: scale(0.98);
 }

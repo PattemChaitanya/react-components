@@ -8,9 +8,11 @@ const LayoutComponent = ({ title, description, keywords, children }) => {
       description={description}
       keywords={keywords}
     >
-      <div className="main-main-container">
+      <div className="main-main-container" role="region" aria-label={title || "Main content"}>
         <div className="scroll-wrapper-component">
-          <div className="page-layout">{children}</div>
+          <article className="page-layout">
+            {children}
+          </article>
         </div>
       </div>
     </HelmetComponent>
